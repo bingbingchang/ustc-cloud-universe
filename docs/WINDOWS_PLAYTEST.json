@@ -1,0 +1,17 @@
+{
+  "checks": {
+    "context": true,
+    "coordinates": true,
+    "fly": true,
+    "free_camera": true,
+    "history": true,
+    "housing": true,
+    "research": true,
+    "return_to_avatar": true,
+    "screenshot": true,
+    "walk": true
+  },
+  "engine": "4.7.1-stable (official)",
+  "exported": true,
+  "passed": true
+}
