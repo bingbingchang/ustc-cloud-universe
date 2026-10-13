@@ -1,0 +1,3357 @@
+{
+  "schema_version": 1,
+  "unit": "meter",
+  "coordinate_system": "+X east +Z south in unchanged site.json meter frame",
+  "origin_wgs84": [
+    117.2634979,
+    31.8427261
+  ],
+  "south_rotation_radians": 0.07446840453199037,
+  "asset_manifest": "assets/campus_tree_species_manifest.json",
+  "scale_format": "uniform multiplier",
+  "heading_format": "radians around +Y",
+  "placement_status": "ready for scene module import; existing scene untouched",
+  "sources": [
+    {
+      "id": "official_map",
+      "url": "https://indico.pnp.ustc.edu.cn/event/3091/attachments/6396/12868/科大东校园地图.pdf",
+      "local": "references/maps/east_campus.png",
+      "use": "Road adjacency, building labels and green spaces."
+    },
+    {
+      "id": "official_gis",
+      "url": "https://gis.ustc.edu.cn/",
+      "local": "references/maps/gis_index.html",
+      "use": "Official GIS campus context."
+    },
+    {
+      "id": "osm_geometry",
+      "url": "https://www.openstreetmap.org/",
+      "local": "renders/coverage/osm_east_full.xml",
+      "use": "Exact shared local road centers and all building footprint exclusion polygons."
+    },
+    {
+      "id": "esri_north",
+      "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer",
+      "local": "references/road_network/osm_satellite_overlay.jpg",
+      "metadata": "references/road_network/satellite_metadata.json",
+      "use": "North and road canopy masses; image capture date unknown."
+    },
+    {
+      "id": "esri_core",
+      "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer",
+      "local": "references/satellite/esri_reference.jpg",
+      "use": "Mature crown density beside First Teaching Hall and plaza; stems inferred beneath crowns."
+    },
+    {
+      "id": "official_plaza_photo",
+      "url": "https://sz.ustc.edu.cn/wdxz_show/61.html",
+      "local": "references/buildings/东区郭沫若广场.jpg",
+      "use": "Layered dense garden: mature broadleaf trees and cedars behind clipped shrubs."
+    },
+    {
+      "id": "official_autumn",
+      "url": "https://business.ustc.edu.cn/2011/1026/c28419a526436/page.htm",
+      "use": "First Teaching Hall snow cedars, plane leaves and Koelreuteria on Guo Moruo Road."
+    },
+    {
+      "id": "official_tree_inventory",
+      "url": "https://ef.ustc.edu.cn/info/1061/2005.htm",
+      "use": "Plane north of First Teaching Hall; magnolia and loquat in plaza; camphor at lake; pine near 1958."
+    },
+    {
+      "id": "official_plane_avenue",
+      "url": "https://zgkdb.ustc.edu.cn/ndetail/3705",
+      "local": "references/buildings/teaching_north.jpg",
+      "use": "Mature plane avenue form and wide spacing; exact trunk positions estimated."
+    },
+    {
+      "id": "user_campus_observation",
+      "use": "Qinfeng Road behind statue and green strip, tall widely spaced plane trees on both sides; Tianshi Road west lake/east residential route."
+    }
+  ],
+  "placement_basis": "Roads/building geometry anchored to maps and the retained site frame. Individual tree stems and species mix are a visual reconstruction from campus photographs and satellite crowns, not a surveyed inventory. Plane street rows use 18 m phase spacing with real entry/intersection gaps.",
+  "groups": [
+    {
+      "id": "qinfeng_double_plane",
+      "label": "勤奋路双侧高大梧桐",
+      "road_ids": [
+        "road_268836529",
+        "road_265583820"
+      ],
+      "spacing_m": 18,
+      "centerline_offset_m": 8.15,
+      "basis": "User identified road/tree arrangement; official photo and satellite canopy. Individual stems estimated.",
+      "source_ids": [
+        "user_campus_observation",
+        "official_autumn",
+        "esri_north",
+        "osm_geometry"
+      ],
+      "tree_count": 21,
+      "asset_counts": {
+        "tree_plane_a": 5,
+        "tree_plane_b": 9,
+        "tree_plane_c": 7
+      }
+    },
+    {
+      "id": "tianshi_double_plane",
+      "label": "天使路双侧梧桐",
+      "road_ids": [
+        "road_266988253",
+        "road_266988252",
+        "road_265575543",
+        "road_265583821"
+      ],
+      "spacing_m": 18,
+      "centerline_offset_m": 8.1,
+      "stop_z": 337.749,
+      "source_ids": [
+        "official_plane_avenue",
+        "esri_north",
+        "osm_geometry"
+      ],
+      "basis": "Visible mature road canopy; retain paths to lake, hotel and residential entrances.",
+      "tree_count": 28,
+      "asset_counts": {
+        "tree_plane_b": 9,
+        "tree_plane_a": 11,
+        "tree_plane_c": 8
+      }
+    },
+    {
+      "id": "plaza_west_mixed_woodland",
+      "label": "郭沫若广场西侧混合乔木林",
+      "spacing_m": [
+        8,
+        12
+      ],
+      "source_ids": [
+        "official_plaza_photo",
+        "official_tree_inventory",
+        "esri_core"
+      ],
+      "replace_existing": "guo_plaza_03 trees + south_plaza_edge_02 trees",
+      "tree_count": 25,
+      "asset_counts": {
+        "tree_garden": 15,
+        "tree_plane_a": 3,
+        "tree_conifer": 7
+      }
+    },
+    {
+      "id": "plaza_east_mixed_woodland",
+      "label": "郭沫若广场东侧混合乔木林",
+      "spacing_m": [
+        8,
+        12
+      ],
+      "source_ids": [
+        "official_plaza_photo",
+        "official_tree_inventory",
+        "esri_core"
+      ],
+      "replace_existing": "guo_plaza_03 trees + south_plaza_edge_02 trees",
+      "tree_count": 19,
+      "asset_counts": {
+        "tree_conifer": 5,
+        "tree_garden": 11,
+        "tree_plane_a": 3
+      }
+    },
+    {
+      "id": "hall_courtyard_mixed",
+      "label": "一教庭院乔木补充",
+      "source_ids": [
+        "official_autumn",
+        "osm_geometry"
+      ],
+      "basis": "Only planted pockets outside authored paved passages.",
+      "tree_count": 5,
+      "asset_counts": {
+        "tree_conifer": 2,
+        "tree_garden": 3
+      }
+    },
+    {
+      "id": "north_gate_academic_mixed",
+      "label": "新北门、五教、地空及管理学院绿化",
+      "source_ids": [
+        "esri_north",
+        "osm_geometry",
+        "official_map"
+      ],
+      "basis": "Satellite crown masses and exact campus/building outlines; garden stems approximated.",
+      "tree_count": 39,
+      "asset_counts": {
+        "tree_garden": 12,
+        "tree_conifer": 12,
+        "tree_plane_c": 10,
+        "tree_plane_a": 5
+      }
+    },
+    {
+      "id": "hanhai_east_green",
+      "label": "瀚海路东段行道树",
+      "source_ids": [
+        "esri_north",
+        "osm_geometry"
+      ],
+      "spacing_m": 18,
+      "tree_count": 9,
+      "asset_counts": {
+        "tree_plane_c": 5,
+        "tree_conifer": 4
+      }
+    },
+    {
+      "id": "teaching_west_double_plane",
+      "label": "一教西侧连接路双侧梧桐",
+      "road_ids": [
+        "road_264872430"
+      ],
+      "spacing_m": 18,
+      "centerline_offset_m": [
+        7.7,
+        8.2
+      ],
+      "source_ids": [
+        "official_plane_avenue",
+        "esri_core",
+        "osm_geometry"
+      ],
+      "tree_count": 4,
+      "asset_counts": {
+        "tree_plane_a": 2,
+        "tree_plane_c": 1,
+        "tree_plane_b": 1
+      }
+    },
+    {
+      "id": "hall_north_mature_plane",
+      "label": "一教北侧成熟法桐树列",
+      "spacing_m": 19.4,
+      "centerline_offset_m": 8.4,
+      "road_ids": [
+        "road_264872431"
+      ],
+      "source_ids": [
+        "official_tree_inventory",
+        "official_plane_avenue",
+        "esri_core"
+      ],
+      "replace_existing": "Original six core trees at z=144; moved to z=142 to keep new Hanhai pavement and sidewalk free. Eastern tree merges with intersecting Tianshi row.",
+      "merged_proposed_tree_ids": [
+        "tianshi_double_plane_017"
+      ],
+      "tree_count": 6,
+      "asset_counts": {
+        "tree_plane_a": 2,
+        "tree_plane_b": 2,
+        "tree_plane_c": 2
+      }
+    }
+  ],
+  "replace_existing": [
+    {
+      "owner": "guo_plaza_03",
+      "selector": "all module trees",
+      "count": 14,
+      "reason": "Replace sparse old generic trees with side woodland and real species."
+    },
+    {
+      "owner": "south_plaza_edge_02",
+      "selector": "all module trees",
+      "count": 4,
+      "reason": "Avoid doubled planting inside the shared plaza landscape."
+    },
+    {
+      "owner": "diorama.planting",
+      "selector": "non-cherry trees at z=225",
+      "positions": [
+        [
+          -32.0,
+          225
+        ],
+        [
+          -19.2,
+          225
+        ],
+        [
+          -6.4,
+          225
+        ],
+        [
+          6.4,
+          225
+        ],
+        [
+          19.2,
+          225
+        ],
+        [
+          32.0,
+          225
+        ]
+      ],
+      "reason": "Replaced by the mapped north side of Qinfeng Road."
+    },
+    {
+      "owner": "diorama.planting",
+      "selector": "non-cherry east flank at x=69",
+      "positions": [
+        [
+          69,
+          176
+        ],
+        [
+          69,
+          186
+        ],
+        [
+          69,
+          196
+        ],
+        [
+          69,
+          206
+        ],
+        [
+          69,
+          216
+        ],
+        [
+          69,
+          226
+        ]
+      ],
+      "reason": "Replaced by the west side of mapped Tianshi Road."
+    },
+    {
+      "owner": "north_axis_layout",
+      "selector": "listed tree indices",
+      "trees": [
+        {
+          "index": 33,
+          "position": [
+            82,
+            71
+          ]
+        }
+      ],
+      "reason": "A new mature avenue stem replaces nearby old generic tree; cherry avenue remains."
+    },
+    {
+      "owner": "diorama.planting",
+      "selector": "non-cherry west flank at x=-69",
+      "positions": [
+        [
+          -69,
+          176
+        ],
+        [
+          -69,
+          186
+        ],
+        [
+          -69,
+          196
+        ],
+        [
+          -69,
+          206
+        ],
+        [
+          -69,
+          216
+        ],
+        [
+          -69,
+          226
+        ]
+      ],
+      "reason": "Replaced by the mature plane row along corrected west link road."
+    },
+    {
+      "owner": "diorama.planting",
+      "selector": "non-cherry north row at z=144",
+      "positions": [
+        [
+          -68,
+          144
+        ],
+        [
+          -48.6,
+          144
+        ],
+        [
+          -29.2,
+          144
+        ],
+        [
+          29,
+          144
+        ],
+        [
+          48.4,
+          144
+        ],
+        [
+          67.8,
+          144
+        ]
+      ],
+      "count": 6,
+      "reason": "Replaced by mature planes in the reconstructed Hanhai planting strip at z=142."
+    }
+  ],
+  "trees": [
+    {
+      "id": "qinfeng_double_plane_001",
+      "group": "qinfeng_double_plane",
+      "asset": "tree_plane_a",
+      "position": [
+        -68.608,
+        0.0,
+        223.738
+      ],
+      "scale": 1.1,
+      "heading": 2.55494,
+      "source_ids": [
+        "user_campus_observation",
+        "official_autumn",
+        "esri_north",
+        "osm_geometry"
+      ],
+      "road_id": "road_268836529"
+    },
+    {
+      "id": "qinfeng_double_plane_002",
+      "group": "qinfeng_double_plane",
+      "asset": "tree_plane_b",
+      "position": [
+        -68.614,
+        0.0,
+        240.038
+      ],
+      "scale": 1.1,
+      "heading": 4.95783,
+      "source_ids": [
+        "user_campus_observation",
+        "official_autumn",
+        "esri_north",
+        "osm_geometry"
+      ],
+      "road_id": "road_268836529"
+    },
+    {
+      "id": "qinfeng_double_plane_003",
+      "group": "qinfeng_double_plane",
+      "asset": "tree_plane_b",
+      "position": [
+        -50.608,
+        0.0,
+        223.745
+      ],
+      "scale": 1.12,
+      "heading": 0.00894,
+      "source_ids": [
+        "user_campus_observation",
+        "official_autumn",
+        "esri_north",
+        "osm_geometry"
+      ],
+      "road_id": "road_268836529"
+    },
+    {
+      "id": "qinfeng_double_plane_004",
+      "group": "qinfeng_double_plane",
+      "asset": "tree_plane_c",
+      "position": [
+        -50.614,
+        0.0,
+        240.045
+      ],
+      "scale": 1.12,
+      "heading": 0.27104,
+      "source_ids": [
+        "user_campus_observation",
+        "official_autumn",
+        "esri_north",
+        "osm_geometry"
+      ],
+      "road_id": "road_268836529"
+    },
+    {
+      "id": "qinfeng_double_plane_005",
+      "group": "qinfeng_double_plane",
+      "asset": "tree_plane_c",
+      "position": [
+        -32.547,
+        0.0,
+        223.794
+      ],
+      "scale": 1.18,
+      "heading": 5.13245,
+      "source_ids": [
+        "user_campus_observation",
+        "official_autumn",
+        "esri_north",
+        "osm_geometry"
+      ],
+      "road_id": "road_268836529"
+    },
+    {
+      "id": "qinfeng_double_plane_006",
+      "group": "qinfeng_double_plane",
+      "asset": "tree_plane_a",
+      "position": [
+        -32.675,
+        0.0,
+        240.093
+      ],
+      "scale": 1.18,
+      "heading": 3.337,
+      "source_ids": [
+        "user_campus_observation",
+        "official_autumn",
+        "esri_north",
+        "osm_geometry"
+      ],
+      "road_id": "road_268836529"
+    },
+    {
+      "id": "qinfeng_double_plane_007",
+      "group": "qinfeng_double_plane",
+      "asset": "tree_plane_a",
+      "position": [
+        -14.592,
+        0.0,
+        223.878
+      ],
+      "scale": 1.1,
+      "heading": 0.43118,
+      "source_ids": [
+        "user_campus_observation",
+        "official_autumn",
+        "esri_north",
+        "osm_geometry"
+      ],
+      "road_id": "road_268836529"
+    },
+    {
+      "id": "qinfeng_double_plane_008",
+      "group": "qinfeng_double_plane",
+      "asset": "tree_plane_b",
+      "position": [
+        -14.631,
+        0.0,
+        240.178
+      ],
+      "scale": 1.1,
+      "heading": 1.39851,
+      "source_ids": [
+        "user_campus_observation",
+        "official_autumn",
+        "esri_north",
+        "osm_geometry"
+      ],
+      "road_id": "road_268836529"
+    },
+    {
+      "id": "qinfeng_double_plane_009",
+      "group": "qinfeng_double_plane",
+      "asset": "tree_plane_c",
+      "position": [
+        21.531,
+        0.0,
+        224.312
+      ],
+      "scale": 1.18,
+      "heading": 0.31558,
+      "source_ids": [
+        "user_campus_observation",
+        "official_autumn",
+        "esri_north",
+        "osm_geometry"
+      ],
+      "road_id": "road_268836529"
+    },
+    {
+      "id": "qinfeng_double_plane_010",
+      "group": "qinfeng_double_plane",
+      "asset": "tree_plane_a",
+      "position": [
+        21.239,
+        0.0,
+        240.609
+      ],
+      "scale": 1.18,
+      "heading": 1.44468,
+      "source_ids": [
+        "user_campus_observation",
+        "official_autumn",
+        "esri_north",
+        "osm_geometry"
+      ],
+      "road_id": "road_268836529"
+    },
+    {
+      "id": "qinfeng_double_plane_011",
+      "group": "qinfeng_double_plane",
+      "asset": "tree_plane_b",
+      "position": [
+        39.235,
+        0.0,
+        240.927
+      ],
+      "scale": 1.1,
+      "heading": 5.58345,
+      "source_ids": [
+        "user_campus_observation",
+        "official_autumn",
+        "esri_north",
+        "osm_geometry"
+      ],
+      "road_id": "road_268836529"
+    },
+    {
+      "id": "qinfeng_double_plane_012",
+      "group": "qinfeng_double_plane",
+      "asset": "tree_plane_b",
+      "position": [
+        57.526,
+        0.0,
+        224.954
+      ],
+      "scale": 1.12,
+      "heading": 3.51711,
+      "source_ids": [
+        "user_campus_observation",
+        "official_autumn",
+        "esri_north",
+        "osm_geometry"
+      ],
+      "road_id": "road_268836529"
+    },
+    {
+      "id": "qinfeng_double_plane_013",
+      "group": "qinfeng_double_plane",
+      "asset": "tree_plane_c",
+      "position": [
+        57.232,
+        0.0,
+        241.252
+      ],
+      "scale": 1.12,
+      "heading": 0.46922,
+      "source_ids": [
+        "user_campus_observation",
+        "official_autumn",
+        "esri_north",
+        "osm_geometry"
+      ],
+      "road_id": "road_268836529"
+    },
+    {
+      "id": "qinfeng_double_plane_014",
+      "group": "qinfeng_double_plane",
+      "asset": "tree_plane_b",
+      "position": [
+        93.627,
+        0.0,
+        240.986
+      ],
+      "scale": 1.1,
+      "heading": 3.43463,
+      "source_ids": [
+        "user_campus_observation",
+        "official_autumn",
+        "esri_north",
+        "osm_geometry"
+      ],
+      "road_id": "road_265583820"
+    },
+    {
+      "id": "qinfeng_double_plane_015",
+      "group": "qinfeng_double_plane",
+      "asset": "tree_plane_b",
+      "position": [
+        111.098,
+        0.0,
+        224.12
+      ],
+      "scale": 1.12,
+      "heading": 4.12117,
+      "source_ids": [
+        "user_campus_observation",
+        "official_autumn",
+        "esri_north",
+        "osm_geometry"
+      ],
+      "road_id": "road_265583820"
+    },
+    {
+      "id": "qinfeng_double_plane_016",
+      "group": "qinfeng_double_plane",
+      "asset": "tree_plane_c",
+      "position": [
+        111.618,
+        0.0,
+        240.412
+      ],
+      "scale": 1.12,
+      "heading": 2.74852,
+      "source_ids": [
+        "user_campus_observation",
+        "official_autumn",
+        "esri_north",
+        "osm_geometry"
+      ],
+      "road_id": "road_265583820"
+    },
+    {
+      "id": "qinfeng_double_plane_017",
+      "group": "qinfeng_double_plane",
+      "asset": "tree_plane_c",
+      "position": [
+        129.089,
+        0.0,
+        223.547
+      ],
+      "scale": 1.18,
+      "heading": 4.62261,
+      "source_ids": [
+        "user_campus_observation",
+        "official_autumn",
+        "esri_north",
+        "osm_geometry"
+      ],
+      "road_id": "road_265583820"
+    },
+    {
+      "id": "qinfeng_double_plane_018",
+      "group": "qinfeng_double_plane",
+      "asset": "tree_plane_a",
+      "position": [
+        129.608,
+        0.0,
+        239.838
+      ],
+      "scale": 1.18,
+      "heading": 0.80277,
+      "source_ids": [
+        "user_campus_observation",
+        "official_autumn",
+        "esri_north",
+        "osm_geometry"
+      ],
+      "road_id": "road_265583820"
+    },
+    {
+      "id": "qinfeng_double_plane_019",
+      "group": "qinfeng_double_plane",
+      "asset": "tree_plane_b",
+      "position": [
+        147.599,
+        0.0,
+        239.265
+      ],
+      "scale": 1.1,
+      "heading": 5.51229,
+      "source_ids": [
+        "user_campus_observation",
+        "official_autumn",
+        "esri_north",
+        "osm_geometry"
+      ],
+      "road_id": "road_265583820"
+    },
+    {
+      "id": "qinfeng_double_plane_020",
+      "group": "qinfeng_double_plane",
+      "asset": "tree_plane_b",
+      "position": [
+        163.213,
+        0.0,
+        221.737
+      ],
+      "scale": 1.12,
+      "heading": 5.35017,
+      "source_ids": [
+        "user_campus_observation",
+        "official_autumn",
+        "esri_north",
+        "osm_geometry"
+      ],
+      "road_id": "road_265583820"
+    },
+    {
+      "id": "qinfeng_double_plane_021",
+      "group": "qinfeng_double_plane",
+      "asset": "tree_plane_c",
+      "position": [
+        167.195,
+        0.0,
+        237.543
+      ],
+      "scale": 1.12,
+      "heading": 3.73769,
+      "source_ids": [
+        "user_campus_observation",
+        "official_autumn",
+        "esri_north",
+        "osm_geometry"
+      ],
+      "road_id": "road_265583820"
+    },
+    {
+      "id": "tianshi_double_plane_001",
+      "group": "tianshi_double_plane",
+      "asset": "tree_plane_b",
+      "position": [
+        103.319,
+        0.0,
+        -12.504
+      ],
+      "scale": 1.14,
+      "heading": 4.45142,
+      "source_ids": [
+        "official_plane_avenue",
+        "esri_north",
+        "osm_geometry"
+      ],
+      "road_id": "road_265575543"
+    },
+    {
+      "id": "tianshi_double_plane_002",
+      "group": "tianshi_double_plane",
+      "asset": "tree_plane_a",
+      "position": [
+        103.324,
+        0.0,
+        1.461
+      ],
+      "scale": 1.1,
+      "heading": 2.83333,
+      "source_ids": [
+        "official_plane_avenue",
+        "esri_north",
+        "osm_geometry"
+      ],
+      "road_id": "road_265575543"
+    },
+    {
+      "id": "tianshi_double_plane_003",
+      "group": "tianshi_double_plane",
+      "asset": "tree_plane_a",
+      "position": [
+        87.479,
+        0.0,
+        4.836
+      ],
+      "scale": 1.1,
+      "heading": 0.39307,
+      "source_ids": [
+        "official_plane_avenue",
+        "esri_north",
+        "osm_geometry"
+      ],
+      "road_id": "road_265575543"
+    },
+    {
+      "id": "tianshi_double_plane_004",
+      "group": "tianshi_double_plane",
+      "asset": "tree_plane_c",
+      "position": [
+        106.255,
+        0.0,
+        20.903
+      ],
+      "scale": 1.17,
+      "heading": 4.41373,
+      "source_ids": [
+        "official_plane_avenue",
+        "esri_north",
+        "osm_geometry"
+      ],
+      "road_id": "road_265575543"
+    },
+    {
+      "id": "tianshi_double_plane_005",
+      "group": "tianshi_double_plane",
+      "asset": "tree_plane_b",
+      "position": [
+        103.656,
+        0.0,
+        42.131
+      ],
+      "scale": 1.14,
+      "heading": 0.59613,
+      "source_ids": [
+        "official_plane_avenue",
+        "esri_north",
+        "osm_geometry"
+      ],
+      "road_id": "road_265575543"
+    },
+    {
+      "id": "tianshi_double_plane_006",
+      "group": "tianshi_double_plane",
+      "asset": "tree_plane_b",
+      "position": [
+        89.042,
+        0.0,
+        35.139
+      ],
+      "scale": 1.14,
+      "heading": 2.45609,
+      "source_ids": [
+        "official_plane_avenue",
+        "esri_north",
+        "osm_geometry"
+      ],
+      "road_id": "road_265575543"
+    },
+    {
+      "id": "tianshi_double_plane_007",
+      "group": "tianshi_double_plane",
+      "asset": "tree_plane_a",
+      "position": [
+        97.576,
+        0.0,
+        55.336
+      ],
+      "scale": 1.1,
+      "heading": 2.87617,
+      "source_ids": [
+        "official_plane_avenue",
+        "esri_north",
+        "osm_geometry"
+      ],
+      "road_id": "road_265575543"
+    },
+    {
+      "id": "tianshi_double_plane_008",
+      "group": "tianshi_double_plane",
+      "asset": "tree_plane_a",
+      "position": [
+        81.384,
+        0.0,
+        54.854
+      ],
+      "scale": 1.1,
+      "heading": 5.45342,
+      "source_ids": [
+        "official_plane_avenue",
+        "esri_north",
+        "osm_geometry"
+      ],
+      "road_id": "road_265575543"
+    },
+    {
+      "id": "tianshi_double_plane_009",
+      "group": "tianshi_double_plane",
+      "asset": "tree_plane_c",
+      "position": [
+        97.041,
+        0.0,
+        73.328
+      ],
+      "scale": 1.17,
+      "heading": 2.11596,
+      "source_ids": [
+        "official_plane_avenue",
+        "esri_north",
+        "osm_geometry"
+      ],
+      "road_id": "road_265575543"
+    },
+    {
+      "id": "tianshi_double_plane_010",
+      "group": "tianshi_double_plane",
+      "asset": "tree_plane_c",
+      "position": [
+        80.848,
+        0.0,
+        72.846
+      ],
+      "scale": 1.17,
+      "heading": 1.83751,
+      "source_ids": [
+        "official_plane_avenue",
+        "esri_north",
+        "osm_geometry"
+      ],
+      "road_id": "road_265575543"
+    },
+    {
+      "id": "tianshi_double_plane_011",
+      "group": "tianshi_double_plane",
+      "asset": "tree_plane_b",
+      "position": [
+        96.505,
+        0.0,
+        91.32
+      ],
+      "scale": 1.14,
+      "heading": 0.21297,
+      "source_ids": [
+        "official_plane_avenue",
+        "esri_north",
+        "osm_geometry"
+      ],
+      "road_id": "road_265575543"
+    },
+    {
+      "id": "tianshi_double_plane_012",
+      "group": "tianshi_double_plane",
+      "asset": "tree_plane_b",
+      "position": [
+        80.312,
+        0.0,
+        90.838
+      ],
+      "scale": 1.14,
+      "heading": 1.83709,
+      "source_ids": [
+        "official_plane_avenue",
+        "esri_north",
+        "osm_geometry"
+      ],
+      "road_id": "road_265575543"
+    },
+    {
+      "id": "tianshi_double_plane_013",
+      "group": "tianshi_double_plane",
+      "asset": "tree_plane_a",
+      "position": [
+        94.331,
+        0.0,
+        110.566
+      ],
+      "scale": 1.1,
+      "heading": 0.79502,
+      "source_ids": [
+        "official_plane_avenue",
+        "esri_north",
+        "osm_geometry"
+      ],
+      "road_id": "road_265575543"
+    },
+    {
+      "id": "tianshi_double_plane_014",
+      "group": "tianshi_double_plane",
+      "asset": "tree_plane_a",
+      "position": [
+        78.479,
+        0.0,
+        107.227
+      ],
+      "scale": 1.1,
+      "heading": 2.01831,
+      "source_ids": [
+        "official_plane_avenue",
+        "esri_north",
+        "osm_geometry"
+      ],
+      "road_id": "road_265575543"
+    },
+    {
+      "id": "tianshi_double_plane_015",
+      "group": "tianshi_double_plane",
+      "asset": "tree_plane_c",
+      "position": [
+        90.622,
+        0.0,
+        128.179
+      ],
+      "scale": 1.17,
+      "heading": 3.32045,
+      "source_ids": [
+        "official_plane_avenue",
+        "esri_north",
+        "osm_geometry"
+      ],
+      "road_id": "road_265575543"
+    },
+    {
+      "id": "tianshi_double_plane_016",
+      "group": "tianshi_double_plane",
+      "asset": "tree_plane_c",
+      "position": [
+        74.77,
+        0.0,
+        124.841
+      ],
+      "scale": 1.17,
+      "heading": 2.57992,
+      "source_ids": [
+        "official_plane_avenue",
+        "esri_north",
+        "osm_geometry"
+      ],
+      "road_id": "road_265575543"
+    },
+    {
+      "id": "tianshi_double_plane_018",
+      "group": "tianshi_double_plane",
+      "asset": "tree_plane_a",
+      "position": [
+        85.455,
+        0.0,
+        162.228
+      ],
+      "scale": 1.1,
+      "heading": 0.46729,
+      "source_ids": [
+        "official_plane_avenue",
+        "esri_north",
+        "osm_geometry"
+      ],
+      "road_id": "road_265575543"
+    },
+    {
+      "id": "tianshi_double_plane_019",
+      "group": "tianshi_double_plane",
+      "asset": "tree_plane_a",
+      "position": [
+        69.262,
+        0.0,
+        161.744
+      ],
+      "scale": 1.1,
+      "heading": 5.22357,
+      "source_ids": [
+        "official_plane_avenue",
+        "esri_north",
+        "osm_geometry"
+      ],
+      "road_id": "road_265575543"
+    },
+    {
+      "id": "tianshi_double_plane_020",
+      "group": "tianshi_double_plane",
+      "asset": "tree_plane_c",
+      "position": [
+        84.917,
+        0.0,
+        180.22
+      ],
+      "scale": 1.17,
+      "heading": 0.25367,
+      "source_ids": [
+        "official_plane_avenue",
+        "esri_north",
+        "osm_geometry"
+      ],
+      "road_id": "road_265575543"
+    },
+    {
+      "id": "tianshi_double_plane_021",
+      "group": "tianshi_double_plane",
+      "asset": "tree_plane_c",
+      "position": [
+        68.725,
+        0.0,
+        179.736
+      ],
+      "scale": 1.17,
+      "heading": 2.51726,
+      "source_ids": [
+        "official_plane_avenue",
+        "esri_north",
+        "osm_geometry"
+      ],
+      "road_id": "road_265575543"
+    },
+    {
+      "id": "tianshi_double_plane_022",
+      "group": "tianshi_double_plane",
+      "asset": "tree_plane_b",
+      "position": [
+        84.377,
+        0.0,
+        198.214
+      ],
+      "scale": 1.14,
+      "heading": 5.89471,
+      "source_ids": [
+        "official_plane_avenue",
+        "esri_north",
+        "osm_geometry"
+      ],
+      "road_id": "road_265575543"
+    },
+    {
+      "id": "tianshi_double_plane_023",
+      "group": "tianshi_double_plane",
+      "asset": "tree_plane_b",
+      "position": [
+        68.184,
+        0.0,
+        197.726
+      ],
+      "scale": 1.14,
+      "heading": 4.36746,
+      "source_ids": [
+        "official_plane_avenue",
+        "esri_north",
+        "osm_geometry"
+      ],
+      "road_id": "road_265575543"
+    },
+    {
+      "id": "tianshi_double_plane_024",
+      "group": "tianshi_double_plane",
+      "asset": "tree_plane_a",
+      "position": [
+        67.642,
+        0.0,
+        215.718
+      ],
+      "scale": 1.1,
+      "heading": 0.49199,
+      "source_ids": [
+        "official_plane_avenue",
+        "esri_north",
+        "osm_geometry"
+      ],
+      "road_id": "road_265575543"
+    },
+    {
+      "id": "tianshi_double_plane_025",
+      "group": "tianshi_double_plane",
+      "asset": "tree_plane_b",
+      "position": [
+        67.083,
+        0.0,
+        251.94
+      ],
+      "scale": 1.14,
+      "heading": 1.98957,
+      "source_ids": [
+        "official_plane_avenue",
+        "esri_north",
+        "osm_geometry"
+      ],
+      "road_id": "road_265583821"
+    },
+    {
+      "id": "tianshi_double_plane_026",
+      "group": "tianshi_double_plane",
+      "asset": "tree_plane_a",
+      "position": [
+        66.844,
+        0.0,
+        269.78
+      ],
+      "scale": 1.1,
+      "heading": 5.18085,
+      "source_ids": [
+        "official_plane_avenue",
+        "esri_north",
+        "osm_geometry"
+      ],
+      "road_id": "road_265583821"
+    },
+    {
+      "id": "tianshi_double_plane_027",
+      "group": "tianshi_double_plane",
+      "asset": "tree_plane_c",
+      "position": [
+        66.465,
+        0.0,
+        287.777
+      ],
+      "scale": 1.17,
+      "heading": 0.38189,
+      "source_ids": [
+        "official_plane_avenue",
+        "esri_north",
+        "osm_geometry"
+      ],
+      "road_id": "road_265583821"
+    },
+    {
+      "id": "tianshi_double_plane_028",
+      "group": "tianshi_double_plane",
+      "asset": "tree_plane_b",
+      "position": [
+        66.086,
+        0.0,
+        305.773
+      ],
+      "scale": 1.14,
+      "heading": 2.27664,
+      "source_ids": [
+        "official_plane_avenue",
+        "esri_north",
+        "osm_geometry"
+      ],
+      "road_id": "road_265583821"
+    },
+    {
+      "id": "tianshi_double_plane_029",
+      "group": "tianshi_double_plane",
+      "asset": "tree_plane_a",
+      "position": [
+        65.735,
+        0.0,
+        323.787
+      ],
+      "scale": 1.1,
+      "heading": 3.32695,
+      "source_ids": [
+        "official_plane_avenue",
+        "esri_north",
+        "osm_geometry"
+      ],
+      "road_id": "road_265583821"
+    },
+    {
+      "id": "plaza_west_mixed_woodland_001",
+      "group": "plaza_west_mixed_woodland",
+      "asset": "tree_garden",
+      "position": [
+        -16.228,
+        0.0,
+        248.493
+      ],
+      "scale": 1.01,
+      "heading": 1.19957,
+      "source_ids": [
+        "official_plaza_photo",
+        "official_tree_inventory",
+        "esri_core"
+      ]
+    },
+    {
+      "id": "plaza_west_mixed_woodland_002",
+      "group": "plaza_west_mixed_woodland",
+      "asset": "tree_garden",
+      "position": [
+        -57.089,
+        0.0,
+        270.091
+      ],
+      "scale": 1.018,
+      "heading": 0.17199,
+      "source_ids": [
+        "official_plaza_photo",
+        "official_tree_inventory",
+        "esri_core"
+      ]
+    },
+    {
+      "id": "plaza_west_mixed_woodland_003",
+      "group": "plaza_west_mixed_woodland",
+      "asset": "tree_plane_a",
+      "position": [
+        -45.07,
+        0.0,
+        272.059
+      ],
+      "scale": 0.9,
+      "heading": 2.95968,
+      "source_ids": [
+        "official_plaza_photo",
+        "official_tree_inventory",
+        "esri_core"
+      ]
+    },
+    {
+      "id": "plaza_west_mixed_woodland_004",
+      "group": "plaza_west_mixed_woodland",
+      "asset": "tree_garden",
+      "position": [
+        -36.634,
+        0.0,
+        271.997
+      ],
+      "scale": 0.921,
+      "heading": 5.12496,
+      "source_ids": [
+        "official_plaza_photo",
+        "official_tree_inventory",
+        "esri_core"
+      ]
+    },
+    {
+      "id": "plaza_west_mixed_woodland_005",
+      "group": "plaza_west_mixed_woodland",
+      "asset": "tree_conifer",
+      "position": [
+        -26.219,
+        0.0,
+        271.174
+      ],
+      "scale": 0.918,
+      "heading": 4.58574,
+      "source_ids": [
+        "official_plaza_photo",
+        "official_tree_inventory",
+        "esri_core"
+      ]
+    },
+    {
+      "id": "plaza_west_mixed_woodland_006",
+      "group": "plaza_west_mixed_woodland",
+      "asset": "tree_garden",
+      "position": [
+        -17.001,
+        0.0,
+        270.029
+      ],
+      "scale": 0.884,
+      "heading": 6.01776,
+      "source_ids": [
+        "official_plaza_photo",
+        "official_tree_inventory",
+        "esri_core"
+      ]
+    },
+    {
+      "id": "plaza_west_mixed_woodland_007",
+      "group": "plaza_west_mixed_woodland",
+      "asset": "tree_garden",
+      "position": [
+        -55.339,
+        0.0,
+        282.589
+      ],
+      "scale": 1.123,
+      "heading": 3.12213,
+      "source_ids": [
+        "official_plaza_photo",
+        "official_tree_inventory",
+        "esri_core"
+      ]
+    },
+    {
+      "id": "plaza_west_mixed_woodland_008",
+      "group": "plaza_west_mixed_woodland",
+      "asset": "tree_conifer",
+      "position": [
+        -44.919,
+        0.0,
+        282.257
+      ],
+      "scale": 0.994,
+      "heading": 1.08663,
+      "source_ids": [
+        "official_plaza_photo",
+        "official_tree_inventory",
+        "esri_core"
+      ]
+    },
+    {
+      "id": "plaza_west_mixed_woodland_009",
+      "group": "plaza_west_mixed_woodland",
+      "asset": "tree_garden",
+      "position": [
+        -35.573,
+        0.0,
+        282.234
+      ],
+      "scale": 1.101,
+      "heading": 3.29894,
+      "source_ids": [
+        "official_plaza_photo",
+        "official_tree_inventory",
+        "esri_core"
+      ]
+    },
+    {
+      "id": "plaza_west_mixed_woodland_010",
+      "group": "plaza_west_mixed_woodland",
+      "asset": "tree_conifer",
+      "position": [
+        -25.643,
+        0.0,
+        282.847
+      ],
+      "scale": 0.964,
+      "heading": 6.1434,
+      "source_ids": [
+        "official_plaza_photo",
+        "official_tree_inventory",
+        "esri_core"
+      ]
+    },
+    {
+      "id": "plaza_west_mixed_woodland_011",
+      "group": "plaza_west_mixed_woodland",
+      "asset": "tree_garden",
+      "position": [
+        -16.406,
+        0.0,
+        281.114
+      ],
+      "scale": 1.094,
+      "heading": 3.63378,
+      "source_ids": [
+        "official_plaza_photo",
+        "official_tree_inventory",
+        "esri_core"
+      ]
+    },
+    {
+      "id": "plaza_west_mixed_woodland_012",
+      "group": "plaza_west_mixed_woodland",
+      "asset": "tree_garden",
+      "position": [
+        -55.224,
+        0.0,
+        295.402
+      ],
+      "scale": 1.088,
+      "heading": 5.10628,
+      "source_ids": [
+        "official_plaza_photo",
+        "official_tree_inventory",
+        "esri_core"
+      ]
+    },
+    {
+      "id": "plaza_west_mixed_woodland_013",
+      "group": "plaza_west_mixed_woodland",
+      "asset": "tree_conifer",
+      "position": [
+        -46.456,
+        0.0,
+        295.546
+      ],
+      "scale": 1.06,
+      "heading": 5.64958,
+      "source_ids": [
+        "official_plaza_photo",
+        "official_tree_inventory",
+        "esri_core"
+      ]
+    },
+    {
+      "id": "plaza_west_mixed_woodland_014",
+      "group": "plaza_west_mixed_woodland",
+      "asset": "tree_garden",
+      "position": [
+        -35.552,
+        0.0,
+        295.788
+      ],
+      "scale": 0.988,
+      "heading": 0.23149,
+      "source_ids": [
+        "official_plaza_photo",
+        "official_tree_inventory",
+        "esri_core"
+      ]
+    },
+    {
+      "id": "plaza_west_mixed_woodland_015",
+      "group": "plaza_west_mixed_woodland",
+      "asset": "tree_garden",
+      "position": [
+        -24.065,
+        0.0,
+        295.392
+      ],
+      "scale": 1.124,
+      "heading": 1.06973,
+      "source_ids": [
+        "official_plaza_photo",
+        "official_tree_inventory",
+        "esri_core"
+      ]
+    },
+    {
+      "id": "plaza_west_mixed_woodland_016",
+      "group": "plaza_west_mixed_woodland",
+      "asset": "tree_garden",
+      "position": [
+        -56.997,
+        0.0,
+        305.782
+      ],
+      "scale": 1.084,
+      "heading": 1.22278,
+      "source_ids": [
+        "official_plaza_photo",
+        "official_tree_inventory",
+        "esri_core"
+      ]
+    },
+    {
+      "id": "plaza_west_mixed_woodland_017",
+      "group": "plaza_west_mixed_woodland",
+      "asset": "tree_garden",
+      "position": [
+        -47.059,
+        0.0,
+        306.224
+      ],
+      "scale": 0.926,
+      "heading": 0.42345,
+      "source_ids": [
+        "official_plaza_photo",
+        "official_tree_inventory",
+        "esri_core"
+      ]
+    },
+    {
+      "id": "plaza_west_mixed_woodland_018",
+      "group": "plaza_west_mixed_woodland",
+      "asset": "tree_plane_a",
+      "position": [
+        -36.964,
+        0.0,
+        306.229
+      ],
+      "scale": 0.943,
+      "heading": 3.096,
+      "source_ids": [
+        "official_plaza_photo",
+        "official_tree_inventory",
+        "esri_core"
+      ]
+    },
+    {
+      "id": "plaza_west_mixed_woodland_019",
+      "group": "plaza_west_mixed_woodland",
+      "asset": "tree_garden",
+      "position": [
+        -26.211,
+        0.0,
+        306.142
+      ],
+      "scale": 0.978,
+      "heading": 1.33348,
+      "source_ids": [
+        "official_plaza_photo",
+        "official_tree_inventory",
+        "esri_core"
+      ]
+    },
+    {
+      "id": "plaza_west_mixed_woodland_020",
+      "group": "plaza_west_mixed_woodland",
+      "asset": "tree_conifer",
+      "position": [
+        -15.505,
+        0.0,
+        305.718
+      ],
+      "scale": 0.987,
+      "heading": 1.74659,
+      "source_ids": [
+        "official_plaza_photo",
+        "official_tree_inventory",
+        "esri_core"
+      ]
+    },
+    {
+      "id": "plaza_west_mixed_woodland_021",
+      "group": "plaza_west_mixed_woodland",
+      "asset": "tree_plane_a",
+      "position": [
+        -55.968,
+        0.0,
+        329.44
+      ],
+      "scale": 1.075,
+      "heading": 2.11972,
+      "source_ids": [
+        "official_plaza_photo",
+        "official_tree_inventory",
+        "esri_core"
+      ]
+    },
+    {
+      "id": "plaza_west_mixed_woodland_022",
+      "group": "plaza_west_mixed_woodland",
+      "asset": "tree_garden",
+      "position": [
+        -46.875,
+        0.0,
+        328.639
+      ],
+      "scale": 1.146,
+      "heading": 5.28358,
+      "source_ids": [
+        "official_plaza_photo",
+        "official_tree_inventory",
+        "esri_core"
+      ]
+    },
+    {
+      "id": "plaza_west_mixed_woodland_023",
+      "group": "plaza_west_mixed_woodland",
+      "asset": "tree_conifer",
+      "position": [
+        -35.006,
+        0.0,
+        329.71
+      ],
+      "scale": 0.896,
+      "heading": 4.24177,
+      "source_ids": [
+        "official_plaza_photo",
+        "official_tree_inventory",
+        "esri_core"
+      ]
+    },
+    {
+      "id": "plaza_west_mixed_woodland_024",
+      "group": "plaza_west_mixed_woodland",
+      "asset": "tree_garden",
+      "position": [
+        -23.745,
+        0.0,
+        329.321
+      ],
+      "scale": 0.922,
+      "heading": 2.68755,
+      "source_ids": [
+        "official_plaza_photo",
+        "official_tree_inventory",
+        "esri_core"
+      ]
+    },
+    {
+      "id": "plaza_west_mixed_woodland_025",
+      "group": "plaza_west_mixed_woodland",
+      "asset": "tree_conifer",
+      "position": [
+        -15.174,
+        0.0,
+        328.076
+      ],
+      "scale": 0.997,
+      "heading": 3.80974,
+      "source_ids": [
+        "official_plaza_photo",
+        "official_tree_inventory",
+        "esri_core"
+      ]
+    },
+    {
+      "id": "plaza_east_mixed_woodland_001",
+      "group": "plaza_east_mixed_woodland",
+      "asset": "tree_conifer",
+      "position": [
+        16.497,
+        0.0,
+        247.644
+      ],
+      "scale": 0.896,
+      "heading": 5.24573,
+      "source_ids": [
+        "official_plaza_photo",
+        "official_tree_inventory",
+        "esri_core"
+      ]
+    },
+    {
+      "id": "plaza_east_mixed_woodland_002",
+      "group": "plaza_east_mixed_woodland",
+      "asset": "tree_garden",
+      "position": [
+        44.022,
+        0.0,
+        247.89
+      ],
+      "scale": 1.072,
+      "heading": 0.8929,
+      "source_ids": [
+        "official_plaza_photo",
+        "official_tree_inventory",
+        "esri_core"
+      ]
+    },
+    {
+      "id": "plaza_east_mixed_woodland_003",
+      "group": "plaza_east_mixed_woodland",
+      "asset": "tree_plane_a",
+      "position": [
+        26.816,
+        0.0,
+        270.786
+      ],
+      "scale": 0.973,
+      "heading": 3.63816,
+      "source_ids": [
+        "official_plaza_photo",
+        "official_tree_inventory",
+        "esri_core"
+      ]
+    },
+    {
+      "id": "plaza_east_mixed_woodland_004",
+      "group": "plaza_east_mixed_woodland",
+      "asset": "tree_garden",
+      "position": [
+        44.047,
+        0.0,
+        270.577
+      ],
+      "scale": 1.053,
+      "heading": 1.98046,
+      "source_ids": [
+        "official_plaza_photo",
+        "official_tree_inventory",
+        "esri_core"
+      ]
+    },
+    {
+      "id": "plaza_east_mixed_woodland_005",
+      "group": "plaza_east_mixed_woodland",
+      "asset": "tree_conifer",
+      "position": [
+        54.896,
+        0.0,
+        271.788
+      ],
+      "scale": 1.052,
+      "heading": 3.00945,
+      "source_ids": [
+        "official_plaza_photo",
+        "official_tree_inventory",
+        "esri_core"
+      ]
+    },
+    {
+      "id": "plaza_east_mixed_woodland_006",
+      "group": "plaza_east_mixed_woodland",
+      "asset": "tree_garden",
+      "position": [
+        17.202,
+        0.0,
+        281.225
+      ],
+      "scale": 1.028,
+      "heading": 2.95636,
+      "source_ids": [
+        "official_plaza_photo",
+        "official_tree_inventory",
+        "esri_core"
+      ]
+    },
+    {
+      "id": "plaza_east_mixed_woodland_007",
+      "group": "plaza_east_mixed_woodland",
+      "asset": "tree_garden",
+      "position": [
+        44.321,
+        0.0,
+        283.003
+      ],
+      "scale": 1.133,
+      "heading": 4.04519,
+      "source_ids": [
+        "official_plaza_photo",
+        "official_tree_inventory",
+        "esri_core"
+      ]
+    },
+    {
+      "id": "plaza_east_mixed_woodland_008",
+      "group": "plaza_east_mixed_woodland",
+      "asset": "tree_conifer",
+      "position": [
+        55.252,
+        0.0,
+        281.626
+      ],
+      "scale": 0.939,
+      "heading": 2.28117,
+      "source_ids": [
+        "official_plaza_photo",
+        "official_tree_inventory",
+        "esri_core"
+      ]
+    },
+    {
+      "id": "plaza_east_mixed_woodland_009",
+      "group": "plaza_east_mixed_woodland",
+      "asset": "tree_garden",
+      "position": [
+        16.031,
+        0.0,
+        296.004
+      ],
+      "scale": 1.14,
+      "heading": 3.81065,
+      "source_ids": [
+        "official_plaza_photo",
+        "official_tree_inventory",
+        "esri_core"
+      ]
+    },
+    {
+      "id": "plaza_east_mixed_woodland_010",
+      "group": "plaza_east_mixed_woodland",
+      "asset": "tree_conifer",
+      "position": [
+        26.439,
+        0.0,
+        295.91
+      ],
+      "scale": 0.915,
+      "heading": 3.82106,
+      "source_ids": [
+        "official_plaza_photo",
+        "official_tree_inventory",
+        "esri_core"
+      ]
+    },
+    {
+      "id": "plaza_east_mixed_woodland_011",
+      "group": "plaza_east_mixed_woodland",
+      "asset": "tree_garden",
+      "position": [
+        44.444,
+        0.0,
+        295.793
+      ],
+      "scale": 1.044,
+      "heading": 4.49245,
+      "source_ids": [
+        "official_plaza_photo",
+        "official_tree_inventory",
+        "esri_core"
+      ]
+    },
+    {
+      "id": "plaza_east_mixed_woodland_012",
+      "group": "plaza_east_mixed_woodland",
+      "asset": "tree_garden",
+      "position": [
+        55.665,
+        0.0,
+        296.0
+      ],
+      "scale": 0.903,
+      "heading": 1.02181,
+      "source_ids": [
+        "official_plaza_photo",
+        "official_tree_inventory",
+        "esri_core"
+      ]
+    },
+    {
+      "id": "plaza_east_mixed_woodland_013",
+      "group": "plaza_east_mixed_woodland",
+      "asset": "tree_garden",
+      "position": [
+        17.983,
+        0.0,
+        306.565
+      ],
+      "scale": 1.062,
+      "heading": 2.41606,
+      "source_ids": [
+        "official_plaza_photo",
+        "official_tree_inventory",
+        "esri_core"
+      ]
+    },
+    {
+      "id": "plaza_east_mixed_woodland_014",
+      "group": "plaza_east_mixed_woodland",
+      "asset": "tree_plane_a",
+      "position": [
+        43.788,
+        0.0,
+        305.434
+      ],
+      "scale": 1.077,
+      "heading": 4.10152,
+      "source_ids": [
+        "official_plaza_photo",
+        "official_tree_inventory",
+        "esri_core"
+      ]
+    },
+    {
+      "id": "plaza_east_mixed_woodland_015",
+      "group": "plaza_east_mixed_woodland",
+      "asset": "tree_garden",
+      "position": [
+        54.268,
+        0.0,
+        307.052
+      ],
+      "scale": 1.021,
+      "heading": 0.00497,
+      "source_ids": [
+        "official_plaza_photo",
+        "official_tree_inventory",
+        "esri_core"
+      ]
+    },
+    {
+      "id": "plaza_east_mixed_woodland_016",
+      "group": "plaza_east_mixed_woodland",
+      "asset": "tree_plane_a",
+      "position": [
+        16.144,
+        0.0,
+        328.867
+      ],
+      "scale": 0.986,
+      "heading": 1.89243,
+      "source_ids": [
+        "official_plaza_photo",
+        "official_tree_inventory",
+        "esri_core"
+      ]
+    },
+    {
+      "id": "plaza_east_mixed_woodland_017",
+      "group": "plaza_east_mixed_woodland",
+      "asset": "tree_garden",
+      "position": [
+        27.096,
+        0.0,
+        328.379
+      ],
+      "scale": 0.907,
+      "heading": 1.31192,
+      "source_ids": [
+        "official_plaza_photo",
+        "official_tree_inventory",
+        "esri_core"
+      ]
+    },
+    {
+      "id": "plaza_east_mixed_woodland_018",
+      "group": "plaza_east_mixed_woodland",
+      "asset": "tree_conifer",
+      "position": [
+        45.731,
+        0.0,
+        327.941
+      ],
+      "scale": 1.072,
+      "heading": 4.11375,
+      "source_ids": [
+        "official_plaza_photo",
+        "official_tree_inventory",
+        "esri_core"
+      ]
+    },
+    {
+      "id": "plaza_east_mixed_woodland_019",
+      "group": "plaza_east_mixed_woodland",
+      "asset": "tree_garden",
+      "position": [
+        55.021,
+        0.0,
+        329.318
+      ],
+      "scale": 1.126,
+      "heading": 0.60743,
+      "source_ids": [
+        "official_plaza_photo",
+        "official_tree_inventory",
+        "esri_core"
+      ]
+    },
+    {
+      "id": "hall_courtyard_mixed_001",
+      "group": "hall_courtyard_mixed",
+      "asset": "tree_conifer",
+      "position": [
+        -32,
+        0.0,
+        214
+      ],
+      "scale": 0.93,
+      "heading": 1.01406,
+      "source_ids": [
+        "official_autumn",
+        "osm_geometry"
+      ]
+    },
+    {
+      "id": "hall_courtyard_mixed_002",
+      "group": "hall_courtyard_mixed",
+      "asset": "tree_garden",
+      "position": [
+        -16,
+        0.0,
+        216
+      ],
+      "scale": 1.08,
+      "heading": 4.87985,
+      "source_ids": [
+        "official_autumn",
+        "osm_geometry"
+      ]
+    },
+    {
+      "id": "hall_courtyard_mixed_003",
+      "group": "hall_courtyard_mixed",
+      "asset": "tree_conifer",
+      "position": [
+        16,
+        0.0,
+        216
+      ],
+      "scale": 0.95,
+      "heading": 4.66414,
+      "source_ids": [
+        "official_autumn",
+        "osm_geometry"
+      ]
+    },
+    {
+      "id": "hall_courtyard_mixed_004",
+      "group": "hall_courtyard_mixed",
+      "asset": "tree_garden",
+      "position": [
+        29,
+        0.0,
+        218
+      ],
+      "scale": 1.06,
+      "heading": 1.39725,
+      "source_ids": [
+        "official_autumn",
+        "osm_geometry"
+      ]
+    },
+    {
+      "id": "hall_courtyard_mixed_005",
+      "group": "hall_courtyard_mixed",
+      "asset": "tree_garden",
+      "position": [
+        -64.5,
+        0.0,
+        159
+      ],
+      "scale": 0.94,
+      "heading": 6.0726,
+      "source_ids": [
+        "official_autumn",
+        "osm_geometry"
+      ]
+    },
+    {
+      "id": "north_gate_academic_mixed_001",
+      "group": "north_gate_academic_mixed",
+      "asset": "tree_garden",
+      "position": [
+        125.287,
+        0.0,
+        -79.244
+      ],
+      "scale": 0.946,
+      "heading": 5.81017,
+      "source_ids": [
+        "esri_north",
+        "osm_geometry",
+        "official_map"
+      ],
+      "road_id": "road_270537515"
+    },
+    {
+      "id": "north_gate_academic_mixed_002",
+      "group": "north_gate_academic_mixed",
+      "asset": "tree_garden",
+      "position": [
+        124.55,
+        0.0,
+        -63.06
+      ],
+      "scale": 1.067,
+      "heading": 2.86675,
+      "source_ids": [
+        "esri_north",
+        "osm_geometry",
+        "official_map"
+      ],
+      "road_id": "road_270537515"
+    },
+    {
+      "id": "north_gate_academic_mixed_003",
+      "group": "north_gate_academic_mixed",
+      "asset": "tree_conifer",
+      "position": [
+        143.268,
+        0.0,
+        -78.425
+      ],
+      "scale": 1.054,
+      "heading": 1.43229,
+      "source_ids": [
+        "esri_north",
+        "osm_geometry",
+        "official_map"
+      ],
+      "road_id": "road_270537515"
+    },
+    {
+      "id": "north_gate_academic_mixed_004",
+      "group": "north_gate_academic_mixed",
+      "asset": "tree_conifer",
+      "position": [
+        142.532,
+        0.0,
+        -62.242
+      ],
+      "scale": 0.955,
+      "heading": 1.23515,
+      "source_ids": [
+        "esri_north",
+        "osm_geometry",
+        "official_map"
+      ],
+      "road_id": "road_270537515"
+    },
+    {
+      "id": "north_gate_academic_mixed_005",
+      "group": "north_gate_academic_mixed",
+      "asset": "tree_plane_c",
+      "position": [
+        161.25,
+        0.0,
+        -77.607
+      ],
+      "scale": 1.057,
+      "heading": 2.49899,
+      "source_ids": [
+        "esri_north",
+        "osm_geometry",
+        "official_map"
+      ],
+      "road_id": "road_270537515"
+    },
+    {
+      "id": "north_gate_academic_mixed_006",
+      "group": "north_gate_academic_mixed",
+      "asset": "tree_plane_c",
+      "position": [
+        160.513,
+        0.0,
+        -61.424
+      ],
+      "scale": 1.026,
+      "heading": 2.5941,
+      "source_ids": [
+        "esri_north",
+        "osm_geometry",
+        "official_map"
+      ],
+      "road_id": "road_270537515"
+    },
+    {
+      "id": "north_gate_academic_mixed_007",
+      "group": "north_gate_academic_mixed",
+      "asset": "tree_plane_a",
+      "position": [
+        179.231,
+        0.0,
+        -76.788
+      ],
+      "scale": 0.942,
+      "heading": 3.48466,
+      "source_ids": [
+        "esri_north",
+        "osm_geometry",
+        "official_map"
+      ],
+      "road_id": "road_270537515"
+    },
+    {
+      "id": "north_gate_academic_mixed_008",
+      "group": "north_gate_academic_mixed",
+      "asset": "tree_plane_a",
+      "position": [
+        178.494,
+        0.0,
+        -60.605
+      ],
+      "scale": 1.034,
+      "heading": 0.27612,
+      "source_ids": [
+        "esri_north",
+        "osm_geometry",
+        "official_map"
+      ],
+      "road_id": "road_270537515"
+    },
+    {
+      "id": "north_gate_academic_mixed_009",
+      "group": "north_gate_academic_mixed",
+      "asset": "tree_garden",
+      "position": [
+        197.212,
+        0.0,
+        -75.97
+      ],
+      "scale": 1.047,
+      "heading": 2.27608,
+      "source_ids": [
+        "esri_north",
+        "osm_geometry",
+        "official_map"
+      ],
+      "road_id": "road_270537515"
+    },
+    {
+      "id": "north_gate_academic_mixed_010",
+      "group": "north_gate_academic_mixed",
+      "asset": "tree_garden",
+      "position": [
+        196.476,
+        0.0,
+        -59.787
+      ],
+      "scale": 0.971,
+      "heading": 5.07839,
+      "source_ids": [
+        "esri_north",
+        "osm_geometry",
+        "official_map"
+      ],
+      "road_id": "road_270537515"
+    },
+    {
+      "id": "north_gate_academic_mixed_011",
+      "group": "north_gate_academic_mixed",
+      "asset": "tree_plane_c",
+      "position": [
+        215.194,
+        0.0,
+        -75.152
+      ],
+      "scale": 1.048,
+      "heading": 4.4937,
+      "source_ids": [
+        "esri_north",
+        "osm_geometry",
+        "official_map"
+      ],
+      "road_id": "road_270537515"
+    },
+    {
+      "id": "north_gate_academic_mixed_012",
+      "group": "north_gate_academic_mixed",
+      "asset": "tree_plane_a",
+      "position": [
+        233.174,
+        0.0,
+        -74.335
+      ],
+      "scale": 0.952,
+      "heading": 4.20737,
+      "source_ids": [
+        "esri_north",
+        "osm_geometry",
+        "official_map"
+      ],
+      "road_id": "road_270537515"
+    },
+    {
+      "id": "north_gate_academic_mixed_013",
+      "group": "north_gate_academic_mixed",
+      "asset": "tree_conifer",
+      "position": [
+        251.156,
+        0.0,
+        -73.518
+      ],
+      "scale": 0.96,
+      "heading": 0.39141,
+      "source_ids": [
+        "esri_north",
+        "osm_geometry",
+        "official_map"
+      ],
+      "road_id": "road_270537515"
+    },
+    {
+      "id": "north_gate_academic_mixed_014",
+      "group": "north_gate_academic_mixed",
+      "asset": "tree_garden",
+      "position": [
+        269.137,
+        0.0,
+        -72.702
+      ],
+      "scale": 0.951,
+      "heading": 6.04449,
+      "source_ids": [
+        "esri_north",
+        "osm_geometry",
+        "official_map"
+      ],
+      "road_id": "road_270537515"
+    },
+    {
+      "id": "north_gate_academic_mixed_015",
+      "group": "north_gate_academic_mixed",
+      "asset": "tree_garden",
+      "position": [
+        268.403,
+        0.0,
+        -56.519
+      ],
+      "scale": 1.091,
+      "heading": 5.48438,
+      "source_ids": [
+        "esri_north",
+        "osm_geometry",
+        "official_map"
+      ],
+      "road_id": "road_270537515"
+    },
+    {
+      "id": "north_gate_academic_mixed_016",
+      "group": "north_gate_academic_mixed",
+      "asset": "tree_plane_a",
+      "position": [
+        287.119,
+        0.0,
+        -71.886
+      ],
+      "scale": 1.104,
+      "heading": 0.38327,
+      "source_ids": [
+        "esri_north",
+        "osm_geometry",
+        "official_map"
+      ],
+      "road_id": "road_270537515"
+    },
+    {
+      "id": "north_gate_academic_mixed_017",
+      "group": "north_gate_academic_mixed",
+      "asset": "tree_plane_a",
+      "position": [
+        286.384,
+        0.0,
+        -55.702
+      ],
+      "scale": 0.969,
+      "heading": 5.57402,
+      "source_ids": [
+        "esri_north",
+        "osm_geometry",
+        "official_map"
+      ],
+      "road_id": "road_270537515"
+    },
+    {
+      "id": "north_gate_academic_mixed_018",
+      "group": "north_gate_academic_mixed",
+      "asset": "tree_conifer",
+      "position": [
+        305.1,
+        0.0,
+        -71.069
+      ],
+      "scale": 1.02,
+      "heading": 5.84939,
+      "source_ids": [
+        "esri_north",
+        "osm_geometry",
+        "official_map"
+      ],
+      "road_id": "road_270537515"
+    },
+    {
+      "id": "north_gate_academic_mixed_019",
+      "group": "north_gate_academic_mixed",
+      "asset": "tree_conifer",
+      "position": [
+        304.365,
+        0.0,
+        -54.886
+      ],
+      "scale": 1.047,
+      "heading": 2.11323,
+      "source_ids": [
+        "esri_north",
+        "osm_geometry",
+        "official_map"
+      ],
+      "road_id": "road_270537515"
+    },
+    {
+      "id": "north_gate_academic_mixed_020",
+      "group": "north_gate_academic_mixed",
+      "asset": "tree_plane_c",
+      "position": [
+        323.082,
+        0.0,
+        -70.253
+      ],
+      "scale": 1.038,
+      "heading": 4.81031,
+      "source_ids": [
+        "esri_north",
+        "osm_geometry",
+        "official_map"
+      ],
+      "road_id": "road_270537515"
+    },
+    {
+      "id": "north_gate_academic_mixed_021",
+      "group": "north_gate_academic_mixed",
+      "asset": "tree_garden",
+      "position": [
+        341.064,
+        0.0,
+        -69.436
+      ],
+      "scale": 0.966,
+      "heading": 0.07544,
+      "source_ids": [
+        "esri_north",
+        "osm_geometry",
+        "official_map"
+      ],
+      "road_id": "road_270537515"
+    },
+    {
+      "id": "north_gate_academic_mixed_022",
+      "group": "north_gate_academic_mixed",
+      "asset": "tree_conifer",
+      "position": [
+        359.045,
+        0.0,
+        -68.618
+      ],
+      "scale": 1.038,
+      "heading": 5.2133,
+      "source_ids": [
+        "esri_north",
+        "osm_geometry",
+        "official_map"
+      ],
+      "road_id": "road_270537515"
+    },
+    {
+      "id": "north_gate_academic_mixed_023",
+      "group": "north_gate_academic_mixed",
+      "asset": "tree_conifer",
+      "position": [
+        358.309,
+        0.0,
+        -52.435
+      ],
+      "scale": 1.046,
+      "heading": 1.2777,
+      "source_ids": [
+        "esri_north",
+        "osm_geometry",
+        "official_map"
+      ],
+      "road_id": "road_270537515"
+    },
+    {
+      "id": "north_gate_academic_mixed_024",
+      "group": "north_gate_academic_mixed",
+      "asset": "tree_plane_c",
+      "position": [
+        94,
+        0.0,
+        -57
+      ],
+      "scale": 1.036,
+      "heading": 3.37388,
+      "source_ids": [
+        "esri_north",
+        "osm_geometry",
+        "official_map"
+      ]
+    },
+    {
+      "id": "north_gate_academic_mixed_025",
+      "group": "north_gate_academic_mixed",
+      "asset": "tree_garden",
+      "position": [
+        94,
+        0.0,
+        -39
+      ],
+      "scale": 1.117,
+      "heading": 0.84992,
+      "source_ids": [
+        "esri_north",
+        "osm_geometry",
+        "official_map"
+      ]
+    },
+    {
+      "id": "north_gate_academic_mixed_026",
+      "group": "north_gate_academic_mixed",
+      "asset": "tree_conifer",
+      "position": [
+        121,
+        0.0,
+        -10
+      ],
+      "scale": 1.055,
+      "heading": 2.17109,
+      "source_ids": [
+        "esri_north",
+        "osm_geometry",
+        "official_map"
+      ]
+    },
+    {
+      "id": "north_gate_academic_mixed_027",
+      "group": "north_gate_academic_mixed",
+      "asset": "tree_plane_c",
+      "position": [
+        108,
+        0.0,
+        9
+      ],
+      "scale": 1.02,
+      "heading": 6.27224,
+      "source_ids": [
+        "esri_north",
+        "osm_geometry",
+        "official_map"
+      ]
+    },
+    {
+      "id": "north_gate_academic_mixed_028",
+      "group": "north_gate_academic_mixed",
+      "asset": "tree_garden",
+      "position": [
+        143,
+        0.0,
+        -13
+      ],
+      "scale": 1.01,
+      "heading": 1.31818,
+      "source_ids": [
+        "esri_north",
+        "osm_geometry",
+        "official_map"
+      ]
+    },
+    {
+      "id": "north_gate_academic_mixed_029",
+      "group": "north_gate_academic_mixed",
+      "asset": "tree_conifer",
+      "position": [
+        152,
+        0.0,
+        13
+      ],
+      "scale": 1.107,
+      "heading": 3.40438,
+      "source_ids": [
+        "esri_north",
+        "osm_geometry",
+        "official_map"
+      ]
+    },
+    {
+      "id": "north_gate_academic_mixed_030",
+      "group": "north_gate_academic_mixed",
+      "asset": "tree_plane_c",
+      "position": [
+        199,
+        0.0,
+        24
+      ],
+      "scale": 0.998,
+      "heading": 2.97556,
+      "source_ids": [
+        "esri_north",
+        "osm_geometry",
+        "official_map"
+      ]
+    },
+    {
+      "id": "north_gate_academic_mixed_031",
+      "group": "north_gate_academic_mixed",
+      "asset": "tree_garden",
+      "position": [
+        218,
+        0.0,
+        26
+      ],
+      "scale": 1.116,
+      "heading": 0.05016,
+      "source_ids": [
+        "esri_north",
+        "osm_geometry",
+        "official_map"
+      ]
+    },
+    {
+      "id": "north_gate_academic_mixed_032",
+      "group": "north_gate_academic_mixed",
+      "asset": "tree_conifer",
+      "position": [
+        248,
+        0.0,
+        27
+      ],
+      "scale": 1.129,
+      "heading": 3.99327,
+      "source_ids": [
+        "esri_north",
+        "osm_geometry",
+        "official_map"
+      ]
+    },
+    {
+      "id": "north_gate_academic_mixed_033",
+      "group": "north_gate_academic_mixed",
+      "asset": "tree_plane_c",
+      "position": [
+        266,
+        0.0,
+        27
+      ],
+      "scale": 0.997,
+      "heading": 3.05517,
+      "source_ids": [
+        "esri_north",
+        "osm_geometry",
+        "official_map"
+      ]
+    },
+    {
+      "id": "north_gate_academic_mixed_034",
+      "group": "north_gate_academic_mixed",
+      "asset": "tree_garden",
+      "position": [
+        279,
+        0.0,
+        39
+      ],
+      "scale": 1.01,
+      "heading": 0.19284,
+      "source_ids": [
+        "esri_north",
+        "osm_geometry",
+        "official_map"
+      ]
+    },
+    {
+      "id": "north_gate_academic_mixed_035",
+      "group": "north_gate_academic_mixed",
+      "asset": "tree_conifer",
+      "position": [
+        268,
+        0.0,
+        49
+      ],
+      "scale": 1.067,
+      "heading": 4.43387,
+      "source_ids": [
+        "esri_north",
+        "osm_geometry",
+        "official_map"
+      ]
+    },
+    {
+      "id": "north_gate_academic_mixed_036",
+      "group": "north_gate_academic_mixed",
+      "asset": "tree_plane_c",
+      "position": [
+        347,
+        0.0,
+        -42
+      ],
+      "scale": 1.016,
+      "heading": 5.08393,
+      "source_ids": [
+        "esri_north",
+        "osm_geometry",
+        "official_map"
+      ]
+    },
+    {
+      "id": "north_gate_academic_mixed_037",
+      "group": "north_gate_academic_mixed",
+      "asset": "tree_garden",
+      "position": [
+        313,
+        0.0,
+        39
+      ],
+      "scale": 1.026,
+      "heading": 1.64085,
+      "source_ids": [
+        "esri_north",
+        "osm_geometry",
+        "official_map"
+      ]
+    },
+    {
+      "id": "north_gate_academic_mixed_038",
+      "group": "north_gate_academic_mixed",
+      "asset": "tree_conifer",
+      "position": [
+        338,
+        0.0,
+        40
+      ],
+      "scale": 0.933,
+      "heading": 0.89858,
+      "source_ids": [
+        "esri_north",
+        "osm_geometry",
+        "official_map"
+      ]
+    },
+    {
+      "id": "north_gate_academic_mixed_039",
+      "group": "north_gate_academic_mixed",
+      "asset": "tree_plane_c",
+      "position": [
+        362,
+        0.0,
+        42
+      ],
+      "scale": 0.938,
+      "heading": 5.19368,
+      "source_ids": [
+        "esri_north",
+        "osm_geometry",
+        "official_map"
+      ]
+    },
+    {
+      "id": "hanhai_east_green_001",
+      "group": "hanhai_east_green",
+      "asset": "tree_plane_c",
+      "position": [
+        87.76,
+        0.0,
+        142.145
+      ],
+      "scale": 1.1,
+      "heading": 3.24152,
+      "source_ids": [
+        "esri_north",
+        "osm_geometry"
+      ],
+      "road_id": "road_264872431"
+    },
+    {
+      "id": "hanhai_east_green_002",
+      "group": "hanhai_east_green",
+      "asset": "tree_conifer",
+      "position": [
+        105.761,
+        0.0,
+        142.257
+      ],
+      "scale": 1.1,
+      "heading": 1.13744,
+      "source_ids": [
+        "esri_north",
+        "osm_geometry"
+      ],
+      "road_id": "road_264872431"
+    },
+    {
+      "id": "hanhai_east_green_003",
+      "group": "hanhai_east_green",
+      "asset": "tree_conifer",
+      "position": [
+        105.66,
+        0.0,
+        158.457
+      ],
+      "scale": 1.1,
+      "heading": 4.62264,
+      "source_ids": [
+        "esri_north",
+        "osm_geometry"
+      ],
+      "road_id": "road_264872431"
+    },
+    {
+      "id": "hanhai_east_green_004",
+      "group": "hanhai_east_green",
+      "asset": "tree_plane_c",
+      "position": [
+        123.761,
+        0.0,
+        142.37
+      ],
+      "scale": 1.1,
+      "heading": 5.61849,
+      "source_ids": [
+        "esri_north",
+        "osm_geometry"
+      ],
+      "road_id": "road_264872431"
+    },
+    {
+      "id": "hanhai_east_green_005",
+      "group": "hanhai_east_green",
+      "asset": "tree_plane_c",
+      "position": [
+        123.659,
+        0.0,
+        158.57
+      ],
+      "scale": 1.1,
+      "heading": 0.92895,
+      "source_ids": [
+        "esri_north",
+        "osm_geometry"
+      ],
+      "road_id": "road_264872431"
+    },
+    {
+      "id": "hanhai_east_green_006",
+      "group": "hanhai_east_green",
+      "asset": "tree_conifer",
+      "position": [
+        141.761,
+        0.0,
+        142.483
+      ],
+      "scale": 1.1,
+      "heading": 0.02184,
+      "source_ids": [
+        "esri_north",
+        "osm_geometry"
+      ],
+      "road_id": "road_264872431"
+    },
+    {
+      "id": "hanhai_east_green_007",
+      "group": "hanhai_east_green",
+      "asset": "tree_conifer",
+      "position": [
+        141.659,
+        0.0,
+        158.683
+      ],
+      "scale": 1.1,
+      "heading": 2.4589,
+      "source_ids": [
+        "esri_north",
+        "osm_geometry"
+      ],
+      "road_id": "road_264872431"
+    },
+    {
+      "id": "hanhai_east_green_008",
+      "group": "hanhai_east_green",
+      "asset": "tree_plane_c",
+      "position": [
+        159.762,
+        0.0,
+        142.598
+      ],
+      "scale": 1.1,
+      "heading": 4.20137,
+      "source_ids": [
+        "esri_north",
+        "osm_geometry"
+      ],
+      "road_id": "road_264872431"
+    },
+    {
+      "id": "hanhai_east_green_009",
+      "group": "hanhai_east_green",
+      "asset": "tree_plane_c",
+      "position": [
+        159.657,
+        0.0,
+        158.798
+      ],
+      "scale": 1.1,
+      "heading": 5.03866,
+      "source_ids": [
+        "esri_north",
+        "osm_geometry"
+      ],
+      "road_id": "road_264872431"
+    },
+    {
+      "id": "teaching_west_double_plane_001",
+      "group": "teaching_west_double_plane",
+      "asset": "tree_plane_a",
+      "position": [
+        -86,
+        0,
+        162
+      ],
+      "scale": 1.08,
+      "heading": 0.0,
+      "road_id": "road_264872430",
+      "source_ids": [
+        "official_plane_avenue",
+        "esri_core",
+        "osm_geometry"
+      ]
+    },
+    {
+      "id": "teaching_west_double_plane_002",
+      "group": "teaching_west_double_plane",
+      "asset": "tree_plane_c",
+      "position": [
+        -86,
+        0,
+        180
+      ],
+      "scale": 1.14,
+      "heading": 1.17,
+      "road_id": "road_264872430",
+      "source_ids": [
+        "official_plane_avenue",
+        "esri_core",
+        "osm_geometry"
+      ]
+    },
+    {
+      "id": "teaching_west_double_plane_003",
+      "group": "teaching_west_double_plane",
+      "asset": "tree_plane_b",
+      "position": [
+        -70,
+        0,
+        180
+      ],
+      "scale": 1.14,
+      "heading": 2.04,
+      "road_id": "road_264872430",
+      "source_ids": [
+        "official_plane_avenue",
+        "esri_core",
+        "osm_geometry"
+      ]
+    },
+    {
+      "id": "teaching_west_double_plane_004",
+      "group": "teaching_west_double_plane",
+      "asset": "tree_plane_a",
+      "position": [
+        -70,
+        0,
+        198
+      ],
+      "scale": 1.1,
+      "heading": 3.21,
+      "road_id": "road_264872430",
+      "source_ids": [
+        "official_plane_avenue",
+        "esri_core",
+        "osm_geometry"
+      ]
+    },
+    {
+      "id": "hall_north_mature_plane_001",
+      "group": "hall_north_mature_plane",
+      "asset": "tree_plane_a",
+      "position": [
+        -68,
+        0,
+        142.0
+      ],
+      "scale": 1.1,
+      "heading": 0.0,
+      "source_ids": [
+        "official_tree_inventory",
+        "official_plane_avenue",
+        "esri_core"
+      ],
+      "replaces_old_position": [
+        -68,
+        0,
+        144
+      ]
+    },
+    {
+      "id": "hall_north_mature_plane_002",
+      "group": "hall_north_mature_plane",
+      "asset": "tree_plane_b",
+      "position": [
+        -48.6,
+        0,
+        142.0
+      ],
+      "scale": 1.1,
+      "heading": 0.72,
+      "source_ids": [
+        "official_tree_inventory",
+        "official_plane_avenue",
+        "esri_core"
+      ],
+      "replaces_old_position": [
+        -48.6,
+        0,
+        144
+      ]
+    },
+    {
+      "id": "hall_north_mature_plane_003",
+      "group": "hall_north_mature_plane",
+      "asset": "tree_plane_c",
+      "position": [
+        -29.2,
+        0,
+        142.0
+      ],
+      "scale": 1.1,
+      "heading": 1.44,
+      "source_ids": [
+        "official_tree_inventory",
+        "official_plane_avenue",
+        "esri_core"
+      ],
+      "replaces_old_position": [
+        -29.2,
+        0,
+        144
+      ]
+    },
+    {
+      "id": "hall_north_mature_plane_004",
+      "group": "hall_north_mature_plane",
+      "asset": "tree_plane_a",
+      "position": [
+        29,
+        0,
+        142.0
+      ],
+      "scale": 1.1,
+      "heading": 2.16,
+      "source_ids": [
+        "official_tree_inventory",
+        "official_plane_avenue",
+        "esri_core"
+      ],
+      "replaces_old_position": [
+        29,
+        0,
+        144
+      ]
+    },
+    {
+      "id": "hall_north_mature_plane_005",
+      "group": "hall_north_mature_plane",
+      "asset": "tree_plane_b",
+      "position": [
+        48.4,
+        0,
+        142.0
+      ],
+      "scale": 1.1,
+      "heading": 2.88,
+      "source_ids": [
+        "official_tree_inventory",
+        "official_plane_avenue",
+        "esri_core"
+      ],
+      "replaces_old_position": [
+        48.4,
+        0,
+        144
+      ]
+    },
+    {
+      "id": "hall_north_mature_plane_006",
+      "group": "hall_north_mature_plane",
+      "asset": "tree_plane_c",
+      "position": [
+        67.8,
+        0,
+        142.0
+      ],
+      "scale": 1.1,
+      "heading": 3.6,
+      "source_ids": [
+        "official_tree_inventory",
+        "official_plane_avenue",
+        "esri_core"
+      ],
+      "replaces_old_position": [
+        67.8,
+        0,
+        144
+      ]
+    }
+  ],
+  "replacement_suggestions": [
+    {
+      "existing_owner": "diorama.planting",
+      "old_position": [
+        -68,
+        0,
+        144
+      ],
+      "suggested_asset": "tree_plane_a",
+      "suggested_position": [
+        -68,
+        0,
+        142.0
+      ],
+      "suggested_scale": 1.1,
+      "reason": "One Teaching Hall north-side mature plane row; shift out of reconstructed Hanhai road + sidewalk. Keep the central entrance clear.",
+      "apply": true,
+      "source_ids": [
+        "official_tree_inventory",
+        "official_plane_avenue",
+        "esri_core"
+      ],
+      "applied_tree_id": "hall_north_mature_plane_001"
+    },
+    {
+      "existing_owner": "diorama.planting",
+      "old_position": [
+        -48.6,
+        0,
+        144
+      ],
+      "suggested_asset": "tree_plane_b",
+      "suggested_position": [
+        -48.6,
+        0,
+        142.0
+      ],
+      "suggested_scale": 1.1,
+      "reason": "One Teaching Hall north-side mature plane row; shift out of reconstructed Hanhai road + sidewalk. Keep the central entrance clear.",
+      "apply": true,
+      "source_ids": [
+        "official_tree_inventory",
+        "official_plane_avenue",
+        "esri_core"
+      ],
+      "applied_tree_id": "hall_north_mature_plane_002"
+    },
+    {
+      "existing_owner": "diorama.planting",
+      "old_position": [
+        -29.2,
+        0,
+        144
+      ],
+      "suggested_asset": "tree_plane_c",
+      "suggested_position": [
+        -29.2,
+        0,
+        142.0
+      ],
+      "suggested_scale": 1.1,
+      "reason": "One Teaching Hall north-side mature plane row; shift out of reconstructed Hanhai road + sidewalk. Keep the central entrance clear.",
+      "apply": true,
+      "source_ids": [
+        "official_tree_inventory",
+        "official_plane_avenue",
+        "esri_core"
+      ],
+      "applied_tree_id": "hall_north_mature_plane_003"
+    },
+    {
+      "existing_owner": "diorama.planting",
+      "old_position": [
+        29,
+        0,
+        144
+      ],
+      "suggested_asset": "tree_plane_a",
+      "suggested_position": [
+        29,
+        0,
+        142.0
+      ],
+      "suggested_scale": 1.1,
+      "reason": "One Teaching Hall north-side mature plane row; shift out of reconstructed Hanhai road + sidewalk. Keep the central entrance clear.",
+      "apply": true,
+      "source_ids": [
+        "official_tree_inventory",
+        "official_plane_avenue",
+        "esri_core"
+      ],
+      "applied_tree_id": "hall_north_mature_plane_004"
+    },
+    {
+      "existing_owner": "diorama.planting",
+      "old_position": [
+        48.4,
+        0,
+        144
+      ],
+      "suggested_asset": "tree_plane_b",
+      "suggested_position": [
+        48.4,
+        0,
+        142.0
+      ],
+      "suggested_scale": 1.1,
+      "reason": "One Teaching Hall north-side mature plane row; shift out of reconstructed Hanhai road + sidewalk. Keep the central entrance clear.",
+      "apply": true,
+      "source_ids": [
+        "official_tree_inventory",
+        "official_plane_avenue",
+        "esri_core"
+      ],
+      "applied_tree_id": "hall_north_mature_plane_005"
+    },
+    {
+      "existing_owner": "diorama.planting",
+      "old_position": [
+        67.8,
+        0,
+        144
+      ],
+      "suggested_asset": "tree_plane_c",
+      "suggested_position": [
+        67.8,
+        0,
+        142.0
+      ],
+      "suggested_scale": 1.1,
+      "reason": "One Teaching Hall north-side mature plane row; shift out of reconstructed Hanhai road + sidewalk. Keep the central entrance clear.",
+      "apply": true,
+      "source_ids": [
+        "official_tree_inventory",
+        "official_plane_avenue",
+        "esri_core"
+      ],
+      "applied_tree_id": "hall_north_mature_plane_006"
+    }
+  ],
+  "validation_summary": {
+    "tree_count": 156,
+    "counts_by_group": {
+      "qinfeng_double_plane": 21,
+      "tianshi_double_plane": 28,
+      "plaza_west_mixed_woodland": 25,
+      "plaza_east_mixed_woodland": 19,
+      "hall_courtyard_mixed": 5,
+      "north_gate_academic_mixed": 39,
+      "hanhai_east_green": 9,
+      "teaching_west_double_plane": 4,
+      "hall_north_mature_plane": 6
+    },
+    "counts_by_asset": {
+      "tree_plane_a": 31,
+      "tree_plane_b": 21,
+      "tree_plane_c": 33,
+      "tree_garden": 41,
+      "tree_conifer": 30
+    },
+    "building_footprints_checked": 176,
+    "road_and_walkway_lines_checked": 188,
+    "candidate_rejections": {
+      "road_or_walkway": 20,
+      "water_or_forecourt": 1,
+      "building_footprint": 14,
+      "outside_playable_land": 11,
+      "other_new_tree": 13
+    },
+    "checks": "Every included stem and root flare is outside all OSM building outlines, road plus sidewalk buffers, mapped/art-authored paths, water, statue/cafe circulation and character story spaces. Each tree lies in the current land or the two specified east road strips; Tianshi stops at plaza south.",
+    "north_replacement_checks": "Six applied north positions checked against all buildings, roads + sidewalks, footways, actor areas and ponds. One intersecting Tianshi proposed tree merged to preserve >8 m new-tree spacing."
+  }
+}

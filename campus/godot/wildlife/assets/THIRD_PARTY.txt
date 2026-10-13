@@ -1,0 +1,18 @@
+Second batch wildlife assets
+
+Squirrel (squirrel_gray.glb)
+Original mesh and base colour: Poly by Google
+Source: https://poly.pizza/m/2WqY_AFEn-M
+License: Creative Commons Attribution 3.0
+https://creativecommons.org/licenses/by/3.0/
+Changes: meter scale, orientation, skin rig and campus animation clips.
+
+Hedgehog (hedgehog.glb)
+Original mesh and base colour: Poly by Google
+Source: https://poly.pizza/m/8UNni5IvK_c
+License: Creative Commons Attribution 3.0
+https://creativecommons.org/licenses/by/3.0/
+Changes: meter scale, orientation, skin rig, campus animation clips and back quill textures.
+
+The unchanged downloaded originals are in campus/blender/wildlife/third_party/.
+Keep the author, model source and license credit when distributing these animals.

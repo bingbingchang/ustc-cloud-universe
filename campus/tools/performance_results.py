@@ -1,0 +1,68 @@
+"""Summarize measured results, without substituting old samples."""
+import json
+from pathlib import Path
+root = Path(__file__).resolve().parents[1]
+out = root / 'renders/performance_upgrade'
+names = ['baseline', 'optimized', 'baseline_motion', 'optimized_motion', 'expanded', 'expanded_motion']
+reports = {n: json.loads((out / (n + '.json')).read_text(encoding='utf-8')) for n in names}
+text = '''# 本轮性能结果与西池扩建
+
+2026-09-09，本机RTX 5060 Ti / Godot 4.7.1 Forward+。同轮1600×900、4×MSAA、TAA、SSAO/SSIL、14个生命元素与全部动画；VSync关闭，所有采样窗口焦点占比100%。每机位90帧预热、180帧计时。下面均为实际帧间隔推算FPS，P95为帧时间，不是GPU单项计时。
+
+## 优化前后
+
+| 版本 | 亭桥 FPS / P95 ms | 水边 | 南岸 | 总览 | 西池南岸 |
+|---|---|---|---|---|---|
+'''
+for n, r in reports.items():
+    values = [f"{v['effective_fps']:.1f} / {v['p95_frame_ms']:.1f}" for v in r['views']]
+    text += '| ' + n + ' | ' + ' | '.join(values + ['—'] * (5-len(values))) + ' |\n'
+text += '''
+baseline与optimized是同一内容，未含西池新增；motion是小幅连续移动相机，保持倒影逐帧更新，不是长距离穿区压力测试。expanded两项包含本轮新增西池。短采样有波动，不能据其中一个机位的微小变化下结论。
+
+此前23–30FPS来自历史短采样，本轮基线约37–46FPS；不跨轮计算优化倍数，不把静止相机收益当作全部游玩收益。
+
+## 主要瓶颈与改动
+
+本场景主要压力在高密度植物的重复几何提交，以及实时倒影再次渲染场景。运行时重建ArrayMesh只带最高精度索引，不能继承导入资源的LOD；大范围MultiMesh又使远近植被共用一个批次。
+
+本轮为157个材质面生成282级额外LOD，并验证最高精度顶点和索引不变。重复物件按24米网格分批、复用网格与材质。以亭桥静止机位为例，提交图元统计约从1.236亿降为1944万（包括渲染通道重复提交，不等于场景唯一三角形数）；绘制调用约从2271增加至2958，帧率仍明显提升，因此不能只盯着draw call数量。
+
+倒影保持768×432：移动时逐帧，静止时最多12Hz，水波仍逐帧运行。原画质、近景模型、碰撞和人物行为保留。
+
+诊断分离：
+
+| 诊断 | 四机位 FPS 范围 | 解释 |
+|---|---|---|
+'''
+for n, explanation in [('no_trees', '临时隐藏树冠/柳枝等，证明植物开销突出；没有交付删树版本'), ('no_reflection', '临时停用倒影，诊断第二次渲染成本'), ('no_ssil', '临时关闭间接光，收益很小，最终保留'), ('lod_only', '空间分批与LOD，倒影仍逐帧'), ('reflection_only', '只复用静止倒影，不改几何')]:
+    r=json.loads((out / (n+'.json')).read_text(encoding='utf-8'))
+    fps=[v['effective_fps'] for v in r['views']]
+    text += f'| {n} | {min(fps):.1f}–{max(fps):.1f} | {explanation} |\n'
+text += '''
+关闭单项的整帧差值不能当作独立GPU耗时，也不能相加。方法与官方来源见 [性能规范](PERFORMANCE_STANDARD.md)。
+
+## 西池扩建与视觉检查
+
+沿现有GIS西池岸线与桥路，新增4棵树、30花丛、122荷叶群落、2石组，总树数148。复用已有眼镜湖参考与莫奈概念的疏密、冷暖和前后层次；本轮没有新生成概念图，也没有新增测绘面积。西池水面复用同一平面倒影视口，没有额外建第二个倒影视口。
+
+11组优化前后原生1920×1080图保持相同机位、FOV和可见实例数量；4组西池扩建前后图另外比较。原图中近景亭桥、花丛与树冠主要色块保留，远景细叶有LOD简化，动态树叶、水波和人物时刻不完全一致。西池以荷叶群岛与岸边白粉花丛丰富层次，保持桥头通行与开阔水面；西岸背景立面仍显重复、岸线仍较规整，后续精修不能只继续增加植物数量。
+
+[完整对照画廊](../renders/performance_upgrade/review.html)。
+
+## 验证与复现
+
+- [场景QA](../renders/performance_upgrade/qa/validation.json)：8组全部通过，包含17条连续路线、9项禁入、14生命元素、五位漫步与实际视觉/碰撞接触。
+- [可见地面接缝](../renders/ground_seams/campus_performance_after.json)：12,834点，零缺口。
+- [LOD最高精度验证](../renders/performance_upgrade/lod_validation.json)：157材质面全部一致。
+- [原资产保护](../renders/performance_upgrade/preservation.json)：115份既有GLB、贴图、地图/布局数据哈希保持。
+- [机位与实例比较](../renders/performance_upgrade/comparison_validation.json)：11组机位、FOV与可见实例数一致。计数跨材质面累加，不是独立树木数量。
+
+双击 `OPEN_CAMPUS_OPTIMIZED.cmd` 或 `OPEN_LAKE_GARDEN.cmd`。`run_lake_garden.ps1 -Unoptimized` 保留西池内容关闭本轮优化，供同内容复查；`-Before` 为更早的扩建前样段，不应用于性能收益计算。
+
+复现性能：`profile_campus_performance.ps1 -Diagnostics`；生成图表：`python tools/performance_results.py` 和 `python tools/performance_review.py`。LOD构建用 `build_render_lods.ps1`，不要重建所有既有角色资产。
+
+所有性能进程正常退出，仍有优化前后均存在的7个Texture RID退出释放警告；不能据此报告零警告，也没有证据将其解释为游玩中持续内存增长。长时间内存/温度、穿区卡顿与完整东区流式加载尚未验证或实现。本轮结果只适用于当前机器、画质和已测区域。
+'''
+(root / 'docs/PERFORMANCE_RESULTS.md').write_text(text, encoding='utf-8')
+print(root / 'docs/PERFORMANCE_RESULTS.md')

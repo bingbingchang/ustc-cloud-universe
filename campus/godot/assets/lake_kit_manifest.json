@@ -1,0 +1,38 @@
+{
+  "lake_willow_0": {
+    "triangles": 19834,
+    "materials": 4
+  },
+  "lake_willow_1": {
+    "triangles": 19834,
+    "materials": 4
+  },
+  "lake_lotus_0": {
+    "triangles": 525,
+    "materials": 4
+  },
+  "lake_lotus_1": {
+    "triangles": 525,
+    "materials": 4
+  },
+  "lake_lotus_2": {
+    "triangles": 525,
+    "materials": 4
+  },
+  "lake_lotus_3": {
+    "triangles": 1481,
+    "materials": 7
+  },
+  "lake_reeds_0": {
+    "triangles": 69,
+    "materials": 2
+  },
+  "lake_reeds_1": {
+    "triangles": 4789,
+    "materials": 5
+  },
+  "lake_shore_stones": {
+    "triangles": 129,
+    "materials": 1
+  }
+}

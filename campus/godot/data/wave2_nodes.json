@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "placement_source": "module_layout.json / story_nodes; no duplicate coordinates here",
+  "actors": [
+    {
+      "id": "leaf_cat",
+      "name": "校园狸花猫 · 一片落叶",
+      "tier": "Creature",
+      "source": "Original campus creature",
+      "role": "leaf_cat",
+      "asset": "wave2_leaf_cat",
+      "node_ref": "cat2",
+      "heading": 1.9,
+      "period": 28,
+      "time_offset": 0,
+      "height": 0.56,
+      "story": "低头闻落叶，伸爪试探，听到风声后抬头，再安静下来。",
+      "script": "mascot_actor.gd"
+    }
+  ]
+}

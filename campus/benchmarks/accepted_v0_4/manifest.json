@@ -1,0 +1,41 @@
+{
+  "version": "accepted_v0_4",
+  "scope": "User accepted Tiku; expansion must preserve these files",
+  "images": [
+    {
+      "source": "renders/tiku_identity/01_front.png",
+      "file": "tiku_front.png",
+      "scope": "accepted character / actual Godot"
+    },
+    {
+      "source": "renders/tiku_identity/08_study.png",
+      "file": "tiku_study.png",
+      "scope": "accepted character / actual Godot"
+    },
+    {
+      "source": "renders/tiku_identity/15_roadside_thinking.png",
+      "file": "tiku_roadside.png",
+      "scope": "accepted uniform variant / actual Godot"
+    },
+    {
+      "source": "renders/life/hero_01.png",
+      "file": "environment_ortho.png",
+      "scope": "historical environment baseline, predates final hero"
+    },
+    {
+      "source": "renders/life/photo_spots.json",
+      "file": "photo_spots.json",
+      "scope": "fixed existing camera definitions"
+    }
+  ],
+  "frozen_sha256": {
+    "godot/assets/tiku_boy1.glb": "b6dcf2eb1bf992de7dd74c36756d6665a5d36e619eb4e471d509c442eeec2cee",
+    "godot/assets/tiku_boy1_uniform.glb": "9ac6b460cc554033e76713e9874667c0e1d21e9b1c4041688b268e640730ec70",
+    "blender/scripts/build_tiku.py": "84f424556692b61a8a73068f4a89266353c690263e1d634791393b0bb0f79cc3",
+    "blender/scripts/tiku_head.py": "950507ab378a1456b4d8d163b320a7e86ce6193d1206aafcf2e5c3aef5ca87bb",
+    "godot/scripts/tiku_actor.gd": "be67ed0b7fc82867db68a43498dd31d54c601dc0d5aef9d11a400939e6e6b4b8",
+    "godot/shaders/tiku_face.gdshader": "9a4376733d08fbb80b82abb0a7bbf7b8e3e0eb160d63f6b7da2232f8946984cf",
+    "godot/shaders/tiku_cloth.gdshader": "b72581fa401a1abdd9b757f2cc2b4982b0117fa1b0006fbbdf04fc67ae819266",
+    "godot/assets/textures/tiku_face_albedo.png": "6d0189e366147dc1c59bb59bed24a1e3422770bbbe3e5625fb1f3fec302a602c"
+  }
+}

@@ -1,0 +1,1521 @@
+{
+  "unit": "meter",
+  "coordinate_system": "Godot +X east,+Y up,+Z south; Blender=(x,-z,y)",
+  "source_site": "godot/assets/site.json",
+  "layout_source": "godot/data/north_axis_layout.json; OSM corroborated with official photographs",
+  "pavilion_outline": [
+    [
+      38.832,
+      77.761
+    ],
+    [
+      38.502,
+      82.185
+    ],
+    [
+      41.705,
+      85.223
+    ],
+    [
+      46.031,
+      83.383
+    ],
+    [
+      46.521,
+      78.591
+    ],
+    [
+      43.025,
+      76.044
+    ]
+  ],
+  "pavilion_center": [
+    42.501,
+    80.789
+  ],
+  "deck_top": 0.34,
+  "bridges": [
+    {
+      "id": "east_north",
+      "osm_ways": [
+        306372996,
+        840891953
+      ],
+      "points": [
+        [
+          28.635,
+          65.95
+        ],
+        [
+          34.35,
+          67.971
+        ],
+        [
+          36.413,
+          70.165
+        ],
+        [
+          40.32,
+          71.405
+        ],
+        [
+          42.539,
+          74.046
+        ],
+        [
+          43.025,
+          76.044
+        ]
+      ],
+      "width": 2.6,
+      "top": 0.34,
+      "ramps": [
+        "start"
+      ]
+    },
+    {
+      "id": "east_east",
+      "osm_ways": [
+        306372998,
+        840891954
+      ],
+      "points": [
+        [
+          68.84,
+          75.64
+        ],
+        [
+          60.468,
+          75.573
+        ],
+        [
+          59.275,
+          76.32
+        ],
+        [
+          57.33,
+          78.383
+        ],
+        [
+          52.296,
+          78.799
+        ],
+        [
+          46.521,
+          78.591
+        ]
+      ],
+      "width": 2.6,
+      "top": 0.34,
+      "ramps": [
+        "start"
+      ]
+    },
+    {
+      "id": "west_curve",
+      "osm_ways": [
+        290098999
+      ],
+      "points": [
+        [
+          -17.199,
+          106.686
+        ],
+        [
+          -22.275,
+          107.411
+        ],
+        [
+          -27.471,
+          108.841
+        ],
+        [
+          -35.098,
+          110.48
+        ],
+        [
+          -41.351,
+          112.11
+        ],
+        [
+          -42.268,
+          113.736
+        ],
+        [
+          -43.024,
+          116.367
+        ],
+        [
+          -42.672,
+          119.783
+        ],
+        [
+          -43.758,
+          124.307
+        ],
+        [
+          -41.926,
+          133.286
+        ]
+      ],
+      "width": 2.6,
+      "top": 0.34,
+      "ramps": [
+        "start",
+        "end"
+      ]
+    },
+    {
+      "id": "west_spur",
+      "osm_ways": [
+        290098998
+      ],
+      "points": [
+        [
+          -41.351,
+          112.11
+        ],
+        [
+          -44.877,
+          109.84
+        ]
+      ],
+      "width": 2,
+      "top": 0.34,
+      "ramps": []
+    }
+  ],
+  "collision_solids": [
+    {
+      "name": "NorthGatePost0",
+      "type": "box",
+      "center": [
+        -11.175,
+        2.6,
+        2.65
+      ],
+      "size": [
+        1.35,
+        5.2,
+        1.9
+      ],
+      "owner": "root_architecture",
+      "load_in_scene": true
+    },
+    {
+      "name": "NorthGatePost1",
+      "type": "box",
+      "center": [
+        -5.1,
+        2.6,
+        2.65
+      ],
+      "size": [
+        1.35,
+        5.2,
+        1.9
+      ],
+      "owner": "root_architecture",
+      "load_in_scene": true
+    },
+    {
+      "name": "NorthGatePost2",
+      "type": "box",
+      "center": [
+        3.1,
+        2.6,
+        2.65
+      ],
+      "size": [
+        1.35,
+        5.2,
+        1.9
+      ],
+      "owner": "root_architecture",
+      "load_in_scene": true
+    },
+    {
+      "name": "NorthGatePost3",
+      "type": "box",
+      "center": [
+        9.175,
+        2.6,
+        2.65
+      ],
+      "size": [
+        1.35,
+        5.2,
+        1.9
+      ],
+      "owner": "root_architecture",
+      "load_in_scene": true
+    },
+    {
+      "name": "NorthGateHeader",
+      "type": "box",
+      "center": [
+        -1.0,
+        5.8,
+        2.65
+      ],
+      "size": [
+        21.96,
+        1.45,
+        2.4
+      ],
+      "owner": "root_architecture",
+      "load_in_scene": true
+    },
+    {
+      "name": "YijianColumn0",
+      "type": "cylinder",
+      "center": [
+        39.9327,
+        2.085,
+        78.6694
+      ],
+      "radius": 0.17,
+      "height": 3.49,
+      "owner": "root_architecture",
+      "load_in_scene": true
+    },
+    {
+      "name": "YijianBenchBarrier0",
+      "type": "beam",
+      "a": [
+        39.9327,
+        78.6694
+      ],
+      "b": [
+        39.7017,
+        81.7662
+      ],
+      "width": 0.42,
+      "height": 0.95,
+      "y": 0.84,
+      "owner": "root_architecture",
+      "load_in_scene": true
+    },
+    {
+      "name": "YijianColumn1",
+      "type": "cylinder",
+      "center": [
+        39.7017,
+        2.085,
+        81.7662
+      ],
+      "radius": 0.17,
+      "height": 3.49,
+      "owner": "root_architecture",
+      "load_in_scene": true
+    },
+    {
+      "name": "YijianBenchBarrier1",
+      "type": "beam",
+      "a": [
+        39.7017,
+        81.7662
+      ],
+      "b": [
+        41.943799999999996,
+        83.8928
+      ],
+      "width": 0.42,
+      "height": 0.95,
+      "y": 0.84,
+      "owner": "root_architecture",
+      "load_in_scene": true
+    },
+    {
+      "name": "YijianColumn2",
+      "type": "cylinder",
+      "center": [
+        41.943799999999996,
+        2.085,
+        83.8928
+      ],
+      "radius": 0.17,
+      "height": 3.49,
+      "owner": "root_architecture",
+      "load_in_scene": true
+    },
+    {
+      "name": "YijianBenchBarrier2",
+      "type": "beam",
+      "a": [
+        41.943799999999996,
+        83.8928
+      ],
+      "b": [
+        44.972,
+        82.6048
+      ],
+      "width": 0.42,
+      "height": 0.95,
+      "y": 0.84,
+      "owner": "root_architecture",
+      "load_in_scene": true
+    },
+    {
+      "name": "YijianColumn3",
+      "type": "cylinder",
+      "center": [
+        44.972,
+        2.085,
+        82.6048
+      ],
+      "radius": 0.17,
+      "height": 3.49,
+      "owner": "root_architecture",
+      "load_in_scene": true
+    },
+    {
+      "name": "YijianColumn4",
+      "type": "cylinder",
+      "center": [
+        45.315,
+        2.085,
+        79.2504
+      ],
+      "radius": 0.17,
+      "height": 3.49,
+      "owner": "root_architecture",
+      "load_in_scene": true
+    },
+    {
+      "name": "YijianColumn5",
+      "type": "cylinder",
+      "center": [
+        42.867799999999995,
+        2.085,
+        77.4675
+      ],
+      "radius": 0.17,
+      "height": 3.49,
+      "owner": "root_architecture",
+      "load_in_scene": true
+    },
+    {
+      "name": "BridgeBarrier_east_north_0_0",
+      "type": "beam",
+      "a": [
+        28.24825668334961,
+        67.04362487792969
+      ],
+      "b": [
+        33.69779586791992,
+        68.97075653076172
+      ],
+      "width": 0.28,
+      "height": 0.66,
+      "y": 0.67,
+      "owner": "root_architecture",
+      "load_in_scene": true
+    },
+    {
+      "name": "BridgeBarrier_east_north_0_1",
+      "type": "beam",
+      "a": [
+        29.021743774414062,
+        64.85636901855469
+      ],
+      "b": [
+        35.002201080322266,
+        66.97124481201172
+      ],
+      "width": 0.28,
+      "height": 0.66,
+      "y": 0.67,
+      "owner": "root_architecture",
+      "load_in_scene": true
+    },
+    {
+      "name": "BridgeBarrier_east_north_1_0",
+      "type": "beam",
+      "a": [
+        33.69779586791992,
+        68.97075653076172
+      ],
+      "b": [
+        35.774559020996094,
+        71.17939758300781
+      ],
+      "width": 0.28,
+      "height": 0.66,
+      "y": 0.67,
+      "owner": "root_architecture",
+      "load_in_scene": true
+    },
+    {
+      "name": "BridgeBarrier_east_north_1_1",
+      "type": "beam",
+      "a": [
+        35.002201080322266,
+        66.97124481201172
+      ],
+      "b": [
+        37.05143737792969,
+        69.15060424804688
+      ],
+      "width": 0.28,
+      "height": 0.66,
+      "y": 0.67,
+      "owner": "root_architecture",
+      "load_in_scene": true
+    },
+    {
+      "name": "BridgeBarrier_east_north_2_0",
+      "type": "beam",
+      "a": [
+        35.774559020996094,
+        71.17939758300781
+      ],
+      "b": [
+        39.648345947265625,
+        72.40885162353516
+      ],
+      "width": 0.28,
+      "height": 0.66,
+      "y": 0.67,
+      "owner": "root_architecture",
+      "load_in_scene": true
+    },
+    {
+      "name": "BridgeBarrier_east_north_2_1",
+      "type": "beam",
+      "a": [
+        37.05143737792969,
+        69.15060424804688
+      ],
+      "b": [
+        40.99165344238281,
+        70.4011459350586
+      ],
+      "width": 0.28,
+      "height": 0.66,
+      "y": 0.67,
+      "owner": "root_architecture",
+      "load_in_scene": true
+    },
+    {
+      "name": "BridgeBarrier_east_north_3_0",
+      "type": "beam",
+      "a": [
+        39.648345947265625,
+        72.40885162353516
+      ],
+      "b": [
+        41.4760856628418,
+        74.58418273925781
+      ],
+      "width": 0.28,
+      "height": 0.66,
+      "y": 0.67,
+      "owner": "root_architecture",
+      "load_in_scene": true
+    },
+    {
+      "name": "BridgeBarrier_east_north_3_1",
+      "type": "beam",
+      "a": [
+        40.99165344238281,
+        70.4011459350586
+      ],
+      "b": [
+        43.6019172668457,
+        73.5078125
+      ],
+      "width": 0.28,
+      "height": 0.66,
+      "y": 0.67,
+      "owner": "root_architecture",
+      "load_in_scene": true
+    },
+    {
+      "name": "BridgeBarrier_east_north_4_0",
+      "type": "beam",
+      "a": [
+        41.4760856628418,
+        74.58418273925781
+      ],
+      "b": [
+        41.897865295410156,
+        76.31816864013672
+      ],
+      "width": 0.28,
+      "height": 0.66,
+      "y": 0.67,
+      "owner": "root_architecture",
+      "load_in_scene": true
+    },
+    {
+      "name": "BridgeBarrier_east_north_4_1",
+      "type": "beam",
+      "a": [
+        43.6019172668457,
+        73.5078125
+      ],
+      "b": [
+        44.152137756347656,
+        75.76982879638672
+      ],
+      "width": 0.28,
+      "height": 0.66,
+      "y": 0.67,
+      "owner": "root_architecture",
+      "load_in_scene": true
+    },
+    {
+      "name": "BridgeBarrier_east_east_0_0",
+      "type": "beam",
+      "a": [
+        68.84928131103516,
+        74.48003387451172
+      ],
+      "b": [
+        60.13905715942383,
+        74.41033172607422
+      ],
+      "width": 0.28,
+      "height": 0.66,
+      "y": 0.67,
+      "owner": "root_architecture",
+      "load_in_scene": true
+    },
+    {
+      "name": "BridgeBarrier_east_east_0_1",
+      "type": "beam",
+      "a": [
+        68.8307113647461,
+        76.79996490478516
+      ],
+      "b": [
+        60.796939849853516,
+        76.73566436767578
+      ],
+      "width": 0.28,
+      "height": 0.66,
+      "y": 0.67,
+      "owner": "root_architecture",
+      "load_in_scene": true
+    },
+    {
+      "name": "BridgeBarrier_east_east_1_0",
+      "type": "beam",
+      "a": [
+        60.13905715942383,
+        74.41033172607422
+      ],
+      "b": [
+        58.533145904541016,
+        75.41587829589844
+      ],
+      "width": 0.28,
+      "height": 0.66,
+      "y": 0.67,
+      "owner": "root_architecture",
+      "load_in_scene": true
+    },
+    {
+      "name": "BridgeBarrier_east_east_1_1",
+      "type": "beam",
+      "a": [
+        60.796939849853516,
+        76.73566436767578
+      ],
+      "b": [
+        60.0168571472168,
+        77.22412109375
+      ],
+      "width": 0.28,
+      "height": 0.66,
+      "y": 0.67,
+      "owner": "root_architecture",
+      "load_in_scene": true
+    },
+    {
+      "name": "BridgeBarrier_east_east_2_0",
+      "type": "beam",
+      "a": [
+        58.533145904541016,
+        75.41587829589844
+      ],
+      "b": [
+        56.791133880615234,
+        77.26358032226562
+      ],
+      "width": 0.28,
+      "height": 0.66,
+      "y": 0.67,
+      "owner": "root_architecture",
+      "load_in_scene": true
+    },
+    {
+      "name": "BridgeBarrier_east_east_2_1",
+      "type": "beam",
+      "a": [
+        60.0168571472168,
+        77.22412109375
+      ],
+      "b": [
+        57.86886978149414,
+        79.50242614746094
+      ],
+      "width": 0.28,
+      "height": 0.66,
+      "y": 0.67,
+      "owner": "root_architecture",
+      "load_in_scene": true
+    },
+    {
+      "name": "BridgeBarrier_east_east_3_0",
+      "type": "beam",
+      "a": [
+        56.791133880615234,
+        77.26358032226562
+      ],
+      "b": [
+        52.26901626586914,
+        77.63728332519531
+      ],
+      "width": 0.28,
+      "height": 0.66,
+      "y": 0.67,
+      "owner": "root_architecture",
+      "load_in_scene": true
+    },
+    {
+      "name": "BridgeBarrier_east_east_3_1",
+      "type": "beam",
+      "a": [
+        57.86886978149414,
+        79.50242614746094
+      ],
+      "b": [
+        52.3229866027832,
+        79.96072387695312
+      ],
+      "width": 0.28,
+      "height": 0.66,
+      "y": 0.67,
+      "owner": "root_architecture",
+      "load_in_scene": true
+    },
+    {
+      "name": "BridgeBarrier_east_east_4_0",
+      "type": "beam",
+      "a": [
+        52.26901626586914,
+        77.63728332519531
+      ],
+      "b": [
+        46.56275177001953,
+        77.43175506591797
+      ],
+      "width": 0.28,
+      "height": 0.66,
+      "y": 0.67,
+      "owner": "root_architecture",
+      "load_in_scene": true
+    },
+    {
+      "name": "BridgeBarrier_east_east_4_1",
+      "type": "beam",
+      "a": [
+        52.3229866027832,
+        79.96072387695312
+      ],
+      "b": [
+        46.479248046875,
+        79.75025177001953
+      ],
+      "width": 0.28,
+      "height": 0.66,
+      "y": 0.67,
+      "owner": "root_architecture",
+      "load_in_scene": true
+    },
+    {
+      "name": "BridgeBarrier_west_curve_0_0",
+      "type": "beam",
+      "a": [
+        -17.363018035888672,
+        105.53765106201172
+      ],
+      "b": [
+        -22.511857986450195,
+        106.27306365966797
+      ],
+      "width": 0.28,
+      "height": 0.66,
+      "y": 0.67,
+      "owner": "root_architecture",
+      "load_in_scene": true
+    },
+    {
+      "name": "BridgeBarrier_west_curve_0_1",
+      "type": "beam",
+      "a": [
+        -17.03498077392578,
+        107.83434295654297
+      ],
+      "b": [
+        -22.03814125061035,
+        108.54894256591797
+      ],
+      "width": 0.28,
+      "height": 0.66,
+      "y": 0.67,
+      "owner": "root_architecture",
+      "load_in_scene": true
+    },
+    {
+      "name": "BridgeBarrier_west_curve_1_0",
+      "type": "beam",
+      "a": [
+        -22.511857986450195,
+        106.27306365966797
+      ],
+      "b": [
+        -27.74698257446289,
+        107.71382904052734
+      ],
+      "width": 0.28,
+      "height": 0.66,
+      "y": 0.67,
+      "owner": "root_architecture",
+      "load_in_scene": true
+    },
+    {
+      "name": "BridgeBarrier_west_curve_1_1",
+      "type": "beam",
+      "a": [
+        -22.03814125061035,
+        108.54894256591797
+      ],
+      "b": [
+        -27.195018768310547,
+        109.96817779541016
+      ],
+      "width": 0.28,
+      "height": 0.66,
+      "y": 0.67,
+      "owner": "root_architecture",
+      "load_in_scene": true
+    },
+    {
+      "name": "BridgeBarrier_west_curve_2_0",
+      "type": "beam",
+      "a": [
+        -27.74698257446289,
+        107.71382904052734
+      ],
+      "b": [
+        -35.36628341674805,
+        109.3511734008789
+      ],
+      "width": 0.28,
+      "height": 0.66,
+      "y": 0.67,
+      "owner": "root_architecture",
+      "load_in_scene": true
+    },
+    {
+      "name": "BridgeBarrier_west_curve_2_1",
+      "type": "beam",
+      "a": [
+        -27.195018768310547,
+        109.96817779541016
+      ],
+      "b": [
+        -34.829715728759766,
+        111.60883331298828
+      ],
+      "width": 0.28,
+      "height": 0.66,
+      "y": 0.67,
+      "owner": "root_architecture",
+      "load_in_scene": true
+    },
+    {
+      "name": "BridgeBarrier_west_curve_3_0",
+      "type": "beam",
+      "a": [
+        -35.36628341674805,
+        109.3511734008789
+      ],
+      "b": [
+        -40.95851135253906,
+        110.80892181396484
+      ],
+      "width": 0.28,
+      "height": 0.66,
+      "y": 0.67,
+      "owner": "root_architecture",
+      "load_in_scene": true
+    },
+    {
+      "name": "BridgeBarrier_west_curve_3_1",
+      "type": "beam",
+      "a": [
+        -34.829715728759766,
+        111.60883331298828
+      ],
+      "b": [
+        -40.58229446411133,
+        113.10838317871094
+      ],
+      "width": 0.28,
+      "height": 0.66,
+      "y": 0.67,
+      "owner": "root_architecture",
+      "load_in_scene": true
+    },
+    {
+      "name": "BridgeBarrier_west_curve_4_0",
+      "type": "beam",
+      "a": [
+        -42.70918273925781,
+        112.1568603515625
+      ],
+      "b": [
+        -43.34528350830078,
+        113.28477478027344
+      ],
+      "width": 0.28,
+      "height": 0.66,
+      "y": 0.67,
+      "owner": "root_architecture",
+      "load_in_scene": true
+    },
+    {
+      "name": "BridgeBarrier_west_curve_4_1",
+      "type": "beam",
+      "a": [
+        -40.58229446411133,
+        113.10838317871094
+      ],
+      "b": [
+        -41.19071960449219,
+        114.18722534179688
+      ],
+      "width": 0.28,
+      "height": 0.66,
+      "y": 0.67,
+      "owner": "root_architecture",
+      "load_in_scene": true
+    },
+    {
+      "name": "BridgeBarrier_west_curve_5_0",
+      "type": "beam",
+      "a": [
+        -43.34528350830078,
+        113.28477478027344
+      ],
+      "b": [
+        -44.20090866088867,
+        116.26249694824219
+      ],
+      "width": 0.28,
+      "height": 0.66,
+      "y": 0.67,
+      "owner": "root_architecture",
+      "load_in_scene": true
+    },
+    {
+      "name": "BridgeBarrier_west_curve_5_1",
+      "type": "beam",
+      "a": [
+        -41.19071960449219,
+        114.18722534179688
+      ],
+      "b": [
+        -41.84708786010742,
+        116.47149658203125
+      ],
+      "width": 0.28,
+      "height": 0.66,
+      "y": 0.67,
+      "owner": "root_architecture",
+      "load_in_scene": true
+    },
+    {
+      "name": "BridgeBarrier_west_curve_6_0",
+      "type": "beam",
+      "a": [
+        -44.20090866088867,
+        116.26249694824219
+      ],
+      "b": [
+        -43.846195220947266,
+        119.70484924316406
+      ],
+      "width": 0.28,
+      "height": 0.66,
+      "y": 0.67,
+      "owner": "root_architecture",
+      "load_in_scene": true
+    },
+    {
+      "name": "BridgeBarrier_west_curve_6_1",
+      "type": "beam",
+      "a": [
+        -41.84708786010742,
+        116.47149658203125
+      ],
+      "b": [
+        -41.497806549072266,
+        119.86114501953125
+      ],
+      "width": 0.28,
+      "height": 0.66,
+      "y": 0.67,
+      "owner": "root_architecture",
+      "load_in_scene": true
+    },
+    {
+      "name": "BridgeBarrier_west_curve_7_0",
+      "type": "beam",
+      "a": [
+        -43.846195220947266,
+        119.70484924316406
+      ],
+      "b": [
+        -44.94606018066406,
+        124.28660583496094
+      ],
+      "width": 0.28,
+      "height": 0.66,
+      "y": 0.67,
+      "owner": "root_architecture",
+      "load_in_scene": true
+    },
+    {
+      "name": "BridgeBarrier_west_curve_7_1",
+      "type": "beam",
+      "a": [
+        -41.497806549072266,
+        119.86114501953125
+      ],
+      "b": [
+        -42.56993865966797,
+        124.327392578125
+      ],
+      "width": 0.28,
+      "height": 0.66,
+      "y": 0.67,
+      "owner": "root_architecture",
+      "load_in_scene": true
+    },
+    {
+      "name": "BridgeBarrier_west_curve_8_0",
+      "type": "beam",
+      "a": [
+        -44.94606018066406,
+        124.28660583496094
+      ],
+      "b": [
+        -43.062583923339844,
+        133.5178985595703
+      ],
+      "width": 0.28,
+      "height": 0.66,
+      "y": 0.67,
+      "owner": "root_architecture",
+      "load_in_scene": true
+    },
+    {
+      "name": "BridgeBarrier_west_curve_8_1",
+      "type": "beam",
+      "a": [
+        -42.56993865966797,
+        124.327392578125
+      ],
+      "b": [
+        -40.78941345214844,
+        133.05409240722656
+      ],
+      "width": 0.28,
+      "height": 0.66,
+      "y": 0.67,
+      "owner": "root_architecture",
+      "load_in_scene": true
+    },
+    {
+      "name": "BridgeBarrier_west_spur_0_0",
+      "type": "beam",
+      "a": [
+        -42.02058029174805,
+        110.65612030029297
+      ],
+      "b": [
+        -44.411468505859375,
+        109.11688995361328
+      ],
+      "width": 0.28,
+      "height": 0.66,
+      "y": 0.67,
+      "owner": "root_architecture",
+      "load_in_scene": true
+    },
+    {
+      "name": "BridgeBarrier_west_spur_0_1",
+      "type": "beam",
+      "a": [
+        -42.95164108276367,
+        112.10234069824219
+      ],
+      "b": [
+        -45.342529296875,
+        110.56310272216797
+      ],
+      "width": 0.28,
+      "height": 0.66,
+      "y": 0.67,
+      "owner": "root_architecture",
+      "load_in_scene": true
+    },
+    {
+      "name": "ExpertBuildingSolid",
+      "type": "polygon",
+      "outline": [
+        [
+          88.404,
+          15.75
+        ],
+        [
+          87.867,
+          31.588
+        ],
+        [
+          59.407,
+          30.613
+        ],
+        [
+          59.155,
+          38.177
+        ],
+        [
+          64.722,
+          38.369
+        ],
+        [
+          64.506,
+          44.698
+        ],
+        [
+          58.938,
+          44.516
+        ],
+        [
+          58.599,
+          54.393
+        ],
+        [
+          44.478,
+          53.908
+        ],
+        [
+          44.87,
+          42.419
+        ],
+        [
+          50.372,
+          42.606
+        ],
+        [
+          50.562,
+          37.012
+        ],
+        [
+          30.787,
+          36.35
+        ],
+        [
+          31.437,
+          17.343
+        ],
+        [
+          49.453,
+          17.962
+        ],
+        [
+          49.695,
+          10.777
+        ],
+        [
+          60.583,
+          11.165
+        ],
+        [
+          60.465,
+          14.781
+        ]
+      ],
+      "bottom": 0,
+      "top": 12.5,
+      "owner": "environment",
+      "load_in_scene": false
+    },
+    {
+      "name": "NorthSurrounding_267646978",
+      "type": "polygon",
+      "outline": [
+        [
+          -26.043,
+          -12.424
+        ],
+        [
+          -16.598,
+          -5.643
+        ],
+        [
+          -14.944,
+          -4.449
+        ],
+        [
+          -19.893,
+          2.441
+        ],
+        [
+          -22.042,
+          0.898
+        ],
+        [
+          -40.398,
+          26.423
+        ],
+        [
+          -37.51,
+          28.49
+        ],
+        [
+          -44.141,
+          37.729
+        ],
+        [
+          -47.064,
+          35.627
+        ],
+        [
+          -69.597,
+          66.984
+        ],
+        [
+          -66.449,
+          69.248
+        ],
+        [
+          -71.948,
+          76.9
+        ],
+        [
+          -75.437,
+          74.387
+        ],
+        [
+          -98.614,
+          106.622
+        ],
+        [
+          -107.204,
+          100.451
+        ]
+      ],
+      "bottom": 0,
+      "top": 9.9,
+      "optional_layer": "north_axis_surroundings",
+      "owner": "environment",
+      "load_in_scene": false
+    },
+    {
+      "name": "NorthSurrounding_298741850",
+      "type": "polygon",
+      "outline": [
+        [
+          105.481,
+          73.155
+        ],
+        [
+          171.584,
+          74.218
+        ],
+        [
+          171.797,
+          61.076
+        ],
+        [
+          160.041,
+          60.89
+        ],
+        [
+          160.072,
+          58.573
+        ],
+        [
+          151.809,
+          58.436
+        ],
+        [
+          151.77,
+          60.864
+        ],
+        [
+          143.829,
+          60.74
+        ],
+        [
+          143.867,
+          58.323
+        ],
+        [
+          135.595,
+          58.186
+        ],
+        [
+          135.551,
+          60.68
+        ],
+        [
+          127.533,
+          60.561
+        ],
+        [
+          127.571,
+          58.156
+        ],
+        [
+          119.128,
+          58.016
+        ],
+        [
+          119.101,
+          60.155
+        ],
+        [
+          105.689,
+          59.946
+        ]
+      ],
+      "bottom": 0,
+      "top": 12.0,
+      "optional_layer": "north_axis_surroundings",
+      "owner": "environment",
+      "load_in_scene": false
+    },
+    {
+      "name": "NorthSurrounding_298741849",
+      "type": "polygon",
+      "outline": [
+        [
+          105.0,
+          133.198
+        ],
+        [
+          170.298,
+          133.999
+        ],
+        [
+          170.465,
+          120.464
+        ],
+        [
+          159.312,
+          120.323
+        ],
+        [
+          159.336,
+          117.839
+        ],
+        [
+          151.8,
+          117.745
+        ],
+        [
+          151.77,
+          120.184
+        ],
+        [
+          126.69,
+          119.874
+        ],
+        [
+          126.723,
+          117.279
+        ],
+        [
+          118.051,
+          117.167
+        ],
+        [
+          118.03,
+          119.485
+        ],
+        [
+          105.173,
+          119.328
+        ]
+      ],
+      "bottom": 0,
+      "top": 12.0,
+      "optional_layer": "north_axis_surroundings",
+      "owner": "environment",
+      "load_in_scene": false
+    }
+  ],
+  "groups": {
+    "NorthGate": {
+      "objects": 5,
+      "triangles": 53916,
+      "godot_bounds_min": [
+        -12.020000457763672,
+        0.0,
+        1.4199999570846558
+      ],
+      "godot_bounds_max": [
+        10.020000457763672,
+        6.519999980926514,
+        3.880000114440918
+      ]
+    },
+    "NorthGateVine": {
+      "objects": 4,
+      "triangles": 48386,
+      "godot_bounds_min": [
+        -12.395381927490234,
+        -0.00866861455142498,
+        1.1089447736740112
+      ],
+      "godot_bounds_max": [
+        10.359875679016113,
+        7.224636077880859,
+        4.195009708404541
+      ]
+    },
+    "NorthPavilion": {
+      "objects": 6,
+      "triangles": 78392,
+      "godot_bounds_min": [
+        37.923912048339844,
+        -0.3499999940395355,
+        75.37347412109375
+      ],
+      "godot_bounds_max": [
+        47.10129928588867,
+        7.150000095367432,
+        85.85523986816406
+      ]
+    },
+    "NorthPavilionRoofSurface": {
+      "objects": 1,
+      "triangles": 6192,
+      "godot_bounds_min": [
+        37.98212814331055,
+        3.938508987426758,
+        75.4271469116211
+      ],
+      "godot_bounds_max": [
+        47.04359817504883,
+        6.440000057220459,
+        85.79942321777344
+      ]
+    },
+    "NorthPavilionRoofSoffit": {
+      "objects": 1,
+      "triangles": 6704,
+      "godot_bounds_min": [
+        37.98212814331055,
+        3.818509101867676,
+        75.42950439453125
+      ],
+      "godot_bounds_max": [
+        47.04359817504883,
+        6.3122076988220215,
+        85.79942321777344
+      ]
+    },
+    "NorthBridges": {
+      "objects": 3,
+      "triangles": 53596,
+      "godot_bounds_min": [
+        -45.43267822265625,
+        -0.9399999976158142,
+        64.69267272949219
+      ],
+      "godot_bounds_max": [
+        68.85057830810547,
+        1.0099999904632568,
+        133.55027770996094
+      ]
+    },
+    "NorthExpert": {
+      "objects": 9,
+      "triangles": 103664,
+      "godot_bounds_min": [
+        30.09000015258789,
+        0.0,
+        10.09000015258789
+      ],
+      "godot_bounds_max": [
+        89.01000213623047,
+        15.052939414978027,
+        55.779998779296875
+      ]
+    },
+    "NorthSurrounding_267646978": {
+      "objects": 7,
+      "triangles": 52342,
+      "godot_bounds_min": [
+        -107.404052734375,
+        0.0,
+        -12.624168395996094
+      ],
+      "godot_bounds_max": [
+        -14.743867874145508,
+        10.050000190734863,
+        106.82211303710938
+      ]
+    },
+    "NorthSurrounding_298741850": {
+      "objects": 7,
+      "triangles": 37420,
+      "godot_bounds_min": [
+        105.1413345336914,
+        0.0,
+        57.67591094970703
+      ],
+      "godot_bounds_max": [
+        172.13624572753906,
+        12.149999618530273,
+        74.55941772460938
+      ]
+    },
+    "NorthSurrounding_298741849": {
+      "objects": 7,
+      "triangles": 36044,
+      "godot_bounds_min": [
+        104.657470703125,
+        0.0,
+        116.8232421875
+      ],
+      "godot_bounds_max": [
+        170.8083953857422,
+        12.149999618530273,
+        134.3434600830078
+      ]
+    }
+  },
+  "observed_sources": [
+    "https://zgkdb.ustc.edu.cn/ndetail/3705",
+    "https://djyszw.ustc.edu.cn/info/1041/3325.htm",
+    "https://zsb.ustc.edu.cn/2024/0310/c35540a631898/page.htm",
+    "https://news.ustc.edu.cn/info/1056/94500.htm"
+  ],
+  "confidence": "OSM footprints and adjacency medium; photographed architecture character high; heights, joinery, expert facade/roof subdivision are estimated",
+  "total_triangles": 476656,
+  "collision_policy": "Root loads box/cylinder/beam only. Four building polygons are informational and already built by north_axis_environment. Bridge and pavilion walkable decks/slopes belong exclusively to environment. No water blockers or ground added here.",
+  "exports": [
+    "godot/assets/north_axis_architecture.glb",
+    "godot/assets/north_axis_surroundings.glb"
+  ]
+}

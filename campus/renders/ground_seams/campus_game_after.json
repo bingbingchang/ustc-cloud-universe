@@ -1,0 +1,9 @@
+{
+	"method": "Actual visible grass triangles on a separate ray layer; 0.5m boundary sampling, offsets 5/25/75mm on both sides. Water and protected areas excluded. Physics slabs cannot mask visual holes.",
+	"missing": [],
+	"passed": true,
+	"samples": 120695,
+	"scene": "campus_game",
+	"simulated_old_inset": false,
+	"visual_meshes": 20
+}

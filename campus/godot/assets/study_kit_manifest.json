@@ -1,0 +1,58 @@
+{
+  "study_canopy_0": {
+    "triangles": 128616,
+    "materials": 4
+  },
+  "study_canopy_1": {
+    "triangles": 128616,
+    "materials": 4
+  },
+  "study_canopy_2": {
+    "triangles": 128616,
+    "materials": 5
+  },
+  "study_lotus_0": {
+    "triangles": 1880,
+    "materials": 4
+  },
+  "study_lotus_1": {
+    "triangles": 1880,
+    "materials": 4
+  },
+  "study_lotus_2": {
+    "triangles": 2836,
+    "materials": 7
+  },
+  "study_lotus_3": {
+    "triangles": 2836,
+    "materials": 7
+  },
+  "study_bank_patch_0": {
+    "triangles": 2560,
+    "materials": 4
+  },
+  "study_bank_patch_1": {
+    "triangles": 2560,
+    "materials": 4
+  },
+  "study_willow_bough": {
+    "triangles": 24804,
+    "materials": 4
+  },
+  "study_rock_garden_0": {
+    "triangles": 2145,
+    "materials": 4
+  },
+  "study_rock_garden_1": {
+    "triangles": 2145,
+    "materials": 4
+  },
+  "study_flower_mound_0": {
+    "triangles": 6640,
+    "materials": 4
+  },
+  "study_flower_mound_1": {
+    "triangles": 6640,
+    "materials": 4
+  }
+}

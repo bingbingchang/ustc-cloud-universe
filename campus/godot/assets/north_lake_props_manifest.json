@@ -1,0 +1,42 @@
+{
+  "unit": "meter",
+  "sources": "Authored geometry; observed official USTC pavilion_4.jpg, 东区眼镜湖.jpg and the rock-bank photo named 东区一鉴亭.jpg; no photos used as textures.",
+  "assets": {
+    "north_lily": {
+      "triangles": 5040,
+      "objects": 3,
+      "bounds_min": [
+        -0.9519577026367188,
+        -0.38083934783935547,
+        -0.8526932001113892
+      ],
+      "bounds_max": [
+        0.9522846937179565,
+        0.24676626920700073,
+        0.9028525948524475
+      ],
+      "recommended_scale": [
+        0.8,
+        1.25
+      ]
+    },
+    "north_rock": {
+      "triangles": 3382,
+      "objects": 1,
+      "bounds_min": [
+        -1.0152133703231812,
+        -0.11999999731779099,
+        -0.3870341181755066
+      ],
+      "bounds_max": [
+        0.9646700620651245,
+        1.1440999507904053,
+        0.7475972771644592
+      ],
+      "recommended_scale": [
+        0.7,
+        1.45
+      ]
+    }
+  }
+}

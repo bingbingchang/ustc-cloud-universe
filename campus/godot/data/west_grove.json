@@ -1,0 +1,95 @@
+{
+  "id": "west_grove",
+  "source": "Existing north_axis_layout west_bank path; satellite-inferred intermediate route retained. Artistic planting, no new surveyed land.",
+  "bounds": [
+    -58,
+    28,
+    -9,
+    73
+  ],
+  "trees": [
+    [
+      -29,
+      33
+    ],
+    [
+      -36,
+      43
+    ],
+    [
+      -45,
+      55
+    ],
+    [
+      -38,
+      64
+    ],
+    [
+      -20,
+      65
+    ]
+  ],
+  "flower_anchors": [
+    [
+      -20,
+      31
+    ],
+    [
+      -27,
+      37
+    ],
+    [
+      -34,
+      47
+    ],
+    [
+      -39,
+      57
+    ],
+    [
+      -32,
+      66
+    ],
+    [
+      -16,
+      60
+    ]
+  ],
+  "actors": [
+    {
+      "id": "grove_photo",
+      "tier": "Ambient",
+      "asset": "ambient_photographer",
+      "role": "photographer",
+      "position": [
+        -14,
+        0.005,
+        31
+      ],
+      "heading": -1.1,
+      "phase": 6,
+      "cycle_seconds": 22,
+      "story": "停下取景，微调手机，低头查看照片；复用普通学生资产实例。"
+    },
+    {
+      "id": "grove_reader",
+      "tier": "Ambient",
+      "asset": "ambient_study_walk",
+      "role": "study_walk",
+      "position": [
+        -25,
+        0.005,
+        49
+      ],
+      "path_end": [
+        -25,
+        0.005,
+        53
+      ],
+      "heading": 3.14159265,
+      "phase": 0,
+      "cycle_seconds": 46,
+      "story": "沿林下空地慢走四米，停下读资料、翻页，回转。"
+    }
+  ]
+}

@@ -1,0 +1,243 @@
+{
+  "units": "metres",
+  "export_axes": "Godot/glTF Y-up",
+  "source": "blender\\source\\campus_tree_species.blend",
+  "references": [
+    {
+      "url": "https://business.ustc.edu.cn/2011/1026/c28419a526436/page.htm",
+      "observations": "Official campus photo captions: tall snow cedars below First Teaching Hall; plane leaves; tall golden-rain trees beside Guo Moruo Road."
+    },
+    {
+      "url": "https://ef.ustc.edu.cn/info/1061/2005.htm",
+      "observations": "Official tree locations: plane north of First Teaching Hall; magnolia and loquat in Guo Moruo Square; camphor at Glasses Lake; pine beside USTC1958."
+    },
+    {
+      "local": "references/buildings/东区郭沫若广场.jpg",
+      "url": "https://sz.ustc.edu.cn/wdxz_show/61.html",
+      "observations": "Mature irregular broad crowns behind clipped shrubs, tall tiered conifers; larger trees flank both sides of the plaza."
+    },
+    {
+      "local": "references/buildings/teaching_north.jpg",
+      "observations": "High plane-tree trunks, widely spaced roadside planting, visible large forks."
+    }
+  ],
+  "geometry": "Original procedural opaque 3D leaf silhouettes, branches and flared roots. Asset species and sizes convey the referenced types; placement is performed by the scene module.",
+  "assets": {
+    "tree_plane_a": {
+      "family": "mature plane / campus 梧桐",
+      "description": "Tall roadside tree, mottled bark, high forks and palmately lobed real mesh leaves. Uneven broad crown; not clipped spherical topiary.",
+      "triangles": 26139,
+      "mesh_surfaces": 6,
+      "bounds_godot_m": {
+        "min": [
+          -4.631,
+          -0.029,
+          -4.919
+        ],
+        "max": [
+          5.4,
+          14.742,
+          5.309
+        ]
+      },
+      "dimensions_m": [
+        10.031,
+        14.771,
+        10.229
+      ],
+      "canopy_clearance_m": 5.2,
+      "materials": [
+        "PlaneBark",
+        "PlaneBarkBrown",
+        "PlaneBarkPale",
+        "PlaneLeaf",
+        "PlaneLeafLight",
+        "PlaneLeafDark"
+      ],
+      "collision": "Clip real Bark mesh below 2.4 m, using existing low_trunk_shape().",
+      "lod_suggestion": {
+        "lod0_m": 32,
+        "lod1_m": 75,
+        "lod2_m": 160,
+        "triangle_ratios": [
+          1.0,
+          0.5,
+          0.2
+        ],
+        "notes": "Keep trunk and major forks; use mesh LOD with existing spatial MultiMesh batches."
+      }
+    },
+    "tree_plane_b": {
+      "family": "mature plane / campus 梧桐",
+      "description": "Tall roadside tree, mottled bark, high forks and palmately lobed real mesh leaves. Uneven broad crown; not clipped spherical topiary.",
+      "triangles": 28870,
+      "mesh_surfaces": 6,
+      "bounds_godot_m": {
+        "min": [
+          -5.572,
+          -0.022,
+          -6.242
+        ],
+        "max": [
+          5.776,
+          15.446,
+          6.602
+        ]
+      },
+      "dimensions_m": [
+        11.348,
+        15.468,
+        12.845
+      ],
+      "canopy_clearance_m": 5.6,
+      "materials": [
+        "PlaneBark",
+        "PlaneBarkPale",
+        "PlaneBarkBrown",
+        "PlaneLeafLight",
+        "PlaneLeaf",
+        "PlaneLeafDark"
+      ],
+      "collision": "Clip real Bark mesh below 2.4 m, using existing low_trunk_shape().",
+      "lod_suggestion": {
+        "lod0_m": 32,
+        "lod1_m": 75,
+        "lod2_m": 160,
+        "triangle_ratios": [
+          1.0,
+          0.5,
+          0.2
+        ],
+        "notes": "Keep trunk and major forks; use mesh LOD with existing spatial MultiMesh batches."
+      }
+    },
+    "tree_plane_c": {
+      "family": "mature plane / campus 梧桐",
+      "description": "Tall roadside tree, mottled bark, high forks and palmately lobed real mesh leaves. Uneven broad crown; not clipped spherical topiary.",
+      "triangles": 23408,
+      "mesh_surfaces": 6,
+      "bounds_godot_m": {
+        "min": [
+          -5.623,
+          -0.018,
+          -5.523
+        ],
+        "max": [
+          4.955,
+          13.543,
+          5.107
+        ]
+      },
+      "dimensions_m": [
+        10.578,
+        13.56,
+        10.63
+      ],
+      "canopy_clearance_m": 4.9,
+      "materials": [
+        "PlaneBark",
+        "PlaneBarkPale",
+        "PlaneBarkBrown",
+        "PlaneLeaf",
+        "PlaneLeafDark",
+        "PlaneLeafLight"
+      ],
+      "collision": "Clip real Bark mesh below 2.4 m, using existing low_trunk_shape().",
+      "lod_suggestion": {
+        "lod0_m": 32,
+        "lod1_m": 75,
+        "lod2_m": 160,
+        "triangle_ratios": [
+          1.0,
+          0.5,
+          0.2
+        ],
+        "notes": "Keep trunk and major forks; use mesh LOD with existing spatial MultiMesh batches."
+      }
+    },
+    "tree_conifer": {
+      "family": "cedar / fir type evergreen",
+      "description": "Dark conifer with single leader, layered horizontal branches and geometric needle sprays. Snow cedar is documented beside First Teaching Hall; this is a general asset silhouette.",
+      "triangles": 25744,
+      "mesh_surfaces": 4,
+      "bounds_godot_m": {
+        "min": [
+          -4.316,
+          -0.02,
+          -4.36
+        ],
+        "max": [
+          4.962,
+          13.3,
+          4.867
+        ]
+      },
+      "dimensions_m": [
+        9.278,
+        13.321,
+        9.227
+      ],
+      "canopy_clearance_m": 2.8,
+      "materials": [
+        "ConiferBark",
+        "ConiferLeafDark",
+        "ConiferLeaf",
+        "ConiferLeafLight"
+      ],
+      "collision": "Clip real Bark mesh below 2.4 m, using existing low_trunk_shape().",
+      "lod_suggestion": {
+        "lod0_m": 32,
+        "lod1_m": 75,
+        "lod2_m": 160,
+        "triangle_ratios": [
+          1.0,
+          0.5,
+          0.2
+        ],
+        "notes": "Keep trunk and major forks; use mesh LOD with existing spatial MultiMesh batches."
+      }
+    },
+    "tree_garden": {
+      "family": "garden evergreen broadleaf / magnolia type",
+      "description": "Lower, broad asymmetric garden crown, leathery oval real mesh leaves. Magnolia and loquat are documented in Guo Moruo Square; the asset uses magnolia-type leaves.",
+      "triangles": 24192,
+      "mesh_surfaces": 4,
+      "bounds_godot_m": {
+        "min": [
+          -3.149,
+          -0.023,
+          -3.898
+        ],
+        "max": [
+          3.458,
+          9.169,
+          3.485
+        ]
+      },
+      "dimensions_m": [
+        6.607,
+        9.192,
+        7.383
+      ],
+      "canopy_clearance_m": 2.7,
+      "materials": [
+        "GardenBark",
+        "GardenLeafDark",
+        "GardenLeafLight",
+        "GardenLeaf"
+      ],
+      "collision": "Clip real Bark mesh below 2.4 m, using existing low_trunk_shape().",
+      "lod_suggestion": {
+        "lod0_m": 32,
+        "lod1_m": 75,
+        "lod2_m": 160,
+        "triangle_ratios": [
+          1.0,
+          0.5,
+          0.2
+        ],
+        "notes": "Keep trunk and major forks; use mesh LOD with existing spatial MultiMesh batches."
+      }
+    }
+  }
+}

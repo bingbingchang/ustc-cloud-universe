@@ -1,0 +1,2250 @@
+{
+  "buildings": [
+    {
+      "osm_way": "271959068",
+      "name": "研究生公寓364／365号楼",
+      "outline": [
+        [
+          -276.323,
+          613.932
+        ],
+        [
+          -276.109,
+          599.006
+        ],
+        [
+          -329.471,
+          598.247
+        ],
+        [
+          -329.447,
+          596.532
+        ],
+        [
+          -337.295,
+          596.426
+        ],
+        [
+          -337.531,
+          612.933
+        ],
+        [
+          -340.078,
+          612.899
+        ],
+        [
+          -340.183,
+          619.771
+        ],
+        [
+          -343.601,
+          619.728
+        ],
+        [
+          -343.695,
+          626.077
+        ],
+        [
+          -347.112,
+          626.023
+        ],
+        [
+          -347.207,
+          632.494
+        ],
+        [
+          -340.524,
+          632.591
+        ],
+        [
+          -340.632,
+          640.143
+        ],
+        [
+          -360.54,
+          639.862
+        ],
+        [
+          -360.731,
+          652.838
+        ],
+        [
+          -276.946,
+          654.038
+        ],
+        [
+          -276.727,
+          638.778
+        ],
+        [
+          -330.267,
+          638.006
+        ],
+        [
+          -329.91,
+          613.156
+        ]
+      ],
+      "levels": 6,
+      "height": 19.8,
+      "source": "https://www.openstreetmap.org/way/271959068",
+      "confidence": "OSM footprint cross-checked against GIS image and campus plan; storeys and unseen facade details estimated."
+    },
+    {
+      "osm_way": "1135310336",
+      "name": "人文与社会科学学院",
+      "outline": [
+        [
+          -279.97,
+          541.004
+        ],
+        [
+          -279.558,
+          553.144
+        ],
+        [
+          -279.517,
+          554.496
+        ],
+        [
+          -279.095,
+          566.871
+        ],
+        [
+          -298.407,
+          567.125
+        ],
+        [
+          -311.24,
+          567.283
+        ],
+        [
+          -325.25,
+          567.464
+        ],
+        [
+          -338.103,
+          567.631
+        ],
+        [
+          -338.206,
+          555.425
+        ],
+        [
+          -338.222,
+          553.729
+        ],
+        [
+          -338.332,
+          541.611
+        ],
+        [
+          -326.364,
+          541.49
+        ],
+        [
+          -318.369,
+          541.406
+        ],
+        [
+          -306.401,
+          541.284
+        ],
+        [
+          -295.75,
+          541.164
+        ]
+      ],
+      "levels": 4,
+      "height": 14.0,
+      "source": "https://www.openstreetmap.org/way/1135310336",
+      "confidence": "OSM footprint cross-checked against GIS image and campus plan; storeys and unseen facade details estimated."
+    },
+    {
+      "osm_way": "271959067",
+      "name": "东区羽毛球馆",
+      "outline": [
+        [
+          -278.026,
+          591.415
+        ],
+        [
+          -278.952,
+          571.944
+        ],
+        [
+          -337.713,
+          573.325
+        ],
+        [
+          -337.753,
+          592.79
+        ]
+      ],
+      "levels": 1,
+      "height": 8.0,
+      "source": "https://www.openstreetmap.org/way/271959067",
+      "confidence": "OSM footprint cross-checked against GIS image and campus plan; storeys and unseen facade details estimated."
+    },
+    {
+      "osm_way": "1135310342",
+      "name": "可再生资源与洁净能源实验室",
+      "outline": [
+        [
+          -220.038,
+          553.905
+        ],
+        [
+          -220.939,
+          584.534
+        ],
+        [
+          -185.396,
+          585.58
+        ],
+        [
+          -184.534,
+          555.985
+        ],
+        [
+          -196.173,
+          555.64
+        ],
+        [
+          -196.945,
+          582.11
+        ],
+        [
+          -205.275,
+          581.867
+        ],
+        [
+          -204.474,
+          554.363
+        ]
+      ],
+      "levels": 3,
+      "height": 11.2,
+      "source": "https://www.openstreetmap.org/way/1135310342",
+      "confidence": "OSM footprint cross-checked against GIS image and campus plan; storeys and unseen facade details estimated."
+    },
+    {
+      "osm_way": "270334649",
+      "name": "国际学院／国际合作与交流中心",
+      "outline": [
+        [
+          -129.165,
+          552.946
+        ],
+        [
+          -94.999,
+          552.897
+        ],
+        [
+          -94.969,
+          577.776
+        ],
+        [
+          -132.205,
+          577.819
+        ],
+        [
+          -132.215,
+          569.7
+        ],
+        [
+          -129.144,
+          569.695
+        ]
+      ],
+      "levels": 4,
+      "height": 14.0,
+      "source": "https://www.openstreetmap.org/way/270334649",
+      "confidence": "OSM footprint cross-checked against GIS image and campus plan; storeys and unseen facade details estimated."
+    },
+    {
+      "osm_way": "271958264",
+      "name": "科大洗浴中心",
+      "outline": [
+        [
+          -155.925,
+          562.211
+        ],
+        [
+          -134.555,
+          562.445
+        ],
+        [
+          -134.443,
+          552.441
+        ],
+        [
+          -155.814,
+          552.207
+        ]
+      ],
+      "levels": 2,
+      "height": 7.0,
+      "source": "https://www.openstreetmap.org/way/271958264",
+      "confidence": "OSM footprint cross-checked against GIS image and campus plan; storeys and unseen facade details estimated."
+    },
+    {
+      "osm_way": "270334648",
+      "name": "学生服务中心",
+      "outline": [
+        [
+          -93.416,
+          613.472
+        ],
+        [
+          -93.436,
+          648.416
+        ],
+        [
+          -127.69,
+          648.392
+        ],
+        [
+          -127.687,
+          634.12
+        ],
+        [
+          -113.682,
+          634.128
+        ],
+        [
+          -113.675,
+          613.455
+        ]
+      ],
+      "levels": 3,
+      "height": 10.8,
+      "source": "https://www.openstreetmap.org/way/270334648",
+      "confidence": "OSM footprint cross-checked against GIS image and campus plan; storeys and unseen facade details estimated."
+    },
+    {
+      "osm_way": "298766878",
+      "name": "水电管理中心",
+      "outline": [
+        [
+          -127.528,
+          606.969
+        ],
+        [
+          -98.183,
+          607.519
+        ],
+        [
+          -97.959,
+          595.371
+        ],
+        [
+          -128.96,
+          594.786
+        ],
+        [
+          -129.078,
+          601.066
+        ],
+        [
+          -127.413,
+          601.101
+        ]
+      ],
+      "levels": 2,
+      "height": 7.0,
+      "source": "https://www.openstreetmap.org/way/298766878",
+      "confidence": "OSM footprint cross-checked against GIS image and campus plan; storeys and unseen facade details estimated."
+    },
+    {
+      "osm_way": "686072850",
+      "name": "化学与材料科学学院办公楼",
+      "outline": [
+        [
+          -264.361,
+          640.827
+        ],
+        [
+          -234.568,
+          640.831
+        ],
+        [
+          -234.942,
+          650.794
+        ],
+        [
+          -264.644,
+          650.585
+        ]
+      ],
+      "levels": 2,
+      "height": 7.0,
+      "source": "https://www.openstreetmap.org/way/686072850",
+      "confidence": "OSM footprint cross-checked against GIS image and campus plan; storeys and unseen facade details estimated."
+    },
+    {
+      "osm_way": "271958265",
+      "name": "校园服务小店",
+      "outline": [
+        [
+          -162.711,
+          561.716
+        ],
+        [
+          -162.793,
+          570.82
+        ],
+        [
+          -174.157,
+          570.719
+        ],
+        [
+          -174.084,
+          561.615
+        ]
+      ],
+      "levels": 1,
+      "height": 4.0,
+      "source": "https://www.openstreetmap.org/way/271958265",
+      "confidence": "OSM footprint cross-checked against GIS image and campus plan; storeys and unseen facade details estimated."
+    }
+  ],
+  "courts": [
+    {
+      "id": "basketball_1",
+      "sport": "basketball",
+      "center": [
+        -254.5,
+        567.5
+      ],
+      "width": 14.2,
+      "length": 26.0,
+      "heading": 0,
+      "polygon": [
+        [
+          -262.35,
+          553.1
+        ],
+        [
+          -246.65,
+          553.1
+        ],
+        [
+          -246.65,
+          581.9
+        ],
+        [
+          -262.35,
+          581.9
+        ]
+      ],
+      "court_polygon": [
+        [
+          -261.6,
+          554.5
+        ],
+        [
+          -247.4,
+          554.5
+        ],
+        [
+          -247.4,
+          580.5
+        ],
+        [
+          -261.6,
+          580.5
+        ]
+      ],
+      "basis": "5 separate markings visible in satellite/GIS; fitted to actual grouped footprints, dimensions approximate."
+    },
+    {
+      "id": "basketball_2",
+      "sport": "basketball",
+      "center": [
+        -238.4,
+        567.5
+      ],
+      "width": 14.2,
+      "length": 26.0,
+      "heading": 0,
+      "polygon": [
+        [
+          -246.25,
+          553.1
+        ],
+        [
+          -230.55,
+          553.1
+        ],
+        [
+          -230.55,
+          581.9
+        ],
+        [
+          -246.25,
+          581.9
+        ]
+      ],
+      "court_polygon": [
+        [
+          -245.5,
+          554.5
+        ],
+        [
+          -231.3,
+          554.5
+        ],
+        [
+          -231.3,
+          580.5
+        ],
+        [
+          -245.5,
+          580.5
+        ]
+      ],
+      "basis": "5 separate markings visible in satellite/GIS; fitted to actual grouped footprints, dimensions approximate."
+    },
+    {
+      "id": "basketball_3",
+      "sport": "basketball",
+      "center": [
+        -224,
+        610.0
+      ],
+      "width": 14.4,
+      "length": 27.0,
+      "heading": 0,
+      "polygon": [
+        [
+          -231.95,
+          595.1
+        ],
+        [
+          -216.05,
+          595.1
+        ],
+        [
+          -216.05,
+          624.9
+        ],
+        [
+          -231.95,
+          624.9
+        ]
+      ],
+      "court_polygon": [
+        [
+          -231.2,
+          596.5
+        ],
+        [
+          -216.8,
+          596.5
+        ],
+        [
+          -216.8,
+          623.5
+        ],
+        [
+          -231.2,
+          623.5
+        ]
+      ],
+      "basis": "5 separate markings visible in satellite/GIS; fitted to actual grouped footprints, dimensions approximate."
+    },
+    {
+      "id": "basketball_4",
+      "sport": "basketball",
+      "center": [
+        -208.5,
+        610.0
+      ],
+      "width": 14.4,
+      "length": 27.0,
+      "heading": 0,
+      "polygon": [
+        [
+          -216.45,
+          595.1
+        ],
+        [
+          -200.55,
+          595.1
+        ],
+        [
+          -200.55,
+          624.9
+        ],
+        [
+          -216.45,
+          624.9
+        ]
+      ],
+      "court_polygon": [
+        [
+          -215.7,
+          596.5
+        ],
+        [
+          -201.3,
+          596.5
+        ],
+        [
+          -201.3,
+          623.5
+        ],
+        [
+          -215.7,
+          623.5
+        ]
+      ],
+      "basis": "5 separate markings visible in satellite/GIS; fitted to actual grouped footprints, dimensions approximate."
+    },
+    {
+      "id": "basketball_5",
+      "sport": "basketball",
+      "center": [
+        -193,
+        610.0
+      ],
+      "width": 14.4,
+      "length": 27.0,
+      "heading": 0,
+      "polygon": [
+        [
+          -200.95,
+          595.1
+        ],
+        [
+          -185.05,
+          595.1
+        ],
+        [
+          -185.05,
+          624.9
+        ],
+        [
+          -200.95,
+          624.9
+        ]
+      ],
+      "court_polygon": [
+        [
+          -200.2,
+          596.5
+        ],
+        [
+          -185.8,
+          596.5
+        ],
+        [
+          -185.8,
+          623.5
+        ],
+        [
+          -200.2,
+          623.5
+        ]
+      ],
+      "basis": "5 separate markings visible in satellite/GIS; fitted to actual grouped footprints, dimensions approximate."
+    },
+    {
+      "id": "tennis_1",
+      "sport": "tennis",
+      "center": [
+        -166.4,
+        594.8
+      ],
+      "width": 10.97,
+      "length": 23.77,
+      "heading": 0,
+      "polygon": [
+        [
+          -174.65,
+          577.7
+        ],
+        [
+          -158.15,
+          577.7
+        ],
+        [
+          -158.15,
+          611.9
+        ],
+        [
+          -174.65,
+          611.9
+        ]
+      ],
+      "court_polygon": [
+        [
+          -171.885,
+          582.915
+        ],
+        [
+          -160.915,
+          582.915
+        ],
+        [
+          -160.915,
+          606.685
+        ],
+        [
+          -171.885,
+          606.685
+        ]
+      ],
+      "basis": "Four north/south courts plus one west transverse court in aerial image; colors/fence cross-checked against 2026 official photo."
+    },
+    {
+      "id": "tennis_2",
+      "sport": "tennis",
+      "center": [
+        -149.2,
+        594.8
+      ],
+      "width": 10.97,
+      "length": 23.77,
+      "heading": 0,
+      "polygon": [
+        [
+          -157.45,
+          577.7
+        ],
+        [
+          -140.95,
+          577.7
+        ],
+        [
+          -140.95,
+          611.9
+        ],
+        [
+          -157.45,
+          611.9
+        ]
+      ],
+      "court_polygon": [
+        [
+          -154.685,
+          582.915
+        ],
+        [
+          -143.715,
+          582.915
+        ],
+        [
+          -143.715,
+          606.685
+        ],
+        [
+          -154.685,
+          606.685
+        ]
+      ],
+      "basis": "Four north/south courts plus one west transverse court in aerial image; colors/fence cross-checked against 2026 official photo."
+    },
+    {
+      "id": "tennis_3",
+      "sport": "tennis",
+      "center": [
+        -166.4,
+        634.0
+      ],
+      "width": 10.97,
+      "length": 23.77,
+      "heading": 0,
+      "polygon": [
+        [
+          -174.65,
+          616.9
+        ],
+        [
+          -158.15,
+          616.9
+        ],
+        [
+          -158.15,
+          651.1
+        ],
+        [
+          -174.65,
+          651.1
+        ]
+      ],
+      "court_polygon": [
+        [
+          -171.885,
+          622.115
+        ],
+        [
+          -160.915,
+          622.115
+        ],
+        [
+          -160.915,
+          645.885
+        ],
+        [
+          -171.885,
+          645.885
+        ]
+      ],
+      "basis": "Four north/south courts plus one west transverse court in aerial image; colors/fence cross-checked against 2026 official photo."
+    },
+    {
+      "id": "tennis_4",
+      "sport": "tennis",
+      "center": [
+        -149.2,
+        634.0
+      ],
+      "width": 10.97,
+      "length": 23.77,
+      "heading": 0,
+      "polygon": [
+        [
+          -157.45,
+          616.9
+        ],
+        [
+          -140.95,
+          616.9
+        ],
+        [
+          -140.95,
+          651.1
+        ],
+        [
+          -157.45,
+          651.1
+        ]
+      ],
+      "court_polygon": [
+        [
+          -154.685,
+          622.115
+        ],
+        [
+          -143.715,
+          622.115
+        ],
+        [
+          -143.715,
+          645.885
+        ],
+        [
+          -154.685,
+          645.885
+        ]
+      ],
+      "basis": "Four north/south courts plus one west transverse court in aerial image; colors/fence cross-checked against 2026 official photo."
+    },
+    {
+      "id": "tennis_5",
+      "sport": "tennis",
+      "center": [
+        -204.0,
+        642.5
+      ],
+      "width": 10.97,
+      "length": 23.77,
+      "heading": 1.5707963267948966,
+      "polygon": [
+        [
+          -221.1,
+          650.75
+        ],
+        [
+          -221.1,
+          634.25
+        ],
+        [
+          -186.9,
+          634.25
+        ],
+        [
+          -186.9,
+          650.75
+        ]
+      ],
+      "court_polygon": [
+        [
+          -215.885,
+          647.985
+        ],
+        [
+          -215.885,
+          637.015
+        ],
+        [
+          -192.115,
+          637.015
+        ],
+        [
+          -192.115,
+          647.985
+        ]
+      ],
+      "basis": "Four north/south courts plus one west transverse court in aerial image; colors/fence cross-checked against 2026 official photo."
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://gis.ustc.edu.cn/",
+      "local": "references/south_sports/gis_east_tiles.jpg",
+      "js": "references/south_sports/gis_xbgis_readable.js",
+      "use": "GIS JS reveals mapdata/zoom3/x_y.jpg tile source; cross-check names, court groups and road adjacency."
+    },
+    {
+      "local": "references/maps/east_campus.png",
+      "use": "Official plan: 364/365 west of south courts; humanities and badminton hall west of court spine."
+    },
+    {
+      "url": "https://news.ustc.edu.cn/info/1055/95289.htm",
+      "use": "2026 official east tennis photographs: blue/green hard courts, green wire fence and nets."
+    },
+    {
+      "url": "https://gradunion.ustc.edu.cn/2012/0317/c5709a61204/page.psp",
+      "use": "364 south and 365 north have balconies, with west connecting block."
+    }
+  ],
+  "hardscape": [
+    {
+      "id": "dorm_courtyard",
+      "surface": "pavers",
+      "polygon": [
+        [
+          -329,
+          615
+        ],
+        [
+          -276,
+          615
+        ],
+        [
+          -276,
+          637
+        ],
+        [
+          -329,
+          637
+        ]
+      ]
+    },
+    {
+      "id": "service_front",
+      "surface": "concrete",
+      "polygon": [
+        [
+          -134,
+          647
+        ],
+        [
+          -90,
+          647
+        ],
+        [
+          -90,
+          658
+        ],
+        [
+          -134,
+          658
+        ]
+      ]
+    },
+    {
+      "id": "entry_271959068",
+      "surface": "concrete",
+      "polygon": [
+        [
+          -330.089,
+          623.3456
+        ],
+        [
+          -321.089,
+          623.3456
+        ],
+        [
+          -321.089,
+          627.9456
+        ],
+        [
+          -330.089,
+          627.9456
+        ]
+      ]
+    },
+    {
+      "id": "entry_1135310336",
+      "surface": "concrete",
+      "polygon": [
+        [
+          -336.118,
+          569.7471
+        ],
+        [
+          -327.118,
+          569.7471
+        ],
+        [
+          -327.118,
+          574.3471
+        ],
+        [
+          -336.118,
+          574.3471
+        ]
+      ]
+    },
+    {
+      "id": "entry_271959067",
+      "surface": "concrete",
+      "polygon": [
+        [
+          -278.4941,
+          579.1657
+        ],
+        [
+          -269.4941,
+          579.1657
+        ],
+        [
+          -269.4941,
+          583.7657
+        ],
+        [
+          -278.4941,
+          583.7657
+        ]
+      ]
+    },
+    {
+      "id": "entry_1135310342",
+      "surface": "concrete",
+      "polygon": [
+        [
+          -216.6236,
+          547.3359
+        ],
+        [
+          -207.6236,
+          547.3359
+        ],
+        [
+          -207.6236,
+          551.9359
+        ],
+        [
+          -216.6236,
+          551.9359
+        ]
+      ]
+    },
+    {
+      "id": "entry_270334649",
+      "surface": "concrete",
+      "polygon": [
+        [
+          -116.5885,
+          546.1215
+        ],
+        [
+          -107.5885,
+          546.1215
+        ],
+        [
+          -107.5885,
+          550.7215
+        ],
+        [
+          -116.5885,
+          550.7215
+        ]
+      ]
+    },
+    {
+      "id": "entry_271958264",
+      "surface": "concrete",
+      "polygon": [
+        [
+          -149.5792,
+          545.5243
+        ],
+        [
+          -140.5792,
+          545.5243
+        ],
+        [
+          -140.5792,
+          550.1243
+        ],
+        [
+          -149.5792,
+          550.1243
+        ]
+      ]
+    },
+    {
+      "id": "entry_270334648",
+      "surface": "concrete",
+      "polygon": [
+        [
+          -115.0662,
+          650.604
+        ],
+        [
+          -106.0662,
+          650.604
+        ],
+        [
+          -106.0662,
+          655.204
+        ],
+        [
+          -115.0662,
+          655.204
+        ]
+      ]
+    },
+    {
+      "id": "entry_298766878",
+      "surface": "concrete",
+      "polygon": [
+        [
+          -117.4398,
+          609.4432
+        ],
+        [
+          -108.4398,
+          609.4432
+        ],
+        [
+          -108.4398,
+          614.0432
+        ],
+        [
+          -117.4398,
+          614.0432
+        ]
+      ]
+    },
+    {
+      "id": "entry_686072850",
+      "surface": "concrete",
+      "polygon": [
+        [
+          -254.3247,
+          652.8894
+        ],
+        [
+          -245.3247,
+          652.8894
+        ],
+        [
+          -245.3247,
+          657.4894
+        ],
+        [
+          -254.3247,
+          657.4894
+        ]
+      ]
+    },
+    {
+      "id": "entry_271958265",
+      "surface": "concrete",
+      "polygon": [
+        [
+          -173.015,
+          572.9693
+        ],
+        [
+          -164.015,
+          572.9693
+        ],
+        [
+          -164.015,
+          577.5693
+        ],
+        [
+          -173.015,
+          577.5693
+        ]
+      ]
+    }
+  ],
+  "benches": [
+    [
+      -285,
+      618,
+      1.57
+    ],
+    [
+      -318,
+      633,
+      0
+    ],
+    [
+      -230,
+      588,
+      0
+    ],
+    [
+      -180,
+      626,
+      1.57
+    ],
+    [
+      -130,
+      657,
+      0
+    ]
+  ],
+  "lamps": [
+    [
+      -273.8,
+      556,
+      0
+    ],
+    [
+      -273.8,
+      589,
+      0
+    ],
+    [
+      -273.8,
+      631,
+      0
+    ],
+    [
+      -285,
+      622,
+      0
+    ],
+    [
+      -318,
+      631,
+      0
+    ],
+    [
+      -88,
+      578,
+      0
+    ],
+    [
+      -88,
+      622,
+      0
+    ],
+    [
+      -131,
+      657,
+      0
+    ]
+  ],
+  "walk_routes": [
+    {
+      "id": "track_to_south_courts",
+      "points": [
+        [
+          -176.76,
+          530
+        ],
+        [
+          -176.76,
+          544.88
+        ],
+        [
+          -177,
+          550
+        ],
+        [
+          -226,
+          550
+        ],
+        [
+          -271.19,
+          550.03
+        ],
+        [
+          -271.1,
+          589
+        ],
+        [
+          -271.1,
+          625
+        ]
+      ]
+    },
+    {
+      "id": "guo_road_to_south_cross",
+      "points": [
+        [
+          -78.7,
+          441
+        ],
+        [
+          -80.7,
+          517.5
+        ],
+        [
+          -82,
+          598.7
+        ],
+        [
+          -83.94,
+          667.58
+        ],
+        [
+          -175.1,
+          666.77
+        ],
+        [
+          -271.08,
+          664.38
+        ]
+      ]
+    },
+    {
+      "id": "dorm364_365_courtyard",
+      "points": [
+        [
+          -271.1,
+          625
+        ],
+        [
+          -285,
+          625
+        ],
+        [
+          -305,
+          625
+        ],
+        [
+          -326.5,
+          625
+        ]
+      ]
+    },
+    {
+      "id": "courts_to_tennis_gates",
+      "points": [
+        [
+          -271.1,
+          589
+        ],
+        [
+          -233,
+          589
+        ],
+        [
+          -180,
+          589
+        ],
+        [
+          -179,
+          614.4
+        ],
+        [
+          -137.8,
+          614.4
+        ]
+      ]
+    },
+    {
+      "id": "south_walk_and_exit",
+      "points": [
+        [
+          -271.1,
+          631
+        ],
+        [
+          -229.5,
+          631
+        ],
+        [
+          -229.5,
+          660
+        ],
+        [
+          -180,
+          660
+        ],
+        [
+          -137.2,
+          660
+        ],
+        [
+          -137.09,
+          666.8
+        ]
+      ]
+    },
+    {
+      "id": "basketball_1_surface",
+      "points": [
+        [
+          -254.5,
+          560.22
+        ],
+        [
+          -254.5,
+          567.5
+        ],
+        [
+          -254.5,
+          574.78
+        ]
+      ]
+    },
+    {
+      "id": "basketball_2_surface",
+      "points": [
+        [
+          -238.4,
+          560.22
+        ],
+        [
+          -238.4,
+          567.5
+        ],
+        [
+          -238.4,
+          574.78
+        ]
+      ]
+    },
+    {
+      "id": "basketball_3_surface",
+      "points": [
+        [
+          -224,
+          602.44
+        ],
+        [
+          -224,
+          610.0
+        ],
+        [
+          -224,
+          617.56
+        ]
+      ]
+    },
+    {
+      "id": "basketball_4_surface",
+      "points": [
+        [
+          -208.5,
+          602.44
+        ],
+        [
+          -208.5,
+          610.0
+        ],
+        [
+          -208.5,
+          617.56
+        ]
+      ]
+    },
+    {
+      "id": "basketball_5_surface",
+      "points": [
+        [
+          -193,
+          602.44
+        ],
+        [
+          -193,
+          610.0
+        ],
+        [
+          -193,
+          617.56
+        ]
+      ]
+    },
+    {
+      "id": "tennis_1_surface",
+      "points": [
+        [
+          -166.4,
+          588.1443999999999
+        ],
+        [
+          -166.4,
+          594.8
+        ],
+        [
+          -166.4,
+          601.4556
+        ]
+      ]
+    },
+    {
+      "id": "tennis_2_surface",
+      "points": [
+        [
+          -149.2,
+          588.1443999999999
+        ],
+        [
+          -149.2,
+          594.8
+        ],
+        [
+          -149.2,
+          601.4556
+        ]
+      ]
+    },
+    {
+      "id": "tennis_3_surface",
+      "points": [
+        [
+          -166.4,
+          627.3444
+        ],
+        [
+          -166.4,
+          634.0
+        ],
+        [
+          -166.4,
+          640.6556
+        ]
+      ]
+    },
+    {
+      "id": "tennis_4_surface",
+      "points": [
+        [
+          -149.2,
+          627.3444
+        ],
+        [
+          -149.2,
+          634.0
+        ],
+        [
+          -149.2,
+          640.6556
+        ]
+      ]
+    },
+    {
+      "id": "tennis_5_surface",
+      "points": [
+        [
+          -211.0,
+          642.5
+        ],
+        [
+          -204.0,
+          642.5
+        ],
+        [
+          -197.0,
+          642.5
+        ]
+      ]
+    },
+    {
+      "id": "entry_271959068",
+      "points": [
+        [
+          -325.5889643002803,
+          625.0
+        ],
+        [
+          -325.5889643002803,
+          625.6456412170944
+        ]
+      ]
+    },
+    {
+      "id": "entry_1135310336",
+      "points": [
+        [
+          -318,
+          570
+        ],
+        [
+          -331.61803609477084,
+          572.04712020306
+        ]
+      ]
+    },
+    {
+      "id": "entry_271959067",
+      "points": [
+        [
+          -271.1638932695695,
+          581.46300395253
+        ],
+        [
+          -273.9940803313627,
+          581.4657310300879
+        ]
+      ]
+    },
+    {
+      "id": "entry_1135310342",
+      "points": [
+        [
+          -212.12363632571984,
+          550.0
+        ],
+        [
+          -212.12363632571984,
+          549.6359471037202
+        ]
+      ]
+    },
+    {
+      "id": "entry_270334649",
+      "points": [
+        [
+          -112.41238206580753,
+          544.5343651721506
+        ],
+        [
+          -112.08845377782684,
+          548.4215046279189
+        ]
+      ]
+    },
+    {
+      "id": "entry_271958264",
+      "points": [
+        [
+          -145.1262099277116,
+          547.260517493976
+        ],
+        [
+          -145.07923057490402,
+          547.824269727667
+        ]
+      ]
+    },
+    {
+      "id": "entry_270334648",
+      "points": [
+        [
+          -110.77494772663181,
+          667.1866925855846
+        ],
+        [
+          -110.56615291567383,
+          652.9039988954579
+        ]
+      ]
+    },
+    {
+      "id": "entry_298766878",
+      "points": [
+        [
+          -137.8,
+          614.4
+        ],
+        [
+          -112.93982664514452,
+          611.743209821393
+        ]
+      ]
+    },
+    {
+      "id": "entry_686072850",
+      "points": [
+        [
+          -250.06626898242936,
+          664.8999358985387
+        ],
+        [
+          -249.82466375049734,
+          655.1893885993882
+        ]
+      ]
+    },
+    {
+      "id": "entry_271958265",
+      "points": [
+        [
+          -180,
+          589.0
+        ],
+        [
+          -168.5149931406413,
+          575.2693222796797
+        ]
+      ]
+    }
+  ],
+  "trees": [
+    {
+      "asset": "tree_plane_a",
+      "position": [
+        -331.386,
+        0,
+        536.996
+      ],
+      "scale": 0.973,
+      "heading": 3.3721
+    },
+    {
+      "asset": "tree_garden",
+      "position": [
+        -319.277,
+        0,
+        538.191
+      ],
+      "scale": 1.009,
+      "heading": 1.8472
+    },
+    {
+      "asset": "tree_plane_b",
+      "position": [
+        -297.603,
+        0,
+        537.358
+      ],
+      "scale": 0.925,
+      "heading": 4.9916
+    },
+    {
+      "asset": "tree_conifer",
+      "position": [
+        -231.887,
+        0,
+        537.923
+      ],
+      "scale": 0.863,
+      "heading": 0.1995
+    },
+    {
+      "asset": "tree_plane_a",
+      "position": [
+        -97.703,
+        0,
+        550.055
+      ],
+      "scale": 1.037,
+      "heading": 0.5391
+    },
+    {
+      "asset": "tree_garden",
+      "position": [
+        -265.214,
+        0,
+        560.577
+      ],
+      "scale": 1.041,
+      "heading": 4.376
+    },
+    {
+      "asset": "tree_plane_b",
+      "position": [
+        -199.585,
+        0,
+        560.274
+      ],
+      "scale": 0.894,
+      "heading": 1.4475
+    },
+    {
+      "asset": "tree_conifer",
+      "position": [
+        -175.504,
+        0,
+        559.343
+      ],
+      "scale": 0.865,
+      "heading": 3.9832
+    },
+    {
+      "asset": "tree_plane_c",
+      "position": [
+        -163.273,
+        0,
+        559.097
+      ],
+      "scale": 0.81,
+      "heading": 2.0374
+    },
+    {
+      "asset": "tree_plane_a",
+      "position": [
+        -153.144,
+        0,
+        572.151
+      ],
+      "scale": 0.926,
+      "heading": 4.984
+    },
+    {
+      "asset": "tree_garden",
+      "position": [
+        -143.087,
+        0,
+        571.267
+      ],
+      "scale": 0.849,
+      "heading": 6.2828
+    },
+    {
+      "asset": "tree_plane_b",
+      "position": [
+        -265.207,
+        0,
+        580.477
+      ],
+      "scale": 0.804,
+      "heading": 3.7366
+    },
+    {
+      "asset": "tree_conifer",
+      "position": [
+        -131.356,
+        0,
+        580.481
+      ],
+      "scale": 0.896,
+      "heading": 0.323
+    },
+    {
+      "asset": "tree_plane_c",
+      "position": [
+        -122.707,
+        0,
+        582.882
+      ],
+      "scale": 0.858,
+      "heading": 3.4509
+    },
+    {
+      "asset": "tree_plane_a",
+      "position": [
+        -109.955,
+        0,
+        580.816
+      ],
+      "scale": 0.931,
+      "heading": 5.0416
+    },
+    {
+      "asset": "tree_garden",
+      "position": [
+        -97.395,
+        0,
+        580.931
+      ],
+      "scale": 0.972,
+      "heading": 0.9759
+    },
+    {
+      "asset": "tree_plane_b",
+      "position": [
+        -342.486,
+        0,
+        592.618
+      ],
+      "scale": 1.029,
+      "heading": 1.1458
+    },
+    {
+      "asset": "tree_conifer",
+      "position": [
+        -265.028,
+        0,
+        593.469
+      ],
+      "scale": 0.99,
+      "heading": 0.8011
+    },
+    {
+      "asset": "tree_plane_c",
+      "position": [
+        -252.391,
+        0,
+        594.597
+      ],
+      "scale": 1.038,
+      "heading": 0.0692
+    },
+    {
+      "asset": "tree_plane_a",
+      "position": [
+        -241.631,
+        0,
+        593.0
+      ],
+      "scale": 0.815,
+      "heading": 0.3563
+    },
+    {
+      "asset": "tree_garden",
+      "position": [
+        -210.796,
+        0,
+        591.715
+      ],
+      "scale": 0.846,
+      "heading": 3.9358
+    },
+    {
+      "asset": "tree_plane_b",
+      "position": [
+        -186.287,
+        0,
+        592.369
+      ],
+      "scale": 0.967,
+      "heading": 5.7055
+    },
+    {
+      "asset": "tree_conifer",
+      "position": [
+        -97.649,
+        0,
+        592.865
+      ],
+      "scale": 1.003,
+      "heading": 6.0395
+    },
+    {
+      "asset": "tree_plane_c",
+      "position": [
+        -364.137,
+        0,
+        605.147
+      ],
+      "scale": 0.837,
+      "heading": 4.9004
+    },
+    {
+      "asset": "tree_plane_a",
+      "position": [
+        -341.866,
+        0,
+        603.153
+      ],
+      "scale": 0.904,
+      "heading": 6.0693
+    },
+    {
+      "asset": "tree_garden",
+      "position": [
+        -265.523,
+        0,
+        604.699
+      ],
+      "scale": 0.887,
+      "heading": 0.8599
+    },
+    {
+      "asset": "tree_plane_b",
+      "position": [
+        -253.561,
+        0,
+        604.63
+      ],
+      "scale": 0.86,
+      "heading": 2.3595
+    },
+    {
+      "asset": "tree_conifer",
+      "position": [
+        -240.773,
+        0,
+        604.236
+      ],
+      "scale": 0.972,
+      "heading": 3.4999
+    },
+    {
+      "asset": "tree_plane_c",
+      "position": [
+        -132.05,
+        0,
+        603.819
+      ],
+      "scale": 0.835,
+      "heading": 4.0373
+    },
+    {
+      "asset": "tree_plane_a",
+      "position": [
+        -361.534,
+        0,
+        613.653
+      ],
+      "scale": 0.976,
+      "heading": 5.4287
+    },
+    {
+      "asset": "tree_garden",
+      "position": [
+        -352.14,
+        0,
+        613.662
+      ],
+      "scale": 1.021,
+      "heading": 1.3964
+    },
+    {
+      "asset": "tree_plane_b",
+      "position": [
+        -262.983,
+        0,
+        613.632
+      ],
+      "scale": 0.812,
+      "heading": 0.2093
+    },
+    {
+      "asset": "tree_conifer",
+      "position": [
+        -254.09,
+        0,
+        615.475
+      ],
+      "scale": 1.037,
+      "heading": 0.867
+    },
+    {
+      "asset": "tree_plane_c",
+      "position": [
+        -242.785,
+        0,
+        614.239
+      ],
+      "scale": 0.852,
+      "heading": 5.5513
+    },
+    {
+      "asset": "tree_plane_b",
+      "position": [
+        -372.991,
+        0,
+        626.389
+      ],
+      "scale": 0.93,
+      "heading": 5.9376
+    },
+    {
+      "asset": "tree_conifer",
+      "position": [
+        -364.534,
+        0,
+        625.249
+      ],
+      "scale": 0.904,
+      "heading": 1.074
+    },
+    {
+      "asset": "tree_plane_c",
+      "position": [
+        -353.627,
+        0,
+        627.099
+      ],
+      "scale": 0.976,
+      "heading": 5.7031
+    },
+    {
+      "asset": "tree_plane_a",
+      "position": [
+        -263.596,
+        0,
+        625.114
+      ],
+      "scale": 0.871,
+      "heading": 1.1377
+    },
+    {
+      "asset": "tree_garden",
+      "position": [
+        -252.255,
+        0,
+        624.441
+      ],
+      "scale": 0.854,
+      "heading": 2.2474
+    },
+    {
+      "asset": "tree_plane_b",
+      "position": [
+        -240.605,
+        0,
+        625.493
+      ],
+      "scale": 0.848,
+      "heading": 2.4194
+    },
+    {
+      "asset": "tree_conifer",
+      "position": [
+        -197.285,
+        0,
+        627.079
+      ],
+      "scale": 1.024,
+      "heading": 1.8298
+    },
+    {
+      "asset": "tree_plane_c",
+      "position": [
+        -130.708,
+        0,
+        624.985
+      ],
+      "scale": 0.867,
+      "heading": 5.9568
+    },
+    {
+      "asset": "tree_plane_a",
+      "position": [
+        -120.184,
+        0,
+        625.504
+      ],
+      "scale": 0.928,
+      "heading": 0.8878
+    },
+    {
+      "asset": "tree_garden",
+      "position": [
+        -373.236,
+        0,
+        638.584
+      ],
+      "scale": 1.008,
+      "heading": 4.125
+    },
+    {
+      "asset": "tree_plane_b",
+      "position": [
+        -361.346,
+        0,
+        636.719
+      ],
+      "scale": 0.999,
+      "heading": 6.2213
+    },
+    {
+      "asset": "tree_conifer",
+      "position": [
+        -262.924,
+        0,
+        636.404
+      ],
+      "scale": 0.986,
+      "heading": 3.0676
+    },
+    {
+      "asset": "tree_plane_c",
+      "position": [
+        -252.285,
+        0,
+        635.478
+      ],
+      "scale": 1.033,
+      "heading": 2.8929
+    },
+    {
+      "asset": "tree_plane_a",
+      "position": [
+        -243.234,
+        0,
+        635.403
+      ],
+      "scale": 0.987,
+      "heading": 4.0652
+    },
+    {
+      "asset": "tree_garden",
+      "position": [
+        -133.495,
+        0,
+        638.099
+      ],
+      "scale": 0.968,
+      "heading": 4.6095
+    },
+    {
+      "asset": "tree_plane_b",
+      "position": [
+        -372.416,
+        0,
+        646.671
+      ],
+      "scale": 0.849,
+      "heading": 4.2171
+    },
+    {
+      "asset": "tree_conifer",
+      "position": [
+        -176.98,
+        0,
+        647.493
+      ],
+      "scale": 0.891,
+      "heading": 5.4006
+    },
+    {
+      "asset": "tree_plane_c",
+      "position": [
+        -133.011,
+        0,
+        646.391
+      ],
+      "scale": 1.003,
+      "heading": 6.061
+    },
+    {
+      "asset": "tree_plane_a",
+      "position": [
+        -298.399,
+        0,
+        657.216
+      ],
+      "scale": 0.91,
+      "heading": 0.1188
+    },
+    {
+      "asset": "tree_garden",
+      "position": [
+        -264.454,
+        0,
+        657.781
+      ],
+      "scale": 0.915,
+      "heading": 4.2121
+    },
+    {
+      "asset": "tree_plane_b",
+      "position": [
+        -120.545,
+        0,
+        659.551
+      ],
+      "scale": 1.029,
+      "heading": 5.0282
+    },
+    {
+      "asset": "tree_conifer",
+      "position": [
+        -99.067,
+        0,
+        660.019
+      ],
+      "scale": 1.009,
+      "heading": 4.4865
+    }
+  ]
+}

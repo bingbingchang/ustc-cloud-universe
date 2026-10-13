@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "home_source": "scene_modules.story_nodes, including north_axis_layout overrides; route offsets are relative to the resolved home",
+  "routes": [
+    {"id":"raiden","home_ref":"raiden","speed_mps":0.62,"stride_m":0.46,"foot_lift_m":0.040,"story_seconds":32,"time_offset":39,"turn_rate":0.72,"pauses":[2.8,4.2,2.2],"offsets":[[0,0,0],[-1.57,0,2.01],[-6.87,0,4.92],[-1.57,0,2.01],[0,0,0]],"source":"west_south_lane_02 mapped garden walk; return to reading pad"},
+    {"id":"march7","home_ref":"march7","speed_mps":0.66,"stride_m":0.46,"foot_lift_m":0.042,"story_seconds":28,"time_offset":43,"turn_rate":0.68,"pauses":[3.3,5.4,2.4],"offsets":[[0,0,0],[0.4,0,-9],[0.6,0,-18],[0.4,0,-9],[0,0,0]],"source":"north_axis_layout: Tian Shi Road centerline (89.1,88) to (89.7,70), minimum 5m clear width"},
+    {"id":"meituan","home_ref":"meituan","speed_mps":0.48,"stride_m":0.30,"foot_lift_m":0.035,"story_seconds":32,"time_offset":68,"turn_rate":0.58,"pauses":[3.8,4.6,2.6],"offsets":[[0,0,0],[-0.42,0,-1.76],[-2.8,0,2.5],[-0.42,0,-1.76],[0,0,0]],"source":"east_teaching_garden_02 path369507582; insulated box remains at original home"},
+    {"id":"doubao","home_ref":"doubao","speed_mps":0.52,"stride_m":0.34,"foot_lift_m":0.033,"story_seconds":30,"time_offset":47,"turn_rate":0.65,"pauses":[5.1,2.3,4.7],"offsets":[[0,0,0],[0,0,-10],[0,0,0],[0,0,9],[0,0,0]],"source":"north_axis_layout: old north gate approach centerline x1.6, z29..48; minimum 5m clear width"},
+    {"id":"leaf_cat","home_ref":"cat2","speed_mps":0.38,"stride_m":0.25,"foot_lift_m":0.025,"story_seconds":28,"time_offset":37,"turn_rate":0.80,"pauses":[2.2,5.3,3.1],"offsets":[[0,0,0],[-2,0,-1],[-2.7,0,-4],[-2,0,-1],[0,0,0]],"source":"west_south_lane_02 verge access; leaf remains at original home"}
+  ]
+}

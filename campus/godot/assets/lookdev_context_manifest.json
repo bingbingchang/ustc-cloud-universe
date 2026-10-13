@@ -1,0 +1,1025 @@
+{
+  "asset": "lookdev_context.glb",
+  "coordinate_system": "Godot meters, identity root, original absolute site coordinates",
+  "purpose": "Background enclosure only; no additional playable ground, NPCs or entrance routes",
+  "retained_osm_ids": [
+    "268207470",
+    "270335375",
+    "270537512",
+    "306371643"
+  ],
+  "retained_buildings": [
+    {
+      "name": "USTC1958（东区）",
+      "center": [
+        -45.0,
+        247.33
+      ],
+      "size": [
+        19.51,
+        10.5
+      ],
+      "outline": [
+        [
+          -54.756,
+          251.014
+        ],
+        [
+          -54.004,
+          242.083
+        ],
+        [
+          -35.245,
+          243.649
+        ],
+        [
+          -35.987,
+          252.581
+        ],
+        [
+          -54.756,
+          251.014
+        ]
+      ],
+      "height": 4.5,
+      "osm_id": "268207470"
+    },
+    {
+      "name": "背景建筑",
+      "center": [
+        -83.5,
+        -50.89
+      ],
+      "size": [
+        53.35,
+        90.68
+      ],
+      "outline": [
+        [
+          -103.653,
+          -63.608
+        ],
+        [
+          -92.325,
+          -54.01
+        ],
+        [
+          -109.41,
+          -30.397
+        ],
+        [
+          -110.174,
+          -5.555
+        ],
+        [
+          -56.822,
+          -78.724
+        ],
+        [
+          -64.437,
+          -94.267
+        ],
+        [
+          -104.498,
+          -96.23
+        ],
+        [
+          -105.076,
+          -81.499
+        ],
+        [
+          -102.313,
+          -80.936
+        ],
+        [
+          -103.653,
+          -63.608
+        ]
+      ],
+      "height": 9.899999999999999,
+      "osm_id": "270335375"
+    },
+    {
+      "name": "教学行政楼",
+      "center": [
+        171.85,
+        -47.41
+      ],
+      "size": [
+        84.25,
+        23.7
+      ],
+      "outline": [
+        [
+          213.975,
+          -56.413
+        ],
+        [
+          213.565,
+          -44.691
+        ],
+        [
+          206.486,
+          -44.941
+        ],
+        [
+          206.262,
+          -38.513
+        ],
+        [
+          178.569,
+          -39.486
+        ],
+        [
+          160.82,
+          -43.921
+        ],
+        [
+          131.881,
+          -35.565
+        ],
+        [
+          129.72,
+          -43.052
+        ],
+        [
+          131.551,
+          -43.585
+        ],
+        [
+          130.557,
+          -47.026
+        ],
+        [
+          132.512,
+          -47.583
+        ],
+        [
+          132.919,
+          -59.26
+        ],
+        [
+          213.975,
+          -56.413
+        ]
+      ],
+      "height": 9.899999999999999,
+      "osm_id": "270537512"
+    },
+    {
+      "name": "背景建筑",
+      "center": [
+        -90.75,
+        205.12
+      ],
+      "size": [
+        7.19,
+        24.35
+      ],
+      "outline": [
+        [
+          -94.204,
+          192.943
+        ],
+        [
+          -89.931,
+          192.961
+        ],
+        [
+          -87.156,
+          192.978
+        ],
+        [
+          -87.303,
+          217.298
+        ],
+        [
+          -94.35,
+          217.251
+        ],
+        [
+          -94.204,
+          192.943
+        ]
+      ],
+      "height": 3.5,
+      "osm_id": "306371643"
+    }
+  ],
+  "excluded_rebuilt_osm_ids": [
+    "267646978",
+    "270537516",
+    "298741849",
+    "298741850"
+  ],
+  "domain_polygons": [
+    {
+      "id": "core",
+      "polygon": [
+        [
+          -80,
+          118
+        ],
+        [
+          80,
+          118
+        ],
+        [
+          80,
+          238
+        ],
+        [
+          -80,
+          238
+        ]
+      ]
+    },
+    {
+      "id": "north_axis",
+      "polygon": [
+        [
+          -30,
+          -20
+        ],
+        [
+          104,
+          -20
+        ],
+        [
+          104,
+          50
+        ],
+        [
+          178,
+          50
+        ],
+        [
+          178,
+          143
+        ],
+        [
+          90,
+          143
+        ],
+        [
+          88,
+          145
+        ],
+        [
+          80,
+          153
+        ],
+        [
+          80,
+          118
+        ],
+        [
+          -80,
+          118
+        ],
+        [
+          -112,
+          108
+        ]
+      ]
+    },
+    {
+      "id": "east_teaching_garden_02",
+      "polygon": [
+        [
+          80,
+          145
+        ],
+        [
+          104,
+          145
+        ],
+        [
+          113,
+          160
+        ],
+        [
+          128,
+          178
+        ],
+        [
+          128,
+          208
+        ],
+        [
+          109,
+          216
+        ],
+        [
+          80,
+          210
+        ]
+      ]
+    },
+    {
+      "id": "west_south_lane_02",
+      "polygon": [
+        [
+          -80,
+          224
+        ],
+        [
+          -104,
+          225
+        ],
+        [
+          -130,
+          228
+        ],
+        [
+          -137,
+          238
+        ],
+        [
+          -130,
+          252
+        ],
+        [
+          -108,
+          253
+        ],
+        [
+          -80,
+          238
+        ]
+      ]
+    },
+    {
+      "id": "south_plaza_edge_02",
+      "polygon": [
+        [
+          18,
+          238
+        ],
+        [
+          42,
+          238
+        ],
+        [
+          42,
+          269
+        ],
+        [
+          36,
+          273
+        ],
+        [
+          21,
+          271
+        ],
+        [
+          18,
+          253
+        ]
+      ]
+    }
+  ],
+  "selection_audit": [
+    {
+      "osm_id": "267646978",
+      "name": "高科技广场（北区）",
+      "retained": false,
+      "reason": "Already rebuilt by the new north-axis architecture",
+      "intersecting_domains": [
+        "north_axis"
+      ]
+    },
+    {
+      "osm_id": "268207470",
+      "name": "USTC1958（东区）",
+      "retained": true,
+      "reason": "Outside every enabled playable domain",
+      "intersecting_domains": []
+    },
+    {
+      "osm_id": "270335375",
+      "name": "背景建筑",
+      "retained": true,
+      "reason": "Outside every enabled playable domain",
+      "intersecting_domains": []
+    },
+    {
+      "osm_id": "270537512",
+      "name": "教学行政楼",
+      "retained": true,
+      "reason": "Outside every enabled playable domain",
+      "intersecting_domains": []
+    },
+    {
+      "osm_id": "270537516",
+      "name": "背景建筑",
+      "retained": false,
+      "reason": "Already rebuilt by the new north-axis architecture",
+      "intersecting_domains": [
+        "north_axis"
+      ]
+    },
+    {
+      "osm_id": "298741849",
+      "name": "1#",
+      "retained": false,
+      "reason": "Already rebuilt by the new north-axis architecture",
+      "intersecting_domains": [
+        "north_axis"
+      ]
+    },
+    {
+      "osm_id": "298741850",
+      "name": "2#",
+      "retained": false,
+      "reason": "Already rebuilt by the new north-axis architecture",
+      "intersecting_domains": [
+        "north_axis"
+      ]
+    },
+    {
+      "osm_id": "306371643",
+      "name": "背景建筑",
+      "retained": true,
+      "reason": "Outside every enabled playable domain",
+      "intersecting_domains": []
+    },
+    {
+      "osm_id": "334120554",
+      "name": "背景建筑",
+      "retained": false,
+      "reason": "Whole original footprint intersects an enabled playable domain",
+      "intersecting_domains": [
+        "north_axis"
+      ]
+    },
+    {
+      "osm_id": "334120555",
+      "name": "背景建筑",
+      "retained": false,
+      "reason": "Whole original footprint intersects an enabled playable domain",
+      "intersecting_domains": [
+        "north_axis"
+      ]
+    }
+  ],
+  "selection_geometry_rule": "Select full buildings by polygon disjointness; copy original faces whose vertices fit that footprint plus .20m existing cornice allowance. No invented/relocated geometry.",
+  "bounds_godot_m": {
+    "min": [
+      -110.298943,
+      0.0,
+      -96.354851
+    ],
+    "max": [
+      214.09993,
+      10.145,
+      252.705566
+    ]
+  },
+  "triangles": 11916,
+  "vertices": 23804,
+  "mesh_nodes": 18,
+  "materials": [
+    {
+      "doubleSided": true,
+      "name": "Frame",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.5799999833106995,
+          0.6000000238418579,
+          0.550000011920929,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.8399999737739563
+      }
+    },
+    {
+      "doubleSided": true,
+      "name": "Glass",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.10000000149011612,
+          0.14000000059604645,
+          0.12999999523162842,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.23999999463558197
+      }
+    },
+    {
+      "doubleSided": true,
+      "name": "Plaster",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.8100000023841858,
+          0.7900000214576721,
+          0.6600000262260437,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.8399999737739563
+      }
+    },
+    {
+      "doubleSided": true,
+      "name": "Roof",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.25999999046325684,
+          0.28999999165534973,
+          0.27000001072883606,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.8399999737739563
+      }
+    },
+    {
+      "doubleSided": true,
+      "name": "Stone",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.6200000047683716,
+          0.5899999737739563,
+          0.5199999809265137,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.8399999737739563
+      }
+    }
+  ],
+  "mesh_records": [
+    {
+      "node": "Context_268207470_Background_Frame",
+      "source": "background.glb",
+      "source_node": "Background_Frame",
+      "role": "Context_268207470",
+      "material": "Frame",
+      "vertices": 672,
+      "triangles": 336,
+      "bounds_godot_m": {
+        "min": [
+          -54.618912,
+          1.08,
+          242.18869
+        ],
+        "max": [
+          -35.379585,
+          2.92,
+          252.47522
+        ]
+      },
+      "preserved_attributes": [
+        "POSITION",
+        "NORMAL"
+      ]
+    },
+    {
+      "node": "Context_270335375_Background_Frame",
+      "source": "background.glb",
+      "source_node": "Background_Frame",
+      "role": "Context_270335375",
+      "material": "Frame",
+      "vertices": 10080,
+      "triangles": 5040,
+      "bounds_godot_m": {
+        "min": [
+          -110.210396,
+          1.08,
+          -96.231697
+        ],
+        "max": [
+          -57.499126,
+          9.52,
+          -6.8978
+        ]
+      },
+      "preserved_attributes": [
+        "POSITION",
+        "NORMAL"
+      ]
+    },
+    {
+      "node": "Context_270537512_Background_Frame",
+      "source": "background.glb",
+      "source_node": "Background_Frame",
+      "role": "Context_270537512",
+      "material": "Frame",
+      "vertices": 8064,
+      "triangles": 4032,
+      "bounds_godot_m": {
+        "min": [
+          130.210236,
+          1.08,
+          -59.249096
+        ],
+        "max": [
+          213.957657,
+          9.52,
+          -36.037231
+        ]
+      },
+      "preserved_attributes": [
+        "POSITION",
+        "NORMAL"
+      ]
+    },
+    {
+      "node": "Context_306371643_Background_Frame",
+      "source": "background.glb",
+      "source_node": "Background_Frame",
+      "role": "Context_306371643",
+      "material": "Frame",
+      "vertices": 816,
+      "triangles": 408,
+      "bounds_godot_m": {
+        "min": [
+          -94.390572,
+          1.08,
+          192.901001
+        ],
+        "max": [
+          -87.115501,
+          2.92,
+          217.33725
+        ]
+      },
+      "preserved_attributes": [
+        "POSITION",
+        "NORMAL"
+      ]
+    },
+    {
+      "node": "Context_268207470_Background_Glass",
+      "source": "background.glb",
+      "source_node": "Background_Glass",
+      "role": "Context_268207470",
+      "material": "Glass",
+      "vertices": 112,
+      "triangles": 56,
+      "bounds_godot_m": {
+        "min": [
+          -54.674931,
+          1.08,
+          242.133194
+        ],
+        "max": [
+          -35.32439,
+          2.92,
+          252.530716
+        ]
+      },
+      "preserved_attributes": [
+        "POSITION",
+        "NORMAL"
+      ]
+    },
+    {
+      "node": "Context_270335375_Background_Glass",
+      "source": "background.glb",
+      "source_node": "Background_Glass",
+      "role": "Context_270335375",
+      "material": "Glass",
+      "vertices": 1680,
+      "triangles": 840,
+      "bounds_godot_m": {
+        "min": [
+          -110.187157,
+          1.08,
+          -96.221939
+        ],
+        "max": [
+          -57.217514,
+          9.52,
+          -6.337656
+        ]
+      },
+      "preserved_attributes": [
+        "POSITION",
+        "NORMAL"
+      ]
+    },
+    {
+      "node": "Context_270537512_Background_Glass",
+      "source": "background.glb",
+      "source_node": "Background_Glass",
+      "role": "Context_270537512",
+      "material": "Glass",
+      "vertices": 1344,
+      "triangles": 672,
+      "bounds_godot_m": {
+        "min": [
+          130.01181,
+          1.08,
+          -59.269058
+        ],
+        "max": [
+          213.977509,
+          9.52,
+          -35.83873
+        ]
+      },
+      "preserved_attributes": [
+        "POSITION",
+        "NORMAL"
+      ]
+    },
+    {
+      "node": "Context_306371643_Background_Glass",
+      "source": "background.glb",
+      "source_node": "Background_Glass",
+      "role": "Context_306371643",
+      "material": "Glass",
+      "vertices": 136,
+      "triangles": 68,
+      "bounds_godot_m": {
+        "min": [
+          -94.389015,
+          1.08,
+          192.903885
+        ],
+        "max": [
+          -87.117027,
+          2.92,
+          217.336182
+        ]
+      },
+      "preserved_attributes": [
+        "POSITION",
+        "NORMAL"
+      ]
+    },
+    {
+      "node": "Context_268207470_Background_Plaster",
+      "source": "background.glb",
+      "source_node": "Background_Plaster",
+      "role": "Context_268207470",
+      "material": "Plaster",
+      "vertices": 20,
+      "triangles": 10,
+      "bounds_godot_m": {
+        "min": [
+          -54.756001,
+          0.0,
+          242.082993
+        ],
+        "max": [
+          -35.244999,
+          4.5,
+          252.580994
+        ]
+      },
+      "preserved_attributes": [
+        "POSITION",
+        "NORMAL"
+      ]
+    },
+    {
+      "node": "Context_306371643_Background_Plaster",
+      "source": "background.glb",
+      "source_node": "Background_Plaster",
+      "role": "Context_306371643",
+      "material": "Plaster",
+      "vertices": 25,
+      "triangles": 13,
+      "bounds_godot_m": {
+        "min": [
+          -94.349998,
+          0.0,
+          192.942993
+        ],
+        "max": [
+          -87.155998,
+          3.5,
+          217.298004
+        ]
+      },
+      "preserved_attributes": [
+        "POSITION",
+        "NORMAL"
+      ]
+    },
+    {
+      "node": "Context_268207470_Background_Roof",
+      "source": "background.glb",
+      "source_node": "Background_Roof",
+      "role": "Context_268207470",
+      "material": "Roof",
+      "vertices": 4,
+      "triangles": 2,
+      "bounds_godot_m": {
+        "min": [
+          -54.756001,
+          4.55,
+          242.082993
+        ],
+        "max": [
+          -35.244999,
+          4.55,
+          252.580994
+        ]
+      },
+      "preserved_attributes": [
+        "POSITION",
+        "NORMAL"
+      ]
+    },
+    {
+      "node": "Context_270335375_Background_Roof",
+      "source": "background.glb",
+      "source_node": "Background_Roof",
+      "role": "Context_270335375",
+      "material": "Roof",
+      "vertices": 9,
+      "triangles": 7,
+      "bounds_godot_m": {
+        "min": [
+          -110.174004,
+          9.95,
+          -96.230003
+        ],
+        "max": [
+          -56.821999,
+          9.95,
+          -5.555
+        ]
+      },
+      "preserved_attributes": [
+        "POSITION",
+        "NORMAL"
+      ]
+    },
+    {
+      "node": "Context_270537512_Background_Roof",
+      "source": "background.glb",
+      "source_node": "Background_Roof",
+      "role": "Context_270537512",
+      "material": "Roof",
+      "vertices": 12,
+      "triangles": 10,
+      "bounds_godot_m": {
+        "min": [
+          129.720001,
+          9.95,
+          -59.259998
+        ],
+        "max": [
+          213.975006,
+          9.95,
+          -35.564999
+        ]
+      },
+      "preserved_attributes": [
+        "POSITION",
+        "NORMAL"
+      ]
+    },
+    {
+      "node": "Context_306371643_Background_Roof",
+      "source": "background.glb",
+      "source_node": "Background_Roof",
+      "role": "Context_306371643",
+      "material": "Roof",
+      "vertices": 5,
+      "triangles": 3,
+      "bounds_godot_m": {
+        "min": [
+          -94.349998,
+          3.55,
+          192.942993
+        ],
+        "max": [
+          -87.155998,
+          3.55,
+          217.298004
+        ]
+      },
+      "preserved_attributes": [
+        "POSITION",
+        "NORMAL"
+      ]
+    },
+    {
+      "node": "Context_268207470_Background_Stone",
+      "source": "background.glb",
+      "source_node": "Background_Stone",
+      "role": "Context_268207470",
+      "material": "Stone",
+      "vertices": 96,
+      "triangles": 48,
+      "bounds_godot_m": {
+        "min": [
+          -54.880558,
+          4.495,
+          241.958435
+        ],
+        "max": [
+          -35.12043,
+          4.745,
+          252.705566
+        ]
+      },
+      "preserved_attributes": [
+        "POSITION",
+        "NORMAL"
+      ]
+    },
+    {
+      "node": "Context_270335375_Background_Stone",
+      "source": "background.glb",
+      "source_node": "Background_Stone",
+      "role": "Context_270335375",
+      "material": "Stone",
+      "vertices": 261,
+      "triangles": 133,
+      "bounds_godot_m": {
+        "min": [
+          -110.298943,
+          0.0,
+          -96.354851
+        ],
+        "max": [
+          -56.709747,
+          10.145,
+          -5.481354
+        ]
+      },
+      "preserved_attributes": [
+        "POSITION",
+        "NORMAL"
+      ]
+    },
+    {
+      "node": "Context_270537512_Background_Stone",
+      "source": "background.glb",
+      "source_node": "Background_Stone",
+      "role": "Context_270537512",
+      "material": "Stone",
+      "vertices": 348,
+      "triangles": 178,
+      "bounds_godot_m": {
+        "min": [
+          129.599899,
+          0.0,
+          -59.384922
+        ],
+        "max": [
+          214.09993,
+          10.145,
+          -35.444904
+        ]
+      },
+      "preserved_attributes": [
+        "POSITION",
+        "NORMAL"
+      ]
+    },
+    {
+      "node": "Context_306371643_Background_Stone",
+      "source": "background.glb",
+      "source_node": "Background_Stone",
+      "role": "Context_306371643",
+      "material": "Stone",
+      "vertices": 120,
+      "triangles": 60,
+      "bounds_godot_m": {
+        "min": [
+          -94.474998,
+          3.495,
+          192.818008
+        ],
+        "max": [
+          -87.031006,
+          3.745,
+          217.423004
+        ]
+      },
+      "preserved_attributes": [
+        "POSITION",
+        "NORMAL"
+      ]
+    }
+  ],
+  "glb_bytes": 658728,
+  "output_sha256": "d7878094331f4eedb26ba8ca5a2530d027e4ab96d0c0401b3f6f1f306cf935e0",
+  "all_retained_footprints_disjoint": true,
+  "source_sha256": {
+    "godot\\assets\\background.glb": "1f1162f50ae3e73bccca4dc542c98e64d8aaec8639df465f6b500b46f5f128ac"
+  },
+  "attribution": "Original OpenStreetMap footprint data, ODbL; existing project background simplification. Building heights/facades remain approximate.",
+  "collision_policy": "No colliders generated in this GLB. Existing playable-domain visible boundaries govern access.",
+  "validation": {
+    "passed": true,
+    "verified_vertices": 23804,
+    "checks": [
+      "Written GLB is structurally readable",
+      "Every written position/normal tuple occurs unchanged in its exact source node",
+      "Node transform and complete material dictionary equal source",
+      "All triangle indices are valid"
+    ],
+    "scope": "CPU asset integrity only; Godot render and player traversal are validated by the integrating task"
+  }
+}

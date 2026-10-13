@@ -1,0 +1,15 @@
+{
+  "source_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer",
+  "retrieved_date": "2026-10-12",
+  "capture_date": "unknown",
+  "zoom": 19,
+  "tile_origin": [
+    432916,
+    213184
+  ],
+  "size": [
+    1536,
+    1280
+  ],
+  "attribution": "Esri, Vantor, Earthstar Geographics, GIS User Community"
+}

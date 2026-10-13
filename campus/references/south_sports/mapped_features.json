@@ -1,0 +1,645 @@
+{
+  "bounds": [
+    -380,
+    535,
+    -70,
+    675
+  ],
+  "polygon": [
+    [
+      -350.235,
+      535.0
+    ],
+    [
+      -369.876,
+      600.518
+    ],
+    [
+      -380.0,
+      642.054
+    ],
+    [
+      -380.0,
+      675.0
+    ],
+    [
+      -70.0,
+      675.0
+    ],
+    [
+      -70.0,
+      535.0
+    ]
+  ],
+  "buildings": [
+    {
+      "osm_way": "271959068",
+      "name": "研究生公寓364／365号楼",
+      "outline": [
+        [
+          -276.323,
+          613.932
+        ],
+        [
+          -276.109,
+          599.006
+        ],
+        [
+          -329.471,
+          598.247
+        ],
+        [
+          -329.447,
+          596.532
+        ],
+        [
+          -337.295,
+          596.426
+        ],
+        [
+          -337.531,
+          612.933
+        ],
+        [
+          -340.078,
+          612.899
+        ],
+        [
+          -340.183,
+          619.771
+        ],
+        [
+          -343.601,
+          619.728
+        ],
+        [
+          -343.695,
+          626.077
+        ],
+        [
+          -347.112,
+          626.023
+        ],
+        [
+          -347.207,
+          632.494
+        ],
+        [
+          -340.524,
+          632.591
+        ],
+        [
+          -340.632,
+          640.143
+        ],
+        [
+          -360.54,
+          639.862
+        ],
+        [
+          -360.731,
+          652.838
+        ],
+        [
+          -276.946,
+          654.038
+        ],
+        [
+          -276.727,
+          638.778
+        ],
+        [
+          -330.267,
+          638.006
+        ],
+        [
+          -329.91,
+          613.156
+        ]
+      ],
+      "levels": 6,
+      "height": 19.8,
+      "source": "https://www.openstreetmap.org/way/271959068",
+      "confidence": "OSM footprint cross-checked against GIS image and campus plan; storeys and unseen facade details estimated."
+    },
+    {
+      "osm_way": "1135310336",
+      "name": "人文与社会科学学院",
+      "outline": [
+        [
+          -279.97,
+          541.004
+        ],
+        [
+          -279.558,
+          553.144
+        ],
+        [
+          -279.517,
+          554.496
+        ],
+        [
+          -279.095,
+          566.871
+        ],
+        [
+          -298.407,
+          567.125
+        ],
+        [
+          -311.24,
+          567.283
+        ],
+        [
+          -325.25,
+          567.464
+        ],
+        [
+          -338.103,
+          567.631
+        ],
+        [
+          -338.206,
+          555.425
+        ],
+        [
+          -338.222,
+          553.729
+        ],
+        [
+          -338.332,
+          541.611
+        ],
+        [
+          -326.364,
+          541.49
+        ],
+        [
+          -318.369,
+          541.406
+        ],
+        [
+          -306.401,
+          541.284
+        ],
+        [
+          -295.75,
+          541.164
+        ]
+      ],
+      "levels": 4,
+      "height": 14.0,
+      "source": "https://www.openstreetmap.org/way/1135310336",
+      "confidence": "OSM footprint cross-checked against GIS image and campus plan; storeys and unseen facade details estimated."
+    },
+    {
+      "osm_way": "271959067",
+      "name": "东区羽毛球馆",
+      "outline": [
+        [
+          -278.026,
+          591.415
+        ],
+        [
+          -278.952,
+          571.944
+        ],
+        [
+          -337.713,
+          573.325
+        ],
+        [
+          -337.753,
+          592.79
+        ]
+      ],
+      "levels": 1,
+      "height": 8.0,
+      "source": "https://www.openstreetmap.org/way/271959067",
+      "confidence": "OSM footprint cross-checked against GIS image and campus plan; storeys and unseen facade details estimated."
+    },
+    {
+      "osm_way": "1135310342",
+      "name": "可再生资源与洁净能源实验室",
+      "outline": [
+        [
+          -220.038,
+          553.905
+        ],
+        [
+          -220.939,
+          584.534
+        ],
+        [
+          -185.396,
+          585.58
+        ],
+        [
+          -184.534,
+          555.985
+        ],
+        [
+          -196.173,
+          555.64
+        ],
+        [
+          -196.945,
+          582.11
+        ],
+        [
+          -205.275,
+          581.867
+        ],
+        [
+          -204.474,
+          554.363
+        ]
+      ],
+      "levels": 3,
+      "height": 11.2,
+      "source": "https://www.openstreetmap.org/way/1135310342",
+      "confidence": "OSM footprint cross-checked against GIS image and campus plan; storeys and unseen facade details estimated."
+    },
+    {
+      "osm_way": "270334649",
+      "name": "国际学院／国际合作与交流中心",
+      "outline": [
+        [
+          -129.165,
+          552.946
+        ],
+        [
+          -94.999,
+          552.897
+        ],
+        [
+          -94.969,
+          577.776
+        ],
+        [
+          -132.205,
+          577.819
+        ],
+        [
+          -132.215,
+          569.7
+        ],
+        [
+          -129.144,
+          569.695
+        ]
+      ],
+      "levels": 4,
+      "height": 14.0,
+      "source": "https://www.openstreetmap.org/way/270334649",
+      "confidence": "OSM footprint cross-checked against GIS image and campus plan; storeys and unseen facade details estimated."
+    },
+    {
+      "osm_way": "271958264",
+      "name": "科大洗浴中心",
+      "outline": [
+        [
+          -155.925,
+          562.211
+        ],
+        [
+          -134.555,
+          562.445
+        ],
+        [
+          -134.443,
+          552.441
+        ],
+        [
+          -155.814,
+          552.207
+        ]
+      ],
+      "levels": 2,
+      "height": 7.0,
+      "source": "https://www.openstreetmap.org/way/271958264",
+      "confidence": "OSM footprint cross-checked against GIS image and campus plan; storeys and unseen facade details estimated."
+    },
+    {
+      "osm_way": "270334648",
+      "name": "学生服务中心",
+      "outline": [
+        [
+          -93.416,
+          613.472
+        ],
+        [
+          -93.436,
+          648.416
+        ],
+        [
+          -127.69,
+          648.392
+        ],
+        [
+          -127.687,
+          634.12
+        ],
+        [
+          -113.682,
+          634.128
+        ],
+        [
+          -113.675,
+          613.455
+        ]
+      ],
+      "levels": 3,
+      "height": 10.8,
+      "source": "https://www.openstreetmap.org/way/270334648",
+      "confidence": "OSM footprint cross-checked against GIS image and campus plan; storeys and unseen facade details estimated."
+    },
+    {
+      "osm_way": "298766878",
+      "name": "水电管理中心",
+      "outline": [
+        [
+          -127.528,
+          606.969
+        ],
+        [
+          -98.183,
+          607.519
+        ],
+        [
+          -97.959,
+          595.371
+        ],
+        [
+          -128.96,
+          594.786
+        ],
+        [
+          -129.078,
+          601.066
+        ],
+        [
+          -127.413,
+          601.101
+        ]
+      ],
+      "levels": 2,
+      "height": 7.0,
+      "source": "https://www.openstreetmap.org/way/298766878",
+      "confidence": "OSM footprint cross-checked against GIS image and campus plan; storeys and unseen facade details estimated."
+    },
+    {
+      "osm_way": "686072850",
+      "name": "化学与材料科学学院办公楼",
+      "outline": [
+        [
+          -264.361,
+          640.827
+        ],
+        [
+          -234.568,
+          640.831
+        ],
+        [
+          -234.942,
+          650.794
+        ],
+        [
+          -264.644,
+          650.585
+        ]
+      ],
+      "levels": 2,
+      "height": 7.0,
+      "source": "https://www.openstreetmap.org/way/686072850",
+      "confidence": "OSM footprint cross-checked against GIS image and campus plan; storeys and unseen facade details estimated."
+    },
+    {
+      "osm_way": "271958265",
+      "name": "校园服务小店",
+      "outline": [
+        [
+          -162.711,
+          561.716
+        ],
+        [
+          -162.793,
+          570.82
+        ],
+        [
+          -174.157,
+          570.719
+        ],
+        [
+          -174.084,
+          561.615
+        ]
+      ],
+      "levels": 1,
+      "height": 4.0,
+      "source": "https://www.openstreetmap.org/way/271958265",
+      "confidence": "OSM footprint cross-checked against GIS image and campus plan; storeys and unseen facade details estimated."
+    }
+  ],
+  "paths": [
+    {
+      "osm_way": "265033437",
+      "points": [
+        [
+          -271.084,
+          664.377
+        ],
+        [
+          -271.189,
+          555.407
+        ],
+        [
+          -271.195,
+          550.032
+        ]
+      ],
+      "highway": "residential",
+      "source": "https://www.openstreetmap.org/way/265033437"
+    },
+    {
+      "osm_way": "265032060",
+      "points": [
+        [
+          -385.291,
+          663.081
+        ],
+        [
+          -335.535,
+          663.649
+        ],
+        [
+          -316.071,
+          664.042
+        ],
+        [
+          -271.084,
+          664.377
+        ],
+        [
+          -175.106,
+          666.765
+        ],
+        [
+          -137.09,
+          666.802
+        ],
+        [
+          -83.939,
+          667.579
+        ],
+        [
+          1.67,
+          667.443
+        ],
+        [
+          88.214,
+          669.384
+        ],
+        [
+          98.668,
+          669.617
+        ],
+        [
+          112.424,
+          669.919
+        ],
+        [
+          128.043,
+          670.27
+        ]
+      ],
+      "highway": "residential",
+      "source": "https://www.openstreetmap.org/way/265032060"
+    },
+    {
+      "osm_way": "298766877",
+      "points": [
+        [
+          -138.357,
+          605.659
+        ],
+        [
+          -137.09,
+          666.802
+        ]
+      ],
+      "highway": "service",
+      "source": "https://www.openstreetmap.org/way/298766877"
+    },
+    {
+      "osm_way": "265033438",
+      "points": [
+        [
+          -335.535,
+          663.649
+        ],
+        [
+          -336.839,
+          740.2
+        ],
+        [
+          -336.829,
+          751.362
+        ]
+      ],
+      "highway": "service",
+      "source": "https://www.openstreetmap.org/way/265033438"
+    }
+  ],
+  "court_areas": [
+    {
+      "id": "1135310343",
+      "sport": "basketball",
+      "polygon": [
+        [
+          -262.683,
+          552.028
+        ],
+        [
+          -229.908,
+          554.361
+        ],
+        [
+          -232.122,
+          591.661
+        ],
+        [
+          -185.185,
+          593.803
+        ],
+        [
+          -185.054,
+          626.974
+        ],
+        [
+          -240.621,
+          626.564
+        ],
+        [
+          -239.117,
+          583.669
+        ],
+        [
+          -266.084,
+          580.977
+        ]
+      ]
+    },
+    {
+      "id": "1135310344",
+      "sport": "tennis",
+      "polygon": [
+        [
+          -177.198,
+          576.291
+        ],
+        [
+          -142.003,
+          576.541
+        ],
+        [
+          -138.763,
+          654.546
+        ],
+        [
+          -224.727,
+          653.34
+        ],
+        [
+          -225.421,
+          630.764
+        ],
+        [
+          -175.652,
+          631.533
+        ]
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://gis.ustc.edu.cn/",
+      "local": "references/south_sports/gis_east_tiles.jpg",
+      "js": "references/south_sports/gis_xbgis_readable.js",
+      "use": "GIS JS reveals mapdata/zoom3/x_y.jpg tile source; cross-check names, court groups and road adjacency."
+    },
+    {
+      "local": "references/maps/east_campus.png",
+      "use": "Official plan: 364/365 west of south courts; humanities and badminton hall west of court spine."
+    },
+    {
+      "url": "https://news.ustc.edu.cn/info/1055/95289.htm",
+      "use": "2026 official east tennis photographs: blue/green hard courts, green wire fence and nets."
+    },
+    {
+      "url": "https://gradunion.ustc.edu.cn/2012/0317/c5709a61204/page.psp",
+      "use": "364 south and 365 north have balconies, with west connecting block."
+    }
+  ],
+  "attribution": "© OpenStreetMap contributors, ODbL 1.0. GIS/official imagery used as visual references."
+}

@@ -1,0 +1,2216 @@
+{
+  "schema_version": 2,
+  "modules": [
+    {
+      "id": "yuquan_north_connector_01",
+      "template": "tree_lined_walkway",
+      "enabled": false,
+      "bounds": [
+        -6,
+        106,
+        6,
+        118
+      ],
+      "path_width": 8,
+      "surface_top": 0.08,
+      "population_allowed": false,
+      "source": "OSM way 264872432; references/maps/east_campus.png; references/satellite/esri_reference.jpg",
+      "confidence": "road alignment confirmed; shoreline hand tracing is approximate",
+      "note": "12m extension of existing land road between ponds. No bridge, new lake area or invented building. No added tree row until the lake zone is researched.",
+      "ports": [
+        {
+          "side": "north",
+          "span": [
+            -6,
+            6
+          ]
+        }
+      ]
+    },
+    {
+      "id": "east_teaching_garden_02",
+      "template": "wave2_landscape",
+      "enabled": true,
+      "bounds": [
+        80,
+        145,
+        128,
+        216
+      ],
+      "polygon": [
+        [
+          80,
+          145
+        ],
+        [
+          104,
+          145
+        ],
+        [
+          113,
+          160
+        ],
+        [
+          128,
+          178
+        ],
+        [
+          128,
+          208
+        ],
+        [
+          109,
+          216
+        ],
+        [
+          80,
+          210
+        ]
+      ],
+      "ports": [
+        {
+          "side": "east",
+          "span": [
+            145,
+            210
+          ]
+        }
+      ],
+      "surface_top": 0.08,
+      "population_allowed": true,
+      "paths": [
+        {
+          "points": [
+            [
+              79.85,
+              157.8
+            ],
+            [
+              85.5,
+              154.2
+            ],
+            [
+              90.72,
+              150.26
+            ],
+            [
+              103,
+              150.34
+            ]
+          ],
+          "width": 6,
+          "source": "264872431; short 7m northward transition preserves existing Hero art alignment"
+        },
+        {
+          "points": [
+            [
+              90.72,
+              150.26
+            ],
+            [
+              94.58,
+              158.24
+            ],
+            [
+              100.7,
+              163.31
+            ],
+            [
+              105.84,
+              167.25
+            ],
+            [
+              114.05,
+              172.25
+            ],
+            [
+              124,
+              179.03
+            ]
+          ],
+          "width": 3.2,
+          "source": "369507581"
+        },
+        {
+          "points": [
+            [
+              94.58,
+              158.24
+            ],
+            [
+              91.08,
+              165.93
+            ],
+            [
+              88.87,
+              178.74
+            ],
+            [
+              88.63,
+              186.64
+            ],
+            [
+              88.92,
+              196.05
+            ],
+            [
+              89.81,
+              208.31
+            ]
+          ],
+          "width": 3,
+          "source": "369507582"
+        },
+        {
+          "points": [
+            [
+              79.85,
+              186.7
+            ],
+            [
+              84.08,
+              186.75
+            ],
+            [
+              88.63,
+              186.64
+            ]
+          ],
+          "width": 3,
+          "source": "369507583"
+        },
+        {
+          "points": [
+            [
+              88.92,
+              196.05
+            ],
+            [
+              97.11,
+              197.35
+            ],
+            [
+              108.99,
+              200.95
+            ],
+            [
+              114.62,
+              205
+            ],
+            [
+              116.14,
+              206.09
+            ],
+            [
+              124,
+              211.25
+            ]
+          ],
+          "width": 3.2,
+          "source": "369507584"
+        },
+        {
+          "points": [
+            [
+              114.62,
+              205
+            ],
+            [
+              115.79,
+              199.37
+            ],
+            [
+              118.98,
+              196.05
+            ],
+            [
+              124,
+              193
+            ]
+          ],
+          "width": 2.5,
+          "source": "369507586"
+        }
+      ],
+      "story_nodes": [
+        {
+          "id": "march7",
+          "position": [
+            118,
+            0.08,
+            200
+          ],
+          "ground_y": 0.08,
+          "clear_radius": 2.8,
+          "pad_size": [
+            4.8,
+            4.8
+          ]
+        },
+        {
+          "id": "meituan",
+          "position": [
+            95,
+            0.08,
+            160
+          ],
+          "ground_y": 0.08,
+          "clear_radius": 2.8,
+          "pad_size": [
+            4.8,
+            4.8
+          ]
+        }
+      ],
+      "trees": [
+        [
+          85,
+          149,
+          1,
+          1,
+          0.9
+        ],
+        [
+          102,
+          155,
+          1,
+          2,
+          0.88
+        ],
+        [
+          86,
+          169,
+          2,
+          1,
+          0.88
+        ],
+        [
+          102,
+          178,
+          1,
+          0,
+          1
+        ],
+        [
+          119,
+          184,
+          2,
+          2,
+          0.9
+        ],
+        [
+          98,
+          190,
+          1,
+          2,
+          0.88
+        ],
+        [
+          83,
+          201,
+          2,
+          0,
+          0.83
+        ],
+        [
+          106,
+          210,
+          1,
+          0,
+          0.86
+        ],
+        [
+          125,
+          203,
+          1,
+          1,
+          0.83
+        ]
+      ],
+      "benches": [
+        [
+          109.5,
+          194,
+          1.3
+        ],
+        [
+          91,
+          202.5,
+          1.1
+        ]
+      ],
+      "lamps": [
+        [
+          83,
+          159,
+          0
+        ],
+        [
+          93.5,
+          180,
+          0
+        ],
+        [
+          111,
+          208,
+          0
+        ]
+      ],
+      "signs": [
+        [
+          82.8,
+          162,
+          "教一楼东侧花园",
+          "EAST GARDEN"
+        ],
+        [
+          113,
+          194,
+          "校园漫步",
+          "CAMPUS WALK"
+        ]
+      ],
+      "source": "OSM ways 264872431,369507581/582/583/584/586; official east_campus.png and Esri reference: lawn garden east of First Teaching Hall",
+      "confidence": "Road centerlines and absence of buildings/water confirmed against local OSM snapshot, official map and satellite reference. Widths and landscaping are artistic simplification, not a surveyed planting inventory.",
+      "port_aprons": [
+        {
+          "points": [
+            [
+              75.3,
+              158
+            ],
+            [
+              79.85,
+              157.8
+            ]
+          ],
+          "width": 6,
+          "source": "4.55m interface patch inside old plinth; joins retained Hero cross-paving without changing GLB"
+        }
+      ]
+    },
+    {
+      "id": "west_south_lane_02",
+      "template": "wave2_landscape",
+      "enabled": true,
+      "bounds": [
+        -137,
+        224,
+        -80,
+        253
+      ],
+      "polygon": [
+        [
+          -80,
+          224
+        ],
+        [
+          -104,
+          225
+        ],
+        [
+          -130,
+          228
+        ],
+        [
+          -137,
+          238
+        ],
+        [
+          -130,
+          252
+        ],
+        [
+          -108,
+          253
+        ],
+        [
+          -80,
+          238
+        ]
+      ],
+      "ports": [
+        {
+          "side": "west",
+          "span": [
+            224,
+            238
+          ]
+        }
+      ],
+      "surface_top": 0.08,
+      "population_allowed": true,
+      "paths": [
+        {
+          "points": [
+            [
+              -79.85,
+              231.95
+            ],
+            [
+              -116.28,
+              234.1
+            ],
+            [
+              -131,
+              235.77
+            ]
+          ],
+          "width": 6,
+          "source": "265032056"
+        },
+        {
+          "points": [
+            [
+              -131,
+              235.77
+            ],
+            [
+              -133,
+              242
+            ],
+            [
+              -129.87,
+              247.92
+            ],
+            [
+              -124.57,
+              245.01
+            ],
+            [
+              -117.92,
+              244.49
+            ],
+            [
+              -111.65,
+              245.72
+            ],
+            [
+              -106.12,
+              249.95
+            ]
+          ],
+          "width": 2.8,
+          "source": "Garden approach links way265032056 to existing306371636; short approach inferred from satellite"
+        },
+        {
+          "points": [
+            [
+              -109,
+              233.68
+            ],
+            [
+              -108,
+              238
+            ],
+            [
+              -106,
+              239
+            ]
+          ],
+          "width": 2.2,
+          "source": "Small verge access; furnishing-level artistic interpretation"
+        }
+      ],
+      "story_nodes": [
+        {
+          "id": "raiden",
+          "position": [
+            -123,
+            0.08,
+            243
+          ],
+          "ground_y": 0.08,
+          "clear_radius": 2.8,
+          "pad_size": [
+            4.8,
+            4.8
+          ]
+        },
+        {
+          "id": "cat2",
+          "position": [
+            -106,
+            0.08,
+            239
+          ],
+          "ground_y": 0.08,
+          "clear_radius": 2.0,
+          "pad_size": [
+            2.8,
+            2.8
+          ]
+        }
+      ],
+      "trees": [
+        [
+          -86,
+          227,
+          2,
+          2,
+          0.86
+        ],
+        [
+          -101,
+          229,
+          1,
+          0,
+          0.9
+        ],
+        [
+          -121,
+          229,
+          1,
+          1,
+          0.9
+        ],
+        [
+          -131,
+          241,
+          2,
+          0,
+          0.85
+        ],
+        [
+          -124,
+          250,
+          1,
+          2,
+          0.78
+        ],
+        [
+          -113,
+          250,
+          2,
+          1,
+          0.82
+        ]
+      ],
+      "benches": [
+        [
+          -120,
+          248,
+          3.14159
+        ]
+      ],
+      "lamps": [
+        [
+          -84,
+          235.8,
+          0
+        ],
+        [
+          -116,
+          237.8,
+          0
+        ]
+      ],
+      "signs": [
+        [
+          -88,
+          237.5,
+          "郭沫若路 · 教一楼",
+          "CAMPUS LANE"
+        ]
+      ],
+      "source": "OSM265032056 and306371636; official map and Esri: road southwest of teaching hall, south of transport-service buildings",
+      "confidence": "Road centerlines and absence of buildings/water confirmed against local OSM snapshot, official map and satellite reference. Widths and landscaping are artistic simplification, not a surveyed planting inventory.",
+      "port_aprons": [
+        {
+          "points": [
+            [
+              -79.85,
+              231.95
+            ],
+            [
+              -58,
+              232.4
+            ],
+            [
+              -47.5,
+              235.8
+            ]
+          ],
+          "width": 3.6,
+          "source": "Limited old-plinth link to west rear walk. Bends south of existing hedge row ending at z232, avoids plants and preserves old assets"
+        }
+      ]
+    },
+    {
+      "id": "south_plaza_edge_02",
+      "template": "wave2_landscape",
+      "enabled": true,
+      "bounds": [
+        18,
+        238,
+        42,
+        273
+      ],
+      "polygon": [
+        [
+          18,
+          238
+        ],
+        [
+          42,
+          238
+        ],
+        [
+          42,
+          269
+        ],
+        [
+          36,
+          273
+        ],
+        [
+          21,
+          271
+        ],
+        [
+          18,
+          253
+        ]
+      ],
+      "ports": [
+        {
+          "side": "south",
+          "span": [
+            18,
+            42
+          ]
+        }
+      ],
+      "surface_top": 0.08,
+      "population_allowed": true,
+      "paths": [
+        {
+          "points": [
+            [
+              29.85,
+              237.85
+            ],
+            [
+              31.76,
+              260
+            ],
+            [
+              32.6,
+              269
+            ]
+          ],
+          "width": 3.2,
+          "source": "306496882 east-side plaza footway; centerline29.38,232.6 to32.93,273.36"
+        }
+      ],
+      "story_nodes": [
+        {
+          "id": "doubao",
+          "position": [
+            29.5,
+            0.08,
+            260
+          ],
+          "ground_y": 0.08,
+          "clear_radius": 2.8,
+          "pad_size": [
+            4.8,
+            4.8
+          ]
+        }
+      ],
+      "trees": [],
+      "benches": [
+        [
+          26,
+          264,
+          1.5707963
+        ]
+      ],
+      "lamps": [
+        [
+          34.8,
+          253,
+          0
+        ],
+        [
+          28,
+          268,
+          0
+        ]
+      ],
+      "signs": [
+        [
+          23,
+          240.8,
+          "郭沫若广场方向",
+          "SOUTH WALK"
+        ]
+      ],
+      "source": "OSM306496882; official Guo Moruo square photograph; only the eastern grass-and-walk edge, excluding central reflecting basin and USTC1958",
+      "confidence": "Road centerlines and absence of buildings/water confirmed against local OSM snapshot, official map and satellite reference. Widths and landscaping are artistic simplification, not a surveyed planting inventory.",
+      "port_aprons": [
+        {
+          "points": [
+            [
+              42.4,
+              233.8
+            ],
+            [
+              37,
+              235.3
+            ],
+            [
+              29.85,
+              237.9
+            ]
+          ],
+          "width": 3.2,
+          "source": "Short diagonal interface from old eastern courtyard walk to mapped east-side plaza footway"
+        }
+      ]
+    },
+    {
+      "id": "guo_plaza_03",
+      "template": "plaza_expansion",
+      "enabled": true,
+      "bounds": [
+        -83,
+        236,
+        80,
+        340
+      ],
+      "polygon": [
+        [
+          -83,
+          236
+        ],
+        [
+          80,
+          236
+        ],
+        [
+          80,
+          340
+        ],
+        [
+          -83,
+          340
+        ]
+      ],
+      "source": "OSM plaza306496885, road265032055, footway306496882, statue3026612881, cafe268207470, basin264871517; official east campus PDF and USTC photos",
+      "confidence": "Mapped footprints and main road alignments; planting, minor plaza paving and furniture are artistic reconstruction",
+      "surface_top": 0.08,
+      "ports": [
+        {
+          "side": "south",
+          "span": [
+            -80,
+            80
+          ]
+        }
+      ],
+      "plaza_outline": [
+        [
+          -66.907,
+          236.18
+        ],
+        [
+          69.626,
+          236.454
+        ],
+        [
+          71.831,
+          240.934
+        ],
+        [
+          70.529,
+          333.329
+        ],
+        [
+          11.216,
+          333.732
+        ],
+        [
+          10.661,
+          316.14
+        ],
+        [
+          10.521,
+          309.506
+        ],
+        [
+          7.282,
+          306.31
+        ],
+        [
+          7.271,
+          274.441
+        ],
+        [
+          7.266,
+          254.571
+        ],
+        [
+          9.748,
+          254.577
+        ],
+        [
+          9.75,
+          249.092
+        ],
+        [
+          -10.804,
+          249.097
+        ],
+        [
+          -10.806,
+          254.716
+        ],
+        [
+          -8.523,
+          254.72
+        ],
+        [
+          -8.506,
+          306.314
+        ],
+        [
+          -12.458,
+          310.0
+        ],
+        [
+          -12.536,
+          315.246
+        ],
+        [
+          -12.617,
+          334.619
+        ],
+        [
+          -68.029,
+          334.677
+        ],
+        [
+          -69.235,
+          330.395
+        ],
+        [
+          -68.565,
+          243.037
+        ],
+        [
+          -66.907,
+          236.18
+        ]
+      ],
+      "basin": [
+        [
+          -2.69,
+          255.032
+        ],
+        [
+          -2.833,
+          273.721
+        ],
+        [
+          -0.428,
+          273.744
+        ],
+        [
+          1.523,
+          273.756
+        ],
+        [
+          1.676,
+          255.068
+        ],
+        [
+          -2.69,
+          255.032
+        ]
+      ],
+      "cafe": {
+        "osm_id": "268207470",
+        "polygon": [
+          [
+            -54.756,
+            251.014
+          ],
+          [
+            -54.004,
+            242.083
+          ],
+          [
+            -35.245,
+            243.649
+          ],
+          [
+            -35.987,
+            252.581
+          ],
+          [
+            -54.756,
+            251.014
+          ]
+        ],
+        "position": [
+          -45.0,
+          0.08,
+          247.33
+        ],
+        "heading": 3.05815
+      },
+      "monument": {
+        "osm_node": "3026612881",
+        "position": [
+          -0.597,
+          0.08,
+          244.127
+        ],
+        "heading": 3.141592653589793
+      },
+      "paths": [
+        {
+          "points": [
+            [
+              -78.611,
+              231.884
+            ],
+            [
+              -78.37,
+              258.629
+            ],
+            [
+              -78.198,
+              277.397
+            ],
+            [
+              -78.092,
+              288.433
+            ],
+            [
+              -77.893,
+              337.209
+            ]
+          ],
+          "width": 7.0,
+          "source": "265032055 郭沫若路"
+        },
+        {
+          "points": [
+            [
+              29.383,
+              232.604
+            ],
+            [
+              32.929,
+              273.356
+            ],
+            [
+              36.069,
+              309.505
+            ],
+            [
+              38.535,
+              337.164
+            ]
+          ],
+          "width": 3.2,
+          "source": "306496882 existing east path"
+        },
+        {
+          "points": [
+            [
+              -68,
+              250
+            ],
+            [
+              -60,
+              250
+            ],
+            [
+              -58,
+              258
+            ],
+            [
+              -30,
+              258
+            ],
+            [
+              -12,
+              251
+            ],
+            [
+              12,
+              251
+            ],
+            [
+              31,
+              251
+            ]
+          ],
+          "width": 3.5,
+          "source": "Cafe and statue access, photo-supported artistic placement"
+        },
+        {
+          "points": [
+            [
+              -68,
+              318
+            ],
+            [
+              -40,
+              318
+            ],
+            [
+              -13,
+              318
+            ],
+            [
+              12,
+              318
+            ],
+            [
+              38,
+              318
+            ],
+            [
+              68,
+              318
+            ]
+          ],
+          "width": 5.0,
+          "source": "South cross-plaza circulation, photo-supported artistic placement"
+        },
+        {
+          "points": [
+            [
+              -64,
+              253
+            ],
+            [
+              -64,
+              315
+            ]
+          ],
+          "width": 2.8,
+          "source": "West perimeter garden path, inferred from official map and photo"
+        }
+      ],
+      "trees": [],
+      "benches": [
+        [
+          -59,
+          274,
+          1.5707963268
+        ],
+        [
+          -59,
+          301,
+          1.5707963268
+        ],
+        [
+          50,
+          275,
+          -1.5707963268
+        ],
+        [
+          54,
+          303,
+          -1.5707963268
+        ],
+        [
+          -26,
+          324,
+          0.0
+        ],
+        [
+          22,
+          324,
+          0.0
+        ]
+      ],
+      "lamps": [
+        [
+          -10,
+          256,
+          0
+        ],
+        [
+          -10,
+          271,
+          0
+        ],
+        [
+          -10,
+          290,
+          0
+        ],
+        [
+          -10,
+          307,
+          0
+        ],
+        [
+          9,
+          256,
+          0
+        ],
+        [
+          9,
+          271,
+          0
+        ],
+        [
+          9,
+          290,
+          0
+        ],
+        [
+          9,
+          307,
+          0
+        ],
+        [
+          -60,
+          268,
+          0
+        ],
+        [
+          -60,
+          298,
+          0
+        ],
+        [
+          44,
+          277,
+          0
+        ],
+        [
+          48,
+          311,
+          0
+        ]
+      ],
+      "story_nodes": [],
+      "walk_routes": [
+        {
+          "id": "hall_to_plaza",
+          "points": [
+            [
+              -74,
+              157
+            ],
+            [
+              -74,
+              231
+            ],
+            [
+              -65,
+              241
+            ],
+            [
+              -61,
+              251
+            ],
+            [
+              -56,
+              258
+            ],
+            [
+              -28,
+              258
+            ],
+            [
+              -12,
+              251
+            ],
+            [
+              -5,
+              251
+            ]
+          ]
+        },
+        {
+          "id": "east_path_continuation",
+          "points": [
+            [
+              29.85,
+              235
+            ],
+            [
+              31.76,
+              260
+            ],
+            [
+              32.929,
+              273.356
+            ],
+            [
+              36.069,
+              309.505
+            ],
+            [
+              38.535,
+              333
+            ]
+          ]
+        },
+        {
+          "id": "basin_west_walk",
+          "points": [
+            [
+              -5.7,
+              250
+            ],
+            [
+              -5.7,
+              278
+            ],
+            [
+              -5.7,
+              305
+            ],
+            [
+              -8,
+              318
+            ],
+            [
+              -40,
+              318
+            ]
+          ]
+        },
+        {
+          "id": "plaza_west_loop",
+          "points": [
+            [
+              -56,
+              258
+            ],
+            [
+              -64,
+              260
+            ],
+            [
+              -64,
+              282
+            ],
+            [
+              -64,
+              313
+            ],
+            [
+              -40,
+              318
+            ],
+            [
+              -13,
+              318
+            ],
+            [
+              12,
+              318
+            ],
+            [
+              38,
+              318
+            ]
+          ]
+        }
+      ],
+      "backdrop": {
+        "osm_way": "284161540",
+        "name": "东区老图书馆",
+        "footprint_m2": 2080.15,
+        "center": [
+          1.692,
+          378.167
+        ],
+        "regional_coverage_fraction": 0.0,
+        "polygon": [
+          [
+            -56.67216008193054,
+            363.95821092795086
+          ],
+          [
+            -15.970869517494688,
+            363.69426697022294
+          ],
+          [
+            -15.918178495168062,
+            370.3549887883452
+          ],
+          [
+            18.232377306906837,
+            370.1263872644629
+          ],
+          [
+            18.180369875986447,
+            363.07545233312743
+          ],
+          [
+            60.22811423991054,
+            362.80045836894107
+          ],
+          [
+            60.336731490516314,
+            380.2700933759106
+          ],
+          [
+            26.632403876650958,
+            380.487384750469
+          ],
+          [
+            26.681785753752806,
+            387.19246129836137
+          ],
+          [
+            5.540115955087369,
+            387.32116982809305
+          ],
+          [
+            5.591907146383729,
+            395.26412088523267
+          ],
+          [
+            -2.1442493692662197,
+            395.31137693842123
+          ],
+          [
+            -2.194529681532991,
+            386.96712408602133
+          ],
+          [
+            -22.40770244098512,
+            387.098201986736
+          ],
+          [
+            -22.468701204191206,
+            378.2625317274552
+          ],
+          [
+            -56.58073448185282,
+            378.48285687354513
+          ]
+        ]
+      },
+      "signs": []
+    },
+    {
+      "id": "north_academic_04",
+      "name": "五教与北区学院楼",
+      "polygon": [
+        [
+          94.989,
+          -82.674
+        ],
+        [
+          88.0,
+          -82.933
+        ],
+        [
+          88.0,
+          55.0
+        ],
+        [
+          374.778,
+          55.0
+        ],
+        [
+          375.189,
+          43.758
+        ],
+        [
+          378.0,
+          -35.479
+        ],
+        [
+          378.0,
+          -62.588
+        ],
+        [
+          366.027,
+          -72.232
+        ]
+      ],
+      "bounds": [
+        88,
+        -84,
+        378,
+        55
+      ],
+      "ports": [],
+      "enabled": true,
+      "template": "mapped_campus_land",
+      "surface_top": 0.12,
+      "ground_y": 0,
+      "source": "campus_road_network.json",
+      "story_nodes": []
+    },
+    {
+      "id": "qinfeng_east_link_05",
+      "name": "勤奋路东段",
+      "polygon": [
+        [
+          70,
+          222
+        ],
+        [
+          156,
+          221
+        ],
+        [
+          183,
+          217
+        ],
+        [
+          183,
+          238
+        ],
+        [
+          156,
+          241
+        ],
+        [
+          70,
+          244
+        ]
+      ],
+      "bounds": [
+        70,
+        217,
+        183,
+        244
+      ],
+      "ports": [
+        {
+          "side": "east",
+          "span": [
+            222,
+            238
+          ]
+        }
+      ],
+      "enabled": true,
+      "template": "mapped_campus_land",
+      "surface_top": 0.12,
+      "ground_y": 0,
+      "source": "campus_road_network.json",
+      "story_nodes": []
+    },
+    {
+      "id": "hanhai_east_link_05",
+      "name": "瀚海路东段",
+      "polygon": [
+        [
+          70,
+          140
+        ],
+        [
+          183,
+          140
+        ],
+        [
+          183,
+          162
+        ],
+        [
+          70,
+          162
+        ]
+      ],
+      "bounds": [
+        70,
+        140,
+        183,
+        162
+      ],
+      "ports": [
+        {
+          "side": "east",
+          "span": [
+            140,
+            162
+          ]
+        }
+      ],
+      "enabled": true,
+      "template": "mapped_campus_land",
+      "surface_top": 0.12,
+      "ground_y": 0,
+      "source": "campus_road_network.json",
+      "story_nodes": []
+    },
+    {
+      "id": "teaching_west_link_05",
+      "name": "一教西侧道路",
+      "polygon": [
+        [
+          -89,
+          140
+        ],
+        [
+          -70,
+          140
+        ],
+        [
+          -70,
+          244
+        ],
+        [
+          -89,
+          244
+        ]
+      ],
+      "bounds": [
+        -89,
+        140,
+        -70,
+        244
+      ],
+      "ports": [
+        {
+          "side": "west",
+          "span": [
+            140,
+            238
+          ]
+        }
+      ],
+      "enabled": true,
+      "template": "mapped_campus_land",
+      "surface_top": 0.12,
+      "ground_y": 0,
+      "source": "campus_road_network.json",
+      "story_nodes": []
+    },
+    {
+      "id": "guo_west_corridor_06",
+      "name": "1958西侧郭沫若路宽路带",
+      "template": "mapped_campus_land",
+      "polygon": [
+        [
+          -98,
+          232
+        ],
+        [
+          -70,
+          232
+        ],
+        [
+          -70,
+          453
+        ],
+        [
+          -98,
+          453
+        ]
+      ],
+      "bounds": [
+        -98,
+        232,
+        -70,
+        453
+      ],
+      "enabled": true,
+      "ports": [],
+      "story_nodes": [],
+      "surface_top": 0.1,
+      "ground_y": 0,
+      "source": "references/library_district/library_osm_overlay.jpg"
+    },
+    {
+      "id": "library_district_06",
+      "name": "老图书馆—新图书馆—第二教学楼",
+      "template": "library_district",
+      "polygon": [
+        [
+          -98,
+          280
+        ],
+        [
+          82,
+          280
+        ],
+        [
+          82,
+          293
+        ],
+        [
+          198,
+          293
+        ],
+        [
+          198,
+          453
+        ],
+        [
+          -98,
+          453
+        ]
+      ],
+      "bounds": [
+        -98,
+        280,
+        198,
+        453
+      ],
+      "enabled": true,
+      "ports": [],
+      "story_nodes": [],
+      "surface_top": 0.1,
+      "ground_y": 0,
+      "source": "references/library_district/library_osm_overlay.jpg"
+    },
+    {
+      "id": "sports_district_07",
+      "name": "东区田径场与320—323学生公寓",
+      "template": "sports_district",
+      "enabled": true,
+      "bounds": [
+        -335,
+        356,
+        -70,
+        552
+      ],
+      "polygon": [
+        [
+          -274.692,
+          356.0
+        ],
+        [
+          -278.971,
+          363.642
+        ],
+        [
+          -299.846,
+          408.08
+        ],
+        [
+          -321.008,
+          456.366
+        ],
+        [
+          -323.163,
+          459.338
+        ],
+        [
+          -335.0,
+          489.066
+        ],
+        [
+          -335.0,
+          552.0
+        ],
+        [
+          -70.0,
+          552.0
+        ],
+        [
+          -70.0,
+          356.0
+        ]
+      ],
+      "surface_top": 0.1,
+      "ground_y": 0,
+      "ports": [],
+      "story_nodes": [],
+      "source": "references/sports_district/sports_osm_overlay.jpg"
+    },
+    {
+      "id": "south_sports_08",
+      "name": "运动场南侧球场—364／365公寓",
+      "template": "south_sports",
+      "enabled": true,
+      "bounds": [
+        -380,
+        535,
+        -70,
+        675
+      ],
+      "polygon": [
+        [
+          -350.235,
+          535.0
+        ],
+        [
+          -369.876,
+          600.518
+        ],
+        [
+          -380.0,
+          642.054
+        ],
+        [
+          -380.0,
+          675.0
+        ],
+        [
+          -70.0,
+          675.0
+        ],
+        [
+          -70.0,
+          535.0
+        ]
+      ],
+      "surface_top": 0.105,
+      "ground_y": 0,
+      "ports": [],
+      "story_nodes": [],
+      "source": "references/south_sports/south_osm_overlay.jpg"
+    },
+    {
+      "id": "west_connection_09",
+      "name": "西侧连接区",
+      "bounds": [
+        -396,
+        110,
+        -70,
+        675
+      ],
+      "polygon": [
+        [
+          -113.391,
+          110.0
+        ],
+        [
+          -127.155,
+          131.243
+        ],
+        [
+          -196.06,
+          228.072
+        ],
+        [
+          -208.098,
+          247.167
+        ],
+        [
+          -209.352,
+          260.543
+        ],
+        [
+          -211.386,
+          288.825
+        ],
+        [
+          -237.946,
+          288.159
+        ],
+        [
+          -255.662,
+          322.017
+        ],
+        [
+          -278.971,
+          363.642
+        ],
+        [
+          -299.846,
+          408.08
+        ],
+        [
+          -321.008,
+          456.366
+        ],
+        [
+          -323.163,
+          459.338
+        ],
+        [
+          -337.215,
+          494.629
+        ],
+        [
+          -344.858,
+          517.062
+        ],
+        [
+          -369.876,
+          600.518
+        ],
+        [
+          -383.655,
+          657.049
+        ],
+        [
+          -388.522,
+          675.0
+        ],
+        [
+          -70.0,
+          675.0
+        ],
+        [
+          -70.0,
+          110.0
+        ]
+      ],
+      "template": "full_mapped_district",
+      "enabled": true,
+      "ground_y": 0,
+      "surface_top": 0.105,
+      "ports": [],
+      "story_nodes": [],
+      "source": "references/full_campus/full_osm_overlay.jpg"
+    },
+    {
+      "id": "east_living_10",
+      "name": "东侧住宅与生活区",
+      "bounds": [
+        80,
+        50,
+        379,
+        680
+      ],
+      "polygon": [
+        [
+          80.0,
+          50.0
+        ],
+        [
+          80.0,
+          680.0
+        ],
+        [
+          238.824,
+          680.0
+        ],
+        [
+          239.608,
+          667.209
+        ],
+        [
+          241.022,
+          644.2
+        ],
+        [
+          244.131,
+          602.517
+        ],
+        [
+          330.597,
+          603.984
+        ],
+        [
+          335.925,
+          497.137
+        ],
+        [
+          362.568,
+          496.683
+        ],
+        [
+          362.828,
+          360.589
+        ],
+        [
+          368.92,
+          215.04
+        ],
+        [
+          374.961,
+          50.0
+        ]
+      ],
+      "template": "full_mapped_district",
+      "enabled": true,
+      "ground_y": 0,
+      "surface_top": 0.105,
+      "ports": [],
+      "story_nodes": [],
+      "source": "references/full_campus/full_osm_overlay.jpg"
+    },
+    {
+      "id": "central_life_11",
+      "name": "行政楼—校史馆—中部生活区",
+      "bounds": [
+        -95,
+        448,
+        195,
+        680
+      ],
+      "polygon": [
+        [
+          -95.0,
+          448.0
+        ],
+        [
+          -95.0,
+          680.0
+        ],
+        [
+          195.0,
+          680.0
+        ],
+        [
+          195.0,
+          448.0
+        ]
+      ],
+      "template": "full_mapped_district",
+      "enabled": true,
+      "ground_y": 0,
+      "surface_top": 0.105,
+      "ports": [],
+      "story_nodes": [],
+      "source": "references/full_campus/full_osm_overlay.jpg"
+    },
+    {
+      "id": "south_research_12",
+      "name": "南部科研楼群—礼堂—南门",
+      "bounds": [
+        -397,
+        670,
+        379,
+        947
+      ],
+      "polygon": [
+        [
+          -387.167,
+          670.0
+        ],
+        [
+          -389.721,
+          679.421
+        ],
+        [
+          -396.923,
+          736.576
+        ],
+        [
+          -378.333,
+          740.55
+        ],
+        [
+          -378.807,
+          742.956
+        ],
+        [
+          -391.126,
+          816.622
+        ],
+        [
+          -276.046,
+          838.722
+        ],
+        [
+          -263.097,
+          841.205
+        ],
+        [
+          -221.04,
+          851.222
+        ],
+        [
+          -24.103,
+          889.442
+        ],
+        [
+          -11.893,
+          891.914
+        ],
+        [
+          96.925,
+          913.614
+        ],
+        [
+          124.754,
+          919.493
+        ],
+        [
+          257.346,
+          946.289
+        ],
+        [
+          231.597,
+          830.734
+        ],
+        [
+          226.966,
+          825.36
+        ],
+        [
+          221.746,
+          806.795
+        ],
+        [
+          224.034,
+          791.868
+        ],
+        [
+          216.625,
+          736.099
+        ],
+        [
+          216.925,
+          729.787
+        ],
+        [
+          217.836,
+          710.465
+        ],
+        [
+          236.941,
+          710.708
+        ],
+        [
+          239.437,
+          670.0
+        ]
+      ],
+      "template": "full_mapped_district",
+      "enabled": true,
+      "ground_y": 0,
+      "surface_top": 0.105,
+      "ports": [],
+      "story_nodes": [],
+      "source": "references/full_campus/full_osm_overlay.jpg"
+    }
+  ],
+  "coordinate_system": "Meters; +X east, +Z campus south. Only polygon interiors are newly walkable; bounds are broad-phase only.",
+  "protected_polygons": [
+    {
+      "id": "transport_annex_306371641",
+      "kind": "building",
+      "polygon": [
+        [
+          -129.02,
+          191.3
+        ],
+        [
+          -140.4,
+          190.95
+        ],
+        [
+          -140.52,
+          194.92
+        ],
+        [
+          -152.65,
+          194.54
+        ],
+        [
+          -152.9,
+          202.66
+        ],
+        [
+          -103.24,
+          204.21
+        ],
+        [
+          -102.86,
+          192.07
+        ],
+        [
+          -114.95,
+          191.7
+        ]
+      ]
+    },
+    {
+      "id": "service_306371643",
+      "kind": "building",
+      "polygon": [
+        [
+          -94.2,
+          192.94
+        ],
+        [
+          -87.16,
+          192.98
+        ],
+        [
+          -87.3,
+          217.3
+        ],
+        [
+          -94.35,
+          217.25
+        ]
+      ]
+    },
+    {
+      "id": "ustc1958_268207470",
+      "kind": "building",
+      "polygon": [
+        [
+          -54.76,
+          251.01
+        ],
+        [
+          -54,
+          242.08
+        ],
+        [
+          -35.24,
+          243.65
+        ],
+        [
+          -35.99,
+          252.58
+        ]
+      ]
+    },
+    {
+      "id": "plaza_basin_264871517",
+      "kind": "water",
+      "polygon": [
+        [
+          -2.69,
+          255.03
+        ],
+        [
+          -2.83,
+          273.72
+        ],
+        [
+          1.52,
+          273.76
+        ],
+        [
+          1.68,
+          255.07
+        ]
+      ]
+    }
+  ],
+  "population_envelope_check": {
+    "window_m": [
+      100,
+      100
+    ],
+    "frozen_population_source": "data/population.json before wave2 additions",
+    "new_nodes": {
+      "raiden": [
+        -123,
+        243
+      ],
+      "march7": [
+        118,
+        200
+      ],
+      "meituan": [
+        95,
+        160
+      ],
+      "doubao": [
+        29.5,
+        260
+      ],
+      "cat2": [
+        -106,
+        239
+      ]
+    },
+    "max_counts": {
+      "Hero": 2,
+      "Ambient": 4,
+      "Creature": 3
+    },
+    "method": "Axis-aligned sliding windows with candidate lower-left edges at every actor x,z; conservative route-envelope validation is performed in runtime proof."
+  }
+}

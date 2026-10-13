@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "coordinate_system": "meters; +X east, +Z campus south; ground Y=0",
+  "budgets_per_100m_square": {"Hero": 2, "Ambient": 4, "Creature": 3},
+  "actors": [
+    {"id":"solver","name":"做题家·长椅版","tier":"Hero","role":"tiku_study","asset":"tiku_boy1","position":[-17,0.64,147],"heading":0,"zone":"quiet_study","status":"accepted_frozen"},
+    {"id":"roadside","name":"做题家·校服版","tier":"Hero","role":"tiku_roadside","asset":"tiku_boy1_uniform","position":[3.4,0.978,145],"heading":-0.3,"zone":"axis_story","status":"accepted_frozen"},
+    {"id":"photo","name":"樱花摄影同学","tier":"Ambient","role":"photographer","asset":"ambient_photographer","replaces":"student_photo","position":[10.4,0.005,140.8],"heading":1.08,"zone":"sakura_story","cycle_seconds":22,"status":"unified_v0_5"},
+    {"id":"reader","name":"背资料慢走同学","tier":"Ambient","role":"study_walk","asset":"ambient_study_walk","replaces":"student_reader","position":[14,0.105,155.6],"heading":-1.570796327,"zone":"light_activity","cycle_seconds":46,"path_end":[19.3,0.105,155.6],"status":"unified_v0_5"},
+    {"id":"cyclist","name":"骑车归来的同学","tier":"Ambient","role":"cyclist","asset":"ambient_cyclist","position":[30,0.095,157],"heading":-1.570796327,"zone":"east_cycle_stop","cycle_seconds":64,"path_end":[55.9,0.095,157],"yield_distance":2.1,"collision_size":[1.45,1.6,1.9],"status":"new"},
+    {"id":"bench_reader","name":"后院长椅读者","tier":"Ambient","role":"bench_reader","asset":"ambient_bench_reader","position":[-27,0.08,218.8],"heading":3.141592654,"zone":"quiet_courtyard","cycle_seconds":32,"status":"new"},
+    {"id":"cat","name":"长椅边的校园猫","tier":"Creature","role":"cat","asset":"campus_cat","position":[-18.22,0.025,146.26],"heading":-0.3,"zone":"quiet_study","cycle_seconds":24,"status":"reused"},
+    {"id":"bird0","name":"公告栏麻雀","tier":"Creature","role":"sparrow","asset":"campus_sparrow","position":[25.15,2.56,151.3],"heading":-0.3,"zone":"light_activity","status":"reused"},
+    {"id":"bird1","name":"路面麻雀","tier":"Creature","role":"sparrow","asset":"campus_sparrow","position":[19.7,0.11,157.4],"heading":0.7,"zone":"light_activity","status":"reused"}
+  ]
+}

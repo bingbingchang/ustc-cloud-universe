@@ -1,0 +1,174 @@
+{
+  "units": "meters",
+  "coordinates": "Godot (X,up,Z); Blender=(X,-Z,up); ground origin; forward -Z",
+  "observed_sources": [
+    {
+      "url": "https://zsb.ustc.edu.cn/xysj/list.htm",
+      "image": "https://zsb.ustc.edu.cn/_upload/article/images/af/ec/10b4e11e4f87959e1539bb3a0c45/11163d90-726c-4891-93e3-7d0751155dac.jpg",
+      "features": "Low pale vertical rib cladding, glass frontage, square posts, black window frames, wooden deck, black terrace furniture"
+    },
+    {
+      "url": "https://zgkdb.ustc.edu.cn/ndetail/6404",
+      "image": "https://zgkdb.ustc.edu.cn/uploadfile/2020/1106/20201106024547590.jpg",
+      "features": "Coffee pavilion shape and northwest plaza position"
+    },
+    {
+      "url": "https://zgkdb.ustc.edu.cn/ndetail/7454",
+      "image": "https://zgkdb.ustc.edu.cn/uploadfile/2022/0614/20220614042440279.jpg",
+      "features": "Standing full-length bronze, crossed arms, Zhongshan jacket and trousers"
+    },
+    {
+      "url": "https://metalisotopes.ustc.edu.cn/news/MgCuFePbSiV.html",
+      "image": "https://metalisotopes.ustc.edu.cn/media/images/wwy/201104/small_IMG_2348%2820201104-210723%29.JPG",
+      "features": "Standing statue over stepped paved forecourt"
+    },
+    {
+      "url": "https://m.baike.ustc.edu.cn/wiki/detail?id=394",
+      "features": "Monument at north of Guo plaza, facing south"
+    },
+    {
+      "local": "references/buildings/东区1958咖啡.jpg",
+      "features": "Outdoor umbrellas, dark chairs, small round tables, garden setting"
+    },
+    {
+      "local": "references/buildings/东区郭沫若广场.jpg",
+      "features": "Broad formal plaza and central water channel; parent scene handles landscape"
+    }
+  ],
+  "confidence": "Observed facade type and statue pose high. Cafe 19 x 9 m footprint supplied from OSM approximation. Heights, exact facade bay spacings, statue portrait and pedestal estimated; first exterior/game-ready pass.",
+  "assets": {
+    "Cafe": {
+      "file": "godot/assets/plaza_cafe.glb",
+      "triangles": 26576,
+      "objects": 14,
+      "bounds_min": [
+        -10.076879501342773,
+        0.0,
+        -7.464041709899902
+      ],
+      "bounds_max": [
+        9.774999618530273,
+        3.690000057220459,
+        4.78000020980835
+      ],
+      "parts": [
+        "CafeCladding",
+        "CafeFurniture",
+        "CafePlanters",
+        "CafeSigns",
+        "CafeStructure",
+        "CafeTerrace"
+      ],
+      "building_envelope": [
+        19,
+        3.7,
+        9
+      ],
+      "collision_suggestion": [
+        {
+          "type": "box",
+          "center": [
+            0,
+            1.8,
+            0
+          ],
+          "size": [
+            19,
+            3.6,
+            9
+          ],
+          "purpose": "Exterior-only building shell; entry is currently closed"
+        },
+        {
+          "type": "box",
+          "center": [
+            -1.4,
+            0.07,
+            -5.59
+          ],
+          "size": [
+            17.1,
+            0.14,
+            2.12
+          ],
+          "purpose": "Walkable low wood apron"
+        },
+        {
+          "type": "box",
+          "center": [
+            -5.6,
+            0.043,
+            -6.89
+          ],
+          "size": [
+            5.4,
+            0.086,
+            0.46
+          ],
+          "purpose": "Low step"
+        }
+      ],
+      "optional_collisions": "Use single cylinders for each patio table and planter boxes; umbrellas and chair slats do not need individual physics shapes"
+    },
+    "Monument": {
+      "file": "godot/assets/plaza_guo_monument.glb",
+      "triangles": 18739,
+      "objects": 5,
+      "bounds_min": [
+        -1.350000023841858,
+        0.0,
+        -1.090000033378601
+      ],
+      "bounds_max": [
+        1.350000023841858,
+        3.5889999866485596,
+        1.090000033378601
+      ],
+      "parts": [
+        "MonumentBase",
+        "MonumentFigure",
+        "MonumentFineDetail",
+        "MonumentInscription"
+      ],
+      "collision_suggestion": [
+        {
+          "type": "box",
+          "center": [
+            0,
+            0.09,
+            0
+          ],
+          "size": [
+            2.7,
+            0.18,
+            2.18
+          ]
+        },
+        {
+          "type": "box",
+          "center": [
+            0,
+            0.67,
+            0
+          ],
+          "size": [
+            1.77,
+            0.94,
+            1.45
+          ]
+        },
+        {
+          "type": "cylinder",
+          "center": [
+            0,
+            2.4,
+            0
+          ],
+          "radius": 0.54,
+          "height": 2.5
+        }
+      ],
+      "placement": "Rotate Y by PI in Godot to face geographic south; asset authored forward -Z"
+    }
+  }
+}

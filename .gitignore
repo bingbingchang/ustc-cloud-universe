@@ -1,0 +1,8 @@
+**/.godot/
+**/__pycache__/
+*.pyc
+*.blend1
+*.blend2
+*.log
+dist/
+**/scenes/campus_world.scn

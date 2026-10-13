@@ -1,0 +1,1802 @@
+{
+  "buildings": [
+    {
+      "osm_way": "284161540",
+      "name": "东区老图书馆（办公楼207）",
+      "outline": [
+        [
+          -56.672,
+          363.958
+        ],
+        [
+          -15.971,
+          363.694
+        ],
+        [
+          -15.918,
+          370.355
+        ],
+        [
+          18.232,
+          370.126
+        ],
+        [
+          18.18,
+          363.075
+        ],
+        [
+          60.228,
+          362.8
+        ],
+        [
+          60.337,
+          380.27
+        ],
+        [
+          26.632,
+          380.487
+        ],
+        [
+          26.682,
+          387.192
+        ],
+        [
+          5.54,
+          387.321
+        ],
+        [
+          5.592,
+          395.264
+        ],
+        [
+          -2.144,
+          395.311
+        ],
+        [
+          -2.195,
+          386.967
+        ],
+        [
+          -22.408,
+          387.098
+        ],
+        [
+          -22.469,
+          378.263
+        ],
+        [
+          -56.581,
+          378.483
+        ]
+      ],
+      "levels": 4,
+      "height": 14.6,
+      "source": "https://www.openstreetmap.org/way/284161540",
+      "confidence": "OSM footprint; library 6/Teaching 2 8 floors confirmed official pages; other heights estimated"
+    },
+    {
+      "osm_way": "284161541",
+      "name": "东区图书馆",
+      "outline": [
+        [
+          5.592,
+          395.264
+        ],
+        [
+          15.355,
+          395.357
+        ],
+        [
+          15.964,
+          398.246
+        ],
+        [
+          32.159,
+          398.885
+        ],
+        [
+          32.651,
+          403.583
+        ],
+        [
+          60.49,
+          403.619
+        ],
+        [
+          60.411,
+          410.649
+        ],
+        [
+          64.141,
+          410.693
+        ],
+        [
+          64.04,
+          420.811
+        ],
+        [
+          60.053,
+          420.781
+        ],
+        [
+          59.787,
+          427.908
+        ],
+        [
+          52.865,
+          427.96
+        ],
+        [
+          53.001,
+          429.944
+        ],
+        [
+          21.398,
+          429.56
+        ],
+        [
+          21.634,
+          428.307
+        ],
+        [
+          9.793,
+          427.992
+        ],
+        [
+          9.751,
+          426.271
+        ],
+        [
+          -4.044,
+          426.112
+        ],
+        [
+          -4.159,
+          427.653
+        ],
+        [
+          -16.87,
+          427.697
+        ],
+        [
+          -16.823,
+          428.972
+        ],
+        [
+          -49.548,
+          428.504
+        ],
+        [
+          -49.521,
+          426.243
+        ],
+        [
+          -54.482,
+          426.441
+        ],
+        [
+          -54.573,
+          418.25
+        ],
+        [
+          -58.38,
+          418.1
+        ],
+        [
+          -58.381,
+          410.618
+        ],
+        [
+          -54.067,
+          410.583
+        ],
+        [
+          -54.117,
+          402.618
+        ],
+        [
+          -24.514,
+          403.265
+        ],
+        [
+          -24.342,
+          399.052
+        ],
+        [
+          -9.41,
+          399.597
+        ],
+        [
+          -9.499,
+          395.075
+        ],
+        [
+          -2.144,
+          395.311
+        ]
+      ],
+      "levels": 6,
+      "height": 21.6,
+      "source": "https://www.openstreetmap.org/way/284161541",
+      "confidence": "OSM footprint; library 6/Teaching 2 8 floors confirmed official pages; other heights estimated"
+    },
+    {
+      "osm_way": "271958257",
+      "name": "第二教学楼",
+      "outline": [
+        [
+          138.948,
+          352.628
+        ],
+        [
+          139.098,
+          340.207
+        ],
+        [
+          153.28,
+          340.384
+        ],
+        [
+          153.364,
+          334.057
+        ],
+        [
+          148.687,
+          333.998
+        ],
+        [
+          148.776,
+          327.08
+        ],
+        [
+          152.336,
+          327.133
+        ],
+        [
+          152.466,
+          317.387
+        ],
+        [
+          107.671,
+          316.754
+        ],
+        [
+          107.786,
+          308.233
+        ],
+        [
+          103.726,
+          308.164
+        ],
+        [
+          103.677,
+          303.232
+        ],
+        [
+          107.748,
+          303.279
+        ],
+        [
+          107.77,
+          299.936
+        ],
+        [
+          159.515,
+          300.384
+        ],
+        [
+          159.541,
+          297.242
+        ],
+        [
+          177.609,
+          297.408
+        ],
+        [
+          177.449,
+          314.668
+        ],
+        [
+          171.218,
+          314.604
+        ],
+        [
+          171.277,
+          308.487
+        ],
+        [
+          156.647,
+          308.343
+        ],
+        [
+          156.471,
+          326.706
+        ],
+        [
+          170.949,
+          326.85
+        ],
+        [
+          170.827,
+          338.771
+        ],
+        [
+          155.393,
+          338.612
+        ],
+        [
+          155.323,
+          345.398
+        ],
+        [
+          159.829,
+          345.455
+        ],
+        [
+          159.75,
+          352.864
+        ]
+      ],
+      "levels": 8,
+      "height": 28.6,
+      "source": "https://www.openstreetmap.org/way/271958257",
+      "confidence": "OSM footprint; library 6/Teaching 2 8 floors confirmed official pages; other heights estimated"
+    },
+    {
+      "osm_way": "1135310337",
+      "name": "少年班学院204",
+      "outline": [
+        [
+          91.802,
+          294.474
+        ],
+        [
+          103.608,
+          294.373
+        ],
+        [
+          103.677,
+          303.232
+        ],
+        [
+          103.726,
+          308.164
+        ],
+        [
+          103.782,
+          315.661
+        ],
+        [
+          99.97,
+          315.7
+        ],
+        [
+          100.208,
+          343.248
+        ],
+        [
+          91.095,
+          343.327
+        ],
+        [
+          90.906,
+          320.967
+        ],
+        [
+          87.626,
+          320.99
+        ],
+        [
+          87.596,
+          317.074
+        ],
+        [
+          87.557,
+          312.388
+        ],
+        [
+          91.956,
+          312.359
+        ]
+      ],
+      "levels": 4,
+      "height": 14.6,
+      "source": "https://www.openstreetmap.org/way/1135310337",
+      "confidence": "OSM footprint; library 6/Teaching 2 8 floors confirmed official pages; other heights estimated"
+    },
+    {
+      "osm_way": "284161542",
+      "name": "东区学生食堂208",
+      "outline": [
+        [
+          100.2,
+          417.911
+        ],
+        [
+          100.318,
+          394.615
+        ],
+        [
+          104.098,
+          394.63
+        ],
+        [
+          104.113,
+          391.754
+        ],
+        [
+          116.986,
+          391.822
+        ],
+        [
+          116.955,
+          398.343
+        ],
+        [
+          129.8,
+          398.409
+        ],
+        [
+          129.839,
+          391.153
+        ],
+        [
+          170.524,
+          391.356
+        ],
+        [
+          170.508,
+          394.489
+        ],
+        [
+          174.449,
+          394.504
+        ],
+        [
+          174.351,
+          413.854
+        ],
+        [
+          166.537,
+          413.806
+        ],
+        [
+          166.495,
+          423.381
+        ],
+        [
+          173.941,
+          423.412
+        ],
+        [
+          173.867,
+          439.53
+        ],
+        [
+          129.421,
+          439.303
+        ],
+        [
+          129.449,
+          433.462
+        ],
+        [
+          118.12,
+          433.409
+        ],
+        [
+          118.189,
+          418.004
+        ]
+      ],
+      "levels": 3,
+      "height": 11.1,
+      "source": "https://www.openstreetmap.org/way/284161542",
+      "confidence": "OSM footprint; library 6/Teaching 2 8 floors confirmed official pages; other heights estimated"
+    }
+  ],
+  "hardscape": [
+    {
+      "id": "old_library_front",
+      "surface": "pavers",
+      "polygon": [
+        [
+          -22,
+          347
+        ],
+        [
+          22,
+          347
+        ],
+        [
+          22,
+          372
+        ],
+        [
+          -22,
+          372
+        ]
+      ]
+    },
+    {
+      "id": "library_south_front",
+      "surface": "granite",
+      "polygon": [
+        [
+          -28,
+          428
+        ],
+        [
+          28,
+          428
+        ],
+        [
+          28,
+          438
+        ],
+        [
+          -28,
+          438
+        ]
+      ]
+    },
+    {
+      "id": "teaching2_front",
+      "surface": "concrete",
+      "polygon": [
+        [
+          80,
+          346
+        ],
+        [
+          139,
+          346
+        ],
+        [
+          139,
+          365
+        ],
+        [
+          80,
+          365
+        ]
+      ]
+    },
+    {
+      "id": "teaching2_east_court",
+      "surface": "pavers",
+      "polygon": [
+        [
+          169,
+          302
+        ],
+        [
+          187,
+          302
+        ],
+        [
+          187,
+          351
+        ],
+        [
+          169,
+          351
+        ]
+      ]
+    },
+    {
+      "id": "canteen_front",
+      "surface": "concrete",
+      "polygon": [
+        [
+          94,
+          383
+        ],
+        [
+          178,
+          383
+        ],
+        [
+          178,
+          400
+        ],
+        [
+          94,
+          400
+        ]
+      ]
+    }
+  ],
+  "walk_routes": [
+    {
+      "id": "coffee_west_to_library",
+      "points": [
+        [
+          -78.37,
+          258.629
+        ],
+        [
+          -77.893,
+          337.209
+        ],
+        [
+          -78.506,
+          399.025
+        ],
+        [
+          -78.697,
+          440.959
+        ],
+        [
+          0,
+          441.74
+        ]
+      ]
+    },
+    {
+      "id": "plaza_to_old_library",
+      "points": [
+        [
+          -5.7,
+          280
+        ],
+        [
+          -5.7,
+          330
+        ],
+        [
+          -0.738,
+          336.966
+        ],
+        [
+          -0.34,
+          361
+        ],
+        [
+          -0.34,
+          367.0
+        ]
+      ]
+    },
+    {
+      "id": "tianshi_to_teaching2",
+      "points": [
+        [
+          75.215,
+          233.425
+        ],
+        [
+          74.136,
+          308.231
+        ],
+        [
+          73.629,
+          352.75
+        ],
+        [
+          91.55,
+          354.42
+        ],
+        [
+          123,
+          354.3
+        ],
+        [
+          124.03,
+          367.0
+        ]
+      ]
+    },
+    {
+      "id": "library_ring",
+      "points": [
+        [
+          73.573,
+          337.749
+        ],
+        [
+          73.575,
+          367.063
+        ],
+        [
+          73.492,
+          391.421
+        ],
+        [
+          73.813,
+          441.856
+        ],
+        [
+          0,
+          441.74
+        ],
+        [
+          -78.697,
+          440.959
+        ],
+        [
+          -77.893,
+          337.209
+        ]
+      ]
+    }
+  ],
+  "sources": [
+    "https://gis.ustc.edu.cn/",
+    "https://www.teach.ustc.edu.cn/service/svc-resource/12388.html",
+    "https://lib.ustc.edu.cn/本馆概况/东区图书馆简介/"
+  ],
+  "ground_plan_basis": "Satellite forecourts/path edges and OSM footprints; individual paving patterns and plants are art-directed.",
+  "trees": [
+    {
+      "asset": "tree_plane_a",
+      "position": [
+        -63.758,
+        0,
+        290.731
+      ],
+      "scale": 1.028,
+      "heading": 6.1672
+    },
+    {
+      "asset": "tree_garden",
+      "position": [
+        -51.104,
+        0,
+        291.108
+      ],
+      "scale": 0.865,
+      "heading": 5.8894
+    },
+    {
+      "asset": "tree_plane_b",
+      "position": [
+        -37.886,
+        0,
+        287.604
+      ],
+      "scale": 1.062,
+      "heading": 4.6395
+    },
+    {
+      "asset": "tree_conifer",
+      "position": [
+        -11.762,
+        0,
+        288.144
+      ],
+      "scale": 0.897,
+      "heading": 5.7295
+    },
+    {
+      "asset": "tree_plane_c",
+      "position": [
+        -1.621,
+        0,
+        290.629
+      ],
+      "scale": 0.956,
+      "heading": 5.1069
+    },
+    {
+      "asset": "tree_plane_a",
+      "position": [
+        12.975,
+        0,
+        287.837
+      ],
+      "scale": 1.013,
+      "heading": 1.5316
+    },
+    {
+      "asset": "tree_garden",
+      "position": [
+        27.97,
+        0,
+        292.374
+      ],
+      "scale": 0.944,
+      "heading": 4.56
+    },
+    {
+      "asset": "tree_plane_b",
+      "position": [
+        39.386,
+        0,
+        292.205
+      ],
+      "scale": 1.012,
+      "heading": 5.6382
+    },
+    {
+      "asset": "tree_conifer",
+      "position": [
+        53.856,
+        0,
+        288.57
+      ],
+      "scale": 1.03,
+      "heading": 1.1321
+    },
+    {
+      "asset": "tree_plane_c",
+      "position": [
+        63.738,
+        0,
+        289.56
+      ],
+      "scale": 0.934,
+      "heading": 6.0843
+    },
+    {
+      "asset": "tree_plane_a",
+      "position": [
+        -88.698,
+        0,
+        303.806
+      ],
+      "scale": 0.954,
+      "heading": 2.2804
+    },
+    {
+      "asset": "tree_garden",
+      "position": [
+        -66.929,
+        0,
+        302.551
+      ],
+      "scale": 0.88,
+      "heading": 1.2956
+    },
+    {
+      "asset": "tree_plane_b",
+      "position": [
+        -52.577,
+        0,
+        304.956
+      ],
+      "scale": 0.974,
+      "heading": 0.7239
+    },
+    {
+      "asset": "tree_conifer",
+      "position": [
+        -37.323,
+        0,
+        304.122
+      ],
+      "scale": 1.071,
+      "heading": 1.871
+    },
+    {
+      "asset": "tree_plane_c",
+      "position": [
+        -12.127,
+        0,
+        304.837
+      ],
+      "scale": 1.071,
+      "heading": 0.9453
+    },
+    {
+      "asset": "tree_plane_a",
+      "position": [
+        1.267,
+        0,
+        303.844
+      ],
+      "scale": 1.103,
+      "heading": 3.6483
+    },
+    {
+      "asset": "tree_garden",
+      "position": [
+        13.921,
+        0,
+        302.72
+      ],
+      "scale": 1.002,
+      "heading": 2.5159
+    },
+    {
+      "asset": "tree_plane_b",
+      "position": [
+        27.455,
+        0,
+        302.947
+      ],
+      "scale": 1.0,
+      "heading": 0.53
+    },
+    {
+      "asset": "tree_conifer",
+      "position": [
+        39.62,
+        0,
+        303.909
+      ],
+      "scale": 0.977,
+      "heading": 3.4028
+    },
+    {
+      "asset": "tree_plane_c",
+      "position": [
+        52.643,
+        0,
+        305.059
+      ],
+      "scale": 0.987,
+      "heading": 4.56
+    },
+    {
+      "asset": "tree_plane_a",
+      "position": [
+        65.055,
+        0,
+        305.376
+      ],
+      "scale": 1.112,
+      "heading": 6.1133
+    },
+    {
+      "asset": "tree_garden",
+      "position": [
+        -89.914,
+        0,
+        317.138
+      ],
+      "scale": 1.045,
+      "heading": 2.1671
+    },
+    {
+      "asset": "tree_plane_b",
+      "position": [
+        -63.588,
+        0,
+        317.771
+      ],
+      "scale": 1.092,
+      "heading": 0.8778
+    },
+    {
+      "asset": "tree_conifer",
+      "position": [
+        -49.994,
+        0,
+        316.674
+      ],
+      "scale": 1.091,
+      "heading": 5.8441
+    },
+    {
+      "asset": "tree_plane_c",
+      "position": [
+        -37.584,
+        0,
+        313.939
+      ],
+      "scale": 1.106,
+      "heading": 1.134
+    },
+    {
+      "asset": "tree_plane_a",
+      "position": [
+        -11.182,
+        0,
+        315.595
+      ],
+      "scale": 0.875,
+      "heading": 6.2756
+    },
+    {
+      "asset": "tree_garden",
+      "position": [
+        -1.713,
+        0,
+        318.08
+      ],
+      "scale": 1.0,
+      "heading": 1.3164
+    },
+    {
+      "asset": "tree_plane_b",
+      "position": [
+        13.944,
+        0,
+        313.982
+      ],
+      "scale": 1.019,
+      "heading": 1.4111
+    },
+    {
+      "asset": "tree_conifer",
+      "position": [
+        24.346,
+        0,
+        314.633
+      ],
+      "scale": 1.02,
+      "heading": 2.7754
+    },
+    {
+      "asset": "tree_plane_c",
+      "position": [
+        40.703,
+        0,
+        313.825
+      ],
+      "scale": 0.901,
+      "heading": 3.7241
+    },
+    {
+      "asset": "tree_plane_a",
+      "position": [
+        51.712,
+        0,
+        314.14
+      ],
+      "scale": 0.92,
+      "heading": 3.0694
+    },
+    {
+      "asset": "tree_garden",
+      "position": [
+        66.225,
+        0,
+        313.852
+      ],
+      "scale": 1.001,
+      "heading": 2.3295
+    },
+    {
+      "asset": "tree_plane_b",
+      "position": [
+        -92.817,
+        0,
+        330.263
+      ],
+      "scale": 1.021,
+      "heading": 1.0183
+    },
+    {
+      "asset": "tree_conifer",
+      "position": [
+        -64.801,
+        0,
+        330.51
+      ],
+      "scale": 1.078,
+      "heading": 2.0898
+    },
+    {
+      "asset": "tree_plane_c",
+      "position": [
+        -50.71,
+        0,
+        329.861
+      ],
+      "scale": 0.902,
+      "heading": 3.9167
+    },
+    {
+      "asset": "tree_plane_a",
+      "position": [
+        -38.293,
+        0,
+        328.913
+      ],
+      "scale": 1.007,
+      "heading": 1.9417
+    },
+    {
+      "asset": "tree_garden",
+      "position": [
+        -13.146,
+        0,
+        327.077
+      ],
+      "scale": 1.095,
+      "heading": 4.3635
+    },
+    {
+      "asset": "tree_plane_b",
+      "position": [
+        0.158,
+        0,
+        328.84
+      ],
+      "scale": 1.103,
+      "heading": 3.4403
+    },
+    {
+      "asset": "tree_conifer",
+      "position": [
+        12.602,
+        0,
+        326.822
+      ],
+      "scale": 0.996,
+      "heading": 4.9377
+    },
+    {
+      "asset": "tree_plane_c",
+      "position": [
+        27.615,
+        0,
+        330.57
+      ],
+      "scale": 0.941,
+      "heading": 0.46
+    },
+    {
+      "asset": "tree_plane_a",
+      "position": [
+        50.412,
+        0,
+        328.604
+      ],
+      "scale": 0.905,
+      "heading": 1.1242
+    },
+    {
+      "asset": "tree_garden",
+      "position": [
+        66.082,
+        0,
+        329.262
+      ],
+      "scale": 0.959,
+      "heading": 1.8706
+    },
+    {
+      "asset": "tree_plane_b",
+      "position": [
+        78.997,
+        0,
+        331.349
+      ],
+      "scale": 0.896,
+      "heading": 2.0607
+    },
+    {
+      "asset": "tree_conifer",
+      "position": [
+        144.289,
+        0,
+        330.84
+      ],
+      "scale": 0.983,
+      "heading": 2.7744
+    },
+    {
+      "asset": "tree_plane_c",
+      "position": [
+        -91.932,
+        0,
+        342.114
+      ],
+      "scale": 0.969,
+      "heading": 0.2987
+    },
+    {
+      "asset": "tree_plane_a",
+      "position": [
+        -38.429,
+        0,
+        342.217
+      ],
+      "scale": 0.952,
+      "heading": 5.8996
+    },
+    {
+      "asset": "tree_garden",
+      "position": [
+        -24.945,
+        0,
+        342.295
+      ],
+      "scale": 0.958,
+      "heading": 6.1514
+    },
+    {
+      "asset": "tree_plane_b",
+      "position": [
+        -13.155,
+        0,
+        342.567
+      ],
+      "scale": 1.02,
+      "heading": 5.4635
+    },
+    {
+      "asset": "tree_conifer",
+      "position": [
+        14.463,
+        0,
+        344.258
+      ],
+      "scale": 1.032,
+      "heading": 1.1889
+    },
+    {
+      "asset": "tree_plane_c",
+      "position": [
+        118.47,
+        0,
+        343.875
+      ],
+      "scale": 0.983,
+      "heading": 0.8707
+    },
+    {
+      "asset": "tree_plane_a",
+      "position": [
+        130.664,
+        0,
+        340.508
+      ],
+      "scale": 0.996,
+      "heading": 3.1289
+    },
+    {
+      "asset": "tree_garden",
+      "position": [
+        168.011,
+        0,
+        343.789
+      ],
+      "scale": 0.928,
+      "heading": 5.6175
+    },
+    {
+      "asset": "tree_plane_b",
+      "position": [
+        -89.867,
+        0,
+        354.031
+      ],
+      "scale": 1.044,
+      "heading": 2.1813
+    },
+    {
+      "asset": "tree_conifer",
+      "position": [
+        -64.427,
+        0,
+        357.133
+      ],
+      "scale": 1.12,
+      "heading": 4.3451
+    },
+    {
+      "asset": "tree_plane_c",
+      "position": [
+        -53.676,
+        0,
+        353.784
+      ],
+      "scale": 0.975,
+      "heading": 0.3575
+    },
+    {
+      "asset": "tree_plane_a",
+      "position": [
+        -40.928,
+        0,
+        356.816
+      ],
+      "scale": 0.875,
+      "heading": 3.0144
+    },
+    {
+      "asset": "tree_garden",
+      "position": [
+        -28.128,
+        0,
+        356.801
+      ],
+      "scale": 1.026,
+      "heading": 3.4247
+    },
+    {
+      "asset": "tree_plane_b",
+      "position": [
+        26.449,
+        0,
+        354.287
+      ],
+      "scale": 0.949,
+      "heading": 4.9002
+    },
+    {
+      "asset": "tree_conifer",
+      "position": [
+        36.735,
+        0,
+        354.955
+      ],
+      "scale": 0.964,
+      "heading": 5.2111
+    },
+    {
+      "asset": "tree_plane_c",
+      "position": [
+        53.962,
+        0,
+        357.22
+      ],
+      "scale": 1.114,
+      "heading": 0.4297
+    },
+    {
+      "asset": "tree_plane_a",
+      "position": [
+        65.762,
+        0,
+        354.536
+      ],
+      "scale": 1.067,
+      "heading": 5.5297
+    },
+    {
+      "asset": "tree_garden",
+      "position": [
+        171.205,
+        0,
+        354.234
+      ],
+      "scale": 0.907,
+      "heading": 0.0248
+    },
+    {
+      "asset": "tree_plane_b",
+      "position": [
+        -93.214,
+        0,
+        366.388
+      ],
+      "scale": 0.929,
+      "heading": 2.2666
+    },
+    {
+      "asset": "tree_conifer",
+      "position": [
+        -67.318,
+        0,
+        368.97
+      ],
+      "scale": 1.097,
+      "heading": 3.9266
+    },
+    {
+      "asset": "tree_plane_c",
+      "position": [
+        65.742,
+        0,
+        369.497
+      ],
+      "scale": 0.957,
+      "heading": 3.9743
+    },
+    {
+      "asset": "tree_plane_a",
+      "position": [
+        -92.74,
+        0,
+        380.07
+      ],
+      "scale": 1.078,
+      "heading": 6.2739
+    },
+    {
+      "asset": "tree_garden",
+      "position": [
+        -63.486,
+        0,
+        379.507
+      ],
+      "scale": 1.036,
+      "heading": 0.47
+    },
+    {
+      "asset": "tree_plane_b",
+      "position": [
+        -52.901,
+        0,
+        381.42
+      ],
+      "scale": 1.035,
+      "heading": 5.3793
+    },
+    {
+      "asset": "tree_conifer",
+      "position": [
+        -27.838,
+        0,
+        381.089
+      ],
+      "scale": 0.964,
+      "heading": 5.9559
+    },
+    {
+      "asset": "tree_plane_c",
+      "position": [
+        52.903,
+        0,
+        382.732
+      ],
+      "scale": 1.078,
+      "heading": 5.7608
+    },
+    {
+      "asset": "tree_plane_a",
+      "position": [
+        66.584,
+        0,
+        382.659
+      ],
+      "scale": 0.966,
+      "heading": 6.1573
+    },
+    {
+      "asset": "tree_garden",
+      "position": [
+        89.97,
+        0,
+        382.011
+      ],
+      "scale": 0.872,
+      "heading": 0.7796
+    },
+    {
+      "asset": "tree_plane_b",
+      "position": [
+        106.1,
+        0,
+        380.518
+      ],
+      "scale": 1.107,
+      "heading": 2.8885
+    },
+    {
+      "asset": "tree_conifer",
+      "position": [
+        118.152,
+        0,
+        382.69
+      ],
+      "scale": 1.058,
+      "heading": 0.4654
+    },
+    {
+      "asset": "tree_plane_c",
+      "position": [
+        132.389,
+        0,
+        381.639
+      ],
+      "scale": 1.102,
+      "heading": 2.3094
+    },
+    {
+      "asset": "tree_plane_a",
+      "position": [
+        144.326,
+        0,
+        379.002
+      ],
+      "scale": 1.049,
+      "heading": 0.3133
+    },
+    {
+      "asset": "tree_garden",
+      "position": [
+        153.901,
+        0,
+        379.353
+      ],
+      "scale": 0.883,
+      "heading": 3.9219
+    },
+    {
+      "asset": "tree_plane_b",
+      "position": [
+        170.485,
+        0,
+        380.459
+      ],
+      "scale": 1.111,
+      "heading": 0.8993
+    },
+    {
+      "asset": "tree_conifer",
+      "position": [
+        -93.323,
+        0,
+        395.866
+      ],
+      "scale": 1.017,
+      "heading": 1.6549
+    },
+    {
+      "asset": "tree_plane_c",
+      "position": [
+        -66.907,
+        0,
+        395.519
+      ],
+      "scale": 0.878,
+      "heading": 0.0104
+    },
+    {
+      "asset": "tree_plane_a",
+      "position": [
+        -50.745,
+        0,
+        394.19
+      ],
+      "scale": 0.917,
+      "heading": 4.1595
+    },
+    {
+      "asset": "tree_garden",
+      "position": [
+        -37.089,
+        0,
+        394.739
+      ],
+      "scale": 1.045,
+      "heading": 1.2123
+    },
+    {
+      "asset": "tree_plane_b",
+      "position": [
+        -26.971,
+        0,
+        391.821
+      ],
+      "scale": 0.907,
+      "heading": 3.2813
+    },
+    {
+      "asset": "tree_conifer",
+      "position": [
+        -13.526,
+        0,
+        393.068
+      ],
+      "scale": 1.075,
+      "heading": 4.0224
+    },
+    {
+      "asset": "tree_plane_c",
+      "position": [
+        14.616,
+        0,
+        391.821
+      ],
+      "scale": 1.005,
+      "heading": 6.0176
+    },
+    {
+      "asset": "tree_plane_a",
+      "position": [
+        25.946,
+        0,
+        395.959
+      ],
+      "scale": 1.067,
+      "heading": 5.3349
+    },
+    {
+      "asset": "tree_garden",
+      "position": [
+        38.729,
+        0,
+        392.318
+      ],
+      "scale": 0.928,
+      "heading": 0.5772
+    },
+    {
+      "asset": "tree_plane_b",
+      "position": [
+        50.255,
+        0,
+        393.765
+      ],
+      "scale": 0.895,
+      "heading": 1.2062
+    },
+    {
+      "asset": "tree_conifer",
+      "position": [
+        66.575,
+        0,
+        391.948
+      ],
+      "scale": 0.952,
+      "heading": 0.2658
+    },
+    {
+      "asset": "tree_plane_c",
+      "position": [
+        93.201,
+        0,
+        395.294
+      ],
+      "scale": 1.101,
+      "heading": 3.87
+    },
+    {
+      "asset": "tree_plane_a",
+      "position": [
+        -89.834,
+        0,
+        406.38
+      ],
+      "scale": 1.019,
+      "heading": 5.7555
+    },
+    {
+      "asset": "tree_garden",
+      "position": [
+        -66.868,
+        0,
+        405.139
+      ],
+      "scale": 1.023,
+      "heading": 5.2833
+    },
+    {
+      "asset": "tree_plane_b",
+      "position": [
+        65.01,
+        0,
+        405.245
+      ],
+      "scale": 0.973,
+      "heading": 0.4058
+    },
+    {
+      "asset": "tree_conifer",
+      "position": [
+        79.607,
+        0,
+        407.729
+      ],
+      "scale": 0.935,
+      "heading": 3.4694
+    },
+    {
+      "asset": "tree_plane_c",
+      "position": [
+        90.224,
+        0,
+        408.815
+      ],
+      "scale": 1.08,
+      "heading": 0.4894
+    },
+    {
+      "asset": "tree_plane_a",
+      "position": [
+        -64.514,
+        0,
+        422.169
+      ],
+      "scale": 0.866,
+      "heading": 4.7788
+    },
+    {
+      "asset": "tree_garden",
+      "position": [
+        93.343,
+        0,
+        420.167
+      ],
+      "scale": 1.1,
+      "heading": 2.4604
+    },
+    {
+      "asset": "tree_plane_b",
+      "position": [
+        169.142,
+        0,
+        418.436
+      ],
+      "scale": 1.08,
+      "heading": 4.886
+    },
+    {
+      "asset": "tree_conifer",
+      "position": [
+        -92.709,
+        0,
+        431.167
+      ],
+      "scale": 0.93,
+      "heading": 4.2601
+    },
+    {
+      "asset": "tree_plane_c",
+      "position": [
+        -65.768,
+        0,
+        432.181
+      ],
+      "scale": 0.953,
+      "heading": 2.8587
+    },
+    {
+      "asset": "tree_plane_a",
+      "position": [
+        -39.663,
+        0,
+        432.601
+      ],
+      "scale": 0.866,
+      "heading": 5.6215
+    },
+    {
+      "asset": "tree_garden",
+      "position": [
+        39.372,
+        0,
+        433.237
+      ],
+      "scale": 0.997,
+      "heading": 2.9365
+    },
+    {
+      "asset": "tree_plane_b",
+      "position": [
+        64.403,
+        0,
+        430.902
+      ],
+      "scale": 0.976,
+      "heading": 4.9568
+    },
+    {
+      "asset": "tree_conifer",
+      "position": [
+        79.199,
+        0,
+        431.126
+      ],
+      "scale": 0.945,
+      "heading": 2.374
+    },
+    {
+      "asset": "tree_plane_c",
+      "position": [
+        90.44,
+        0,
+        433.667
+      ],
+      "scale": 0.962,
+      "heading": 1.5068
+    },
+    {
+      "asset": "tree_plane_a",
+      "position": [
+        102.356,
+        0,
+        430.842
+      ],
+      "scale": 1.084,
+      "heading": 3.1821
+    },
+    {
+      "asset": "tree_garden",
+      "position": [
+        114.88,
+        0,
+        431.334
+      ],
+      "scale": 0.912,
+      "heading": 2.8252
+    }
+  ]
+}

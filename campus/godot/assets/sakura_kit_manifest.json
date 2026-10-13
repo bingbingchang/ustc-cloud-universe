@@ -1,0 +1,34 @@
+{
+  "units": "meters",
+  "source": "original procedural geometry from official reference observations; no photo textures",
+  "assets": {
+    "sakura_tree_0": {
+      "triangles": 219436,
+      "materials": 6
+    },
+    "sakura_tree_1": {
+      "triangles": 219632,
+      "materials": 6
+    },
+    "sakura_tree_2": {
+      "triangles": 219628,
+      "materials": 6
+    },
+    "sakura_shrub_0": {
+      "triangles": 1952,
+      "materials": 4
+    },
+    "sakura_shrub_1": {
+      "triangles": 1952,
+      "materials": 4
+    },
+    "sakura_shrub_2": {
+      "triangles": 4512,
+      "materials": 5
+    },
+    "sakura_grass": {
+      "triangles": 102,
+      "materials": 2
+    }
+  }
+}

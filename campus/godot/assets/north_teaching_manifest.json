@@ -1,0 +1,1303 @@
+{
+  "unit": "meter",
+  "coordinate_system": "Absolute Godot +X east,+Y up,+Z south; Blender=(x,-z,y)",
+  "placement": [
+    0,
+    0,
+    0
+  ],
+  "origin_wgs84": [
+    117.2634979,
+    31.8427261
+  ],
+  "south_rotation_radians": 0.07446840453199037,
+  "source_osm": "renders/coverage/osm_east_full.xml",
+  "buildings": [
+    {
+      "asset": "Teaching5",
+      "name": "第五教学楼（王璞楼）",
+      "osm_way_id": 265575547,
+      "polygon": [
+        [
+          178.797,
+          -9.129
+        ],
+        [
+          170.284,
+          -5.281
+        ],
+        [
+          166.266,
+          -14.167
+        ],
+        [
+          189.802,
+          -24.799
+        ],
+        [
+          221.609,
+          -23.842
+        ],
+        [
+          241.749,
+          -20.065
+        ],
+        [
+          254.614,
+          -17.6
+        ],
+        [
+          275.396,
+          -17.365
+        ],
+        [
+          275.164,
+          -12.086
+        ],
+        [
+          281.017,
+          -11.66
+        ],
+        [
+          280.186,
+          9.642
+        ],
+        [
+          261.531,
+          8.819
+        ],
+        [
+          261.461,
+          4.677
+        ],
+        [
+          256.655,
+          4.318
+        ],
+        [
+          256.609,
+          8.619
+        ],
+        [
+          237.714,
+          7.856
+        ],
+        [
+          238.034,
+          4.066
+        ],
+        [
+          233.108,
+          3.788
+        ],
+        [
+          232.682,
+          7.603
+        ],
+        [
+          213.825,
+          6.954
+        ],
+        [
+          214.133,
+          2.818
+        ],
+        [
+          208.843,
+          2.602
+        ],
+        [
+          208.627,
+          6.633
+        ],
+        [
+          190.045,
+          5.615
+        ],
+        [
+          190.435,
+          -1.403
+        ]
+      ],
+      "levels": 5,
+      "roof_height_m": 21.3,
+      "front_approach": [
+        199.08984022502722,
+        0.1,
+        10.617262218609698
+      ],
+      "footprint_area_m2": 2817.55
+    },
+    {
+      "asset": "TeachingAdministration",
+      "name": "教学行政楼（地空学院）",
+      "osm_way_id": 270537512,
+      "polygon": [
+        [
+          213.975,
+          -56.413
+        ],
+        [
+          213.565,
+          -44.691
+        ],
+        [
+          206.486,
+          -44.941
+        ],
+        [
+          206.262,
+          -38.513
+        ],
+        [
+          178.569,
+          -39.486
+        ],
+        [
+          160.82,
+          -43.921
+        ],
+        [
+          131.881,
+          -35.565
+        ],
+        [
+          129.72,
+          -43.052
+        ],
+        [
+          131.551,
+          -43.585
+        ],
+        [
+          130.557,
+          -47.026
+        ],
+        [
+          132.512,
+          -47.583
+        ],
+        [
+          132.919,
+          -59.26
+        ]
+      ],
+      "levels": 16,
+      "roof_height_m": 63.8,
+      "front_approach": [
+        168.60361057870702,
+        0.1,
+        -37.33772855951997
+      ],
+      "footprint_area_m2": 1433.9
+    },
+    {
+      "asset": "ManagementResearch",
+      "name": "管理科学教学科研楼",
+      "osm_way_id": 270537513,
+      "polygon": [
+        [
+          333.473,
+          -41.711
+        ],
+        [
+          329.572,
+          -42.002
+        ],
+        [
+          329.329,
+          -34.17
+        ],
+        [
+          325.235,
+          -34.297
+        ],
+        [
+          323.281,
+          -33.25
+        ],
+        [
+          297.553,
+          -34.144
+        ],
+        [
+          281.716,
+          -32.593
+        ],
+        [
+          252.247,
+          -38.204
+        ],
+        [
+          252.814,
+          -40.726
+        ],
+        [
+          253.526,
+          -43.918
+        ],
+        [
+          256.083,
+          -43.894
+        ],
+        [
+          257.22,
+          -54.57
+        ],
+        [
+          334.038,
+          -51.57
+        ]
+      ],
+      "levels": 16,
+      "roof_height_m": 64.4,
+      "front_approach": [
+        290.07311006536,
+        0.1,
+        -28.889926431265764
+      ],
+      "footprint_area_m2": 1453.88
+    },
+    {
+      "asset": "ManagementMBA",
+      "name": "管理学院MBA中心",
+      "osm_way_id": 270537514,
+      "polygon": [
+        [
+          252.814,
+          -40.726
+        ],
+        [
+          249.544,
+          -40.97
+        ],
+        [
+          234.387,
+          -36.983
+        ],
+        [
+          229.679,
+          -38.014
+        ],
+        [
+          226.866,
+          -41.469
+        ],
+        [
+          225.669,
+          -45.996
+        ],
+        [
+          227.553,
+          -55.244
+        ],
+        [
+          231.077,
+          -54.468
+        ],
+        [
+          232.583,
+          -56.24
+        ],
+        [
+          235.348,
+          -56.714
+        ],
+        [
+          241.922,
+          -55.544
+        ],
+        [
+          248.818,
+          -56.39
+        ],
+        [
+          257.22,
+          -54.57
+        ],
+        [
+          256.083,
+          -43.894
+        ],
+        [
+          253.526,
+          -43.918
+        ]
+      ],
+      "levels": 4,
+      "roof_height_m": 16.1,
+      "front_approach": [
+        231.0703616329833,
+        0.1,
+        -33.102669319190355
+      ],
+      "footprint_area_m2": 485.89
+    }
+  ],
+  "observed_sources": [
+    {
+      "url": "https://www.teach.ustc.edu.cn/service/svc-resource/12388.html",
+      "claim": "Teaching five has five floors"
+    },
+    {
+      "url": "https://en.ustc.edu.cn/Dictionary.htm",
+      "claim": "第五教学楼（王璞楼） landmark name"
+    },
+    {
+      "url": "https://map.baidu.com/place/9d869de78b9635fd344aae90",
+      "image": "https://taojin-his.cdn.bcebos.com/30adcbef76094b3656895f55a9cc7cd98d109d6b.jpg",
+      "local": "references/buildings/teaching5_front.jpg",
+      "observed": "White tile wall, full-height fine aluminium curtain entry, vertical gold 王璞楼, glass canopy, three steps"
+    },
+    {
+      "local": "references/maps/east_campus.png",
+      "claim": "Teaching administrative and management buildings north of teaching five; new north gate northwest"
+    },
+    {
+      "local": "references/road_network/north_roads_satellite.jpg",
+      "claim": "Roof outlines, paired long high blocks, segmented teaching five roof"
+    },
+    {
+      "url": "https://ess.ustc.edu.cn/main.htm",
+      "claim": "Earth/Space faculty address is teaching administration building"
+    },
+    {
+      "url": "https://essetc.ustc.edu.cn/zxgk/list.htm",
+      "claim": "Laboratories at teaching administration floors 8 and 16"
+    },
+    {
+      "url": "https://faculty.ustc.edu.cn/caichen/zh_CN/article/1021455/content/5480.htm",
+      "claim": "Management research room 1607 establishes at least 16 floors"
+    },
+    {
+      "url": "https://www.ezhujianpt.com/project/list_0_0_121013_1213_36.html",
+      "claim": "2019 facade renovation listing: teaching administration 16 floors,63.8m; management research 16 floors,64.4m"
+    },
+    {
+      "url": "https://news.ustc.edu.cn/info/1056/68537.htm",
+      "claim": "New Huangshan north gate is electric gate and university name stone; separate from old north arch"
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/File:The_North_Gate_of_East_University_of_Science_and_Technology_of_China_1.jpg",
+      "local": "references/buildings/new_northgate_2022.jpg",
+      "photographer": "深鸣",
+      "date": "2022-09-10",
+      "observed": "Cylindrical metallic guard booth with horizontal layered roof, practical entry equipment, large rough stone; photo used for shape reference only"
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/File:The_North_Gate_of_East_University_of_Science_and_Technology_of_China_2.jpg",
+      "local": "references/buildings/new_northgate_inside_2022.jpg",
+      "photographer": "深鸣",
+      "date": "2022-09-10",
+      "observed": "Vine-covered stone, reddish Chinese inscription and small English line; photo used for shape reference only"
+    }
+  ],
+  "confidence": "Plan polygons and relative placement from OSM, corroborated by official campus plan and public satellite imagery. Teaching-five entry treatment photographed. Teaching-five height21.3m estimated from5 floors. Faculty exact facade bay sizes, panel tone, roofs and entry arrangement are exterior modelling approximations; MBA4-floor height is estimated. No fabricated college name attached to an unrelated building.",
+  "collision_solids": [
+    {
+      "name": "Teaching5_closed_exterior",
+      "type": "polygon_prism",
+      "polygon": [
+        [
+          178.797,
+          -9.129
+        ],
+        [
+          170.284,
+          -5.281
+        ],
+        [
+          166.266,
+          -14.167
+        ],
+        [
+          189.802,
+          -24.799
+        ],
+        [
+          221.609,
+          -23.842
+        ],
+        [
+          241.749,
+          -20.065
+        ],
+        [
+          254.614,
+          -17.6
+        ],
+        [
+          275.396,
+          -17.365
+        ],
+        [
+          275.164,
+          -12.086
+        ],
+        [
+          281.017,
+          -11.66
+        ],
+        [
+          280.186,
+          9.642
+        ],
+        [
+          261.531,
+          8.819
+        ],
+        [
+          261.461,
+          4.677
+        ],
+        [
+          256.655,
+          4.318
+        ],
+        [
+          256.609,
+          8.619
+        ],
+        [
+          237.714,
+          7.856
+        ],
+        [
+          238.034,
+          4.066
+        ],
+        [
+          233.108,
+          3.788
+        ],
+        [
+          232.682,
+          7.603
+        ],
+        [
+          213.825,
+          6.954
+        ],
+        [
+          214.133,
+          2.818
+        ],
+        [
+          208.843,
+          2.602
+        ],
+        [
+          208.627,
+          6.633
+        ],
+        [
+          190.045,
+          5.615
+        ],
+        [
+          190.435,
+          -1.403
+        ]
+      ],
+      "bottom": 0.08,
+      "top": 21.8
+    },
+    {
+      "name": "Teaching5_entry_step_0",
+      "type": "polygon_prism",
+      "polygon": [
+        [
+          205.94499393148817,
+          6.506098434376036
+        ],
+        [
+          192.7248179816232,
+          5.781841674233827
+        ],
+        [
+          192.67120985285135,
+          6.760374335175494
+        ],
+        [
+          205.89138580271631,
+          7.484631095317703
+        ]
+      ],
+      "bottom": 0.07,
+      "top": 0.48
+    },
+    {
+      "name": "Teaching5_entry_step_1",
+      "type": "polygon_prism",
+      "polygon": [
+        [
+          205.94499393148817,
+          6.506098434376036
+        ],
+        [
+          192.7248179816232,
+          5.781841674233827
+        ],
+        [
+          192.64768791879837,
+          7.189730502731532
+        ],
+        [
+          205.86786386866333,
+          7.913987262873741
+        ]
+      ],
+      "bottom": 0.07,
+      "top": 0.32
+    },
+    {
+      "name": "Teaching5_entry_step_2",
+      "type": "polygon_prism",
+      "polygon": [
+        [
+          205.94499393148817,
+          6.506098434376036
+        ],
+        [
+          192.7248179816232,
+          5.781841674233827
+        ],
+        [
+          192.62416598474542,
+          7.61908667028757
+        ],
+        [
+          205.84434193461038,
+          8.34334343042978
+        ]
+      ],
+      "bottom": 0.07,
+      "top": 0.16
+    },
+    {
+      "name": "TeachingAdministration_closed_exterior",
+      "type": "polygon_prism",
+      "polygon": [
+        [
+          213.975,
+          -56.413
+        ],
+        [
+          213.565,
+          -44.691
+        ],
+        [
+          206.486,
+          -44.941
+        ],
+        [
+          206.262,
+          -38.513
+        ],
+        [
+          178.569,
+          -39.486
+        ],
+        [
+          160.82,
+          -43.921
+        ],
+        [
+          131.881,
+          -35.565
+        ],
+        [
+          129.72,
+          -43.052
+        ],
+        [
+          131.551,
+          -43.585
+        ],
+        [
+          130.557,
+          -47.026
+        ],
+        [
+          132.512,
+          -47.583
+        ],
+        [
+          132.919,
+          -59.26
+        ]
+      ],
+      "bottom": 0.08,
+      "top": 64.3
+    },
+    {
+      "name": "TeachingAdministration_entry_step_0",
+      "type": "polygon_prism",
+      "polygon": [
+        [
+          175.14201504601598,
+          -40.32169689411642
+        ],
+        [
+          164.23728815912807,
+          -43.04649624863486
+        ],
+        [
+          163.9997166851576,
+          -42.09572824604143
+        ],
+        [
+          174.90444357204552,
+          -39.37092889152299
+        ]
+      ],
+      "bottom": 0.07,
+      "top": 0.48
+    },
+    {
+      "name": "TeachingAdministration_entry_step_1",
+      "type": "polygon_prism",
+      "polygon": [
+        [
+          175.14201504601598,
+          -40.32169689411642
+        ],
+        [
+          164.23728815912807,
+          -43.04649624863486
+        ],
+        [
+          163.89547614045625,
+          -41.67855453061779
+        ],
+        [
+          174.80020302734417,
+          -38.95375517609935
+        ]
+      ],
+      "bottom": 0.07,
+      "top": 0.32
+    },
+    {
+      "name": "TeachingAdministration_entry_step_2",
+      "type": "polygon_prism",
+      "polygon": [
+        [
+          175.14201504601598,
+          -40.32169689411642
+        ],
+        [
+          164.23728815912807,
+          -43.04649624863486
+        ],
+        [
+          163.79123559575493,
+          -41.26138081519414
+        ],
+        [
+          174.69596248264284,
+          -38.5365814606757
+        ]
+      ],
+      "bottom": 0.07,
+      "top": 0.16
+    },
+    {
+      "name": "ManagementResearch_closed_exterior",
+      "type": "polygon_prism",
+      "polygon": [
+        [
+          333.473,
+          -41.711
+        ],
+        [
+          329.572,
+          -42.002
+        ],
+        [
+          329.329,
+          -34.17
+        ],
+        [
+          325.235,
+          -34.297
+        ],
+        [
+          323.281,
+          -33.25
+        ],
+        [
+          297.553,
+          -34.144
+        ],
+        [
+          281.716,
+          -32.593
+        ],
+        [
+          252.247,
+          -38.204
+        ],
+        [
+          252.814,
+          -40.726
+        ],
+        [
+          253.526,
+          -43.918
+        ],
+        [
+          256.083,
+          -43.894
+        ],
+        [
+          257.22,
+          -54.57
+        ],
+        [
+          334.038,
+          -51.57
+        ]
+      ],
+      "bottom": 0.08,
+      "top": 64.9
+    },
+    {
+      "name": "ManagementResearch_entry_step_0",
+      "type": "polygon_prism",
+      "polygon": [
+        [
+          295.13016628904893,
+          -33.88662357542504
+        ],
+        [
+          284.1427324670876,
+          -32.810566881741764
+        ],
+        [
+          284.2382519924327,
+          -31.835233082328532
+        ],
+        [
+          295.225685814394,
+          -32.91128977601181
+        ]
+      ],
+      "bottom": 0.07,
+      "top": 0.48
+    },
+    {
+      "name": "ManagementResearch_entry_step_1",
+      "type": "polygon_prism",
+      "polygon": [
+        [
+          295.13016628904893,
+          -33.88662357542504
+        ],
+        [
+          284.1427324670876,
+          -32.810566881741764
+        ],
+        [
+          284.28016362090045,
+          -31.407280496871707
+        ],
+        [
+          295.26759744286176,
+          -32.483337190554984
+        ]
+      ],
+      "bottom": 0.07,
+      "top": 0.32
+    },
+    {
+      "name": "ManagementResearch_entry_step_2",
+      "type": "polygon_prism",
+      "polygon": [
+        [
+          295.13016628904893,
+          -33.88662357542504
+        ],
+        [
+          284.1427324670876,
+          -32.810566881741764
+        ],
+        [
+          284.32207524936814,
+          -30.97932791141488
+        ],
+        [
+          295.30950907132944,
+          -32.055384605098155
+        ]
+      ],
+      "bottom": 0.07,
+      "top": 0.16
+    },
+    {
+      "name": "ManagementMBA_closed_exterior",
+      "type": "polygon_prism",
+      "polygon": [
+        [
+          252.814,
+          -40.726
+        ],
+        [
+          249.544,
+          -40.97
+        ],
+        [
+          234.387,
+          -36.983
+        ],
+        [
+          229.679,
+          -38.014
+        ],
+        [
+          226.866,
+          -41.469
+        ],
+        [
+          225.669,
+          -45.996
+        ],
+        [
+          227.553,
+          -55.244
+        ],
+        [
+          231.077,
+          -54.468
+        ],
+        [
+          232.583,
+          -56.24
+        ],
+        [
+          235.348,
+          -56.714
+        ],
+        [
+          241.922,
+          -55.544
+        ],
+        [
+          248.818,
+          -56.39
+        ],
+        [
+          257.22,
+          -54.57
+        ],
+        [
+          256.083,
+          -43.894
+        ],
+        [
+          253.526,
+          -43.918
+        ]
+      ],
+      "bottom": 0.08,
+      "top": 16.6
+    },
+    {
+      "name": "ManagementMBA_entry_step_0",
+      "type": "polygon_prism",
+      "polygon": [
+        [
+          234.5880719147513,
+          -36.9184935255111
+        ],
+        [
+          229.4693712997641,
+          -38.03943242399281
+        ],
+        [
+          229.25973005539157,
+          -37.082118186838706
+        ],
+        [
+          234.37843067037878,
+          -35.961179288357
+        ]
+      ],
+      "bottom": 0.07,
+      "top": 0.32
+    },
+    {
+      "name": "ManagementMBA_entry_step_1",
+      "type": "polygon_prism",
+      "polygon": [
+        [
+          234.5880719147513,
+          -36.9184935255111
+        ],
+        [
+          229.4693712997641,
+          -38.03943242399281
+        ],
+        [
+          229.1677446114322,
+          -36.66207214400578
+        ],
+        [
+          234.2864452264194,
+          -35.54113324552408
+        ]
+      ],
+      "bottom": 0.07,
+      "top": 0.16
+    },
+    {
+      "name": "NewNorthGate_guard_booth",
+      "type": "polygon_prism",
+      "polygon": [
+        [
+          121.35700000000001,
+          -78.687
+        ],
+        [
+          121.31508876633556,
+          -78.39712266948517
+        ],
+        [
+          121.19221124665486,
+          -78.127
+        ],
+        [
+          120.99674134085946,
+          -77.89504040507106
+        ],
+        [
+          120.742,
+          -77.71705154776143
+        ],
+        [
+          120.44534742547611,
+          -77.60516307455624
+        ],
+        [
+          120.12700000000001,
+          -77.567
+        ],
+        [
+          119.8086525745239,
+          -77.60516307455624
+        ],
+        [
+          119.51200000000001,
+          -77.71705154776143
+        ],
+        [
+          119.25725865914056,
+          -77.89504040507106
+        ],
+        [
+          119.06178875334516,
+          -78.127
+        ],
+        [
+          118.93891123366446,
+          -78.39712266948517
+        ],
+        [
+          118.897,
+          -78.687
+        ],
+        [
+          118.93891123366446,
+          -78.97687733051482
+        ],
+        [
+          119.06178875334516,
+          -79.247
+        ],
+        [
+          119.25725865914056,
+          -79.47895959492892
+        ],
+        [
+          119.51200000000001,
+          -79.65694845223857
+        ],
+        [
+          119.8086525745239,
+          -79.76883692544375
+        ],
+        [
+          120.12700000000001,
+          -79.807
+        ],
+        [
+          120.44534742547611,
+          -79.76883692544375
+        ],
+        [
+          120.742,
+          -79.65694845223857
+        ],
+        [
+          120.99674134085946,
+          -79.47895959492894
+        ],
+        [
+          121.19221124665486,
+          -79.247
+        ],
+        [
+          121.31508876633556,
+          -78.97687733051482
+        ]
+      ],
+      "bottom": 0.08,
+      "top": 3.08
+    },
+    {
+      "name": "NewNorthGate_gate_motor",
+      "type": "polygon_prism",
+      "polygon": [
+        [
+          117.427,
+          -78.847
+        ],
+        [
+          118.027,
+          -78.847
+        ],
+        [
+          118.027,
+          -78.127
+        ],
+        [
+          117.427,
+          -78.127
+        ]
+      ],
+      "bottom": 0.08,
+      "top": 1.47
+    },
+    {
+      "name": "NewNorthGate_folded_gate",
+      "type": "polygon_prism",
+      "polygon": [
+        [
+          117.992,
+          -78.80199999999999
+        ],
+        [
+          119.282,
+          -78.80199999999999
+        ],
+        [
+          119.282,
+          -77.77199999999999
+        ],
+        [
+          117.992,
+          -77.77199999999999
+        ]
+      ],
+      "bottom": 0.08,
+      "top": 1.4
+    },
+    {
+      "name": "NewNorthGate_raised_barrier_base",
+      "type": "polygon_prism",
+      "polygon": [
+        [
+          117.06700000000001,
+          -77.97699999999999
+        ],
+        [
+          117.387,
+          -77.97699999999999
+        ],
+        [
+          117.387,
+          -77.63699999999999
+        ],
+        [
+          117.06700000000001,
+          -77.63699999999999
+        ]
+      ],
+      "bottom": 0.08,
+      "top": 0.7
+    },
+    {
+      "name": "NewNorthGate_name_stone",
+      "type": "polygon_prism",
+      "polygon": [
+        [
+          124.17700000000002,
+          -77.907
+        ],
+        [
+          124.03700000000002,
+          -76.85699999999999
+        ],
+        [
+          125.12700000000002,
+          -75.97699999999999
+        ],
+        [
+          127.27700000000002,
+          -75.817
+        ],
+        [
+          130.97700000000003,
+          -75.957
+        ],
+        [
+          132.20700000000002,
+          -76.55699999999999
+        ],
+        [
+          132.23700000000002,
+          -77.457
+        ],
+        [
+          130.60700000000003,
+          -78.08699999999999
+        ],
+        [
+          127.57700000000003,
+          -78.237
+        ]
+      ],
+      "bottom": 0.08,
+      "top": 4.06
+    },
+    {
+      "name": "NewNorthGate_fence_return_91",
+      "type": "polygon_prism",
+      "polygon": [
+        [
+          91.927,
+          -78.607
+        ],
+        [
+          103.927,
+          -78.607
+        ],
+        [
+          103.927,
+          -78.36699999999999
+        ],
+        [
+          91.927,
+          -78.36699999999999
+        ]
+      ],
+      "bottom": 0.08,
+      "top": 1.85
+    },
+    {
+      "name": "NewNorthGate_fence_return_133",
+      "type": "polygon_prism",
+      "polygon": [
+        [
+          133.92700000000002,
+          -78.607
+        ],
+        [
+          140.92700000000002,
+          -78.607
+        ],
+        [
+          140.92700000000002,
+          -78.36699999999999
+        ],
+        [
+          133.92700000000002,
+          -78.36699999999999
+        ]
+      ],
+      "bottom": 0.08,
+      "top": 1.85
+    }
+  ],
+  "assets": {
+    "north_teaching5.glb": {
+      "file": "godot/assets/north_teaching5.glb",
+      "buildings": [
+        "Teaching5"
+      ],
+      "objects": 10,
+      "triangles": 55412,
+      "bounds_min": [
+        166.165771484375,
+        0.07000000029802322,
+        -24.908950805664062
+      ],
+      "bounds_max": [
+        281.1269226074219,
+        23.045000076293945,
+        9.751893043518066
+      ]
+    },
+    "north_faculty_blocks.glb": {
+      "file": "godot/assets/north_faculty_blocks.glb",
+      "buildings": [
+        "TeachingAdministration",
+        "ManagementResearch",
+        "ManagementMBA"
+      ],
+      "objects": 36,
+      "triangles": 259168,
+      "bounds_min": [
+        129.61431884765625,
+        0.07000000029802322,
+        -59.36993408203125
+      ],
+      "bounds_max": [
+        334.1478271484375,
+        67.36000061035156,
+        -30.394086837768555
+      ]
+    },
+    "north_gate.glb": {
+      "file": "godot/assets/north_gate.glb",
+      "buildings": [
+        "NewNorthGate"
+      ],
+      "objects": 13,
+      "triangles": 14044,
+      "bounds_min": [
+        91.89199829101562,
+        0.07500000298023224,
+        -79.98699951171875
+      ],
+      "bounds_max": [
+        140.96200561523438,
+        4.079999923706055,
+        -75.81700134277344
+      ]
+    }
+  },
+  "gates": [
+    {
+      "name": "东区新北门（黄山路）",
+      "osm_node_id": 2755623225,
+      "center": [
+        111.927,
+        -71.737
+      ],
+      "placement": [
+        0,
+        0,
+        0
+      ],
+      "central_open_route_width_m": 7.0,
+      "fixture_north_offset_m": 6.75,
+      "eastward_ring_road_clear_width_m": 9.0,
+      "western_pedestrian_gap_x": [
+        104.12700000000001,
+        108.32700000000001
+      ],
+      "confidence": "Known electric gate, cylindrical guard booth and broad rough vine-covered name stone from photographs. Individual dimensions and side-object positions approximated. Side fixtures lie north of the mapped college-ring road, leaving its 6m road plus 1.5m sidewalks clear; original gate node is unchanged."
+    }
+  ]
+}

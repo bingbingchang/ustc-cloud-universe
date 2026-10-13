@@ -1,0 +1,827 @@
+{
+  "asset": "lookdev_teaching_hall.glb",
+  "source_blend": "blender\\source\\lookdev_teaching_hall.blend",
+  "coordinate_system": "Godot XYZ east/up/south in meters, root identity; Blender X,-Z,Y mapping on import",
+  "bounds_godot_m": {
+    "min": [
+      -62.5,
+      0.0,
+      164.300003
+    ],
+    "max": [
+      62.5,
+      17.58,
+      222.399994
+    ]
+  },
+  "triangles": 499204,
+  "vertices": 1011760,
+  "mesh_nodes": 11,
+  "glb_bytes": 30190480,
+  "output_sha256": "0d961c5f048ae8d0390e9d5fe25a798d27478846ae7deab6ab2c633a915e8457",
+  "selection": {
+    "hall_inclusive_xyz_min_max": [
+      -63.0,
+      -0.02,
+      163.8,
+      63.0,
+      18.0,
+      223.0
+    ],
+    "remove_old_entry_xyz_min_max": [
+      -6.2,
+      -0.02,
+      164.0,
+      6.2,
+      0.761,
+      166.4
+    ],
+    "corrected_entry_only_xyz_min_max": [
+      -6.01,
+      -0.01,
+      164.75,
+      6.01,
+      0.481,
+      167.235
+    ],
+    "rule": "Keep whole triangles whose three world-space vertices fall inside the chosen box; entry additionally keeps only five full-width connected components, excluding intersected canopy-column bevel caps. No clipping or vertex relocation."
+  },
+  "alignment": {
+    "root_translation": [
+      0,
+      0,
+      0
+    ],
+    "root_scale": [
+      1,
+      1,
+      1
+    ],
+    "main_wall": {
+      "min": [
+        -62,
+        0,
+        168.4
+      ],
+      "max": [
+        62,
+        17,
+        184
+      ]
+    },
+    "wing_outer_z": [
+      180,
+      222
+    ],
+    "paving_top": 0.105,
+    "corrected_steps": [
+      {
+        "center_z": 165.0,
+        "top_y": 0.12,
+        "width": 12,
+        "depth": 0.48
+      },
+      {
+        "center_z": 165.45,
+        "top_y": 0.24,
+        "width": 12,
+        "depth": 0.48
+      },
+      {
+        "center_z": 165.9,
+        "top_y": 0.36,
+        "width": 12,
+        "depth": 0.48
+      },
+      {
+        "center_z": 166.35,
+        "top_y": 0.48,
+        "width": 12,
+        "depth": 0.48
+      }
+    ],
+    "landing": {
+      "center_z": 166.85,
+      "top_y": 0.48,
+      "width": 12,
+      "depth": 0.75
+    },
+    "old_step_issue": "The archived four steps got higher toward the north (away from the entrance); removed only these faces.",
+    "diorama_difference": "Same walls and window locations; archived .018m manufactured bevels remain, without later .065m Diorama bevel/rear joinery/parapet additions."
+  },
+  "materials": [
+    {
+      "doubleSided": true,
+      "name": "Brick",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.36000001430511475,
+          0.2199999988079071,
+          0.1599999964237213,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.8399999737739563
+      }
+    },
+    {
+      "doubleSided": true,
+      "name": "BrickWarm",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.4099999964237213,
+          0.2800000011920929,
+          0.20999999344348907,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.8399999737739563
+      }
+    },
+    {
+      "doubleSided": true,
+      "name": "Dark",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.07500000298023224,
+          0.10000000149011612,
+          0.10000000149011612,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.8399999737739563
+      }
+    },
+    {
+      "doubleSided": true,
+      "name": "Frame",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.5799999833106995,
+          0.6000000238418579,
+          0.550000011920929,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.8399999737739563
+      }
+    },
+    {
+      "doubleSided": true,
+      "name": "Glass",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.10000000149011612,
+          0.14000000059604645,
+          0.12999999523162842,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.23999999463558197
+      }
+    },
+    {
+      "doubleSided": true,
+      "name": "GlassLight",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.12999999523162842,
+          0.1599999964237213,
+          0.15000000596046448,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.23999999463558197
+      }
+    },
+    {
+      "doubleSided": true,
+      "name": "Metal",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.1899999976158142,
+          0.25999999046325684,
+          0.23999999463558197,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.8399999737739563
+      }
+    },
+    {
+      "doubleSided": true,
+      "name": "Roof",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.25999999046325684,
+          0.28999999165534973,
+          0.27000001072883606,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.8399999737739563
+      }
+    },
+    {
+      "doubleSided": true,
+      "name": "Stone",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.6200000047683716,
+          0.5899999737739563,
+          0.5199999809265137,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.8399999737739563
+      }
+    }
+  ],
+  "mesh_records": [
+    {
+      "node": "ArchivedLookDevHall_Architecture_Brick",
+      "source": "architecture.glb",
+      "source_node": "Architecture_Brick",
+      "role": "ArchivedLookDevHall",
+      "material": "Brick",
+      "vertices": 3120,
+      "triangles": 1560,
+      "bounds_godot_m": {
+        "min": [
+          -62.0,
+          0.0,
+          167.940002
+        ],
+        "max": [
+          62.0,
+          17.0,
+          222.0
+        ]
+      },
+      "preserved_attributes": [
+        "POSITION",
+        "NORMAL"
+      ]
+    },
+    {
+      "node": "ArchivedLookDevHall_Architecture_BrickWarm",
+      "source": "architecture.glb",
+      "source_node": "Architecture_BrickWarm",
+      "role": "ArchivedLookDevHall",
+      "material": "BrickWarm",
+      "vertices": 8856,
+      "triangles": 4428,
+      "bounds_godot_m": {
+        "min": [
+          -62.040001,
+          0.0,
+          167.664993
+        ],
+        "max": [
+          62.040001,
+          17.0,
+          222.039993
+        ]
+      },
+      "preserved_attributes": [
+        "POSITION",
+        "NORMAL"
+      ]
+    },
+    {
+      "node": "ArchivedLookDevHall_Architecture_Dark",
+      "source": "architecture.glb",
+      "source_node": "Architecture_Dark",
+      "role": "ArchivedLookDevHall",
+      "material": "Dark",
+      "vertices": 7872,
+      "triangles": 3936,
+      "bounds_godot_m": {
+        "min": [
+          -62.130001,
+          0.1,
+          165.725006
+        ],
+        "max": [
+          62.130001,
+          16.049999,
+          217.899994
+        ]
+      },
+      "preserved_attributes": [
+        "POSITION",
+        "NORMAL"
+      ]
+    },
+    {
+      "node": "ArchivedLookDevHall_Architecture_Frame",
+      "source": "architecture.glb",
+      "source_node": "Architecture_Frame",
+      "role": "ArchivedLookDevHall",
+      "material": "Frame",
+      "vertices": 796024,
+      "triangles": 390664,
+      "bounds_godot_m": {
+        "min": [
+          -62.220001,
+          0.15,
+          167.300003
+        ],
+        "max": [
+          62.220001,
+          16.0,
+          217.850006
+        ]
+      },
+      "preserved_attributes": [
+        "POSITION",
+        "NORMAL"
+      ]
+    },
+    {
+      "node": "ArchivedLookDevHall_Architecture_Glass",
+      "source": "architecture.glb",
+      "source_node": "Architecture_Glass",
+      "role": "ArchivedLookDevHall",
+      "material": "Glass",
+      "vertices": 6264,
+      "triangles": 3132,
+      "bounds_godot_m": {
+        "min": [
+          -62.174999,
+          0.2,
+          167.440002
+        ],
+        "max": [
+          62.174999,
+          15.95,
+          217.800003
+        ]
+      },
+      "preserved_attributes": [
+        "POSITION",
+        "NORMAL"
+      ]
+    },
+    {
+      "node": "ArchivedLookDevHall_Architecture_GlassLight",
+      "source": "architecture.glb",
+      "source_node": "Architecture_GlassLight",
+      "role": "ArchivedLookDevHall",
+      "material": "GlassLight",
+      "vertices": 1656,
+      "triangles": 828,
+      "bounds_godot_m": {
+        "min": [
+          -58.759998,
+          1.2,
+          168.172501
+        ],
+        "max": [
+          58.759998,
+          15.95,
+          184.047501
+        ]
+      },
+      "preserved_attributes": [
+        "POSITION",
+        "NORMAL"
+      ]
+    },
+    {
+      "node": "ArchivedLookDevHall_Architecture_Metal",
+      "source": "architecture.glb",
+      "source_node": "Architecture_Metal",
+      "role": "ArchivedLookDevHall",
+      "material": "Metal",
+      "vertices": 4968,
+      "triangles": 2528,
+      "bounds_godot_m": {
+        "min": [
+          -5.627,
+          0.25,
+          164.300003
+        ],
+        "max": [
+          5.627,
+          1.187,
+          166.300003
+        ]
+      },
+      "preserved_attributes": [
+        "POSITION",
+        "NORMAL"
+      ]
+    },
+    {
+      "node": "ArchivedLookDevHall_Architecture_Roof",
+      "source": "architecture.glb",
+      "source_node": "Architecture_Roof",
+      "role": "ArchivedLookDevHall",
+      "material": "Roof",
+      "vertices": 96,
+      "triangles": 48,
+      "bounds_godot_m": {
+        "min": [
+          -62.09,
+          17.26,
+          168.309998
+        ],
+        "max": [
+          62.09,
+          17.58,
+          222.089996
+        ]
+      },
+      "preserved_attributes": [
+        "POSITION",
+        "NORMAL"
+      ]
+    },
+    {
+      "node": "ArchivedLookDevHall_Architecture_Stone",
+      "source": "architecture.glb",
+      "source_node": "Architecture_Stone",
+      "role": "ArchivedLookDevHall",
+      "material": "Stone",
+      "vertices": 175872,
+      "triangles": 86104,
+      "bounds_godot_m": {
+        "min": [
+          -62.5,
+          0.0,
+          165.399994
+        ],
+        "max": [
+          62.5,
+          17.26,
+          222.399994
+        ]
+      },
+      "preserved_attributes": [
+        "POSITION",
+        "NORMAL"
+      ]
+    },
+    {
+      "node": "ArchivedLookDevHall_Inscription_第 一 教 学 楼",
+      "source": "architecture.glb",
+      "source_node": "Inscription_第 一 教 学 楼",
+      "role": "ArchivedLookDevHall",
+      "material": "Stone",
+      "vertices": 5112,
+      "triangles": 5036,
+      "bounds_godot_m": {
+        "min": [
+          -1.523418,
+          5.071523,
+          167.642994
+        ],
+        "max": [
+          1.528741,
+          5.554488,
+          167.656994
+        ]
+      },
+      "preserved_attributes": [
+        "POSITION",
+        "NORMAL",
+        "TEXCOORD_0"
+      ]
+    },
+    {
+      "node": "CorrectedEntry_DioArchitecture_Stone",
+      "source": "dioarchitecture.glb",
+      "source_node": "DioArchitecture_Stone",
+      "role": "CorrectedEntry",
+      "material": "Stone",
+      "vertices": 1920,
+      "triangles": 940,
+      "bounds_godot_m": {
+        "min": [
+          -6.0,
+          0.0,
+          164.759995
+        ],
+        "max": [
+          6.0,
+          0.48,
+          167.225006
+        ]
+      },
+      "preserved_attributes": [
+        "POSITION",
+        "NORMAL"
+      ]
+    }
+  ],
+  "selection_audit": [
+    {
+      "node": "Architecture_Brick",
+      "material": "Brick",
+      "source_triangles": 1560,
+      "kept_triangles": 1560
+    },
+    {
+      "node": "Architecture_BrickWarm",
+      "material": "BrickWarm",
+      "source_triangles": 4428,
+      "kept_triangles": 4428
+    },
+    {
+      "node": "Architecture_Dark",
+      "material": "Dark",
+      "source_triangles": 3936,
+      "kept_triangles": 3936
+    },
+    {
+      "node": "Architecture_Frame",
+      "material": "Frame",
+      "source_triangles": 390664,
+      "kept_triangles": 390664
+    },
+    {
+      "node": "Architecture_Glass",
+      "material": "Glass",
+      "source_triangles": 3132,
+      "kept_triangles": 3132
+    },
+    {
+      "node": "Architecture_GlassLight",
+      "material": "GlassLight",
+      "source_triangles": 828,
+      "kept_triangles": 828
+    },
+    {
+      "node": "Architecture_Metal",
+      "material": "Metal",
+      "source_triangles": 2528,
+      "kept_triangles": 2528
+    },
+    {
+      "node": "Architecture_PavilionColumn",
+      "material": "PavilionColumn",
+      "source_triangles": 552,
+      "kept_triangles": 0
+    },
+    {
+      "node": "Architecture_PavilionRoof",
+      "material": "PavilionRoof",
+      "source_triangles": 95380,
+      "kept_triangles": 0
+    },
+    {
+      "node": "Architecture_Plaster",
+      "material": "Plaster",
+      "source_triangles": 2068,
+      "kept_triangles": 0
+    },
+    {
+      "node": "Architecture_Roof",
+      "material": "Roof",
+      "source_triangles": 48,
+      "kept_triangles": 48
+    },
+    {
+      "node": "Architecture_Soffit",
+      "material": "Soffit",
+      "source_triangles": 1920,
+      "kept_triangles": 0
+    },
+    {
+      "node": "Architecture_Stone",
+      "material": "Stone",
+      "source_triangles": 102404,
+      "kept_triangles": 86104
+    },
+    {
+      "node": "Architecture_Wood",
+      "material": "Wood",
+      "source_triangles": 10008,
+      "kept_triangles": 0
+    },
+    {
+      "node": "Inscription_一 鉴 亭",
+      "material": "Letter",
+      "source_triangles": 1532,
+      "kept_triangles": 0
+    },
+    {
+      "node": "Inscription_中 国 科 学 技 术 大 学",
+      "material": "Letter",
+      "source_triangles": 4232,
+      "kept_triangles": 0
+    },
+    {
+      "node": "Inscription_中 国 科 学 技 术 大 学.001",
+      "material": "Letter",
+      "source_triangles": 4232,
+      "kept_triangles": 0
+    },
+    {
+      "node": "Inscription_第 一 教 学 楼",
+      "material": "Stone",
+      "source_triangles": 5036,
+      "kept_triangles": 5036
+    },
+    {
+      "node": "DioArchitecture_Stone",
+      "material": "Stone",
+      "source_triangles": 114116,
+      "kept_triangles": 940
+    }
+  ],
+  "new_collision_proposals": [
+    {
+      "name": "LookDevCanopyColumnWest",
+      "type": "box",
+      "center": [
+        -5.6,
+        2.4,
+        166.75
+      ],
+      "size": [
+        0.24,
+        4.7,
+        0.24
+      ],
+      "source": "lookdev_assets.py canopy column box; no change to geometry"
+    },
+    {
+      "name": "LookDevHandrailTopWest",
+      "type": "box",
+      "center": [
+        -5.6,
+        1.16,
+        165.3
+      ],
+      "size": [
+        0.054,
+        0.054,
+        2.0
+      ],
+      "source": "Conservative AABB of horizontal radius .027m tube, endpoints z164.3/166.3"
+    },
+    {
+      "name": "LookDevHandrailPostWest0",
+      "type": "cylinder",
+      "center": [
+        -5.6,
+        0.705,
+        164.4
+      ],
+      "radius": 0.022,
+      "height": 0.91,
+      "source": "Exact vertical radius .022m tube, y.25..1.16"
+    },
+    {
+      "name": "LookDevHandrailPostWest1",
+      "type": "cylinder",
+      "center": [
+        -5.6,
+        0.705,
+        165.2
+      ],
+      "radius": 0.022,
+      "height": 0.91,
+      "source": "Exact vertical radius .022m tube, y.25..1.16"
+    },
+    {
+      "name": "LookDevHandrailPostWest2",
+      "type": "cylinder",
+      "center": [
+        -5.6,
+        0.705,
+        166.0
+      ],
+      "radius": 0.022,
+      "height": 0.91,
+      "source": "Exact vertical radius .022m tube, y.25..1.16"
+    },
+    {
+      "name": "LookDevCanopyColumnEast",
+      "type": "box",
+      "center": [
+        5.6,
+        2.4,
+        166.75
+      ],
+      "size": [
+        0.24,
+        4.7,
+        0.24
+      ],
+      "source": "lookdev_assets.py canopy column box; no change to geometry"
+    },
+    {
+      "name": "LookDevHandrailTopEast",
+      "type": "box",
+      "center": [
+        5.6,
+        1.16,
+        165.3
+      ],
+      "size": [
+        0.054,
+        0.054,
+        2.0
+      ],
+      "source": "Conservative AABB of horizontal radius .027m tube, endpoints z164.3/166.3"
+    },
+    {
+      "name": "LookDevHandrailPostEast0",
+      "type": "cylinder",
+      "center": [
+        5.6,
+        0.705,
+        164.4
+      ],
+      "radius": 0.022,
+      "height": 0.91,
+      "source": "Exact vertical radius .022m tube, y.25..1.16"
+    },
+    {
+      "name": "LookDevHandrailPostEast1",
+      "type": "cylinder",
+      "center": [
+        5.6,
+        0.705,
+        165.2
+      ],
+      "radius": 0.022,
+      "height": 0.91,
+      "source": "Exact vertical radius .022m tube, y.25..1.16"
+    },
+    {
+      "name": "LookDevHandrailPostEast2",
+      "type": "cylinder",
+      "center": [
+        5.6,
+        0.705,
+        166.0
+      ],
+      "radius": 0.022,
+      "height": 0.91,
+      "source": "Exact vertical radius .022m tube, y.25..1.16"
+    }
+  ],
+  "collision_ownership": {
+    "main_hall_and_steps": "Existing shared diorama.build_collisions; do not create GLB trimesh duplicates",
+    "new_thin_columns_and_rails": "lookdev_live.build_collisions consumes new_collision_proposals",
+    "entry_planters": "Existing diositedetail visuals and shared EntryPlanter collisions"
+  },
+  "excluded": [
+    "Old north gate",
+    "Old pavilion",
+    "Old bridge",
+    "Expert building",
+    "Diorama trees",
+    "Diositedetail planters/bicycle stands/site furniture (loaded separately)"
+  ],
+  "preservation": {
+    "original_position_and_normal_element_bytes_copied": true,
+    "material_definitions_copied_without_renaming": true,
+    "old_glbs_blends_and_builders_unchanged": {
+      "godot\\assets\\architecture.glb": true,
+      "godot\\assets\\dioarchitecture.glb": true,
+      "godot\\assets\\diositedetail.glb": true,
+      "godot\\assets\\background.glb": true,
+      "godot\\assets\\site.json": true,
+      "blender\\source\\ustc_north_axis.blend": true,
+      "blender\\source\\ustc_diorama.blend": true,
+      "blender\\scripts\\build_campus.py": true,
+      "blender\\scripts\\lookdev_assets.py": true,
+      "blender\\scripts\\diorama_assets.py": true
+    }
+  },
+  "source_sha256": {
+    "godot\\assets\\architecture.glb": "95b110378b11cc85dfbbe9e455ae49cf08819bffbd9837f701e9cda76382497b",
+    "godot\\assets\\dioarchitecture.glb": "976787cf8c25737ef4bfcd9e9f99cd08ea428fe8e0684382cfe606fa76ccaa59",
+    "godot\\assets\\diositedetail.glb": "fb199a8a8dcdfa095da36eaf5b3ea6045f3686c5ffdd4820c6e1ddc1eb7ddd8e",
+    "godot\\assets\\background.glb": "1f1162f50ae3e73bccca4dc542c98e64d8aaec8639df465f6b500b46f5f128ac",
+    "godot\\assets\\site.json": "5097601f3d2fea44ec19484a7dd85544d76451ddf2e9bef90824a062007aeb8f",
+    "blender\\source\\ustc_north_axis.blend": "e888876b40a4a11986e645e5db0522e9da48d4f2f22cbddbcde76abe3b942690",
+    "blender\\source\\ustc_diorama.blend": "dee288d02228bdd65ad24a4f11198fcffb905618a396423cf908943f9742b772",
+    "blender\\scripts\\build_campus.py": "4518b7b712c8a2c736192f6391bb8483f4bc0bd43c897c01117afd4d7d5351c2",
+    "blender\\scripts\\lookdev_assets.py": "11311b18ca0960467de95aaab1bec03605894f722cca44414014befa67c01cbc",
+    "blender\\scripts\\diorama_assets.py": "47927f232e87cd9e58e86efcc7c176788702dccb7f921c1e9526496cd993c238"
+  },
+  "validation": {
+    "passed": true,
+    "verified_vertices": 1011760,
+    "checks": [
+      "Written GLB is structurally readable",
+      "Every written position/normal tuple occurs unchanged in its exact source node",
+      "Node transform and complete material dictionary equal source",
+      "All triangle indices are valid"
+    ],
+    "scope": "CPU asset integrity only; Godot render and player traversal are validated by the integrating task",
+    "corrected_entry_components": 5,
+    "corrected_entry_triangles": 940
+  },
+  "limitations": [
+    "Original archived .018m bevel tessellation remains expensive; no optimization or aesthetic redesign in this extraction.",
+    "This is asset integrity/alignment validation, not a Godot rendering or walkability result."
+  ],
+  "builder_sha256": "3f6acb6e7be03d12980db2e86a6ae3414be8b77cc17fa93ac765d973843d5c92"
+}

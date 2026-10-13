@@ -1,0 +1,299 @@
+{
+  "assets": [
+    {
+      "asset": "cat_tabby",
+      "bones": 25,
+      "triangles": 35568,
+      "clips": [
+        {
+          "name": "idle",
+          "seconds": 4
+        },
+        {
+          "name": "walk",
+          "seconds": 0.96
+        },
+        {
+          "name": "trot",
+          "seconds": 0.56
+        },
+        {
+          "name": "sit_down",
+          "seconds": 1.2
+        },
+        {
+          "name": "sit",
+          "seconds": 4
+        },
+        {
+          "name": "stand_up",
+          "seconds": 1.1
+        },
+        {
+          "name": "lie_down",
+          "seconds": 1.5
+        },
+        {
+          "name": "lie",
+          "seconds": 4
+        },
+        {
+          "name": "rise",
+          "seconds": 1.2
+        },
+        {
+          "name": "stretch",
+          "seconds": 2.6
+        },
+        {
+          "name": "lick",
+          "seconds": 3
+        },
+        {
+          "name": "observe",
+          "seconds": 2.4
+        }
+      ],
+      "meters": true,
+      "forward": "-Z",
+      "up": "+Y",
+      "root_motion": false,
+      "skin": "armature",
+      "source": "D:\\AI\\Ai_blender\\campus\\blender\\wildlife\\source\\cat_tabby.blend"
+    },
+    {
+      "asset": "mallard_male",
+      "bones": 14,
+      "triangles": 8710,
+      "clips": [
+        {
+          "name": "idle",
+          "seconds": 4
+        },
+        {
+          "name": "walk",
+          "seconds": 0.85
+        },
+        {
+          "name": "swim",
+          "seconds": 1.6
+        },
+        {
+          "name": "enter_water",
+          "seconds": 1.2
+        },
+        {
+          "name": "exit_water",
+          "seconds": 1.2
+        },
+        {
+          "name": "preen",
+          "seconds": 3.2
+        },
+        {
+          "name": "rest",
+          "seconds": 4
+        },
+        {
+          "name": "observe",
+          "seconds": 2.4
+        }
+      ],
+      "meters": true,
+      "forward": "-Z",
+      "up": "+Y",
+      "root_motion": false,
+      "skin": "armature",
+      "source": "D:\\AI\\Ai_blender\\campus\\blender\\wildlife\\source\\mallard_male.blend"
+    },
+    {
+      "asset": "mallard_female",
+      "bones": 14,
+      "triangles": 8456,
+      "clips": [
+        {
+          "name": "idle",
+          "seconds": 4
+        },
+        {
+          "name": "walk",
+          "seconds": 0.85
+        },
+        {
+          "name": "swim",
+          "seconds": 1.6
+        },
+        {
+          "name": "enter_water",
+          "seconds": 1.2
+        },
+        {
+          "name": "exit_water",
+          "seconds": 1.2
+        },
+        {
+          "name": "preen",
+          "seconds": 3.2
+        },
+        {
+          "name": "rest",
+          "seconds": 4
+        },
+        {
+          "name": "observe",
+          "seconds": 2.4
+        }
+      ],
+      "meters": true,
+      "forward": "-Z",
+      "up": "+Y",
+      "root_motion": false,
+      "skin": "armature",
+      "source": "D:\\AI\\Ai_blender\\campus\\blender\\wildlife\\source\\mallard_female.blend"
+    },
+    {
+      "asset": "sparrow_tree",
+      "bones": 13,
+      "triangles": 6966,
+      "clips": [
+        {
+          "name": "idle",
+          "seconds": 3
+        },
+        {
+          "name": "peck",
+          "seconds": 0.8
+        },
+        {
+          "name": "hop",
+          "seconds": 0.28
+        },
+        {
+          "name": "takeoff",
+          "seconds": 0.3
+        },
+        {
+          "name": "fly",
+          "seconds": 0.5
+        },
+        {
+          "name": "land",
+          "seconds": 0.4
+        },
+        {
+          "name": "preen",
+          "seconds": 2.4
+        },
+        {
+          "name": "observe",
+          "seconds": 1.8
+        }
+      ],
+      "meters": true,
+      "forward": "-Z",
+      "up": "+Y",
+      "root_motion": false,
+      "skin": "armature",
+      "source": "D:\\AI\\Ai_blender\\campus\\blender\\wildlife\\source\\sparrow_tree.blend"
+    },
+    {
+      "asset": "squirrel_gray",
+      "source": "D:\\AI\\Ai_blender\\campus\\blender\\wildlife\\source\\squirrel_gray.blend",
+      "bones": 7,
+      "triangles": 844,
+      "clips": [
+        {
+          "name": "idle",
+          "seconds": 3.5,
+          "origin": "Added campus clips on the supplied static mesh"
+        },
+        {
+          "name": "walk",
+          "seconds": 0.85,
+          "origin": "Added campus clips on the supplied static mesh"
+        },
+        {
+          "name": "sniff",
+          "seconds": 2.4,
+          "origin": "Added campus clips on the supplied static mesh"
+        },
+        {
+          "name": "observe",
+          "seconds": 2.4,
+          "origin": "Added campus clips on the supplied static mesh"
+        },
+        {
+          "name": "trot",
+          "seconds": 0.52,
+          "origin": "Added campus clips on the supplied static mesh"
+        },
+        {
+          "name": "forage",
+          "seconds": 3.0,
+          "origin": "Added campus clips on the supplied static mesh"
+        },
+        {
+          "name": "jump",
+          "seconds": 0.55,
+          "origin": "Added campus clips on the supplied static mesh"
+        }
+      ],
+      "meters": true,
+      "forward": "-Z",
+      "up": "+Y",
+      "root_motion": false,
+      "skin": "armature",
+      "mesh_origin": "Poly by Google; existing mesh, unchanged topology",
+      "original_file": "squirrel_e.glb",
+      "source_page": "https://poly.pizza/m/2WqY_AFEn-M",
+      "license": "CC BY 3.0 https://creativecommons.org/licenses/by/3.0/",
+      "changes": "Meter scale, skin rig and campus clips"
+    },
+    {
+      "asset": "hedgehog",
+      "source": "D:\\AI\\Ai_blender\\campus\\blender\\wildlife\\source\\hedgehog.blend",
+      "bones": 6,
+      "triangles": 376,
+      "clips": [
+        {
+          "name": "idle",
+          "seconds": 3.5,
+          "origin": "Added campus clips on the supplied static mesh"
+        },
+        {
+          "name": "walk",
+          "seconds": 1.25,
+          "origin": "Added campus clips on the supplied static mesh"
+        },
+        {
+          "name": "sniff",
+          "seconds": 2.4,
+          "origin": "Added campus clips on the supplied static mesh"
+        },
+        {
+          "name": "observe",
+          "seconds": 2.4,
+          "origin": "Added campus clips on the supplied static mesh"
+        },
+        {
+          "name": "hide",
+          "seconds": 2.0,
+          "origin": "Added campus clips on the supplied static mesh"
+        }
+      ],
+      "meters": true,
+      "forward": "-Z",
+      "up": "+Y",
+      "root_motion": false,
+      "skin": "armature",
+      "mesh_origin": "Poly by Google; existing mesh, unchanged topology",
+      "original_file": "hedgehog_google.glb",
+      "source_page": "https://poly.pizza/m/8UNni5IvK_c",
+      "license": "CC BY 3.0 https://creativecommons.org/licenses/by/3.0/",
+      "changes": "Meter scale, skin rig and campus clips; hedgehog back texture added"
+    }
+  ],
+  "version": 1,
+  "texture_origin": "First batch original brush textures; second batch reused Poly by Google base colours and added hedgehog quill textures",
+  "animation_fps": 30
+}

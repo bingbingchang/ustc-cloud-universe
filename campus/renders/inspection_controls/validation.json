@@ -1,0 +1,96 @@
+{
+	"checks": {
+		"avatar_still_walks": true,
+		"button_avatar": true,
+		"button_free_camera": true,
+		"coordinate_toggle": true,
+		"coordinates_survive_hidden_hud": true,
+		"coordinates_visible": true,
+		"fly_moves_without_avatar": true,
+		"free_camera_region_jump": true,
+		"keyboard_fly": true,
+		"native4k_capture": true,
+		"native4k_coordinates": true,
+		"photography_coordinates": true,
+		"region_shortcuts": true,
+		"return_preserves_position": true,
+		"screenshot_context": true
+	},
+	"free_camera": {
+		"camera": [
+			-229.480331420898,
+			12.1636800765991,
+			593.046447753906
+		],
+		"camera_fov": 66.0,
+		"camera_projection": 0,
+		"camera_rotation_radians": [
+			-0.180000007152557,
+			-2.12629008293152,
+			0.0
+		],
+		"center_hit": [
+			-174.679992675781,
+			0.426955699920654,
+			627.060424804688
+		],
+		"coordinate_system": "metres; +X east, +Y up, +Z south; unchanged site.json origin",
+		"mode": "自由相机",
+		"object": "TennisFence_tennis_3",
+		"player": [
+			-236.0,
+			0.140104159712791,
+			589.0
+		],
+		"region": "运动场南侧球场—364／365公寓"
+	},
+	"passed": true,
+	"performance": [],
+	"player": {
+		"camera": [
+			-239.510848999023,
+			2.31203436851501,
+			586.820861816406
+		],
+		"camera_fov": 66.0,
+		"camera_projection": 0,
+		"camera_rotation_radians": [
+			-0.180000007152557,
+			-2.12629008293152,
+			0.0
+		],
+		"center_hit": [
+			-228.71565246582,
+			0.0,
+			593.521301269531
+		],
+		"coordinate_system": "metres; +X east, +Y up, +Z south; unchanged site.json origin",
+		"mode": "人物",
+		"object": "MappedCampusGround_south_sports_08",
+		"player": [
+			-236.0,
+			0.140104159712791,
+			589.0
+		],
+		"region": "运动场南侧球场—364／365公寓"
+	},
+	"routes": [
+		{
+			"blockers": [],
+			"final": "(-271.0, 0.140805, 622.0659)",
+			"id": "walk_after_camera_switch",
+			"max_step_m": 0.044110931456089,
+			"min_feet_y": 0.13260155916214,
+			"passed": true,
+			"segments": [
+				{
+					"reached": true,
+					"remaining_m": 0.0658569410443306,
+					"target": "(-271.0, 0.14, 622.0)"
+				}
+			],
+			"travelled_m": 28.8989868275821
+		}
+	],
+	"screenshots": []
+}
