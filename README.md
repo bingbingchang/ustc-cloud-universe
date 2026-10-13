@@ -10,7 +10,7 @@
 
 ![科大云宇宙东区总览](media/10_campus_overview.png)
 
-[下载 Windows 试玩版](https://github.com/bingbingchang/ustc-cloud-universe/releases/latest) · [项目介绍与参赛定位](docs/PROJECT_INTRO.md) · [未来发展路线](docs/VISION_ROADMAP.md) · [源码运行说明](docs/BUILD_GUIDE.md)
+[下载 Windows 试玩版](https://github.com/bingbingchang/ustc-cloud-universe/releases/tag/v0.1.0-alpha) · [项目介绍与参赛定位](docs/PROJECT_INTRO.md) · [未来发展路线](docs/VISION_ROADMAP.md) · [源码运行说明](docs/BUILD_GUIDE.md)
 
 ## 今天可以体验什么
 
@@ -48,7 +48,7 @@
 
 ## 开始试玩
 
-在 [Releases](https://github.com/bingbingchang/ustc-cloud-universe/releases/latest) 下载 Windows 压缩包，完整解压后运行 `USTCCloudUniverse.exe`。保留旁边的 `.pck` 文件，无需安装 Blender 或 Godot。
+在 [Releases](https://github.com/bingbingchang/ustc-cloud-universe/releases/tag/v0.1.0-alpha) 下载 Windows 压缩包，完整解压后运行 `USTCCloudUniverse.exe`。保留旁边的 `.pck` 文件，无需安装 Blender 或 Godot。
 
 | 操作 | 功能 |
 |---|---|
