@@ -1,0 +1,178 @@
+[
+  {
+    "id": "solar_review",
+    "role": "solar",
+    "title": "Signatures of magnetic reconnection in solar eruptive flares: A multi-wavelength perspective",
+    "url": "https://arxiv.org/pdf/1211.2914",
+    "type": "pdf",
+    "stop_at_heading": "References",
+    "version": "arXiv:1211.2914，2012",
+    "topics": "太阳物理 耀斑 磁重联 日冕 solar flare magnetic reconnection"
+  },
+  {
+    "id": "ustc_finance_2024",
+    "role": "finance",
+    "title": "日常经济业务财务报销指南（2024年修订）",
+    "url": "https://finance.ustc.edu.cn/_upload/article/files/45/28/1b135d524eaaae18e4bb600ef497/fe3665f0-c5d1-4231-8750-0196a890a958.pdf",
+    "type": "pdf",
+    "skip_pdf_pages": [
+      1,
+      2,
+      3
+    ],
+    "version": "2024年修订，历史版本，不能据此宣称是现行全部制度",
+    "topics": "财务 报销 差旅 发票 经费 reimbursement invoice travel"
+  },
+  {
+    "id": "ustc_finance_service",
+    "role": "finance",
+    "title": "关于财务处“校财帮”小程序上线的通知",
+    "url": "https://finance.ustc.edu.cn/2024/0606/c21813a643231/page.psp",
+    "type": "html",
+    "selector": ".wp_articlecontent",
+    "version": "2024-06-06",
+    "topics": "校财帮 报销 进度 财务 微信"
+  },
+  {
+    "id": "ustc_library",
+    "role": "library",
+    "title": "中国科学技术大学图书馆：图书借阅规则",
+    "url": "https://lib.ustc.edu.cn/读者指南/图书借阅规则/",
+    "type": "html",
+    "selector": ".detail-text",
+    "extract_tables": true,
+    "version": "网页快照，页面标注2026-07-22",
+    "topics": "借书 借阅 续借 图书馆 还书 library renew borrow"
+  },
+  {
+    "id": "ustc_history",
+    "role": "history",
+    "title": "中国科学技术大学：学校简介",
+    "url": "https://www.ustc.edu.cn/xxgk/xxjj.htm",
+    "type": "html",
+    "selector": "#vsb_content",
+    "version": "网页数据截至2025年9月",
+    "topics": "校史 建校 迁校 郭沫若 北京 合肥 1958 1970"
+  },
+  {
+    "id": "qwen_embedding_paper",
+    "role": "ai",
+    "title": "Qwen3 Embedding: Advancing Text Embedding and Reranking Through Foundation Models",
+    "url": "https://arxiv.org/pdf/2506.05176",
+    "type": "pdf",
+    "version": "arXiv:2506.05176，2025",
+    "topics": "人工智能 RAG 向量检索 嵌入 重排序 embedding reranking retrieval"
+  },
+  {
+    "id": "ustc_dining_centers",
+    "role": "dining",
+    "title": "University of Science and Technology of China: Dining Centers",
+    "url": "https://en.ustc.edu.cn/Services/Dining_Centers.htm",
+    "type": "html",
+    "selector": ".article-page-table",
+    "extract_tables": true,
+    "version": "官方英文服务页未标更新日期；网页快照，不代表当天营业公告",
+    "topics": "食堂 餐饮 营业 早餐 午餐 晚餐 桃李园 东区 dining breakfast lunch dinner Taoliyuan"
+  },
+  {
+    "id": "nasa_newton_laws",
+    "role": "physics",
+    "title": "NASA Glenn Research Center: Newton's Laws of Motion",
+    "url": "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/newtons-laws-of-motion/",
+    "type": "html",
+    "selector": ".usa-layout-docs-main_content",
+    "extract_tables": true,
+    "version": "NASA Glenn官方科普页网页快照",
+    "topics": "物理 牛顿 运动 惯性 合力 质量 加速度 动量 作用力 反作用力 Newton inertia force acceleration momentum"
+  },
+  {
+    "id": "ustc_course_selection",
+    "role": "student",
+    "title": "中国科学技术大学教务处：选课规则简介",
+    "url": "https://www.teach.ustc.edu.cn/service/svc-student/3543.html",
+    "type": "html",
+    "selector": "article#post-3543",
+    "version": "页面标注2015-07-21，官方网页快照；学期日期另以当期通知为准",
+    "topics": "学生 新生 本科 选课 预选 抽签 正选 退课 换班 课程 培养计划"
+  },
+  {
+    "id": "ustc_dorm_rules",
+    "role": "dorm",
+    "title": "中国科学技术大学计算机学院：中国科学技术大学学生公寓住宿管理规定",
+    "url": "https://cs.ustc.edu.cn/_t1744/2013/0407/c20185a25656/page.psp",
+    "type": "html",
+    "selector": ".wp_articlecontent",
+    "version": "学院官方转载，页面标注2020-09-09；历史规则网页快照",
+    "topics": "宿舍 公寓 住宿 入住 调房 退宿 楼管 登记 宿舍手续"
+  },
+  {
+    "id": "ustc_network_vpn",
+    "role": "network",
+    "title": "中国科学技术大学网络信息中心：VPN设置及常见问题处理",
+    "url": "https://ustcnet.ustc.edu.cn/2015/0127/c40953a718108/page.htm",
+    "type": "html",
+    "selector": ".wp_articlecontent",
+    "version": "官方页面初发2015-01-20，正文已更新含iWAN；以抓取正文为准",
+    "topics": "校园网 网络 VPN WebVPN iWAN 校外 统一身份认证 客户域 资源 连接"
+  },
+  {
+    "id": "ustc_lab_newcomer",
+    "role": "lab",
+    "title": "中国科学技术大学实验室：实验室新手须知",
+    "url": "https://tjlab.ustc.edu.cn/2019/1114/c19072a405106/page.htm",
+    "type": "html",
+    "selector": ".wp_articlecontent",
+    "version": "2019-11-14实验室新手说明；用于通识知识，不代表全校2026准入政策",
+    "topics": "实验室 安全 实验服 护目镜 饮食 防护 规程 个人安全 用电"
+  },
+  {
+    "id": "ustc_sports_course",
+    "role": "sports",
+    "title": "中国科学技术大学教务处：关于体育课程修读有哪些规定？",
+    "url": "https://www.teach.ustc.edu.cn/service/svc-student/13795.html",
+    "type": "html",
+    "selector": "article#post-13795",
+    "version": "FAQ正文初发2021-11-09；页面另列2025版附件，本索引只含FAQ正文",
+    "topics": "体育 教练 体育课 课程 类别 选课 学分 考核 缺课 毕业要求 体适能"
+  },
+  {
+    "id": "ustc_career_recommendation",
+    "role": "career",
+    "title": "中国科学技术大学就业信息网：“毕业生就业推荐表”办理指南",
+    "url": "https://www.job.ustc.edu.cn/EmploymentProcess/info.aspx?itemid=11126",
+    "type": "html",
+    "selector": ".edit-info",
+    "version": "2025-05-17就业办指南网页快照",
+    "topics": "就业 毕业 求职 推荐表 简历 小程序 自助打印 导师 院系 审核 盖章"
+  },
+  {
+    "id": "ustc_graduate_international",
+    "role": "international",
+    "title": "关于研究生办理自费留学、短期因私出境及参加港澳台、国际学术交流有关手续的规定",
+    "url": "https://see.ustc.edu.cn/2024/1226/c37729a669878/page.htm",
+    "type": "html",
+    "selector": ".wp_articlecontent",
+    "version": "页面正文标注2024-11-12，学院制度文件网页快照",
+    "topics": "国际交流 研究生 出境 会议 Vista 任务批件 因公 资助 证明 报销"
+  },
+  {
+    "id": "nasa_plant_fluorescence",
+    "role": "botany",
+    "title": "NASA Earth Observatory: Faint Glow, Clear Signal from Plants",
+    "url": "https://science.nasa.gov/earth/earth-observatory/faint-glow-clear-signal-from-plants-146956/",
+    "type": "html",
+    "selector": ".entry-content",
+    "version": "NASA Earth Observatory科普网页快照，约2020年内容",
+    "topics": "植物 叶片 叶绿素 光合作用 荧光 卫星 观测 碳循环 photosynthesis fluorescence SIF chlorophyll"
+  },
+  {
+    "id": "penn_lab_food",
+    "role": "lab",
+    "title": "宾夕法尼亚大学EHRS：Lab Safety Quick FAQs，第27问（实验室饮食）",
+    "url": "https://ehrs.upenn.edu/health-safety/lab-safety/safety-alerts-and-faqs/lab-safety-quick-faqs",
+    "type": "html",
+    "selector": "p:-soup-contains(\"Am I permitted to consume or store food or drink in the laboratory?\") + blockquote",
+    "version": "官网标注2026-09-28修订；仅用于实验安全原因科普，不作为科大制度",
+    "topics": "实验室 饮食 食物 吃东西 禁止 原因 安全 摄入 暴露 food drink ingestion exposure"
+  }
+]

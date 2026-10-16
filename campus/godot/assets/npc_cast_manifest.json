@@ -1,0 +1,107 @@
+{
+  "solar": {
+    "asset": "npc_solar.glb",
+    "outfit": "lab_jacket",
+    "hair": "curly",
+    "height_m": 1.82,
+    "rig": "Ambient_* articulated node contract"
+  },
+  "finance": {
+    "asset": "npc_finance.glb",
+    "outfit": "blazer",
+    "hair": "sidepart",
+    "height_m": 1.72,
+    "rig": "Ambient_* articulated node contract"
+  },
+  "library": {
+    "asset": "npc_library.glb",
+    "outfit": "cardigan",
+    "hair": "bun",
+    "height_m": 1.64,
+    "rig": "Ambient_* articulated node contract"
+  },
+  "history": {
+    "asset": "npc_history.glb",
+    "outfit": "scarf_vest",
+    "hair": "ponytail",
+    "height_m": 1.7,
+    "rig": "Ambient_* articulated node contract"
+  },
+  "ai": {
+    "asset": "npc_ai.glb",
+    "outfit": "hoodie",
+    "hair": "messy",
+    "height_m": 1.78,
+    "rig": "Ambient_* articulated node contract"
+  },
+  "dining": {
+    "asset": "npc_dining.glb",
+    "outfit": "chef",
+    "hair": "short",
+    "height_m": 1.69,
+    "rig": "Ambient_* articulated node contract"
+  },
+  "physics": {
+    "asset": "npc_physics.glb",
+    "outfit": "long_coat",
+    "hair": "sidepart",
+    "height_m": 1.84,
+    "rig": "Ambient_* articulated node contract"
+  },
+  "student": {
+    "asset": "npc_student.glb",
+    "outfit": "varsity",
+    "hair": "short",
+    "height_m": 1.74,
+    "rig": "Ambient_* articulated node contract"
+  },
+  "dorm": {
+    "asset": "npc_dorm.glb",
+    "outfit": "quilt_vest",
+    "hair": "bob",
+    "height_m": 1.66,
+    "rig": "Ambient_* articulated node contract"
+  },
+  "network": {
+    "asset": "npc_network.glb",
+    "outfit": "utility",
+    "hair": "short",
+    "height_m": 1.8,
+    "rig": "Ambient_* articulated node contract"
+  },
+  "lab": {
+    "asset": "npc_lab.glb",
+    "outfit": "lab_coat",
+    "hair": "ponytail",
+    "height_m": 1.71,
+    "rig": "Ambient_* articulated node contract"
+  },
+  "sports": {
+    "asset": "npc_sports.glb",
+    "outfit": "tracksuit",
+    "hair": "short",
+    "height_m": 1.89,
+    "rig": "Ambient_* articulated node contract"
+  },
+  "career": {
+    "asset": "npc_career.glb",
+    "outfit": "blazer_scarf",
+    "hair": "bob",
+    "height_m": 1.76,
+    "rig": "Ambient_* articulated node contract"
+  },
+  "international": {
+    "asset": "npc_international.glb",
+    "outfit": "scarf",
+    "hair": "wavy",
+    "height_m": 1.68,
+    "rig": "Ambient_* articulated node contract"
+  },
+  "botany": {
+    "asset": "npc_botany.glb",
+    "outfit": "field_vest",
+    "hair": "ponytail",
+    "height_m": 1.65,
+    "rig": "Ambient_* articulated node contract"
+  }
+}

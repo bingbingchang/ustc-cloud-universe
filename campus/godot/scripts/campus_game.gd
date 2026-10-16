@@ -4,6 +4,20 @@ var game_ready=false
 var balanced=true
 var detail_batches:Array[GeometryInstance3D]=[]
 var control_buttons:Array[Button]=[]
+# --- 最小联机（仅当传入 --net-host / --net-join 时才创建） ---
+var net
+var remote_peers={}
+var net_prune_clock=0.0
+var net_state_count=0
+var net_selftest=false
+var net_motion_clock=0.0
+var net_report_clock=0.0
+var chat_log:RichTextLabel
+var chat_input:LineEdit
+var net_status:Label
+var net_theme:Theme
+var hero_interactions
+var campus_agent
 
 func use_lookdev()->bool:return true
 func west_enabled()->bool:return true
@@ -36,6 +50,11 @@ func _ready():
 	setup_building_occlusion()
 	get_window().set_deferred("title","科大云宇宙 · 校园漫游 | 可操控人物")
 	print("CLOUD_UNIVERSE_READY player=1 third_person=true detail_batches=",detail_batches.size())
+	setup_net()
+	hero_interactions=preload("res://scripts/hero_interactions.gd").new()
+	hero_interactions.game=self;hero_interactions.name="KnowledgeHeroes";add_child(hero_interactions)
+	campus_agent=preload("res://scripts/campus_agent.gd").new()
+	campus_agent.game=self;campus_agent.name="CampusGuideAgent";add_child(campus_agent)
 	if "--release-smoke-test" in OS.get_cmdline_user_args():preload("res://scripts/release_smoke.gd").run(self)
 
 func setup_building_occlusion():
@@ -83,6 +102,22 @@ func setup_hud():
 func _process(dt):
 	super._process(dt)
 	if not game_ready:return
+	if net:
+		net_prune_clock+=dt
+		if net_prune_clock>=1.0:
+			net_prune_clock=0.0
+			prune_remote_peers()
+	if net_selftest and net:
+		# 自检时让本地角色沿广场绕圈，这样状态包的内容会持续变化，
+		# 远端才能看到「真的在动」而不只是收到一串静止坐标。
+		net_motion_clock+=dt
+		player.global_position.x=24.0*sin(net_motion_clock*.6)
+		player.global_position.z=258.0+18.0*cos(net_motion_clock*.6)
+		net_report_clock+=dt
+		if net_report_clock>=5.0:
+			net_report_clock=0.0
+			print("NET_STATE_REPORT from=%s remote_avatars=%d states_recv=%d" % [
+				net.local_name,remote_peers.size(),net_state_count])
 	for i in range(control_buttons.size()):control_buttons[i].set_pressed_no_signal(player.free_camera if i==1 else not player.free_camera)
 	if player.free_camera:
 		mode_label.text="自由相机 · %.1f m/s · %s · %d FPS"%[player.fly_speed,"流畅" if balanced else "精细",Engine.get_frames_per_second()];return
@@ -94,7 +129,11 @@ func _process(dt):
 
 func _unhandled_input(e):
 	if not game_ready:return
+	if campus_agent and campus_agent.panel_open:return
+	if hero_interactions and (hero_interactions.panel.visible or hero_interactions.journal.visible):return
 	if e is InputEventKey and e.pressed and not e.echo:
+		if net and e.keycode in [KEY_ENTER,KEY_KP_ENTER]:
+			toggle_chat_focus();get_viewport().set_input_as_handled();return
 		match e.keycode:
 			KEY_R:player.set_view(player.respawn_position,player.respawn_target)
 			KEY_2:player.set_view(Vector3(12,.16,258),Vector3(-.597,1.8,244.127))
@@ -131,3 +170,183 @@ func update_reflection():
 		render_reflection_frame()
 		reflection_view.render_target_update_mode=SubViewport.UPDATE_ONCE
 		reflection_elapsed=0
+
+# ============================================================================
+# 最小联机版本
+# ----------------------------------------------------------------------------
+# 设计目标：证明「真人可以同时出现在同一场景里」，而不是做完整网游。
+# 因此只做三件事：ENet 主机/加入、远端玩家位置与朝向复制、文字聊天。
+# 全部 opt-in：不传 --net-* 参数时本段代码完全不会执行，单机行为不变。
+#
+# 用法：
+#   A 机（主机）：--net-host            或 --net-host=45888
+#   B 机（加入）：--net-join=192.168.1.5 或 --net-join=192.168.1.5:45888
+#   可选：--net-name=你的名字
+#   回车键打开/发送聊天，Esc 或再次回车收回鼠标。
+# ============================================================================
+
+func local_net_state()->Array:
+	# 远端玩家只需要「位置 / 朝向 / 速度 / 是否着地」这四样东西，
+	# 因为 player_avatar.gd 的 animate() 正好吃这四个参数。
+	var heading=player.avatar.rotation.y if player.avatar else player.rotation.y
+	return [player.global_position.x,player.global_position.y,player.global_position.z,
+		heading,Vector2(player.velocity.x,player.velocity.z).length(),
+		player.velocity.y,1.0 if player.is_on_floor() else 0.0]
+
+func setup_net():
+	var host_mode=false
+	var address=""
+	var port=45888
+	var display_name="同学"
+	for a in OS.get_cmdline_user_args():
+		if a=="--net-host":
+			host_mode=true
+		elif a.begins_with("--net-host="):
+			host_mode=true
+			port=int(a.trim_prefix("--net-host="))
+		elif a.begins_with("--net-join="):
+			var v=a.trim_prefix("--net-join=")
+			if ":" in v:
+				var parts=v.split(":")
+				address=parts[0]
+				port=int(parts[1])
+			else:
+				address=v
+		elif a.begins_with("--net-name="):
+			display_name=a.trim_prefix("--net-name=")
+		elif a=="--net-selftest":
+			net_selftest=true
+	if not host_mode and address=="":
+		return
+	setup_net_hud()
+	net=preload("res://scripts/net_session.gd").new()
+	net.name="NetSession"
+	add_child(net)
+	net.peer_state.connect(_on_peer_state)
+	net.peer_joined.connect(_on_peer_joined)
+	net.peer_left.connect(_on_peer_left)
+	net.chat_message.connect(_on_chat_message)
+	net.connected_ok.connect(func():_net_say("—— 已连接到主机 ——"))
+	net.session_ended.connect(func(reason:String):_net_say("—— "+reason+" ——"))
+	if not net.setup(host_mode,address,port,display_name):
+		_net_say("—— 无法建立会话，检查地址/端口，或端口是否被占用 ——")
+		net.queue_free()
+		net=null
+		return
+	net.set_state_provider(Callable(self,"local_net_state"))
+	_net_say("—— 你是%s，%s ——" % ["主机" if host_mode else "客户端",("%s:%d" % [address,port]) if not host_mode else "端口 %d"%port])
+	_update_net_status()
+	print("CAMPUS_GAME_NET mode=%s port=%d name=%s" % ["host" if host_mode else "client",port,display_name])
+	if net_selftest:call_deferred("_net_selftest")
+
+func _net_selftest():
+	# 纯自动化自检：不用人手操作就能验证「状态复制 + 聊天往返」两条链路。
+	await get_tree().create_timer(4.0).timeout
+	if not net:return
+	net.send_chat("自检消息A-from-"+net.local_name)
+	print("NET_SELFTEST_SENT round=A from=%s peers=%d" % [net.local_name,net.remote_peer_ids().size()])
+	await get_tree().create_timer(16.0).timeout
+	if not net:return
+	net.send_chat("自检消息B-from-"+net.local_name)
+	print("NET_SELFTEST_SENT round=B from=%s peers=%d" % [net.local_name,net.remote_peer_ids().size()])
+	await get_tree().create_timer(6.0).timeout
+	var telemetry=[]
+	for id in remote_peers:telemetry.append({str(id):remote_peers[id].telemetry()})
+	print("NET_SELFTEST_REPORT from=%s remote_avatars=%d states_recv=%d telemetry=%s" % [
+		net.local_name if net else "?",remote_peers.size(),net_state_count,JSON.stringify(telemetry)])
+
+func setup_net_hud():
+	if not hud:return
+	net_theme=Theme.new()
+	var font=SystemFont.new()
+	font.font_names=PackedStringArray(["Microsoft YaHei","Segoe UI"])
+	net_theme.default_font=font
+	chat_log=RichTextLabel.new()
+	chat_log.bbcode_enabled=false
+	chat_log.scroll_following=true
+	chat_log.position=Vector2(28,215)
+	chat_log.size=Vector2(470,500)
+	chat_log.mouse_filter=Control.MOUSE_FILTER_IGNORE
+	chat_log.add_theme_font_size_override("normal_font_size",14)
+	chat_log.add_theme_color_override("default_color",Color("edf1df"))
+	chat_log.theme=net_theme
+	hud.add_child(chat_log)
+	chat_input=LineEdit.new()
+	chat_input.placeholder_text="回车打开聊天，再按回车发送"
+	chat_input.position=Vector2(28,175)
+	chat_input.size=Vector2(470,32)
+	chat_input.max_length=200
+	chat_input.theme=net_theme
+	chat_input.text_submitted.connect(_on_chat_submitted)
+	hud.add_child(chat_input)
+	net_status=label("联机中",14,Color("fff9e5"))
+	net_status.position=Vector2(28,722)
+	hud.add_child(net_status)
+
+func _on_chat_submitted(text:String):
+	if not net:return
+	chat_input.text=""
+	chat_input.release_focus()
+	Input.mouse_mode=Input.MOUSE_MODE_CAPTURED
+	if text.strip_edges()!="":
+		net.send_chat(text)
+
+func toggle_chat_focus():
+	if not chat_input:return
+	if chat_input.has_focus():
+		var text=chat_input.text
+		chat_input.text=""
+		chat_input.release_focus()
+		Input.mouse_mode=Input.MOUSE_MODE_CAPTURED
+		if text.strip_edges()!="" and net:net.send_chat(text)
+	else:
+		chat_input.grab_focus()
+		Input.mouse_mode=Input.MOUSE_MODE_VISIBLE
+
+func _on_peer_joined(id:int)->void:
+	_net_say("玩家 %d 加入" % id)
+	_update_net_status()
+
+func _on_peer_left(id:int)->void:
+	drop_remote_peer(id)
+	_net_say("玩家 %d 离开" % id)
+	_update_net_status()
+
+func _on_peer_state(id:int,state:Array)->void:
+	if not remote_peers.has(id):
+		# 必须挂在校园根节点下：player_avatar.gd 里会调用 get_parent().get_parent().style()
+		var remote:Node3D=preload("res://scripts/remote_player.gd").new()
+		remote.name="Remote_%d" % id
+		add_child(remote)
+		remote_peers[id]=remote
+		_net_say("玩家 %d 进入场景" % id)
+	remote_peers[id].apply_state(state)
+	net_state_count+=1
+	_update_net_status()
+
+func drop_remote_peer(id:int)->void:
+	if remote_peers.has(id):
+		var node=remote_peers[id]
+		remote_peers.erase(id)
+		node.queue_free()
+
+func prune_remote_peers()->void:
+	var now=float(Time.get_ticks_msec())/1000.0
+	for id in remote_peers.keys():
+		if remote_peers[id].stale(now):
+			drop_remote_peer(id)
+			_net_say("玩家 %d 超时移除" % id)
+	_update_net_status()
+
+func _on_chat_message(sender_name:String,text:String)->void:
+	_net_say("%s：%s" % [sender_name,text])
+
+func _net_say(text:String)->void:
+	print("NET_CHAT ",text)
+	if chat_log:chat_log.append_text(text+"\n")
+
+func _update_net_status()->void:
+	if not net_status or not net:return
+	var peers=net.remote_peer_ids().size()
+	net_status.text="联机 · %s · 在线 %d 人（含自己 %d 人） · 回车聊天" % [
+		"主机" if net.hosting else "客户端",peers+1,remote_peers.size()+1]

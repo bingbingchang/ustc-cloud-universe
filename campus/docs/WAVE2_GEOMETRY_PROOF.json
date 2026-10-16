@@ -1,0 +1,129 @@
+{
+	"actor_clearance_failures": [],
+	"bench_feet_failures": [],
+	"bench_feet_samples": 16,
+	"engine": "Godot 4.7.1 headless",
+	"exterior_hits": [],
+	"grid_samples": 4843,
+	"missing_ground": [],
+	"modules": [
+		{
+			"area_m2": 2817.5,
+			"grid_samples": 2826,
+			"id": "east_teaching_garden_02",
+			"ports": [
+				{
+					"side": "east",
+					"span": [
+						145.0,
+						210.0
+					]
+				}
+			]
+		},
+		{
+			"area_m2": 1236.0,
+			"grid_samples": 1236,
+			"id": "west_south_lane_02",
+			"ports": [
+				{
+					"side": "west",
+					"span": [
+						224.0,
+						238.0
+					]
+				}
+			]
+		},
+		{
+			"area_m2": 780.0,
+			"grid_samples": 781,
+			"id": "south_plaza_edge_02",
+			"ports": [
+				{
+					"side": "south",
+					"span": [
+						18.0,
+						42.0
+					]
+				}
+			]
+		}
+	],
+	"passed": true,
+	"physics_backend_setting": "DEFAULT",
+	"port_apron_failures": [],
+	"port_apron_samples": 105,
+	"protected_intersections": [],
+	"reused_asset_counts": {
+		"bench": 4,
+		"dioshrub": 78,
+		"diotree10": 4,
+		"diotree11": 4,
+		"diotree12": 3,
+		"diotree20": 3,
+		"diotree21": 2,
+		"diotree22": 3,
+		"grass": 220,
+		"lamp": 7
+	},
+	"routes": [
+		{
+			"final": [
+				-122.865936279297,
+				0.960834145545959,
+				242.827072143555
+			],
+			"id": "west_to_raiden",
+			"min_capsule_center_y": 0.880827248096466,
+			"physics_frames": 1626,
+			"reached": true
+		},
+		{
+			"final": [
+				-106.185066223145,
+				0.960934400558472,
+				238.890884399414
+			],
+			"id": "west_to_cat",
+			"min_capsule_center_y": 0.954929828643799,
+			"physics_frames": 744,
+			"reached": true
+		},
+		{
+			"final": [
+				94.9527816772461,
+				0.960941135883331,
+				159.819351196289
+			],
+			"id": "east_delivery",
+			"min_capsule_center_y": 0.90283328294754,
+			"physics_frames": 564,
+			"reached": true
+		},
+		{
+			"final": [
+				117.891174316406,
+				0.960826396942139,
+				200.149108886719
+			],
+			"id": "east_garden",
+			"min_capsule_center_y": 0.880129337310791,
+			"physics_frames": 1061,
+			"reached": true
+		},
+		{
+			"final": [
+				29.7025566101074,
+				0.960837244987488,
+				259.983337402344
+			],
+			"id": "south_reading",
+			"min_capsule_center_y": 0.880129337310791,
+			"physics_frames": 755,
+			"reached": true
+		}
+	],
+	"scope": "Actual production module builder, native physics bodies; visual asset loading stubbed for CPU-only verification",
+	"tree_count": 19
+}

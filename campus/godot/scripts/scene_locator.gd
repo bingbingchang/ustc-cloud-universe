@@ -41,7 +41,8 @@ func footprint_area(s:Dictionary)->float:
 	return absf(area)*.5
 func region(p:Vector3)->String:
 	for s in regions:
-		if s.enabled and s.has("polygon") and Geometry2D.is_point_in_polygon(Vector2(p.x,p.z),preload("res://scripts/north_axis_environment.gd").polygon(s.polygon)):return s.name
+		# module_layout.json 里 guo_plaza_03 等模块没有 name 字段，直接取 s.name 会刷屏报错。
+		if s.enabled and s.has("polygon") and Geometry2D.is_point_in_polygon(Vector2(p.x,p.z),preload("res://scripts/north_axis_environment.gd").polygon(s.polygon)):return s.get("name",s.get("id","未命名区域"))
 	for shape in core_regions:
 		if Geometry2D.is_point_in_polygon(Vector2(p.x,p.z),shape):return "北轴／核心区域"
 	return "当前建设区域之外"

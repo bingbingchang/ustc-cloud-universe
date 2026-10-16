@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="PackedScene" path="res://samples/ustc1958/review.tscn" id="1"]
+[ext_resource type="Script" path="res://samples/ustc1958/showcase.gd" id="2"]
+
+[node name="USTC1958_Showcase" instance=ExtResource("1")]
+script = ExtResource("2")

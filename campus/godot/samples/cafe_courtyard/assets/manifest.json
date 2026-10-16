@@ -1,0 +1,116 @@
+{
+  "brief": {
+    "scene": "校园咖啡小院",
+    "site_width_m": 14,
+    "site_depth_m": 12,
+    "building_width_m": 6.7,
+    "building_depth_m": 4.3,
+    "front_y_m": 1,
+    "wall_top_m": 3.3,
+    "roof_ridge_m": 4.4,
+    "ground_m": 0.24,
+    "door_width_m": 1.1,
+    "door_height_m": 2.2,
+    "table_top_m": 0.74,
+    "chair_seat_m": 0.45,
+    "reference_image": "campus/references/cafe_courtyard/concept.png",
+    "reference_kind": "AI-generated design reference, not a campus photograph",
+    "image_generation": "built-in image_gen",
+    "reference_prompt": "Use case: stylized-concept. Asset type: buildable reference image for a detailed Blender/Godot 3D campus cafe courtyard. Make ONE landscape three-quarter architectural diorama render, no collage. A compact single-storey cafe toward the back of a 14 by 12 meter courtyard: warm ivory plaster walls, sage-green wood door and window frames, generous transparent front windows with a visible warm wood service counter and restrained interior shelves, low terracotta tiled gable roof with ridge running left-to-right, small fascia sign reading exactly COFFEE. A narrow cream and muted sage striped fabric awning shades the facade. Three round outdoor wood cafe tables with eight individually positioned slender timber-and-dark-metal chairs whose seating fronts face their tables, a clear central paved approach to the door. Small terracotta pots with leafy plants by the entry, a low foreground planted border with irregular grasses and tiny white flowers. Two naturally branching ornamental courtyard trees frame the scene, with modeled leaf clusters and visible trunks, no spherical topiary. Quiet warm gray and beige rectangular courtyard pavers, subtle tile seams and bevels, fine plaster grain, timber grain, gently weathered roof tiles, restrained moss in the planting border. Human-scale door 2.2m tall and table tops 0.74m tall. Refined collectible architectural maquette aesthetic, realistic structure and readable materials, softly stylized high quality 3D, detailed geometry, calm colors. Show the ENTIRE isolated site on a thin earth plinth against warm off-white studio background from front-right elevated viewpoint, approximately 45-degree elevation. Afternoon soft warm sunlight, gentle contact shadows, no blown-out highlights. No people, no vehicles, no large campus background, no UI, no watermark. Keep the architecture and furniture physically plausible, enough space to walk between tables. This image guides actual editable geometry; do not rely on dramatic effects to conceal shapes.",
+    "workflow": "Reference + scene brief -> native Blender meshes and editable hierarchy -> standard PBR GLB -> Godot visual and walking checks",
+    "seed": 20261013
+  },
+  "authoring": "native Blender bpy mesh/curve/text geometry",
+  "blend": "D:\\AI\\Ai_blender\\campus\\blender\\source\\cafe_courtyard.blend",
+  "visual_meshes": 2034,
+  "triangles": 416148,
+  "packed_images": 12,
+  "trees": 2,
+  "tables": 3,
+  "chairs": [
+    {
+      "id": "Chair_0",
+      "position_blender": [
+        -1.847895084045528,
+        -1.421660662407358,
+        0.24
+      ],
+      "angle_rad": -1.2217304763960306,
+      "table_index": 0
+    },
+    {
+      "id": "Chair_1",
+      "position_blender": [
+        -3.536385962517432,
+        -1.199366621102996,
+        0.24
+      ],
+      "angle_rad": 0.9599310885968815,
+      "table_index": 0
+    },
+    {
+      "id": "Chair_2",
+      "position_blender": [
+        -2.9167022505602533,
+        -2.6954154428917194,
+        0.24
+      ],
+      "angle_rad": 2.9670597283903604,
+      "table_index": 0
+    },
+    {
+      "id": "Chair_10",
+      "position_blender": [
+        3.5021049159544724,
+        -1.221660662407358,
+        0.24
+      ],
+      "angle_rad": -1.2217304763960306,
+      "table_index": 1
+    },
+    {
+      "id": "Chair_11",
+      "position_blender": [
+        1.8645973346057814,
+        -0.9329238947009222,
+        0.24
+      ],
+      "angle_rad": 0.8726646259971647,
+      "table_index": 1
+    },
+    {
+      "id": "Chair_12",
+      "position_blender": [
+        2.6,
+        -2.51,
+        0.24
+      ],
+      "angle_rad": 3.141592653589793,
+      "table_index": 1
+    },
+    {
+      "id": "Chair_20",
+      "position_blender": [
+        4.0600000000000005,
+        -3.9,
+        0.24
+      ],
+      "angle_rad": -1.5707963267948966,
+      "table_index": 2
+    },
+    {
+      "id": "Chair_21",
+      "position_blender": [
+        2.14,
+        -3.9,
+        0.24
+      ],
+      "angle_rad": 1.5707963267948966,
+      "table_index": 2
+    }
+  ],
+  "leaves": 15780,
+  "collision_shapes": 33,
+  "roof_tiles": 464,
+  "door_status": "closed modeled door; courtyard walkthrough only"
+}

@@ -1,0 +1,417 @@
+{
+  "health": {
+    "status": "ready",
+    "model": "Qwen/Qwen3-8B",
+    "retrieval": "qwen_embedding+bm25_rrf",
+    "chunks": 191,
+    "npcs": 15,
+    "model_ready": true
+  },
+  "valid_citations": 15,
+  "total": 15,
+  "median_seconds": 2.08,
+  "results": [
+    {
+      "npc_id": "solar",
+      "question": "太阳耀斑为什么与磁重联有关？",
+      "wall_seconds": 3.42,
+      "answer": "太阳耀斑就像磁力线突然打结又松开，释放出巨大能量。这和磁重联有关，因为磁力线在太阳表面纠缠，当它们重新连接时，会释放出储存的能量，就像橡皮筋突然弹开一样[1]。",
+      "sources": [
+        {
+          "citation": 1,
+          "title": "Signatures of magnetic reconnection in solar eruptive flares: A multi-wavelength perspective",
+          "url": "https://arxiv.org/pdf/1211.2914",
+          "version": "arXiv:1211.2914，2012",
+          "location": "PDF第3页 / PDF第1页 / PDF第9页",
+          "text": "PDF第3页\ndly reﬂected in the X-ray observations of stellar ﬂares [54, 55 ].\n\nPDF第1页\narXiv:1211.2914v1 [astro-ph.SR] 13 Nov 2012\nSignatures of magnetic reconnection in\nsolar eruptive ﬂares: A multi-wavelength\nperspective\nBhuwan Joshi, Astrid Veronig, P. K. Manoharan, and B. V. Somov\nAbstract In this article, we review some key aspects of a multi-wavelength\nﬂare which have essentially contributed to form a standard ﬂare mo del based\non the magnetic reconnection. The emphasis is given on the recent o bserva-\ntions taken by the Reuven Ramaty High Energy Solar Spectroscopic Imager\n(RHESSI) on the X-ray emission originating from diﬀerent regions of the coro-\nnal loops. We also brieﬂy summarize those observations which do not seem\nto accommodate within the canonical ﬂare picture and discuss the c hallenges\nfor future investigations 1.\n1 Introduction\nSolar ﬂares are the most striking explosive form of solar activity. A ﬂ are\nis characterized by a sudden catastrophic release of\n\nPDF第9页\nwavelength observations have immensely improved our und er-\nstanding of various physical processes occurring in diﬀerent atmo spheric lay-\ners of the Sun during a solar ﬂare. The standard ﬂare model has be en suc-\ncessful in broadly recognizing these physical processes as the co nsequence of\nlarge-scale magnetic reconnection in the corona. However, the ad vancement\nin the observational capabilities has also led to several new aspects of the\nﬂare evolution that deviate from the standard ﬂare model. Althoug h ﬂares\nhave been observed over the past 150 years, but still our unders tanding about\nthem is incomplete. We have yet to understand several basic elemen ts pertain-\ning to pre-ﬂare magnetic conﬁguration, triggering mechanism, ene rgy release\nsite (e.g., current sheet dimensions), conversion of magnetic ener gy into heat\nand kinetic energy, particle acceleration, etc. These outstanding\n\nPDF第1页\ntroduction\nSolar ﬂares are the most striking explosive form of solar activity. A ﬂ are\nis characterized by a sudden catastrophic release of energy in the solar at-\nBhuwan Joshi\nUdaipur Solar Observatory, Physical Research Laboratory, Udaipur 313 004, India\ne-mail: bhuwan@prl.res.in\nAstrid Veronig\nIGAM/Institute of Physics, University of Graz, Universit¨ atsplatz 5, A-8010 Graz,\nAustria e-mail: astrid.veronig@uni-graz.at\nP. K. Manoharan\nRadio Astronomy Centre, Tata Institute of Fundamental Rese arch, Udhagamandalam\n(Ooty) 643 001, India e-mail: mano@ncra.tifr.res.in\nBoris V. Somov\nAstronomical Institute, Moscow State University, Univers itetskij Prospekt 13,\nMoscow 119992 e-mail: somov@sai.msu.ru.\n1 Published in Multi-scale Dynamical Processes in Space and Astrophysica l\nPlasmas, Astrophysics and Space Science Proceedings, Springer-Ve rlag Berlin Hei-\ndelberg, 33, 29-41 (2012).\n1",
+          "chunk_ids": [
+            "solar_review:PDF第3页:3",
+            "solar_review:PDF第1页:0",
+            "solar_review:PDF第9页:2",
+            "solar_review:PDF第1页:1"
+          ],
+          "cited": true
+        }
+      ],
+      "has_valid_citations": true,
+      "model": "Qwen/Qwen3-8B",
+      "retrieval": "qwen_embedding+bm25_rrf",
+      "elapsed_ms": 3244
+    },
+    {
+      "npc_id": "finance",
+      "question": "国内差旅报销需要准备哪些材料？",
+      "wall_seconds": 2.03,
+      "answer": "国内差旅报销需准备网上填报的国内差旅费用报销单、原始有效票据（如火车票、飞机票、住宿费发票等）、其他相关证明材料（如会议通知、注册费发票等）。[1]",
+      "sources": [
+        {
+          "citation": 1,
+          "title": "日常经济业务财务报销指南（2024年修订）",
+          "url": "https://finance.ustc.edu.cn/_upload/article/files/45/28/1b135d524eaaae18e4bb600ef497/fe3665f0-c5d1-4231-8750-0196a890a958.pdf",
+          "version": "2024年修订，历史版本，不能据此宣称是现行全部制度",
+          "location": "PDF第4页 / PDF第17页 / PDF第10页 / PDF第12页",
+          "text": "PDF第4页\n报 销 指 南\n- 1 -\n国内差旅费用报销\n一、报销范围\n1.城市间交通费：出差人员因公临时到常驻地以外地区出差乘坐火车、飞\n机等公共交通工具所发生的费用。\n2.住宿费：出差人员因公临时出差期间入住宾馆等发生的房租费用。\n3.伙食补助费：出差人员在因公临时出差期间给予的伙食补助费用，按出\n差目的地标准包干使用。\n4.市内交通费：出差人员因公临时出差期间发生的市内交通费用，包干使用。\n5.其他：会议注册费、订票费等。\n二、材料准备\n1.网上填报的国内差旅费用报销单。\n2.原始有效票据：火车票、飞机票（含登机牌）、住宿费发票（或需网上\n订单）、注册费发票等。\n3.其他相关证明材料：会议通知、会议注册费收费标准、特殊情况说明等。\n三、审批手续\n1.出差人（经办人）填报，单位（课题）负责人审批。\n2.单位（课题）负责人本人差旅费应报上一级具有财务审批权的负责人审\n批。学院、重点科研机构党政主要负责人可互为监督审批。\n四、住宿费标准\n1.教职工住宿费采取定额包干补助方式（15 天及以内），补助标准根据各\n类人员级别，参照财政部最新《中央和国家机关工作人员赴地方差旅费住宿费\n\nPDF第17页\n报 销 指 南\n- 14 -\n国内公务接待费用报销\n一、材料准备\n1.网上填报的日常业务报销单。\n2.接待依据（公函/邀请函）。\n3.国内公务接待审批单（学校信息门户—网上办事服务平台）。\n4.发票等有效报销凭据。\n5.接待清单、菜单。\n二、审批手续\n1.经办人填报，证明人签字，经费负责人审批。\n2.单位（课题）负责人对业务的相关性、真实性和合理性负责。\n三、注意事项\n1.国内公务接待费的审批实行一事一批。\n2.一般公务接待标准最高不得超过 130 元/人，工作餐标准不得超过 50 元\n/人。\n3.接待用餐尽量安排校内教工餐厅自助餐。确因工作需要，可以安排桌餐\n一次，并严格控制陪餐人数。\n4.陪餐人数\n（1）接待对象在 10 人以内的，陪餐人数不得超过 3 人。\n（2）超过 10 人的，不得超过接待对象人数的三分之一。\n5.接待工作餐应当供应家常菜，不得提供鱼翅、燕窝等高档菜肴和用野生\n保护动物制作的菜肴，不得提供香烟以及酒类或含有酒精的饮料，不得使用私\n\nPDF第10页\n报 销 指 南\n- 7 -\n（4）其他人员乘坐飞机经济舱、轮船三等舱、火车硬卧或全列软席列车\n的二等座。\n（5）各类人员级别以学校人事部门认定为准。\n4.签证费、必要的保险费等相关费用应放在出国（境）费用报销单中一起\n填报。\n5.办理签证时的差旅费是国内差旅费，不能填在出国（境）费用报销单中。\n6.注册费中含餐费或部分餐费的，需要扣减相应伙食补助。注册费中单独\n列示餐费金额的，报销时应直接扣减；没有明确金额的，早、中、晚餐按照\n20%、40%、40%比例扣减相应伙食补助。\n7.住宿费需要在规定的标准之内，超过标准的部分和超过批件时间的部分\n不予以报销；住宿费中发票上单独列示了餐费、上网费、电话费、交通费、必\n要的小费等费用，以上费用包含在伙食费、公杂费包干中，报销时应直接扣减。\n8.出席国际会议入住会议举办方指定或推荐酒店，住宿费超过国家规定标\n准的，应于出访前报经国合部暨港澳台办和财务处审核后，凭原始票据据实报销。\n9.邀请方（或其他单位）已承担相应费用的，不得重复领取伙食费和公杂\n费等。\n10.因个人原因产生的退票费、行李超重费和改签费等不予报销。确因工\n作需要发生以上费用的，由出国（境）人员说明情况，经项目负责人或所在单\n位负责人审批后予以报销。\n11.30 天以上（含 30 天）的出国交流经费，应按照国家有关规定的人员\n和国家类别标准，按月发放生活补助，超出 1 个月且不满 1 个月的部分按天数\n比例折算。\n\nPDF第12页\n报 销 指 南\n- 9 -\n国内会议费报销\n一、报销范围\n报销范围包括会议住宿费、会议伙食费、会议室租金、交通费、文件印刷\n费和其他费用等。\n二、材料准备\n1.网上填报的日常业务报销单。\n2.根据所办会议的不同，在学校信息门户—网上办事服务平台中填报的学\n术/非学术/校内单位自办会议的会议申请（备案）表。\n3.会议通知（包含加盖公章的会议议程）。\n4.参会人员签到表（如无法提供签到表，可提供参会人员名单、联系方式）。\n5.会议服务单位提供的费用发票、原始明细单据、电子结算单、委托协议\n（合同）等资料。\n三、会议综合定额标准\n会议类型 住宿费 伙食费 其他费用 综合定额标准\n管理会议 340 130 80 550\n业务会议 400 150 100 650\n1.综合定额里的其他费用包含会议室租金、交通费、文件印刷费、办公文\n具，医药费等。\n2.会议费实行综合定额控制，各项费用之间可以调剂使用。对于不安排住\n宿的会议，综合定额按照扣除会议住宿费后的定额标准执行，住宿费不能调剂",
+          "chunk_ids": [
+            "ustc_finance_2024:PDF第4页:0",
+            "ustc_finance_2024:PDF第17页:0",
+            "ustc_finance_2024:PDF第10页:0",
+            "ustc_finance_2024:PDF第12页:0"
+          ],
+          "cited": true
+        }
+      ],
+      "has_valid_citations": true,
+      "model": "Qwen/Qwen3-8B",
+      "retrieval": "qwen_embedding+bm25_rrf",
+      "elapsed_ms": 1847
+    },
+    {
+      "npc_id": "library",
+      "question": "学生能借几本书，借多久？",
+      "wall_seconds": 0.9,
+      "answer": "学生可借30册图书，借期为60天。[1]",
+      "sources": [
+        {
+          "citation": 1,
+          "title": "中国科学技术大学图书馆：图书借阅规则",
+          "url": "https://lib.ustc.edu.cn/读者指南/图书借阅规则/",
+          "version": "网页快照，页面标注2026-07-22",
+          "location": "正文",
+          "text": "正文\n图书借阅规则\n2026-07-22\n（一）图书借书册数和期限\n读者类型 | 正常借期 | 限借册数 | 最大续借次数 | 到期提前续借天数 | 续借时间\n学生 | 60天 | 30册 | 1次 | 10天 | 45天\n教工 | 60天 | 30册 | 1次 | 10天 | 45天\n（二）借书时卡中应无超期图书，且逾期滞纳金未达\n10\n元，否则系统中不能办理手续。（三）图书（尤其各种画册）借出时，请读者先检查一下有无缺页和损坏情况，如有，须告诉图书馆工作人员加盖缺损印章。如还书时发现有缺损而又未盖章确认的，则由读者承担责任。（四）图书归还时，请归还到图书所在馆藏地，或者按规定使用24小时自助还书机。被预约图书必需在预约书柜归还。（五）馆藏现刊、过刊、内部资料等，不提供外借，只能在室内查阅；读者有急需请与工作人员说明。（六）寒暑假期间，图书馆会根据实际情况设置延期还书日以方便读者。（七）一卡通是在书库办理外借图书手续的唯一凭证，请读者一定要妥为保管，借书时须持本人一卡通办理。若不慎丢失一卡通请立即挂失，挂失前的一切借书记录由一卡通所有者本人负责。（八）按照学校的规定，读者因工作毕业、调动、休学、退学、短期学习结束等原因离校，或者因为本硕连读、硕博连读身份变化时，均需由本人或者单位担保人还清所借图书资料，方可签办离校手续或继续注册。",
+          "chunk_ids": [
+            "ustc_library:正文:0"
+          ],
+          "cited": true
+        }
+      ],
+      "has_valid_citations": true,
+      "model": "Qwen/Qwen3-8B",
+      "retrieval": "qwen_embedding+bm25_rrf",
+      "elapsed_ms": 724
+    },
+    {
+      "npc_id": "history",
+      "question": "科大什么时候建校，首任校长是谁？",
+      "wall_seconds": 1.14,
+      "answer": "中国科学技术大学于1958年9月在北京创建，首任校长是郭沫若[1]。",
+      "sources": [
+        {
+          "citation": 1,
+          "title": "中国科学技术大学：学校简介",
+          "url": "https://www.ustc.edu.cn/xxgk/xxjj.htm",
+          "version": "网页数据截至2025年9月",
+          "location": "正文",
+          "text": "正文\n中国科学技术大学是中国科学院所属的一所以前沿科学和高新技术为主，兼有医学、特色管理和人文学科的理工科大学。\n学校现有34个学院，含8个科教融合学院；设有苏州高等研究院、上海研究院、北京研究院、先进技术研究院、国际金融研究院、附属第一医院（安徽省立医院）。\n学校于1958年9月在北京创建，郭沫若任首任校长。这是我党为“两弹一星”事业而创办的红色大学，她的创办被称为“我国教育史和科学史上的一项重大事件”。建校后，中国科学院实施“全院办校、所系结合”的办学方针，高起点、宽口径培养新兴、边缘、交叉学科的尖端科技人才，汇集了严济慈、华罗庚、钱学森、赵忠尧、郭永怀、赵九章、贝时璋等一批著名科学家，建校第二年即被列为全国重点大学。\n1970年初，学校迁至安徽省合肥市。1978年以来，学校锐意改革、大胆创新，在全国率先提出并实施一系列具有创新精神和前瞻意识的教育改革措施，创办少年班、首建研究生院、建设国家大科学工程、面向世界开放办学等，成为国家高质量人才培养和高水平科学研究的重要基地，是国家首批实施“985工程”和“211工程”的大学之一。2017年9月和2022年2月，学校两度入选全国世界一流大学和世界一流学科建设高校，共有11个学科入选世界一流学科建设名单。建校67年来，学校坚持红专并进、理实交融的校训，敢为人先，锐意进取，培养了大批德才兼备的优秀人才，取得了一系列举世瞩目的科研成果，为党和国家事业发展作出了重要贡献。\n校党委全面贯彻党的教育方针，坚持社会主义办学方向，将习近平总书记关于中国科大系列重要指示精神融入办学治校各环节，团结带领全校广大党员干部和师生员工，深刻领悟“两个确立”的决定性意义，不断增强“四个意识”、坚定“四个自信”、做到“两个维护”，围绕“潜心立德树人、执着攻关创新”两大根本任务，大力推进“双一流”建设，努力办出中国特色、科大风格的世界一流大学。\n（数据截至2025年9月）\n\n正文\n推进“双一流”建设，努力办出中国特色、科大风格的世界一流大学。\n（数据截至2025年9月）",
+          "chunk_ids": [
+            "ustc_history:正文:0",
+            "ustc_history:正文:1"
+          ],
+          "cited": true
+        }
+      ],
+      "has_valid_citations": true,
+      "model": "Qwen/Qwen3-8B",
+      "retrieval": "qwen_embedding+bm25_rrf",
+      "elapsed_ms": 964
+    },
+    {
+      "npc_id": "ai",
+      "question": "Embedding 和 Reranker 有什么区别？",
+      "wall_seconds": 2.73,
+      "answer": "Embedding 是将文本转化为向量表示，用于衡量语义相似性；Reranker 则是在检索到候选结果后，进一步排序以提升准确性。例如，NPC 说“你好”，Embedding 会生成一个向量，而 Reranker 会判断哪个 NPC 更符合“你好”的意图[1]。",
+      "sources": [
+        {
+          "citation": 1,
+          "title": "Qwen3 Embedding: Advancing Text Embedding and Reranking Through Foundation Models",
+          "url": "https://arxiv.org/pdf/2506.05176",
+          "version": "arXiv:2506.05176，2025",
+          "location": "PDF第4页 / PDF第2页 / PDF第8页",
+          "text": "PDF第4页\nTechnical Report\nModel Type Models Size Layers SequenceLength EmbeddingDimension MRLSupport InstructionAware\nText Embedding\nQwen3-Embedding-0.6B 0.6B 28 32K 1024 Yes Yes\nQwen3-Embedding-4B 4B 36 32K 2560 Yes Yes\nQwen3-Embedding-8B 8B 36 32K 4096 Yes Yes\nText Reranking\nQwen3-Reranker-0.6B 0.6B 28 32K - - Yes\nQwen3-Reranker-4B 4B 36 32K - - Yes\nQwen3-Reranker-8B 8B 36 32K - - Yes\nTable 1: Model architecture of Qwen3 Embedding models. “MRL Support” indicates whether the\nembedding model supports custom dimensions for the final embedding. “Instruction Aware” notes\nwhether the embedding or reranker model supports customizing the input instruction according to\ndifferent tasks.\nFigure 2: Training pipeline of Qwen3 Embedding and Reranking models.\nTo calculate the relevance score based on the given input, we assess the likelihood of the next token\nbeing ”yes” or ”no.” This is expressed mathematica\n\nPDF第2页\nmbedding attains a\nscore of 70.58 on the MTEB Multilingual benchmark (Enevoldsen et al., 2025) and 80.68 on the MTEB\nCode benchmark (Enevoldsen et al., 2025), surpassing the previous state-of-the-art proprietary\nembedding model, Gemini-Embedding (Lee et al., 2025b). Moreover, our reranking model delivers\ncompetitive results across a range of retrieval tasks. The Qwen3-Reranker-0.6B model exceeds\npreviously top-performing models in numerous retrieval tasks, while the larger Qwen3-Reranker-8B\nmodel demonstrates even superior performance, improving ranking results by 3.0 points over the\n0.6B model across multiple tasks. Furthermore, we include a constructive ablation study to elucidate\nthe key factors contributing to the superior performance of the Qwen3 Embedding series, providing\ninsights into its effectiveness.\nIn the following sections, we describe the design of the model architecture,\n\nPDF第8页\nTechnical Report\nBasic Relevance Retrieval\nModel Param MTEB-R CMTEB-R MMTEB-R MLDR MTEB-Code FollowIR\nQwen3-Embedding-0.6B 0.6B 61.82 71.02 64.64 50.26 75.41 5.09\nJina-multilingual-reranker-v2-base 0.3B 58.22 63.37 63.73 39.66 58.98 -0.68\ngte-multilingual-reranker-base 0.3B 59.51 74.08 59.44 66.33 54.18 -1.64\nBGE-reranker-v2-m3 0.6B 57.03 72.16 58.36 59.51 41.38 -0.01\nQwen3-Reranker-0.6B 0.6B 65.80 71.31 66.36 67.28 73.42 5.41\nQwen3-Reranker-4B 4B 69.76 75.94 72.74 69.97 81.20 14.84\nQwen3-Reranker-8B 8B 69.02 77.45 72.94 70.19 81.22 8.05\nTable 4: Evaluation results for reranking models. We use the retrieval subsets of MTEB(eng, v2),\nMTEB(cmn, v1) and MMTEB, which are MTEB-R, CMTEB-R and MMTEM-R. The rest are all retrieval\ntasks. All scores are our runs based on the retrieval top-100 results from the first row.\nModel MMTEB MTEB (Eng, v2) CMTEB MTEB (Code, v1)\nQwen3-Embedding-0.6B w/ only\n\nPDF第8页\ne\nutilize the Qwen3-Embedding-0.6B model to retrieve the top-100 candidates and then apply different\nreranking models for further refinement. This approach ensures a fair evaluation of the reranking\nmodels. Our results indicate that all three Qwen3-Reranker models enhance performance compared\nto the embedding model and surpass all baseline reranking methods, with Qwen3-Reranker-8B\nachieving the highest performance across most tasks.\n4.3 Analysis\nTo further analyze and explore the key elements of the Qwen3 Embedding model training framework,\nwe conduct an analysis from the following dimensions:\nEffectiveness of Large-Scale Weakly Supervised Pre-T rainingWe first analyze the effectiveness\nof the large-scale weak supervised training stage for the embedding models. As shown in Table 5,\nthe Qwen3-Embedding-0.6B model trained solely on synthetic data (without subsequent training\nstages, as ind",
+          "chunk_ids": [
+            "qwen_embedding_paper:PDF第4页:0",
+            "qwen_embedding_paper:PDF第2页:4",
+            "qwen_embedding_paper:PDF第8页:0",
+            "qwen_embedding_paper:PDF第8页:2"
+          ],
+          "cited": true
+        }
+      ],
+      "has_valid_citations": true,
+      "model": "Qwen/Qwen3-8B",
+      "retrieval": "qwen_embedding+bm25_rrf",
+      "elapsed_ms": 2556
+    },
+    {
+      "npc_id": "dining",
+      "question": "官方表里东区食堂午餐几点供应？",
+      "wall_seconds": 1.14,
+      "answer": "东区食堂的午餐供应时间是11:00—13:00。[1]",
+      "sources": [
+        {
+          "citation": 1,
+          "title": "University of Science and Technology of China: Dining Centers",
+          "url": "https://en.ustc.edu.cn/Services/Dining_Centers.htm",
+          "version": "官方英文服务页未标更新日期；网页快照，不代表当天营业公告",
+          "location": "正文",
+          "text": "正文\nt | +86-551-63606394 | 6:30—9:00 | 11:00—13:00 | 17:00—22:00\nZhengyanglou Restaurant | +86-551-63602681 | | 11:00—14:00 | 17:00—21:00\nXiyuan Restaurant | +86-551-63607619 | 6:30—9:00 | 11:00—13:00 | 17:00—19:30\nSilicon Valley Restaurant | +86-551-63607777 | 7:00—22:00(Winter) | 7:00—23:00(Summer) | \nFanghuayuan Restaurant | +86-551-63600259 | 6:00—9:00 | 11:00—13:00 | 17:00—22:00\nSouth Campus\nDining Hall I | +86-551-63492113 | 6:30—9:00 | 11:00—13:00 | 17:00—22:00\n\n正文\n| Tel.No. | Morning | Noon | Evening\nEast Campus\nEast Campus Restaurant | +86-551-63602678 | 6:30—9:00 | 11:00—13:00 | 17:00—19:30\nDongyuan Restaurant | +86-551-63602679 | 6:30—9:00 | 11:00—13:00 | 17:00—19:30\nTaoliyuan Restaurant | +86-551-63602675 | 6:30—10:00 | 11:00—14:00 | 17:00—23:00\nQinyuanchun Restaurant | +86-551-63606469 | | 11:00—14:00 | 17:00—22:00\nDelicacy Plaza | +86-551-63602287 | | 11:00—13:00 | 17:00—19:30\nXingzuo Restaurant | +86-551-63607384 | 6:30—9:00 | 11:00—13:00 | 17:00—19:30\nWest Campus\nWest Restaurant I | +86-551-63606454 | 6:30—9:00 | 11:00—13:00 | 17:00—19:30\nWest Restaurant II | +86-551-63606434 | 6:30—9:00 | 11:00—13:00 | 17:00—19:30\nWest Restaurant III | +86-551-63606894 | | 11:00—13:00 | 17:00—19:30\nJinjuyuan Restaurant | +86-551-63606394 | 6:30—9:00 | 11:00—13:00 | 17:00—22:00\nZhengyanglou Restaurant | +86-551-63602681 | | 11:00—14:00 | 17:00—21:00\nXiyuan",
+          "chunk_ids": [
+            "ustc_dining_centers:正文:1",
+            "ustc_dining_centers:正文:0"
+          ],
+          "cited": true
+        }
+      ],
+      "has_valid_citations": true,
+      "model": "Qwen/Qwen3-8B",
+      "retrieval": "qwen_embedding+bm25_rrf",
+      "elapsed_ms": 960
+    },
+    {
+      "npc_id": "physics",
+      "question": "为什么车突然刹停时人会前倾？",
+      "wall_seconds": 2.22,
+      "answer": "因为车急刹车时，车停下，但你的身体由于惯性仍保持原来的运动状态，所以你会向前倾。这体现了牛顿第一定律，即物体有保持原有运动状态的倾向，除非有外力改变它 [1]。",
+      "sources": [
+        {
+          "citation": 1,
+          "title": "NASA Glenn Research Center: Newton's Laws of Motion",
+          "url": "https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/newtons-laws-of-motion/",
+          "version": "NASA Glenn官方科普页网页快照",
+          "location": "正文",
+          "text": "正文\nLaws explained why planets move in elliptical orbits rather than in circles.\nBelow is a short movie featuring Orville and Wilbur Wright and a discussion about how Newton’s Laws of Motion applied to the flight of their aircraft.\nNewton’s First Law: Inertia\nAn object at rest remains at rest, and an object in motion remains in motion at constant speed and in a straight line unless acted on by an unbalanced force.\nNewton’s first law states that every object will remain at rest or in uniform motion in a straight line unless compelled to change its state by the action of an external force. This tendency to resist changes in a state of motion is\ninertia\n. If all the external forces cancel each other out, then there is no net force acting on the object.  If there is no net force acting on the object, then the object will maintain a constant velocity.\nExamples of inertia involving aerodynamics:\nT\n\n正文\neaction\n. If object A exerts a force on object B, object B also exerts an equal and opposite force on object A. In other words, forces result from interactions.\nExamples of action and reaction involving aerodynamics:\nThe motion of lift from an airfoil, the air is deflected downward by the airfoil’s action, and in reaction, the wing is pushed upward.\nThe motion of a spinning ball, the air is deflected to one side, and the ball reacts by moving in the opposite direction.\nThe motion of a\njet engine\nproduces thrust and hot exhaust gases flow out the back of the engine, and a thrusting force is produced in the opposite direction.\nReview Newton’s Laws of Motion\n1. Newton’s First Law of Motion (Inertia) | An object at rest remains at rest, and an object in motion remains in motion at constant speed and in a straight line unless acted on by an unbalanced force.\n2. Newton’s Second Law of Motion (\n\n正文\nthere is no net force acting on the object, then the object will maintain a constant velocity.\nExamples of inertia involving aerodynamics:\nThe motion of an airplane when a pilot changes the throttle setting of an engine.\nThe motion of a ball falling down through the atmosphere.\nA model rocket being launched up into the atmosphere.\nThe motion of a kite when the wind changes.\nNewton’s Second Law: Force\nThe acceleration of an object depends on the mass of the object and the amount of force applied.\nHis second law defines a\nforce\nto be equal to change in\nmomentum\n(mass times velocity) per change in time. Momentum is defined to be the mass\nm\nof an object times its velocity\nV\n.\nLet us assume that we have an airplane at a point “0” defined by its location\nX\n0\nand time\nt\n0\n. The airplane has a mass\nm\n0\nand travels at velocity\nV\n0\n. An external force\nF\nto the airplane shown above moves it to poin\n\n正文\nWhat are Newton’s Laws of Motion?\nAn object at rest remains at rest, and an object in motion remains in motion at constant speed and in a straight line unless acted on by an unbalanced force.\nThe acceleration of an object depends on the mass of the object and the amount of force applied.\nWhenever one object exerts a force on another object, the second object exerts an equal and opposite on the first.\nSir Isaac Newton worked in many areas of mathematics and physics. He developed the theories of gravitation in 1666 when he was only 23 years old. In 1686, he presented his three laws of motion in the “Principia Mathematica Philosophiae Naturalis.”\nBy developing his three laws of motion, Newton revolutionized science. Newton’s laws together with Kepler’s Laws explained why planets move in elliptical orbits rather than in circles.\nBelow is a short movie featuring Orville and Wilbur Wright and",
+          "chunk_ids": [
+            "nasa_newton_laws:正文:1",
+            "nasa_newton_laws:正文:7",
+            "nasa_newton_laws:正文:2",
+            "nasa_newton_laws:正文:0"
+          ],
+          "cited": true
+        }
+      ],
+      "has_valid_citations": true,
+      "model": "Qwen/Qwen3-8B",
+      "retrieval": "qwen_embedding+bm25_rrf",
+      "elapsed_ms": 1922
+    },
+    {
+      "npc_id": "student",
+      "question": "预选和正选有什么区别？",
+      "wall_seconds": 1.79,
+      "answer": "预选是选课的第一阶段，选课后需等待抽签确定是否选中。正选是第二阶段，选课先到先得，即选即中[1]。",
+      "sources": [
+        {
+          "citation": 1,
+          "title": "中国科学技术大学教务处：选课规则简介",
+          "url": "https://www.teach.ustc.edu.cn/service/svc-student/3543.html",
+          "version": "页面标注2015-07-21，官方网页快照；学期日期另以当期通知为准",
+          "location": "正文",
+          "text": "正文\n展A模块任选4学分。\nG1修读要求：大学英语交流+大学英语读写+科普英语交流+英语文化与沟通；\nG2修读要求：大学英语交流进阶+大学英语读写进阶+高级英语口语+科普英语交流进阶；\nG3修读要求：大学综合英语（免修，无需自己选课）+英语拓展A模块任选2学分。\n体育选课：\n仅未修满体育（通修）4学分的学生可选，其中，一、二年级学生必须每个春、秋学期任选1门。\n除特别标明男生女生的课程外，其他全部课程不分男生课女生课，均可参加预选，等待抽签。\n通识类课程：\n每名学生每学期最多只能选3门（一年级每学期限选2门）。\nMooc：\n每名学生每学期最多只能选1门。\n注：选课操作成功后，等待系统抽签。选修类课程、通识课、体育选课、英语选课、自由选修、重修重考等课程需要参与抽签。时间冲突、人数已满、及格重修的课程需要在选课申请开放阶段提交个性化选课申请。\n三、预选、抽签及正选规则\n预选：\n预选阶段，选课后等待抽签。\n抽签：\n抽签由教务处选课管理员统一处理；抽签阶段不允许进行选课、退课、换班等操作。抽签时间结束后，抽签抽中的课程信息可在已选课程中查询。\n正选：\n正选阶段选课先到先得、即选即中。\n退课与退课申请：\n非置课选中的课程可直接退课，置课选中的必修课需提交\n退课申请，联系学业指导老师或学生所在院系教学秘书审核\n。\n换班与组换班：\n置课必修课可申请换班，换到时间不冲突且人数未满的课系统自动审核通过，即换即中；人数已满或时间冲突的换班需求在抽签结束后，提交申请等待审核。多门课程同时换班可在个性化选课申请模块的换班申请中提交“组换班”申请。\n分层教学：\n一年级《微积分1》或《力学》L班课堂的同学，可以先提交“退课申请”，学业指导老师直接审核或签字同意后联系所在院系教学秘书审核；退课审核通过后，再自选相应课程。\n四、个性化选课规则\n选课申请：\n申请开放期间（以选课通知时间安排为准），受理因为时间冲突、人数限制、重修已及格课程或其他原因无法直接完成选课操作的选课申请。逾期不再受理。学生提交申请后，可直接联系任课教师在线审核，也可印申请表，由任课教师签字同意后，交给课程开课单位教学秘书办理审核手续\n\n正文\n性化选课规则\n选课申请：\n申请开放期间（以选课通知时间安排为准），受理因为时间冲突、人数限制、重修已及格课程或其他原因无法直接完成选课操作的选课申请。逾期不再受理。学生提交申请后，可直接联系任课教师在线审核，也可印申请表，由任课教师签字同意后，交给课程开课单位教学秘书办理审核手续，开学后提交的申请两周内未完成审核手续，系统将自动审核不通过。\n选课申请审核：\n选课申请审核通过后，直接选中。请在审核处理之前在网上取消不必要的申请，以免因申请被批准而不能退课。请在审核处理结束后及时上网查询结果，避免发生“未选上而去上课”、“已选上而不去上课”的情况。\n五、学困生选课\n学困生应在选课开放时间内自行选课，如需咨询学业指导老师，应在开学第二周周五之前完成并提交学困生选课申请及时联系任课教师在线审核，逾期不再受理。\n\n正文\n一、选课规则\n本科生选课、退课全部通过综合教务系统进行。无选课记录不能参加课程考核，任课教师无法登录成绩。选课结束后必须参加课程学习及考核，否则记为旷考。\n学生应参照修读专业的培养计划或咨询学业指导老师，根据本人学习能力和进度选择需要修读或感兴趣的课程。\n专业培养计划内课程包括必修课和选修课。置课选中的必修课程，可以进行换班操作。部分校定通修课和选修课不置课，需要自行选课参与抽签。\n基础体育为一年级新生第一学期计划必修课程。体育选项每个学期最多选修一门，选课后参与抽签。每个学生必须修满１个基础体育学分，和３个体育选项学分。本科生应在二年级结束之前完成4个体育学分的修读。\n英语选课需要选课后参与抽签。没有完成英语课程修读要求的一、二年级学生必须选英语课。\n对选课人数未达到规定规模的课堂，执行停开管理。其中，思政、数学、物理等校定通修课程选课人数不得少于30人；外语、体育等校定通修课程以及通识类课程不得少于15人；专业课、研讨班课程不得少于10人或本专业学生人数的50%。\n选课结束后不再受理选课、退课等申请。\n二、推荐课程\n登录系统进入选课界面，根据每人执行计划推荐以下课程：\n培养方案内课程：\n学生所修专业培养方案中设置的课程。教务处选课管理员已按执行计划为每位同学预置了本学期的计划内必修课程。学生需仔细核对本人基本学籍信息与当前修读信息，该信息是系统预置计划内必修课程的依据，如果有误请及时联系所在院系教学秘书申请修改并重新置课。\n英语选课：\nL1修读要求：基础英语I、II+英语拓展B模块任选2学分；\nL2修读要求：英语读写I、II+英语交流I、II；\nL3修读要求：英语交流进阶I、II、III+英语读写进阶I、II+英语拓展A模块任选1学分；\nL4修读要求：大学英语（免听课，无需自己选课）+英语拓展A模块任选4学分。\nG1修读要求：大学英语交流+大学英语读写+科普英语交流+英语文化与沟通；\nG2修读要求：大学英语交流进阶+大学英语读写进阶+高级英语口语+科普英语交流进阶；\nG3修读要求：大学综合英语（免修，无需自己选课）+英语拓展A模块任选2学分。\n体育选课：\n仅未修满体",
+          "chunk_ids": [
+            "ustc_course_selection:正文:1",
+            "ustc_course_selection:正文:2",
+            "ustc_course_selection:正文:0"
+          ],
+          "cited": true
+        }
+      ],
+      "has_valid_citations": true,
+      "model": "Qwen/Qwen3-8B",
+      "retrieval": "qwen_embedding+bm25_rrf",
+      "elapsed_ms": 1608
+    },
+    {
+      "npc_id": "dorm",
+      "question": "可以私自调换宿舍吗？",
+      "wall_seconds": 2.83,
+      "answer": "不可以私自调换宿舍。调房必须逐人办理手续，与离宿手续相同[1]。私自换房或转让床位将被视为违纪行为，可能面临校纪处分[1]。如需调房，请通过正规流程申请，由班主任和院系领导审核后，经学生社区办公室批准方可执行。",
+      "sources": [
+        {
+          "citation": 1,
+          "title": "中国科学技术大学计算机学院：中国科学技术大学学生公寓住宿管理规定",
+          "url": "https://cs.ustc.edu.cn/_t1744/2013/0407/c20185a25656/page.psp",
+          "version": "学院官方转载，页面标注2020-09-09；历史规则网页快照",
+          "location": "正文",
+          "text": "正文\n房审批表，并由学生按照调房审批表的程序由班主任、院系领导审核调房理由是否合理并签字，然后由社区办审核同意后发出调房通知单，楼管员凭调房通知单办理调房手续。\n八、调房秩序管理\n⒈所有调房学生都必须逐人办理调房手续。调房手续与离宿手续相同。\n⒉所有办理转系/专业、试读、休学的学生都应主动到学生社区各楼管室登记。教务处、研究生院、继续教育学院学籍管理部门提供给学生社区办公室的名单作为办理调房手续的主要依据。\n⒊不得私自换房、私自转让床位。违者，按照我校学生违纪处分实施细则进行处理。\n⒋在执行全校性调房计划时如有建议或意见，应及时与学生社区办公室联系。但当不能如愿时，不得拒绝执行调房计划。\n⒌调房建议应以不影响新生住宿安排为前提，以住宿标准人数为基础。在一般情况下，不采纳关于低层向高层或高层向低层房间调房的建议。\n6.调房后，各楼管员和学生社区负责住宿调房的管理员应做好调房日志和计算机住宿数据的修改工作。\n7.楼管员对调房结果不及时报告或私自调房的，按私自调房情节进行违章处理。\n本规定由学生处负责解释，自公布之日起施行。\n2006.9月修订\n（来源：\nhttp://stuhome.ustc.edu.cn/content.php?id=454\n）\n\n正文\n费。\n住宿学生应把住宿费凭证或复印件交到所住楼的楼管室。每学年第一学期注册时各院系应把缴纳下一学年度的住宿费作为注册的前提条件，各研究生楼楼管员在学生注册期间把验查住宿费作为常规工作。\n不缴纳住宿费的人员，学生社区视为本人自动放弃住宿资格。\n对于通过银行汇款的各种代培委培学生的住宿费，学校财务应及时把缴费情况告知社区办。\n如有免缴住宿费的代培、委培研究生，研究生院招生办公室在提供新生花名册时同时应提供免缴住宿费的名单。\n十二、住宿秩序管理\n⒈所有的住宿学生必须按学生社区分配的楼房号住宿。如要调整住房，按调房规定办理。\n⒉不办理住宿手续的学生，按私自住宿或留宿处理。对私自住宿者追缴一学年的住宿费，对私自留宿者，按零星住宿追缴住宿费，情节严重的，按违纪处理；对冒充本校学生住宿的，按零星住宿追缴住宿费，并追究出具证明的单位或有关责任人的责任，直至校纪处分。\n⒊未经院系领导或班主任批准的学生，不得私自在校外留宿和在晚上无故晚归。\n⒋如有私自留宿或转让床位的违纪行为，将取消其住宿资格，直至校纪处分。\n⒌学生宿舍内不得留宿异性，不准异性同居。如留宿异性，追究违纪责任。\n⒍不得私自换门锁。换门锁时，应报告楼管员后由维修人员进行。\n7.不得把狗、猫、兔子等动物、宠物带入学生公寓。\n十三、零星住宿\n⒈所有的零星住宿截止期都不得超过本学期的教学日历日期。\n⒉按住宿期限一次性缴清住宿费，如借用床上用品的，暂收取床上用品和生活用品押金300元。\n⒊需住宿的计划外招生的学生，应事先与学生社区办公室联系后再发通知。\n十四、其他\n与学校教学、科研无关的人员的住宿，学生社区不予接待。\n第二章  离宿退房\n遵照学校关于毕业生离校工作和学籍管理规定，为保证新生房源和假期维修工作的顺利进行，对学生办理离宿退房手续作如下规定。\n一、办理离宿手续的对象\n⒈任何类型的住宿学生在毕业离校或进修期限到期或约定的住宿期限到期时都必须逐人办理离宿退房手续。\n⒉对代培生、委培生、师资班、外训班、进修生、自费生和其他住宿者在学业结束离校时，各有关院系和部门都应把办理离宿退房手续（离校手续单）作为学生离校的必备手续之一。\n⒊休\n\n正文\n申请调房时，班主任应从学生工作的角度认真审核学生申请调房原因的合理性，然后签署意见。\n4.对研究生的调房，在不动用空房间的前提下，如属插位、互相间互调，楼管员可以根据实际住宿情况进行调房。\n5.本楼学生调房后三天内，楼管员必须把调房结果报告给负责住宿调房的管理员。\n6. 申请调房审批表可以从学生社区网站下载。\n四、学生自由组合打破院系界限住宿调房规则\n1.在学生社区办公室可提供的与调房学生学生类型相同的房源内挑选；\n2.以不浪费床位、相同住宿截止期和相同住宿校区为基本原则；\n3.当发生全局性调房时，应服从统一调房规定。\n五、准备迎新房源的调房\n新生房源尤其是本科生、成教生的房源，需要整楼或整层的新生房源。楼管员可以根据本楼的实际情况进行整房间的调房，但应做好有关学生的思想工作。\n由于学生外住、转系、分流等原因造成空床位多的学生公寓，楼管员应在每年五月或六月初根据班级住宿相对集中的原则，做好合并房间的调房工作。由于迎新房源的需要，楼管员应完成学生社区办公室下达的合并房间的任务。\n调房工作必须在放假日期前结束，调房后三天内必须把调房结果报告给负责住宿调房的管理员。\n六、大二本科生转系或转专业调房\n教务处学籍管理部门应在八月一日前把大二本科生转系或转专业的学生名单用电子文档或书面方式通知社区办。\n各有关班主任在大二本科生军训期间做好转系或转专业学生的工作，在八月十五日前向社区办提出班级内调房方案。\n对跨校区调整专业的学生，在八月二十日以前办理完调房手续。\n对不跨校区调整专业的学生，可以在八月二十日以前提出住宿到本班级宿舍的调房申请。\n对已办理完调房手续的学生，不得再提出调回原宿舍的调房申请。\n七、关于申请调房审批表\n当住宿学生提出正当、合理的跨校区、跨楼调房理由时，各宿舍楼的楼管员可以让学生填写申请调房审批表，并由学生按照调房审批表的程序由班主任、院系领导审核调房理由是否合理并签字，然后由社区办审核同意后发出调房通知单，楼管员凭调房通知单办理调房手续。\n八、调房秩序管理\n⒈所有调房学生都必须逐人办理调房手续。调房手续与离宿手续相同。\n⒉所有办理转系/专业、试读、休学的学生都应\n\n正文\n为，仍追究其责任。\n第三章　调房\n一、全校性调房\n⒈出于迎新房源或维修需要，当需要全校性调整住房时，各有关职能部门做好学生的思想工作，各有关院系的学生必须在规定的期限内执行调房计划。\n⒉在调房期间如班主任或住宿学生需对宿舍住宿者组合需要调整时，应事先征得学生社区办公室同意并提供重新组合名单与楼房号。\n⒊对不执行调房计划的学生，当影响到迎新或维修工作时，要追究其责任。\n二、班级内部调房\n⒈班主任出于工作需要对本班学生宿舍住宿组合或南北房间需要调整时，班主任可事先与学生社区办公室联系并备案。\n⒉学生需调房应经班主任和院系学生工作负责人签字同意，到学生社区办公室办理调房事宜。\n⒊由于分系、系内分班级、本科大二选择专业，由有关院系及其班主任提供学生住宿组合名单，并在限期内完成学生社区办公室制定的调房计划。如住宿组合又有变动，可与学生社区办公室及时联系。\n⒋对低于住宿标准的房间进行调房，各有关院系和学生必须在规定的期限内执行调房计划。\n⒌当班主任需要申请调房时，在每年五至六月份与学生社区办公室联系。\n6.班级内部调房得到同意后，应在暑假放假前调房完毕。\n三、个别学生调房\n1.当个别学生由于休学而复学、学期中途转系、延期毕业需调房时，可凭有关学籍部门的证明到学生社区办公室办理调房审批事宜。如当时条件不允许，可在适当时候调整。对复学学生尽可能安排到班级所在楼的空床位住宿或自己挑选临近本班级的楼房号。\n2.除休学后复学、转系、延期毕业的原因外，如学生另有其他原因需要申请跨校区或跨楼调房时，应到所住宿楼的楼管室领取申请调房审批表，按照审批表的内容逐项填写，得到班主任、院系学生工作负责人的同意后，报送学生社区办公室。学生社区办公室及时审批后由负责住宿调房的管理员负责具体调房事宜。\n3.当同宿舍的同班级学生有二至三人申请调房时，班主任应从学生工作的角度认真审核学生申请调房原因的合理性，然后签署意见。\n4.对研究生的调房，在不动用空房间的前提下，如属插位、互相间互调，楼管员可以根据实际住宿情况进行调房。\n5.本楼学生调房后三天内，楼管员必须把调房结果报告给负责住宿调房的管理员。\n6. 申请调房",
+          "chunk_ids": [
+            "ustc_dorm_rules:正文:12",
+            "ustc_dorm_rules:正文:7",
+            "ustc_dorm_rules:正文:11",
+            "ustc_dorm_rules:正文:10"
+          ],
+          "cited": true
+        }
+      ],
+      "has_valid_citations": true,
+      "model": "Qwen/Qwen3-8B",
+      "retrieval": "qwen_embedding+bm25_rrf",
+      "elapsed_ms": 2647
+    },
+    {
+      "npc_id": "network",
+      "question": "在校外访问校内资源有哪些方式？",
+      "wall_seconds": 2.78,
+      "answer": "在校外访问校内资源主要有两种方式：iWAN校园网隧道和Web VPN。iWAN通过统一身份认证登录，支持多平台客户端，适合需要全程使用校园网资源的场景[1]。Web VPN无需安装，直接在浏览器访问指定网址即可使用，适合临时访问特定资源[1]。",
+      "sources": [
+        {
+          "citation": 1,
+          "title": "中国科学技术大学网络信息中心：VPN设置及常见问题处理",
+          "url": "https://ustcnet.ustc.edu.cn/2015/0127/c40953a718108/page.htm",
+          "version": "官方页面初发2015-01-20，正文已更新含iWAN；以抓取正文为准",
+          "location": "正文",
+          "text": "正文\n为方便全校师生在校外便捷、安全地接入校园网络，网络信息中心正式推出iWAN校园网隧道服务。在校师生均可通过学校统一身份认证使用该服务。（优先推荐使用）\n校内VPN（虚拟专用网络）服务用于从我校师生在校外需要访问校内的资源及学校购买的文献等资源，\n一般只提供给老师使用（\nWeb VPN\n除外，在校师生都可以使用）。\nVPN帐号是\n网络通\n帐号的一个功能，采用网络通的用户名和密码进行身份验证，教师网络通开通时自动开通VPN接入功能，苏州研究院和上海研究院等合肥之外的学生需要使用VPN的师生请先到网络信息中心服务部（东活一楼）开通网络通账号的VPN接入功能。\n帐号开通后，用户还需要在自己的计算机上设置VPN连接，进行VPN拨号就可以连接到科大校园网络。\n办理离校后，VPN账号即关闭。\nIWAN:\n为方便全校师生在校外便捷、安全地接入校园网络，网络信息中心正式推出iWAN校园网隧道服务。在校师生均可通过学校统一身份认证使用该服务。\n现将有关事项通知如下：\n一、客户端软件安装\niWAN客户端软件支持Windows、Android、鸿蒙、Linux、iOS、macOS等平台。\nWindows客户端软件：\nPanabit-iWAN-2.3.0-Setup.exe\nAndroid/安卓手机客户端软件：\napp-release-2.3.0.apk\n也可访问Panabit官网下载中心获取：\nhttps://download.panabit.com:9443/ecool.php\nLinux客户端正在更新，后续会提供下载。\n苹果iOS或macOS系统请在应用商店搜索“Panabit iWAN”应用，如下图所示:\n二、连接使用\n第一次连接时，请在“客户域”中输入：iwan.ustc。\n依次点击“下一步”、“登录”，在弹出的学校统一身份认证界面中完成认证即可连接。\n使用权限：在校状态的师生均可使用，如遇权限问题，请联系网络信息中心。\n账号安全：统一身份认证界面为学校官方页面，请确认网址为 id.ustc.edu.cn 后再输入密码，确保安全。\n温馨提示：建议登录 https://id.ustc.e\n\n正文\n的学校统一身份认证界面中完成认证即可连接。\n使用权限：在校状态的师生均可使用，如遇权限问题，请联系网络信息中心。\n账号安全：统一身份认证界面为学校官方页面，请确认网址为 id.ustc.edu.cn 后再输入密码，确保安全。\n温馨提示：建议登录 https://id.ustc.edu.cn 设置“通行密钥”（大部分现代设备均支持），可避免每次登录输入密码。\niWAN校园网隧道广泛应用后，原有的PPTP/L2TP等VPN将逐步停止服务。\n三、进阶设置\n3.1 切换线路，优化体验\n当从电信、联通、移动等运营商网络接入iWAN校园网隧道时，在iWAN软件“连接”页面，可以切换不同的线路接入点，以获得更佳速度。\n3.2 路由设置，按需选择\n在“设置”页面的“路由设置”处\n选择 “全部路由” ，点击下方“应用设置”保存配置。连接后所有流量均经过学校转发，适合需要全程使用校园网资源的场景。\n选择 “按网段路由” ，并输入以下学校网段列表，根据需要选择“DNS配置”（建议一般选择“禁用DNS”），点击“应用设置”保存配置。则仅将访问学校的流量通过iWAN校园网隧道转发，其他流量直接走本地网络，速度更快：\n114.214.160.0/19,114.214.192.0/18,202.38.64.0/19,210.45.64.0/20,210.45.112.0/20,211.86.144.0/20,222.195.64.0/19,210.72.22.0/24,202.141.160.0/19,218.22.21.0/27,218.104.71.160/28\nWeb VPN：\n任何校内人员都可以使用，无需特殊申请，无需安装，直接浏览器访问\nhttps://wvpn.ustc.edu.cn\n登录后，在下面输入框中选择所需要的协议，输入必要的参数等，即可直接访问所需资源。\nPPTP VPN：\n如何使用？\n网络信息中心有两个PPTP VPN服务器，用户在设置服务器时，可以根据自己所在网络选择合适的服务器：\nvpn1.ustc.edu.cn：电信IP，适合校外电信用户接入\nvpn2.ustc.edu\n\n正文\n需要的协议，输入必要的参数等，即可直接访问所需资源。\nPPTP VPN：\n如何使用？\n网络信息中心有两个PPTP VPN服务器，用户在设置服务器时，可以根据自己所在网络选择合适的服务器：\nvpn1.ustc.edu.cn：电信IP，适合校外电信用户接入\nvpn2.ustc.edu.cn：教育网IP，适合校外教育网用户接入\nWindows操作系统的设置过程：\nXP\n、\n2000\n、VISTA、7、8.X。\n常见错误：\nVPN客户端拨入时出现619，800错误\n这种情况大数是无法与VPN服务器建立连接，可能是所在的运营商不支持VPN，或者客户机连接Internet的网关（如家庭宽带路由路）对VPN支持不好。\nVPN客户端拨入时出现691错误\n这种情况大数多是用户名密码错误或者没有VPN权限，请登录\nhttp://wlt.ustc.edu.cn\n验证用户名密码是否正确、是否有VPN权限。\nIPsec/L2TP的设置\n：\nWindows 10/11的配置步骤\n依次右键电脑桌面右下角有线网络图标（或无线网络图标），点击“网络和Internet设置”，找到“网络和共享中心”（或在控制面板进入“网络和共享中心”），点击“网络和Internet—VPN—添加、连接、管理”，配置VPN参数，如下：\nVPN提供商：默认选择Windows（内置）\n连接名称：随意填写，如USTC\n服务器名称或地址：218.22.21.11\nVPN类型：使用预共享密钥的L2TP/IPsec\n预共享密钥：ustc\n账户：网络通账号（需要有VPN权限）\n密码：网络通账号密码\niPhone的配置步骤\n依次选择菜单->设置->通用->VPN->添加VPN配置\n类型：修改为L2TP\n描述：ustcvpn或自己修改\n服务器：218.22.21.11\n账户：网络通账号（需要有VPN权限）\n密码：网络通账号密码\n密钥：ustc\n华为Mate10 Android的设置步骤\n依次选择菜单->设置->无线和网络->VPN->添加VPN网络\n账户：网络通账号（需要有VPN权限）\n密码：网络通账号密码\n类型：修改为L2TP/IPSec\n\n正文\n账户：网络通账号（需要有VPN权限）\n密码：网络通账号密码\n密钥：ustc\n华为Mate10 Android的设置步骤\n依次选择菜单->设置->无线和网络->VPN->添加VPN网络\n账户：网络通账号（需要有VPN权限）\n密码：网络通账号密码\n类型：修改为L2TP/IPSec PSK（\n附图\n）\n描述：USTCVPN或自己修改\n服务器：218.22.21.11\nL2TP密钥、IPSec标识符：可空着\nIPSec预共享密钥：ustc\nOpenVPN：\n有了PPTP VPN为什么需要OpenVPN？\nPPTP VPN在某些环境下无法连接，比如通过（无线）路由器，为了解决这个问题建设了OpenVPN系统。\nOpenVPN的设置：\n请参见OpenVPN的主页:\nhttp://openvpn.ustc.edu.cn\n。\n通过VPN登录学校后无需再使用网络通选择出口，也不允许再登录网络通。",
+          "chunk_ids": [
+            "ustc_network_vpn:正文:0",
+            "ustc_network_vpn:正文:1",
+            "ustc_network_vpn:正文:2",
+            "ustc_network_vpn:正文:3"
+          ],
+          "cited": true
+        }
+      ],
+      "has_valid_citations": true,
+      "model": "Qwen/Qwen3-8B",
+      "retrieval": "qwen_embedding+bm25_rrf",
+      "elapsed_ms": 2595
+    },
+    {
+      "npc_id": "lab",
+      "question": "为什么不能在实验区吃东西？",
+      "wall_seconds": 1.49,
+      "answer": "根据实验室规定，实验区内禁止饮食，以避免摄入或暴露于有害化学物质、放射性或生物危害材料的风险[1]。",
+      "sources": [
+        {
+          "citation": 1,
+          "title": "宾夕法尼亚大学EHRS：Lab Safety Quick FAQs，第27问（实验室饮食）",
+          "url": "https://ehrs.upenn.edu/health-safety/lab-safety/safety-alerts-and-faqs/lab-safety-quick-faqs",
+          "version": "官网标注2026-09-28修订；仅用于实验安全原因科普，不作为科大制度",
+          "location": "正文",
+          "text": "正文\nConsumption and storage of food or drink, including water, is prohibited​ in the lab.  Eating, drinking or applying cosmetics in a laboratory area can increase the risk for ingestion of or exposure to hazardous chemicals, or radioactive or biohazardous materials.  Small kitchen appliances, such as tea kettles or coffeemakers, must remain outside the lab and equipment hallways.  Edible items stored in the lab and intended for research use must be labeled “Not for Human Use.”​",
+          "chunk_ids": [
+            "penn_lab_food:正文:0"
+          ],
+          "cited": true
+        },
+        {
+          "citation": 2,
+          "title": "中国科学技术大学实验室：实验室新手须知",
+          "url": "https://tjlab.ustc.edu.cn/2019/1114/c19072a405106/page.htm",
+          "version": "2019-11-14实验室新手说明；用于通识知识，不代表全校2026准入政策",
+          "location": "正文",
+          "text": "正文\n更不要误服，特别是接触到腐蚀性化学品时，要立即用大量的清水冲洗。\n3)\n易燃易爆场所禁止使用明火，如果确实需动用明火，如进行烧焊等，事先要得到批准，并做好充分的防范措施。\n4)\n对于没有使用完的危险化学品不能随意丢弃，否则可能会引发意外事故。\n5)\n要按规定戴好防护用具，防止实验过程过程中受到伤害。\n日常卫生管理制度（\nSanitation management system\n）\n1.\n实验室实行每日轮流值日，负责实验室卫生及茶水间卫生等职责。\n2.\n值日完成签日期并提醒下一位值日生。\n3.\n实验台、试剂架和冰箱按照就近原则分配，使用人负责安全和整理，互相监督，尽量保持整洁。\n4.\n超净台用完以后要及时清理，用酒精擦拭干净，及时清理垃圾。\n5.\n及时把\n37 °C\n恒温培养箱中细菌培养皿拿出清理；及时\n把\n37 °C\n摇床中\nLB\n试管、摇瓶拿出清理。\n6.\n公用实验台，比如电泳区、\nPCR\n区、天平区，用完随即收拾。\n7.\n水池区的器皿须先用自来水冲洗干净，最后用\ndH2O\n冲洗，水池边不能放太多东西，量筒烧杯放回原处。\n8.\n保持电泳区整洁，电泳结束后清洗电泳槽，胶板，梳子等，放在指定地方晾干备用，微波炉用完需将表面和内部液体擦洗干净。\n9.\n处理实验过程中的菌液，要加漂白粉处理方可倒入水池。处理平板时，不能将固体培养基直接倒入垃圾桶，须放保鲜袋内加漂白粉处理，封闭后灭菌再扔掉。\n10.\n禁止移液器接上枪头后平放台面，移液器用完及时调到最大量程，超净台和电泳区的专用移液器不可拿至别处。若取用他人的移液器，用完须放回原处。\n11.\n照胶仪用完及时关灯。文件保存到各自文件夹。并把废弃胶扔掉。；电泳样品立即收走，不然会被扔掉。\n12.\n希望大家严格按照值日表安排时间按时值日，原则上不允许漏值，一旦因特殊原因漏值，希望在第二天\n9\n点之前补值，若不能及时补值，则罚值日一次。\n每日值日生职责（\nDaily clean duty\n）\n1.\n整理水池边台子和水池。\n2.\n负责公共区域整洁卫生。\n3.\n收集离心管和盖子。\n4.\n整理培养皿。\n5.\n拖地、倒垃圾。\n6.\n茶水间清理。\n\n正文\n1.1\n实验室公约\n1.1.1\n实验室安全、卫生\n个人安全\n(Personal Safety)\n1.\n要学习和掌握实验室伤害救护常识，经常对学生进行安全教育，以预防为主，确保师生和国家财产安全。\n2.\n实验前应熟悉每个具体操作中的安全注意事项，对可能发生的事故有高度警惕，严格遵守操作规程，杜绝安全事故的发生。\n3.\n严禁在实验室内饮食或把食物带进实验室，实验后必须仔细把手洗净。\n4.\n实验人员进行实验时应当穿着实验服，严禁戴乳胶手套开门。\n5.\n实验过程中应时刻注意对个人的防护，进行有危险试剂的实验时，要佩戴护目镜、口罩、手套及防毒面罩进行防范；对于有挥发性的有毒试剂，应在通风橱中进行实验。\n仪器安全\n(Equipment Safety)\n1.\n使用电器时要谨防触电，确保用电安全。不要用湿的手、物接触电源，教师要严格控制学生实验用电，实验室供电线路的布设及保险丝的选用，要符合安全供电标准。\n2.\n实验室要配齐防火、防盗等安全设施，并定点布设，定期检查，做到使用方便，时刻保持良好状态。\n3.\n实验室要有三废（废气、废液、废渣）处理措施，不得随意排放超剂量废气、废液、废物。不得随意丢弃用过的实验药品和容器。\n4.\n为避免引起事故，超净台内不要放不必要的物品，用完后拿出放到超净台上方。\n5.\n超声破碎仪功率是\n1200 W\n，破碎时功率最好不要超过\n50%\n（建议\n10%\n，\n10~20 min\n），用完用\nddH\n2\nO\n冲洗探头。\n6.\n烘箱中的物品及时取出，烘箱内无物品时关掉烘箱。\n7.\n高压灭菌锅开机后检查水位，禁止低水位灭菌，废液瓶的水要及时倒出。灭菌锅内物品不要太满及倾斜，以免溢出。灭菌锅压力降到常压，温度降到\n80 °C\n以下，才能打开。\n8.\n离心机要严格配平，旋紧转头内盖，离心机用完后把内壁擦干净，关掉后把离心机盖打开。转子要经常清洗，倒置晾干。\n9.\n摇床最高转速不得超过\n220\n转\n/\n分，摇瓶上须写上使用人，蛋白名称，日期。如果摇瓶在摇床内破裂，要立即停止，摇床要定期紫外照射灭菌。\n10.\n纯化仪、摇床须登记使用。\n11.\n金属煮样器使用时禁止往样品孔\n\n正文\n查试剂是否过期，过期试剂应及时妥善处置。配制的试剂除有特殊规定外，存放期不应超过三个月。\n8)\n应定期检查试剂是否齐全，所缺试剂应及时申请购买。\n9)\n标准物质应按规定存放，定期检查是否完好，每次使用必须有相应的记录。标准物质证书统一存放在资料柜。\n10)\n要加强对火源的管理。化学药品储藏室（橱）周围及内部严禁火源；实验室的火源要远离易燃、易爆物品，有火源时，不能离人。\n11)\n要经常检查危险物品，防止因变质、分解造成自燃、自爆事故。对剧毒物品的容器、变质料、废渣及废水等应予妥善处理。\n5.\n试剂的使用\n1)\n取用化学试剂前应检查试剂的外观，注意其生产日期，不得使用失效的试剂。如怀疑有变质可能时，应经检验合格后再用。使用中要注意保护瓶上的标签，如有脱落应及时贴好，如有损毁则应照原样补全并贴牢。\n2)\n取用液体试剂只准倾出使用，不得在试剂瓶中直接吸取，倒出的试剂不可再倾回原瓶中。倾倒液体试剂时应使瓶签朝向虎口，以免淌下的试剂沾污或腐蚀瓶签。\n3)\n取用固体试剂时应遵守\n“\n只出不回，量用为出\n”\n的原则，倾出的试剂有余量者不得倒回原瓶。所用牛角匙应清洁干燥，不允许一匙多用。\n人事管理制度（\nHuman resource management system\n）\n1.\n上班制度\n每周一至周六为工作日（周六周日可调休），每天打卡时间为早上\n9:10\n之前，下午\n2:10\n之前，每天工作时\n至少\n8\n小时，迟到或早退扣除假期\n0.5\n天。补假、调休需要事先申请，并在实验员处做备注。补假、调休需\n当天有人监督，同时在打卡记录本上做纪录。如有虚假签到，一旦发现，双方劝离实验室。\n2.\n休假制度\n除法定节假日外实验室每年会有两周（\n12\n个工作日）带薪假期，一般分别定于年假一周、暑假一周。扣除\n时打卡迟到以及请假剩余的则为暑假。对于假期少的可用周末补，超过假期，也可以按天计算退回每月发\n助研费（学校、实验室）。所有不能按时打卡和开展科研工作的情况，都算自动休假，包括各种事由的\n假，比如病假、法定产假以外休假、探亲、事假等。超过连续\n24\n小时离开合肥，需要事先书面请假，批准\n才能离开。",
+          "chunk_ids": [
+            "ustc_lab_newcomer:正文:2",
+            "ustc_lab_newcomer:正文:0",
+            "ustc_lab_newcomer:正文:4"
+          ],
+          "cited": false
+        }
+      ],
+      "has_valid_citations": true,
+      "model": "Qwen/Qwen3-8B",
+      "retrieval": "qwen_embedding+bm25_rrf",
+      "elapsed_ms": 1303
+    },
+    {
+      "npc_id": "sports",
+      "question": "体育通修课毕业需要多少学分？",
+      "wall_seconds": 0.86,
+      "answer": "通修类体育课毕业要求为4学分[1]。",
+      "sources": [
+        {
+          "citation": 1,
+          "title": "中国科学技术大学教务处：关于体育课程修读有哪些规定？",
+          "url": "https://www.teach.ustc.edu.cn/service/svc-student/13795.html",
+          "version": "FAQ正文初发2021-11-09；页面另列2025版附件，本索引只含FAQ正文",
+          "location": "正文",
+          "text": "正文\n课程类别\n体育课程分为通修类和通识类。通修类体育课分为基础体育、体育选项(1)、体育选项(2)和体育专训课程。\n课程修读\n学生每学期最多只能修读一门通修类体育课程，已获得4学分者不能再修此类课程。\n学生在大一、大二期间，必须在秋、春季学期各修读一门通修体育课（因伤病获批缓修者除外）。\n学生在大一秋季学期必修基础体育，春季学期修读体育选项(1);大一秋季学期体质测试未及格者，春季学期必须修读“体适能I”。学生在大二期间，需修读体育选项（2）或体育专训，部分专训需要预修相应的前置课程。\n学生因身体问题，从疾病发现至毕业期间不能参加剧烈运动和修读正常体育课程，需要提出申请并提供相应证明材料（出院小结或病历等），经校医院审核同意后，可以修读体育通识类公选课中《传统健身》、《桥牌基础讲座》作为替代课程。另外，可以修读通修类体育课程中运动量较低的《养生（1）》、《养生（2）》、《台球（专训）》作为替代课程。\n温馨提示：\n由于体育课堂容量以及场地条件限制等原因，若抽签未抽中只能修读其他未选满的课堂，不允许申请个性化修读已选满/时间冲突的课堂。\n考核规定\n期末考试：\n缺课达到总课时1/3者，不允许参加期末考试，成绩记录为“F”。\n缓考：\n申请流程同其他课程一致。\n补考：\n若因运动成绩不及格，可以申请补考；若因考勤不及格，不允许参加补考。\n成绩规定及毕业要求\n学校运动队正式队员，在正常训练与比赛期间，可申请将当学期所修体育课程成绩记载为“优秀”。由学生于期末考试前一周提出申请，在体教网站下载《中国科学技术大学运动队正式队员体育课期末成绩申请表》，经核对竞赛秩序册并获运动队教练以及任课老师认可批准后，一式两份，一份交给任课老师留存，一份交给体教教秘存档，则该项课程成绩可记为优秀。注意提交材料时，请将参赛秩序册封面及参赛队员内页复印一并提交。\n通修类体育课毕业要求：4学分。\n“基础体育”课程不及格，无替代课程，必须重修该课程。\n体育选项(1)、体育选项(2)课程不及格，可以修读其他单项课程以满足毕业要求，原不及格课程与新修课程成绩均会记入成绩单。\n附件：\n中国科学技术大学本科生体育课程修读管\n\n正文\n参赛队员内页复印一并提交。\n通修类体育课毕业要求：4学分。\n“基础体育”课程不及格，无替代课程，必须重修该课程。\n体育选项(1)、体育选项(2)课程不及格，可以修读其他单项课程以满足毕业要求，原不及格课程与新修课程成绩均会记入成绩单。\n附件：\n中国科学技术大学本科生体育课程修读管理规定（2025版）",
+          "chunk_ids": [
+            "ustc_sports_course:正文:0",
+            "ustc_sports_course:正文:1"
+          ],
+          "cited": true
+        }
+      ],
+      "has_valid_citations": true,
+      "model": "Qwen/Qwen3-8B",
+      "retrieval": "qwen_embedding+bm25_rrf",
+      "elapsed_ms": 682
+    },
+    {
+      "npc_id": "career",
+      "question": "就业推荐表可以自助打印吗？",
+      "wall_seconds": 2.08,
+      "answer": "可以自助打印。通过“中国科学技术大学就业服务平台”微信小程序，毕业生可自行制作并打印《就业推荐表》，无需前往就业办盖章[1]。打印后需班主任或导师签字，再由院系审核盖章。",
+      "sources": [
+        {
+          "citation": 1,
+          "title": "中国科学技术大学就业信息网：“毕业生就业推荐表”办理指南",
+          "url": "https://www.job.ustc.edu.cn/EmploymentProcess/info.aspx?itemid=11126",
+          "version": "2025-05-17就业办指南网页快照",
+          "location": "正文",
+          "text": "正文\n《就业推荐表》是学校为帮助毕业生就业专门向用人单位出具的一份正式推荐材料，\n是应届毕业生在取得毕业证和学位证之前相关身份的证明，\n是用人单位了解毕业生的重要途径，同时也是毕业生申报北京、上海等地户口的必备材料之一。\n《就业推荐表》\n使用对象为我校非定向培养的学历教育（双证）毕业生（不含定向、委培、在职）。\n办理方式一\n：《\n就业推荐表》\n自助打印\n使用“\n中国科学技术大学\n就业服务平台”微信小程序\n，\n帮助毕业生实现\n自行制作《就业推荐表》并\n自助\n打印\n等功能\n，不需要前往就业办盖章。\n一、\n毕业生登录\n微信小程序\n搜索\n【\n中国科学技术大学就业服务平台\n】\n，\n进入小程序并\n登录\n。\n二\n、\n信息维护\n及推荐表生成\n1.在\n首\n页\n【\n生源信息\n】\n中\n，\n核对\n“学籍信息”、完善“个人基本信息”并\n填写\n“本人及家庭联系方式”\n，\n点击\n“确认并保存”\n。\n注：\n请仔细对照各项基本信息，如发现错误请修正并保存。其中灰色的\n“学籍信息”不需修改，毕业前由就业办老师统一维护，\n以\n学籍部门最终学历注册的信息为准，与毕业证信息保持一致。\n2．\n返回首页，点击\n【\n就业推荐表\n】，进入\n就业推荐表和简历维护\n页面。\n3．\n逐一维护\n各\n项目\n后\n，《就业推荐表》中毕业生个人信息相关项即可自动生成\n，\n点击\n“就业推荐表”\n可预览，\n校就业部门意见栏已预设\n“中国科学技术大学就业指导服务中心”电子章。\n三、\n自助\n打印\n1. 预览推荐表信息\n无误后，可选择已连接彩色打印机的\n电脑\n，在浏览器中输入打印网址：\nhttps://yun.ahbys.com/jytjb\n，\n显示二维码后，使用微信小程序首页\n【扫码打印\n】\n，即可预览并打印带红章的《就业推荐表》。\n注意：不要使用\nIE浏览器打印\n，\n推荐使用\n360浏览器极速模式下打印。\n2.\n打印后，请班主任或导师在\n“班主任或导师意见”栏填写推荐意见并签名，再由学院(系)对相关信息进行最终审核并签字、盖章。\n办理\n方式二\n：\n下载\n《\n就业推荐表》空白表格\n填写办理\n下载地址：中国科大就业信息网（\njob.ustc.edu.c\n\n正文\n用\n360浏览器极速模式下打印。\n2.\n打印后，请班主任或导师在\n“班主任或导师意见”栏填写推荐意见并签名，再由学院(系)对相关信息进行最终审核并签字、盖章。\n办理\n方式二\n：\n下载\n《\n就业推荐表》空白表格\n填写办理\n下载地址：中国科大就业信息网（\njob.ustc.edu.cn）--“就业流程”--“文档下载”页面。\n请毕业生\n参考填写指南，\n认真、如实地填写《就业推荐表》，各院系（单位）对毕业生填写的内容进行审核，并分别在\n“班主任（或导师）意见”、“院系组织意见（及签章）”栏填写意见，最后到学校就业办公室签字盖章\n（\n一式三份\n）\n。",
+          "chunk_ids": [
+            "ustc_career_recommendation:正文:0",
+            "ustc_career_recommendation:正文:1"
+          ],
+          "cited": true
+        }
+      ],
+      "has_valid_citations": true,
+      "model": "Qwen/Qwen3-8B",
+      "retrieval": "qwen_embedding+bm25_rrf",
+      "elapsed_ms": 1899
+    },
+    {
+      "npc_id": "international",
+      "question": "研究生参加国际会议怎样申请出境交流？",
+      "wall_seconds": 2.33,
+      "answer": "研究生参加国际会议需通过“全球化学习平台vista系统”在线申请，经审核后下载打印《任务批件》[1]。完成交流后，报销时需提供该批件。赴港澳或台湾地区交流，需分别按对应流程线下审批[1]。",
+      "sources": [
+        {
+          "citation": 1,
+          "title": "关于研究生办理自费留学、短期因私出境及参加港澳台、国际学术交流有关手续的规定",
+          "url": "https://see.ustc.edu.cn/2024/1226/c37729a669878/page.htm",
+          "version": "页面正文标注2024-11-12，学院制度文件网页快照",
+          "location": "正文",
+          "text": "正文\n为维护正常的教学秩序，我校对研究生办理因公出国、短期因私出境及参加港澳台、国际学术交流有关手续作如下规定：\n1、研究生在学期间因公参加国际学术交流（含港澳），包括短期合作研究、参加学术会议、联合培养等，按照\n国际合作与交流部\n的要求，在“全球化学习平台vista系统”在线申请和审核，下载打印《中国科学技术大学学生出国及赴港澳任务批件》（详询：0551-63603301）。完成交流任务后，在财务报销时，必须提供《任务批件》。\n2、研究生因公赴台湾地区参加学术交流，可在研究生院主页\nhttps://gradschool.ustc.edu.cn/column/248\n，下载《\n中国科学技术大学研究生公派赴台湾地区审批表\n》，进行线下审批。\n3、在读研究生因公出境，可在各校区自助打印机上打印在读证明、成绩单等文件。如需向使领馆提交英文版《派遣信（资助证明）》，可在研究生院主页下载模板\nhttps://gradschool.ustc.edu.cn/column/248\n，修改后携带国合部出具的《任务批件》，至研究生院培养处（东区老图书馆369室）盖章。\n4、在读研究生因公办理在读期间《内地中国居民赴港工作同意书》，可到研究生院培养处（东区老图书馆369室）盖章；毕业时，如需办理《赴港工作同意书》，可去所属院系，或其他主管部门盖章。\n5、研究生在读期间因私出境旅游、探亲，只能利用法定的节假日进行，且必须在导师或院系履行请销假制度，得到批准后才可以出行；研究生毕业后到境外高校、科研院所攻读博士、硕士学位，获聘博士后等科研工作职位，或受雇于跨国公司到境外工作等；以上事由办理护照均可直接到学校户籍室办理户籍证明，然后办理护照/港澳台往来通行证。\n相关说明：\n1、学术交流和因私出境时间超过6个月（含6个月），需学生社区办签字。\n2、研究生应按批准的时间按时返校。确因研究工作需要，需延长时间推迟返校的，应重新提出申请。\n研究生院培养办\n\n正文\n社区办签字。\n2、研究生应按批准的时间按时返校。确因研究工作需要，需延长时间推迟返校的，应重新提出申请。\n研究生院培养办",
+          "chunk_ids": [
+            "ustc_graduate_international:正文:0",
+            "ustc_graduate_international:正文:1"
+          ],
+          "cited": true
+        }
+      ],
+      "has_valid_citations": true,
+      "model": "Qwen/Qwen3-8B",
+      "retrieval": "qwen_embedding+bm25_rrf",
+      "elapsed_ms": 2148
+    },
+    {
+      "npc_id": "botany",
+      "question": "卫星怎么知道植物正在进行光合作用？",
+      "wall_seconds": 2.69,
+      "answer": "卫星通过检测植物发出的太阳诱导叶绿素荧光来判断光合作用的进行。这种荧光是植物在光合作用过程中释放的微弱光信号，强度与光合作用效率相关[1]。卫星仪器能捕捉到这种微弱信号，从而推断植物的生理状态和碳吸收情况。",
+      "sources": [
+        {
+          "citation": 1,
+          "title": "NASA Earth Observatory: Faint Glow, Clear Signal from Plants",
+          "url": "https://science.nasa.gov/earth/earth-observatory/faint-glow-clear-signal-from-plants-146956/",
+          "version": "NASA Earth Observatory科普网页快照，约2020年内容",
+          "location": "正文",
+          "text": "正文\nSA Earth Observatory images by Joshua Stevens , using data courtesy of Yin, Y. et al. (2020) . Story by Kathryn Hansen .\nDownloads\nJune 2018 - September 2019\nPNG (2.64 MB)\n2019\nPNG (392.17 KB)\n\n正文\nce of monitoring carbon cycle anomalies in both natural and agricultural ecosystems to get a full picture.”\nReferences & Resources\nCaltech (2020, March 31)\nFlooding Stunted 2019 Cropland Growing Season, Resulting in More Atmospheric CO2.\nAccessed July 9, 2020.\nFourth National Climate Assessment (2018)\nChapter 21: Midwest.\nAccessed July 9, 2020.\nKÃ¶hler, P.\net al.\n(2018)\nGlobal Retrievals of Solar-Induced Chlorophyll Fluorescence With TROPOMI: First Results and Intersensor Comparison to OCO-2\n.\nGeophysical Research Letters\n, 45 (19), 10,456â10,463.\nNASA Earth Observatory (2019)\nFlooding in the Mississippi Watershed 2019\n.\nYin, Y.\net al.\n(2020)\nCropland Carbon Uptake Delayed and Reduced by 2019 Midwest Floods\n.\nAGU Advances\n, 1 (1), e2019AV000140.\nNASA Earth Observatory images by Joshua Stevens , using data courtesy of Yin, Y. et al. (2020) . Story by Kathryn Hansen .\nDownloads\nJune 2018\n\n正文\nchange, as variations in snow and rainfall over the past three decades have reduced farmers’ flexibility in timing their springtime planting.\nCropland productivity also has implications beyond food security; it also influences the amount of carbon dioxide stored in the atmosphere and the land. Around the planet, carbon is constantly exchanged between the land, atmosphere, and oceans as part of the carbon cycle. Plants, trees, and grasses—including farmlands—are an important part of the cycle, converting carbon dioxide into food during photosynthesis. When crops exhibit lower fluorescence values, less photosynthesis is occurring. In turn, those crops are taking up less carbon dioxide.\nBased on the TROPOMI SIF data, the researchers estimated that the carbon uptake by Midwest crops in June and July 2019 was reduced by 100 million metric tons compared to the previous year due to the floods\n\n正文\nnt productivity. The higher the fluorescence from a plant, the more carbon dioxide it is taking from the atmosphere to fuel its growth.\nBecause fluorescence offers a direct view into the photosynthetic machinery of plants, scientists can use it to detect nuances in the growing season that might be missed by other methods that rely on changes in vegetation color, or “greenness.” Detecting the faint signal of fluorescence with satellites has been a challenge, but scientists have made fast progress.\n“The\nfirst global maps\nof fluorescence were really coarse, yet the data allowed us to make some interesting discoveries,” said Philipp Köhler, a researcher at Caltech who studies SIF.\nIn 2014, for example,\nscientists showed\nthat the U.S. Midwest is one of the\nmost productive growing regions\nin the world, out-glowing even the Amazon rainforest at times. Then in 2016,\nthey discovered\nthat the grow",
+          "chunk_ids": [
+            "nasa_plant_fluorescence:正文:8",
+            "nasa_plant_fluorescence:正文:7",
+            "nasa_plant_fluorescence:正文:5",
+            "nasa_plant_fluorescence:正文:1"
+          ],
+          "cited": true
+        }
+      ],
+      "has_valid_citations": true,
+      "model": "Qwen/Qwen3-8B",
+      "retrieval": "qwen_embedding+bm25_rrf",
+      "elapsed_ms": 2512
+    }
+  ]
+}

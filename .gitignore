@@ -1,8 +1,15 @@
 **/.godot/
 **/__pycache__/
+**/.pytest_cache/
+**/.venv/
+**/models/
+**/logs/
+**/knowledge/raw/
+.env
 *.pyc
 *.blend1
 *.blend2
 *.log
+*.pid
 dist/
 **/scenes/campus_world.scn

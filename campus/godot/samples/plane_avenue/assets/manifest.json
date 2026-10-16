@@ -1,0 +1,64 @@
+{
+  "asset_id": "PLANE_AVENUE_50M",
+  "length_m": 50.0,
+  "road_width_m": 7.2,
+  "clear_walkway_width_m": 1.8,
+  "road_to_walkway_ratio": 4.0,
+  "planting_verge_m": 1.75,
+  "total_width_m": 14.620000000000001,
+  "trees": 8,
+  "stem_silhouettes": 6,
+  "tree_positions": [
+    [
+      -6.4350000000000005,
+      0.135,
+      -20.0
+    ],
+    [
+      6.4350000000000005,
+      0.135,
+      -17.2
+    ],
+    [
+      -6.4350000000000005,
+      0.135,
+      -7.4
+    ],
+    [
+      6.4350000000000005,
+      0.135,
+      -4.0
+    ],
+    [
+      -6.4350000000000005,
+      0.135,
+      6.0
+    ],
+    [
+      6.4350000000000005,
+      0.135,
+      9.4
+    ],
+    [
+      -6.4350000000000005,
+      0.135,
+      18.4
+    ],
+    [
+      6.4350000000000005,
+      0.135,
+      21.5
+    ]
+  ],
+  "source_reference": "Accepted ChatGPT campus avenue sample; original PNGs and primitive construction methods reused.",
+  "dimensions_basis": "Design study, not a surveyed Tianshi Road reconstruction.",
+  "stats": {
+    "nodes": 3296,
+    "unique_meshes": 853,
+    "materials": 25,
+    "embedded_images": 8,
+    "rendered_triangles": 1743861,
+    "crown_leaves": 36919,
+    "ground_leaves": 4076
+  }
+}

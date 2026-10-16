@@ -12,6 +12,18 @@
 
 [下载 Windows 试玩版](https://github.com/bingbingchang/ustc-cloud-universe/releases/tag/v0.1.0-alpha) · [项目介绍与参赛定位](docs/PROJECT_INTRO.md) · [未来发展路线](docs/VISION_ROADMAP.md) · [源码运行说明](docs/BUILD_GUIDE.md)
 
+## 最新源码 AI NPC 与行动向导
+
+当前源码新增 **15 位校园知识 NPC、RAG 问答、行动 Agent 与最小联机**。项目由常兵兵独立开发，使用 Godot、Blender、Python/FastAPI、Qwen3-8B 和 Qwen3-Embedding-0.6B。
+
+角色按各自资料回答，向量检索与 BM25 通过 RRF 融合；玩家可查看回答依据。校园向导还能根据目标查角色、查资料、快速前往并打开对话，游戏执行后回传实际状态。
+
+![AI NPC 与向导 Agent 实机](media/科大云宇宙_RAG与Agent_图文介绍.png)
+
+[20 秒实机视频](media/科大云宇宙_RAG与Agent_20秒实机.mp4) · [架构与面试演示](docs/AI_NPC_DEMO.md) · [AI 后台运行](campus/ai/README.md) · [源码运行](docs/BUILD_GUIDE.md) · [开发入口](campus/docs/team/README.md)
+
+体验新增功能请运行当前源码；既有 `v0.1.0-alpha` Windows 下载包仍是此前的校园漫游版本。RAG 对话需要配置模型服务，校园与角色可独立运行。
+
 ## 今天可以体验什么
 
 当前版本是可以实际运行的三维校园原型，支持人物漫游、第一与第三人称、自由相机、区域跳转，以及用于截图反馈的坐标定位。校园里已有建筑、道路、运动场、生活区、科研楼群、树木和校园人物与动物。
@@ -26,7 +38,7 @@
 | Windows独立试玩验证 | 人物、自由相机、区域跳转与截图保存等10项通过 |
 | 原开发版本移动短测 | 本机1600×900、默认流畅档约70—138 FPS |
 
-99.019%统计的是外部场景的地理范围，包含建筑和水体。建筑室内、未见立面和部分细节仍在打磨。账号、信息发布、报名与真人多人互动属于后续平台建设。
+99.019%统计的是外部场景的地理范围，包含建筑和水体。建筑室内、未见立面和部分细节仍在打磨。当前源码已有 ENet 移动同步与文字聊天原型；账号、信息发布、报名及多人世界持久化属于后续建设。
 
 ![Windows独立试玩版：人物漫游、模式切换与坐标定位](media/12_windows_playtest.png)
 

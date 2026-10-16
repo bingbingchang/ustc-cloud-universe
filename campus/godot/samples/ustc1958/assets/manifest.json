@@ -1,0 +1,1051 @@
+{
+  "scene": "USTC1958 East Campus",
+  "length_basis": "19.5m main length is a modeling estimate based on existing site footprint; drawing proportions traced; not a survey",
+  "main_size_m": [
+    19.5,
+    8.5
+  ],
+  "north_curve_max_y": 7.92,
+  "eave_m": 3.27,
+  "main_ridge_m": 4.95,
+  "north_ridge_max_m": 4.5912,
+  "door_x": 1.625,
+  "floor_y_godot": 0.34,
+  "deck_y_godot": 0.32,
+  "instances": [
+    {
+      "asset": "Table_RoundDark",
+      "name": "OutdoorTable_0",
+      "position": [
+        -8.0,
+        0.32,
+        6.12
+      ],
+      "yaw": 0,
+      "scale": 1
+    },
+    {
+      "asset": "Chair_BlackMetal",
+      "name": "OutdoorChair_0_0",
+      "position": [
+        -7.04,
+        0.32,
+        6.12
+      ],
+      "yaw": -1.5707963267948966,
+      "scale": 1
+    },
+    {
+      "asset": "Chair_BlackMetal",
+      "name": "OutdoorChair_0_1",
+      "position": [
+        -8.96,
+        0.32,
+        6.12
+      ],
+      "yaw": 1.5707963267948966,
+      "scale": 1
+    },
+    {
+      "asset": "Table_RoundDark",
+      "name": "OutdoorTable_1",
+      "position": [
+        -4.2,
+        0.32,
+        6.15
+      ],
+      "yaw": 0,
+      "scale": 1
+    },
+    {
+      "asset": "Chair_BlackMetal",
+      "name": "OutdoorChair_1_0",
+      "position": [
+        -3.24,
+        0.32,
+        6.15
+      ],
+      "yaw": -1.5707963267948966,
+      "scale": 1
+    },
+    {
+      "asset": "Chair_BlackMetal",
+      "name": "OutdoorChair_1_1",
+      "position": [
+        -5.16,
+        0.32,
+        6.15
+      ],
+      "yaw": 1.5707963267948966,
+      "scale": 1
+    },
+    {
+      "asset": "Table_RoundDark",
+      "name": "OutdoorTable_2",
+      "position": [
+        -0.9,
+        0.32,
+        6.2
+      ],
+      "yaw": 0,
+      "scale": 1
+    },
+    {
+      "asset": "Chair_BlackMetal",
+      "name": "OutdoorChair_2_0",
+      "position": [
+        0.05999999999999994,
+        0.32,
+        6.2
+      ],
+      "yaw": -1.5707963267948966,
+      "scale": 1
+    },
+    {
+      "asset": "Chair_BlackMetal",
+      "name": "OutdoorChair_2_1",
+      "position": [
+        -1.8599999999999999,
+        0.32,
+        6.2
+      ],
+      "yaw": 1.5707963267948966,
+      "scale": 1
+    },
+    {
+      "asset": "Table_RoundDark",
+      "name": "OutdoorTable_3",
+      "position": [
+        8.15,
+        0.32,
+        6.43
+      ],
+      "yaw": 0,
+      "scale": 1
+    },
+    {
+      "asset": "Chair_BlackMetal",
+      "name": "OutdoorChair_3_0",
+      "position": [
+        9.11,
+        0.32,
+        6.43
+      ],
+      "yaw": -1.5707963267948966,
+      "scale": 1
+    },
+    {
+      "asset": "Chair_BlackMetal",
+      "name": "OutdoorChair_3_1",
+      "position": [
+        7.19,
+        0.32,
+        6.43
+      ],
+      "yaw": 1.5707963267948966,
+      "scale": 1
+    },
+    {
+      "asset": "Umbrella_Ivory",
+      "name": "OutdoorUmbrella_0",
+      "position": [
+        -8.0,
+        0.32,
+        6.12
+      ],
+      "yaw": 0,
+      "scale": 1
+    },
+    {
+      "asset": "Umbrella_Ivory",
+      "name": "OutdoorUmbrella_1",
+      "position": [
+        -4.2,
+        0.32,
+        6.15
+      ],
+      "yaw": 0,
+      "scale": 1
+    },
+    {
+      "asset": "Tree_A",
+      "name": "MatureTree_0",
+      "position": [
+        5.1,
+        0.1,
+        6.35
+      ],
+      "yaw": 0.25,
+      "scale": 1.0
+    },
+    {
+      "asset": "Tree_B",
+      "name": "MatureTree_1",
+      "position": [
+        11.15,
+        0.1,
+        4.5
+      ],
+      "yaw": -0.22,
+      "scale": 0.97
+    },
+    {
+      "asset": "Tree_C",
+      "name": "MatureTree_2",
+      "position": [
+        -11.85,
+        0.1,
+        5.1
+      ],
+      "yaw": 0.48,
+      "scale": 0.93
+    },
+    {
+      "asset": "Tree_B",
+      "name": "MatureTree_3",
+      "position": [
+        -13.8,
+        0.1,
+        -3.7
+      ],
+      "yaw": 0.8,
+      "scale": 0.96
+    },
+    {
+      "asset": "Tree_C",
+      "name": "MatureTree_4",
+      "position": [
+        -4.3,
+        0.1,
+        -9.7
+      ],
+      "yaw": -0.35,
+      "scale": 0.94
+    },
+    {
+      "asset": "Tree_A",
+      "name": "MatureTree_5",
+      "position": [
+        3.8,
+        0.1,
+        -10.1
+      ],
+      "yaw": 0.62,
+      "scale": 1.02
+    },
+    {
+      "asset": "Tree_B",
+      "name": "MatureTree_6",
+      "position": [
+        11.5,
+        0.1,
+        -8.6
+      ],
+      "yaw": 0.35,
+      "scale": 0.95
+    },
+    {
+      "asset": "Planter_SquareConcrete",
+      "name": "Planter_0",
+      "position": [
+        -9.7,
+        0.32,
+        5.1
+      ],
+      "yaw": 0,
+      "scale": 1
+    },
+    {
+      "asset": "Planter_SquareConcrete",
+      "name": "Planter_1",
+      "position": [
+        -0.04,
+        0.32,
+        4.65
+      ],
+      "yaw": 0,
+      "scale": 1
+    },
+    {
+      "asset": "Planter_SquareConcrete",
+      "name": "Planter_2",
+      "position": [
+        3.29,
+        0.32,
+        4.68
+      ],
+      "yaw": 0,
+      "scale": 1
+    },
+    {
+      "asset": "Planter_SquareConcrete",
+      "name": "Planter_3",
+      "position": [
+        9.15,
+        0.32,
+        5.32
+      ],
+      "yaw": 0,
+      "scale": 1
+    },
+    {
+      "asset": "Planter_SquareConcrete",
+      "name": "Planter_4",
+      "position": [
+        12.1,
+        0.1,
+        2.15
+      ],
+      "yaw": 0,
+      "scale": 1
+    },
+    {
+      "asset": "Planter_SquareConcrete",
+      "name": "Planter_5",
+      "position": [
+        -13.5,
+        0.1,
+        2.95
+      ],
+      "yaw": 0,
+      "scale": 1
+    },
+    {
+      "asset": "Table_RoundDark",
+      "name": "InsideTable_0",
+      "position": [
+        -6.7,
+        0.34,
+        2.5
+      ],
+      "yaw": 0,
+      "scale": 1
+    },
+    {
+      "asset": "Chair_BlackMetal",
+      "name": "InsideChair_0_0",
+      "position": [
+        -5.78,
+        0.34,
+        2.5
+      ],
+      "yaw": -1.5707963267948966,
+      "scale": 1
+    },
+    {
+      "asset": "Chair_BlackMetal",
+      "name": "InsideChair_0_1",
+      "position": [
+        -7.62,
+        0.34,
+        2.5
+      ],
+      "yaw": 1.5707963267948966,
+      "scale": 1
+    },
+    {
+      "asset": "Table_RoundDark",
+      "name": "InsideTable_1",
+      "position": [
+        -3.8,
+        0.34,
+        -2.5
+      ],
+      "yaw": 0,
+      "scale": 1
+    },
+    {
+      "asset": "Chair_BlackMetal",
+      "name": "InsideChair_1_0",
+      "position": [
+        -2.88,
+        0.34,
+        -2.5
+      ],
+      "yaw": -1.5707963267948966,
+      "scale": 1
+    },
+    {
+      "asset": "Chair_BlackMetal",
+      "name": "InsideChair_1_1",
+      "position": [
+        -4.72,
+        0.34,
+        -2.5
+      ],
+      "yaw": 1.5707963267948966,
+      "scale": 1
+    },
+    {
+      "asset": "Table_RoundDark",
+      "name": "InsideTable_2",
+      "position": [
+        -6.7,
+        0.34,
+        -2.5
+      ],
+      "yaw": 0,
+      "scale": 1
+    },
+    {
+      "asset": "Chair_BlackMetal",
+      "name": "InsideChair_2_0",
+      "position": [
+        -5.78,
+        0.34,
+        -2.5
+      ],
+      "yaw": -1.5707963267948966,
+      "scale": 1
+    },
+    {
+      "asset": "Chair_BlackMetal",
+      "name": "InsideChair_2_1",
+      "position": [
+        -7.62,
+        0.34,
+        -2.5
+      ],
+      "yaw": 1.5707963267948966,
+      "scale": 1
+    },
+    {
+      "asset": "Table_RoundDark",
+      "name": "InsideTable_3",
+      "position": [
+        5.4,
+        0.34,
+        -6.25
+      ],
+      "yaw": 0,
+      "scale": 1
+    },
+    {
+      "asset": "Chair_BlackMetal",
+      "name": "InsideChair_3_0",
+      "position": [
+        6.32,
+        0.34,
+        -6.25
+      ],
+      "yaw": -1.5707963267948966,
+      "scale": 1
+    },
+    {
+      "asset": "Chair_BlackMetal",
+      "name": "InsideChair_3_1",
+      "position": [
+        4.48,
+        0.34,
+        -6.25
+      ],
+      "yaw": 1.5707963267948966,
+      "scale": 1
+    },
+    {
+      "asset": "Chair_BlackMetal",
+      "name": "ConferenceChair_0",
+      "position": [
+        -11.98,
+        0.34,
+        0.66
+      ],
+      "yaw": 3.141592653589793,
+      "scale": 1
+    },
+    {
+      "asset": "Chair_BlackMetal",
+      "name": "ConferenceChair_1",
+      "position": [
+        -10.9,
+        0.34,
+        0.66
+      ],
+      "yaw": 3.141592653589793,
+      "scale": 1
+    },
+    {
+      "asset": "Chair_BlackMetal",
+      "name": "ConferenceChair_2",
+      "position": [
+        -11.98,
+        0.34,
+        -1.06
+      ],
+      "yaw": 0,
+      "scale": 1
+    },
+    {
+      "asset": "Chair_BlackMetal",
+      "name": "ConferenceChair_3",
+      "position": [
+        -10.9,
+        0.34,
+        -1.06
+      ],
+      "yaw": 0,
+      "scale": 1
+    },
+    {
+      "asset": "Shrub_0",
+      "name": "GroundShrub_0",
+      "position": [
+        8.06168168425533,
+        0.1,
+        8.305475685548455
+      ],
+      "yaw": 2.9085631597180726,
+      "scale": 1.2297970054252423
+    },
+    {
+      "asset": "Shrub_1",
+      "name": "GroundShrub_1",
+      "position": [
+        -12.56033698558971,
+        0.1,
+        9.043214191885736
+      ],
+      "yaw": 4.22493722835722,
+      "scale": 1.3273567215004667
+    },
+    {
+      "asset": "Shrub_0",
+      "name": "GroundShrub_2",
+      "position": [
+        12.710161499525615,
+        0.1,
+        9.135457507715888
+      ],
+      "yaw": 1.7401968926826605,
+      "scale": 1.295287196830825
+    },
+    {
+      "asset": "Shrub_1",
+      "name": "GroundShrub_3",
+      "position": [
+        12.358076222186654,
+        0.1,
+        8.677456372027073
+      ],
+      "yaw": 1.069050751627696,
+      "scale": 1.3672857191298213
+    },
+    {
+      "asset": "Shrub_0",
+      "name": "GroundShrub_4",
+      "position": [
+        4.412973266658632,
+        0.1,
+        8.720703545560186
+      ],
+      "yaw": 4.317219790429215,
+      "scale": 1.1169679011106992
+    },
+    {
+      "asset": "Shrub_1",
+      "name": "GroundShrub_5",
+      "position": [
+        -11.876998255883057,
+        0.1,
+        8.913402141895839
+      ],
+      "yaw": 0.8987025411433831,
+      "scale": 1.2052214400922063
+    },
+    {
+      "asset": "Shrub_0",
+      "name": "GroundShrub_6",
+      "position": [
+        -4.1711949134924495,
+        0.1,
+        8.975348021996837
+      ],
+      "yaw": 2.220096253041433,
+      "scale": 0.9794428865642254
+    },
+    {
+      "asset": "Shrub_1",
+      "name": "GroundShrub_7",
+      "position": [
+        11.90855097443572,
+        0.1,
+        8.907581711643672
+      ],
+      "yaw": 4.55902312233679,
+      "scale": 0.8570397839991326
+    },
+    {
+      "asset": "Shrub_1",
+      "name": "GroundShrub_9",
+      "position": [
+        12.693079998136717,
+        0.1,
+        8.477925930618266
+      ],
+      "yaw": 2.267245655280864,
+      "scale": 1.3149016886734146
+    },
+    {
+      "asset": "Shrub_0",
+      "name": "GroundShrub_10",
+      "position": [
+        -4.517508567317414,
+        0.1,
+        8.463183657442817
+      ],
+      "yaw": 3.602242184503626,
+      "scale": 1.0616734520434825
+    },
+    {
+      "asset": "Shrub_1",
+      "name": "GroundShrub_11",
+      "position": [
+        11.431149247169966,
+        0.1,
+        8.435781868174846
+      ],
+      "yaw": 4.141415944902632,
+      "scale": 1.19369814029008
+    },
+    {
+      "asset": "Shrub_0",
+      "name": "GroundShrub_12",
+      "position": [
+        6.075408484592735,
+        0.1,
+        8.691445498928715
+      ],
+      "yaw": 3.2751679177110518,
+      "scale": 1.323145033980781
+    },
+    {
+      "asset": "Shrub_1",
+      "name": "GroundShrub_13",
+      "position": [
+        4.207978825617719,
+        0.1,
+        8.360640267882518
+      ],
+      "yaw": 4.358563084700489,
+      "scale": 1.2044178624002357
+    },
+    {
+      "asset": "Shrub_0",
+      "name": "GroundShrub_14",
+      "position": [
+        4.130500795937227,
+        0.1,
+        9.065903711611432
+      ],
+      "yaw": 3.4898438036789248,
+      "scale": 1.0241622818769123
+    },
+    {
+      "asset": "Shrub_1",
+      "name": "GroundShrub_15",
+      "position": [
+        -5.851774991479877,
+        0.1,
+        8.345314742985575
+      ],
+      "yaw": 1.2163706372478997,
+      "scale": 1.3746934818952832
+    },
+    {
+      "asset": "Shrub_0",
+      "name": "GroundShrub_16",
+      "position": [
+        8.638034371902009,
+        0.1,
+        8.97793880926118
+      ],
+      "yaw": 2.003058675145972,
+      "scale": 1.158319383471199
+    },
+    {
+      "asset": "Shrub_1",
+      "name": "GroundShrub_17",
+      "position": [
+        6.33772096080061,
+        0.1,
+        8.302543800509333
+      ],
+      "yaw": 6.016168912911625,
+      "scale": 1.36833980181981
+    },
+    {
+      "asset": "Shrub_0",
+      "name": "GroundShrub_18",
+      "position": [
+        8.946980039637118,
+        0.1,
+        8.834032712791826
+      ],
+      "yaw": 0.8539380928688414,
+      "scale": 1.3983217051806438
+    },
+    {
+      "asset": "Shrub_1",
+      "name": "GroundShrub_19",
+      "position": [
+        6.992161780563226,
+        0.1,
+        8.793289476119162
+      ],
+      "yaw": 1.2819650701261103,
+      "scale": 0.9024634468029415
+    },
+    {
+      "asset": "Shrub_0",
+      "name": "GroundShrub_20",
+      "position": [
+        -5.309582636750143,
+        0.1,
+        8.880085902905915
+      ],
+      "yaw": 2.6175984502156098,
+      "scale": 0.8542577396376797
+    },
+    {
+      "asset": "Shrub_1",
+      "name": "GroundShrub_21",
+      "position": [
+        -3.5996068178466025,
+        0.1,
+        8.951225091293
+      ],
+      "yaw": 6.151860771645248,
+      "scale": 1.0255462221635907
+    },
+    {
+      "asset": "Shrub_0",
+      "name": "GroundShrub_22",
+      "position": [
+        -10.676838954986826,
+        0.1,
+        9.06691530256071
+      ],
+      "yaw": 1.5065811527579163,
+      "scale": 0.8903202153695673
+    },
+    {
+      "asset": "Shrub_1",
+      "name": "GroundShrub_23",
+      "position": [
+        -0.3072976257105591,
+        0.1,
+        8.297904266862847
+      ],
+      "yaw": 5.037282225895197,
+      "scale": 1.2015540385519652
+    },
+    {
+      "asset": "Shrub_0",
+      "name": "GroundShrub_24",
+      "position": [
+        -10.133431675437349,
+        0.1,
+        -9.530992968267455
+      ],
+      "yaw": 2.1946567004869713,
+      "scale": 0.8546184677388301
+    },
+    {
+      "asset": "Shrub_1",
+      "name": "GroundShrub_25",
+      "position": [
+        -11.214493678235527,
+        0.1,
+        -9.090511097053911
+      ],
+      "yaw": 2.1123254623164773,
+      "scale": 1.287794970844804
+    },
+    {
+      "asset": "Shrub_0",
+      "name": "GroundShrub_26",
+      "position": [
+        -1.5494493631325668,
+        0.1,
+        -9.126551227685821
+      ],
+      "yaw": 0.8606916382176387,
+      "scale": 0.9636926066856756
+    },
+    {
+      "asset": "Shrub_1",
+      "name": "GroundShrub_27",
+      "position": [
+        13.537568878633163,
+        0.1,
+        -8.968034538055496
+      ],
+      "yaw": 1.1453705401589163,
+      "scale": 1.2308368858259775
+    },
+    {
+      "asset": "Shrub_0",
+      "name": "GroundShrub_28",
+      "position": [
+        5.356252624197516,
+        0.1,
+        -9.748783263700373
+      ],
+      "yaw": 2.5533615406157693,
+      "scale": 1.3919422382797353
+    },
+    {
+      "asset": "Shrub_1",
+      "name": "GroundShrub_29",
+      "position": [
+        -5.94543293654112,
+        0.1,
+        -9.555302922729187
+      ],
+      "yaw": 5.138080257617335,
+      "scale": 0.9410620060317959
+    },
+    {
+      "asset": "Shrub_0",
+      "name": "GroundShrub_30",
+      "position": [
+        -9.204886537791328,
+        0.1,
+        -10.567826071388431
+      ],
+      "yaw": 0.8521401808975029,
+      "scale": 1.3632455297130908
+    },
+    {
+      "asset": "Shrub_1",
+      "name": "GroundShrub_31",
+      "position": [
+        -0.9351759584604569,
+        0.1,
+        -10.49048115167499
+      ],
+      "yaw": 3.083444122758198,
+      "scale": 1.0296392890483754
+    },
+    {
+      "asset": "Shrub_0",
+      "name": "GroundShrub_32",
+      "position": [
+        -9.18193864778699,
+        0.1,
+        -9.978683055410078
+      ],
+      "yaw": 5.8809545031143395,
+      "scale": 1.112713954314034
+    },
+    {
+      "asset": "Shrub_1",
+      "name": "GroundShrub_33",
+      "position": [
+        -3.795219521366244,
+        0.1,
+        -10.558474691498134
+      ],
+      "yaw": 5.3251518164114335,
+      "scale": 1.188720255900567
+    },
+    {
+      "asset": "Shrub_0",
+      "name": "GroundShrub_34",
+      "position": [
+        -4.586614786426422,
+        0.1,
+        -8.875195686025878
+      ],
+      "yaw": 1.5745099537730116,
+      "scale": 1.3716187396283837
+    },
+    {
+      "asset": "Shrub_1",
+      "name": "GroundShrub_35",
+      "position": [
+        1.583409063216136,
+        0.1,
+        -9.477362454215392
+      ],
+      "yaw": 1.6219878903787748,
+      "scale": 1.3927615371374666
+    },
+    {
+      "asset": "Shrub_0",
+      "name": "GroundShrub_36",
+      "position": [
+        9.642548673147573,
+        0.1,
+        -9.56753867533955
+      ],
+      "yaw": 4.184221202364872,
+      "scale": 1.231946590035344
+    },
+    {
+      "asset": "Shrub_1",
+      "name": "GroundShrub_37",
+      "position": [
+        5.914902769068924,
+        0.1,
+        -10.276040715538443
+      ],
+      "yaw": 0.9674807156095223,
+      "scale": 1.0899608997761434
+    },
+    {
+      "asset": "Shrub_0",
+      "name": "GroundShrub_38",
+      "position": [
+        3.747897403726469,
+        0.1,
+        -9.576667091187602
+      ],
+      "yaw": 4.92230417258036,
+      "scale": 0.9555198304523757
+    },
+    {
+      "asset": "Shrub_1",
+      "name": "GroundShrub_39",
+      "position": [
+        -7.1162313075687145,
+        0.1,
+        -10.04504893448378
+      ],
+      "yaw": 3.2023746473721038,
+      "scale": 0.9982005046488229
+    },
+    {
+      "asset": "Shrub_0",
+      "name": "GroundShrub_40",
+      "position": [
+        -1.736926591638479,
+        0.1,
+        -10.280996034877543
+      ],
+      "yaw": 1.583726273636654,
+      "scale": 1.1761241582893571
+    },
+    {
+      "asset": "Shrub_1",
+      "name": "GroundShrub_41",
+      "position": [
+        -0.8755044931663409,
+        0.1,
+        -10.472361780363627
+      ],
+      "yaw": 0.006152179474012888,
+      "scale": 1.350274296929832
+    },
+    {
+      "asset": "Shrub_0",
+      "name": "GroundShrub_42",
+      "position": [
+        7.816540180472732,
+        0.1,
+        -9.224170630603611
+      ],
+      "yaw": 6.065711974591291,
+      "scale": 1.0697890376607253
+    },
+    {
+      "asset": "Shrub_1",
+      "name": "GroundShrub_43",
+      "position": [
+        -5.9618072999265515,
+        0.1,
+        -10.092237147612487
+      ],
+      "yaw": 4.832632309379147,
+      "scale": 1.202875083755238
+    },
+    {
+      "asset": "Shrub_0",
+      "name": "GroundShrub_44",
+      "position": [
+        4.87150260681625,
+        0.1,
+        -10.295276123439837
+      ],
+      "yaw": 5.43618450010656,
+      "scale": 1.044622610979794
+    },
+    {
+      "asset": "Shrub_1",
+      "name": "GroundShrub_45",
+      "position": [
+        5.517208044286509,
+        0.1,
+        -10.141769103693282
+      ],
+      "yaw": 4.960166847109396,
+      "scale": 1.3588235529449655
+    }
+  ],
+  "chair_checks": [
+    {
+      "name": "OutdoorChair_0_0",
+      "table": "OutdoorTable_0"
+    },
+    {
+      "name": "OutdoorChair_0_1",
+      "table": "OutdoorTable_0"
+    },
+    {
+      "name": "OutdoorChair_1_0",
+      "table": "OutdoorTable_1"
+    },
+    {
+      "name": "OutdoorChair_1_1",
+      "table": "OutdoorTable_1"
+    },
+    {
+      "name": "OutdoorChair_2_0",
+      "table": "OutdoorTable_2"
+    },
+    {
+      "name": "OutdoorChair_2_1",
+      "table": "OutdoorTable_2"
+    },
+    {
+      "name": "OutdoorChair_3_0",
+      "table": "OutdoorTable_3"
+    },
+    {
+      "name": "OutdoorChair_3_1",
+      "table": "OutdoorTable_3"
+    }
+  ],
+  "building": {
+    "mesh_instances": 1582,
+    "unique_meshes": 590,
+    "unique_triangles": 66920
+  },
+  "shared_library": {
+    "mesh_instances": 288,
+    "unique_meshes": 280,
+    "unique_triangles": 299677
+  },
+  "blender_linked_layout": {
+    "mesh_instances": 2219,
+    "unique_meshes": 280,
+    "unique_triangles": 299677
+  },
+  "kit_assets": [
+    "Chair_BlackMetal",
+    "Table_RoundDark",
+    "Umbrella_Ivory",
+    "Planter_SquareConcrete",
+    "Shrub_0",
+    "Shrub_1",
+    "Tree_A",
+    "Tree_B",
+    "Tree_C"
+  ],
+  "collision_shapes": 146,
+  "packed_images": 8,
+  "prototype_leaves": 20714,
+  "blend": "D:\\AI\\Ai_blender\\campus\\blender\\source\\ustc1958_east.blend",
+  "sources": "references/ustc1958/sources.json and design/design_brief.json",
+  "door_state": "open double entry; interior and west conference room walkable"
+}

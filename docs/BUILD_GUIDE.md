@@ -32,6 +32,21 @@ godot --headless --path campus/godot --export-release "Windows Desktop" "../../d
 
 在场景中将问题对准中央准星，按F12。编辑器运行保存至工程旁的 `campus/renders/`；Windows独立试玩版保存至 `%APPDATA%\USTCCloudUniverse\screenshots`。PNG旁会有同名JSON，包含人物、相机与中心命中点坐标以及镜头方向。
 
+## 知识 NPC 与 Agent
+
+当前 `main` 包含 15 位知识 NPC、RAG 后台和校园向导 Agent。先按 [AI 运行说明](../campus/ai/README.md) 启动服务，在游戏 J 面板设置地址；E 交谈，K 打开行动向导。可通过 `CAMPUS_AI_URL` 环境变量或 `run_game.ps1 -AiUrl` 指定后台地址。
+
+## 最小联机
+
+在仓库根目录执行，先将 `GODOT_EXE` 设置为 Godot 可执行文件完整路径：
+
+```powershell
+./campus/run_game.ps1 -Server
+./campus/run_game.ps1 -NetJoin 127.0.0.1
+```
+
+两条命令在不同终端运行。同机使用无窗口主机与一个图形客户端；跨机器将加入地址改为主机局域网 IP。当前同步玩家移动与文字聊天，端口默认 45888/UDP。
+
 ## 版本状态
 
-首个公开版本为 `v0.1.0-alpha`。当前可体验校园空间与控制；账号、信息发布、多人在线互动和现实服务接口按发展路线逐步建设。
+当前源码标记为 `0.2.0-dev`；`v0.1.0-alpha` Windows 下载包保留此前的校园漫游功能，本次未重新发布安装包。AI、联机与动物试验场等新增内容从当前源码运行。

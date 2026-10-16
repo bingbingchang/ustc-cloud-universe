@@ -1,0 +1,12 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://samples/ustc1958/review.gd" id="1"]
+[ext_resource type="PackedScene" path="res://samples/ustc1958/assets/ustc1958_building_site.glb" id="2"]
+[ext_resource type="PackedScene" path="res://samples/ustc1958/assets/ustc1958_collision.glb" id="3"]
+[ext_resource type="PackedScene" path="res://samples/ustc1958/assets/presentation_stage.glb" id="4"]
+
+[node name="USTC1958_EastCampus" type="Node3D"]
+script = ExtResource("1")
+[node name="Visual" parent="." instance=ExtResource("2")]
+[node name="Collision" parent="." instance=ExtResource("3")]
+[node name="Presentation" parent="." instance=ExtResource("4")]

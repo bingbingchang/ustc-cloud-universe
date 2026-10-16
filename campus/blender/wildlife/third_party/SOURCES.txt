@@ -1,0 +1,24 @@
+Downloaded candidates for future asset evaluation; not used by the current campus scenes.
+
+toon_cat_free.glb
+Title: Toon Cat FREE
+Author: Omabuarts Studio
+Original: https://sketchfab.com/3d-models/toon-cat-free-b2bd1ee7858444bda366110a2d960386
+Download mirror: https://github.com/DevTakao/threejs-cat/tree/master/assets/models
+License: CC BY 4.0 https://creativecommons.org/licenses/by/4.0/
+Attribution documented by the mirror's README. No changes to the downloaded file.
+
+oga_bird.blend
+Title: Bird
+Author: Fabio Gonzalez (gonzalfj); base mesh credited on the source page
+Source: https://opengameart.org/content/bird
+Base mesh: https://opengameart.org/content/bird-basemesh
+License: CC0 https://creativecommons.org/publicdomain/zero/1.0/
+Downloaded original file, unchanged. Source describes textures, rig and animation.
+
+oga_duck.blend
+Title: Rigged Duck
+Author: weirdybeardyman
+Source: https://opengameart.org/content/rigged-duck
+License: CC0 https://creativecommons.org/publicdomain/zero/1.0/
+Downloaded original file, unchanged. Source describes waddle and peck animations.

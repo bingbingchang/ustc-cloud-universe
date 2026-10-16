@@ -1,0 +1,215 @@
+{
+  "health": {
+    "status": "ready",
+    "model": "Qwen/Qwen3-8B",
+    "retrieval": "qwen_embedding+bm25_rrf",
+    "chunks": 132,
+    "npcs": 5,
+    "model_ready": true
+  },
+  "passed": 7,
+  "total": 7,
+  "median_seconds": 1.25,
+  "results": [
+    {
+      "npc_id": "solar",
+      "question": "太阳耀斑中的磁重联释放什么能量？请依据论文解释。",
+      "passed": true,
+      "wall_seconds": 4.1,
+      "answer": "太阳耀斑中的磁重联释放的是储存在太阳大气中的磁能，转化为热能和粒子动能。这就像一根被拉紧的橡皮筋突然断裂，释放出之前积累的弹性势能[1]。观测上，这种能量释放表现为X射线和高能粒子的爆发，常出现在日冕环的顶部区域[1]。",
+      "sources": [
+        {
+          "citation": 1,
+          "title": "Signatures of magnetic reconnection in solar eruptive flares: A multi-wavelength perspective",
+          "url": "https://arxiv.org/pdf/1211.2914",
+          "version": "arXiv:1211.2914，2012",
+          "location": "PDF第1页 / PDF第3页 / PDF第9页 / PDF第7页",
+          "text": "PDF第1页\narXiv:1211.2914v1 [astro-ph.SR] 13 Nov 2012\nSignatures of magnetic reconnection in\nsolar eruptive ﬂares: A multi-wavelength\nperspective\nBhuwan Joshi, Astrid Veronig, P. K. Manoharan, and B. V. Somov\nAbstract In this article, we review some key aspects of a multi-wavelength\nﬂare which have essentially contributed to form a standard ﬂare mo del based\non the magnetic reconnection. The emphasis is given on the recent o bserva-\ntions taken by the Reuven Ramaty High Energy Solar Spectroscopic Imager\n(RHESSI) on the X-ray emission originating from diﬀerent regions of the coro-\nnal loops. We also brieﬂy summarize those observations which do not seem\nto accommodate within the canonical ﬂare picture and discuss the c hallenges\nfor future investigations 1.\n1 Introduction\nSolar ﬂares are the most striking explosive form of solar activity. A ﬂ are\nis characterized by a sudden catastrophic release of\n\nPDF第3页\nA multi-wavelength perspective of solar eruptive ﬂares 3\nknown that the energy released during ﬂares is stored in the coron a prior to\nthe event in the form of stressed or non-potential magnetic ﬁelds . Magnetic\nreconnection has been recognized as the fundamental process r esponsible for\nthe changes in the topology of magnetic ﬁelds, as well as the rapid co nver-\nsion of stored magnetic energy into heat and kinetic energy of plasm a and\nparticles during a ﬂare.\nIn section 2, we provide an observational overview of solar ﬂares a nd dis-\ncuss some key aspects of ﬂare development which form the basis fo r the stan-\ndard ﬂare model. With high resolution observations at temporal and spectral\ndomains, now we have a clearer view on these multi-wavelength ﬂare c ompo-\nnents. Recent observations, mainly inspired by Reuven Ramaty High Energy\nSolar Spectroscopic Imager (RHESSI) [38], have further r\n\nPDF第9页\nwavelength observations have immensely improved our und er-\nstanding of various physical processes occurring in diﬀerent atmo spheric lay-\ners of the Sun during a solar ﬂare. The standard ﬂare model has be en suc-\ncessful in broadly recognizing these physical processes as the co nsequence of\nlarge-scale magnetic reconnection in the corona. However, the ad vancement\nin the observational capabilities has also led to several new aspects of the\nﬂare evolution that deviate from the standard ﬂare model. Althoug h ﬂares\nhave been observed over the past 150 years, but still our unders tanding about\nthem is incomplete. We have yet to understand several basic elemen ts pertain-\ning to pre-ﬂare magnetic conﬁguration, triggering mechanism, ene rgy release\nsite (e.g., current sheet dimensions), conversion of magnetic ener gy into heat\nand kinetic energy, particle acceleration, etc. These outstanding\n\nPDF第7页\nA multi-wavelength perspective of solar eruptive ﬂares 7\nﬂare loops and ribbons along with the multi-wavelength view of the loop\nsystem with the hottest one located at the outermost region.\nThe discovery of the HXR source located above the soft X-ray ﬂare loops\n(known as “above-the-looptop” source) by Yohkoh was an important land-\nmark in the history of solar ﬂare observations [46]. This new kind of HX R\nemission raised great interest as it is believed to occur closest to the particle\nacceleration region associated with the magnetic reconnection site . Essen-\ntially the Yohkoh discoveries of the HXR above-the-looptop source along with\nthe SXR cusp (see section 2.2.3) conﬁrmed the role of magnetic reco nnection\nin the standard ﬂare model. Here it is worth mentioning that the abov e-the-\nlooptop source is still a rarely observed feature [20]. However, due to high\nsensitivity and broad ener",
+          "chunk_ids": [
+            "solar_review:PDF第1页:0",
+            "solar_review:PDF第3页:0",
+            "solar_review:PDF第9页:2",
+            "solar_review:PDF第7页:0"
+          ],
+          "cited": true
+        }
+      ],
+      "has_valid_citations": true,
+      "model": "Qwen/Qwen3-8B",
+      "retrieval": "qwen_embedding+bm25_rrf",
+      "elapsed_ms": 3857
+    },
+    {
+      "npc_id": "finance",
+      "question": "根据2024年版指南，国内差旅报销需要准备哪些材料？",
+      "passed": true,
+      "wall_seconds": 2.83,
+      "answer": "根据2024年版指南，国内差旅报销需准备以下材料：  \n1.网上填报的国内差旅费用报销单。  \n2.原始有效票据，如火车票、飞机票、住宿费发票等。  \n3.其他相关证明材料，如会议通知、注册费收费标准等。[1]",
+      "sources": [
+        {
+          "citation": 1,
+          "title": "日常经济业务财务报销指南（2024年修订）",
+          "url": "https://finance.ustc.edu.cn/_upload/article/files/45/28/1b135d524eaaae18e4bb600ef497/fe3665f0-c5d1-4231-8750-0196a890a958.pdf",
+          "version": "2024年修订，历史版本，不能据此宣称是现行全部制度",
+          "location": "PDF第4页 / PDF第10页 / PDF第17页 / PDF第8页",
+          "text": "PDF第4页\n报 销 指 南\n- 1 -\n国内差旅费用报销\n一、报销范围\n1.城市间交通费：出差人员因公临时到常驻地以外地区出差乘坐火车、飞\n机等公共交通工具所发生的费用。\n2.住宿费：出差人员因公临时出差期间入住宾馆等发生的房租费用。\n3.伙食补助费：出差人员在因公临时出差期间给予的伙食补助费用，按出\n差目的地标准包干使用。\n4.市内交通费：出差人员因公临时出差期间发生的市内交通费用，包干使用。\n5.其他：会议注册费、订票费等。\n二、材料准备\n1.网上填报的国内差旅费用报销单。\n2.原始有效票据：火车票、飞机票（含登机牌）、住宿费发票（或需网上\n订单）、注册费发票等。\n3.其他相关证明材料：会议通知、会议注册费收费标准、特殊情况说明等。\n三、审批手续\n1.出差人（经办人）填报，单位（课题）负责人审批。\n2.单位（课题）负责人本人差旅费应报上一级具有财务审批权的负责人审\n批。学院、重点科研机构党政主要负责人可互为监督审批。\n四、住宿费标准\n1.教职工住宿费采取定额包干补助方式（15 天及以内），补助标准根据各\n类人员级别，参照财政部最新《中央和国家机关工作人员赴地方差旅费住宿费\n\nPDF第10页\n报 销 指 南\n- 7 -\n（4）其他人员乘坐飞机经济舱、轮船三等舱、火车硬卧或全列软席列车\n的二等座。\n（5）各类人员级别以学校人事部门认定为准。\n4.签证费、必要的保险费等相关费用应放在出国（境）费用报销单中一起\n填报。\n5.办理签证时的差旅费是国内差旅费，不能填在出国（境）费用报销单中。\n6.注册费中含餐费或部分餐费的，需要扣减相应伙食补助。注册费中单独\n列示餐费金额的，报销时应直接扣减；没有明确金额的，早、中、晚餐按照\n20%、40%、40%比例扣减相应伙食补助。\n7.住宿费需要在规定的标准之内，超过标准的部分和超过批件时间的部分\n不予以报销；住宿费中发票上单独列示了餐费、上网费、电话费、交通费、必\n要的小费等费用，以上费用包含在伙食费、公杂费包干中，报销时应直接扣减。\n8.出席国际会议入住会议举办方指定或推荐酒店，住宿费超过国家规定标\n准的，应于出访前报经国合部暨港澳台办和财务处审核后，凭原始票据据实报销。\n9.邀请方（或其他单位）已承担相应费用的，不得重复领取伙食费和公杂\n费等。\n10.因个人原因产生的退票费、行李超重费和改签费等不予报销。确因工\n作需要发生以上费用的，由出国（境）人员说明情况，经项目负责人或所在单\n位负责人审批后予以报销。\n11.30 天以上（含 30 天）的出国交流经费，应按照国家有关规定的人员\n和国家类别标准，按月发放生活补助，超出 1 个月且不满 1 个月的部分按天数\n比例折算。\n\nPDF第17页\n报 销 指 南\n- 14 -\n国内公务接待费用报销\n一、材料准备\n1.网上填报的日常业务报销单。\n2.接待依据（公函/邀请函）。\n3.国内公务接待审批单（学校信息门户—网上办事服务平台）。\n4.发票等有效报销凭据。\n5.接待清单、菜单。\n二、审批手续\n1.经办人填报，证明人签字，经费负责人审批。\n2.单位（课题）负责人对业务的相关性、真实性和合理性负责。\n三、注意事项\n1.国内公务接待费的审批实行一事一批。\n2.一般公务接待标准最高不得超过 130 元/人，工作餐标准不得超过 50 元\n/人。\n3.接待用餐尽量安排校内教工餐厅自助餐。确因工作需要，可以安排桌餐\n一次，并严格控制陪餐人数。\n4.陪餐人数\n（1）接待对象在 10 人以内的，陪餐人数不得超过 3 人。\n（2）超过 10 人的，不得超过接待对象人数的三分之一。\n5.接待工作餐应当供应家常菜，不得提供鱼翅、燕窝等高档菜肴和用野生\n保护动物制作的菜肴，不得提供香烟以及酒类或含有酒精的饮料，不得使用私\n\nPDF第8页\n报 销 指 南\n- 5 -\n因公临时出国（境）费用报销\n一、报销范围\n1.国际旅费。\n2.国（境）外城市间交通费。\n3.住宿费。\n4.伙食费。\n5.公杂费\n6.其他费用。\n二、材料准备\n1.网上填报的国际差旅费用报销单。\n2.原始有效票据：飞机票（含行程单，登机牌，网上订单打印件）、会议\n注册费票据（含会议注册费收取标准，标注清楚是否包含食宿等费用）、住宿\n费票据（含清单）、签证费票据、保险费用票据、国外票据支付记录打印件等。\n3.出国（境）任务批件、邀请函/会议通知、护照/通行证（包括首页、签\n证/签注、出入境记录）等，经国际合作与交流部暨港澳台办公室（以下简称\n国合部暨港澳台办）审核后，财务处不再重复审核。\n4.教职工需提供出国（境）报销清单、事后公示表。事后公示表需经单位\n负责人和外事秘书审核审批且公示（公示时间不少于 5 个工作日）。\n5.教职工补贴由职能部门审核确认；学生补贴由经费负责人和职能部门审\n核确认，原则上不能超过国家规定标准。",
+          "chunk_ids": [
+            "ustc_finance_2024:PDF第4页:0",
+            "ustc_finance_2024:PDF第10页:0",
+            "ustc_finance_2024:PDF第17页:0",
+            "ustc_finance_2024:PDF第8页:0"
+          ],
+          "cited": true
+        }
+      ],
+      "has_valid_citations": true,
+      "model": "Qwen/Qwen3-8B",
+      "retrieval": "qwen_embedding+bm25_rrf",
+      "elapsed_ms": 2575
+    },
+    {
+      "npc_id": "finance",
+      "question": "校财帮应该从哪里进入和登录？",
+      "passed": true,
+      "wall_seconds": 1.41,
+      "answer": "关注“中国科学技术大学财务处”微信公众号，点击“掌上办公”——“校财帮”，输入用户名、密码登录[1]。",
+      "sources": [
+        {
+          "citation": 1,
+          "title": "关于财务处“校财帮”小程序上线的通知",
+          "url": "https://finance.ustc.edu.cn/2024/0606/c21813a643231/page.psp",
+          "version": "2024-06-06",
+          "location": "正文",
+          "text": "正文\n各位师生：\n为进一步满足广大师生便捷办事的需求，财务处于6月6日上线“校财帮”小程序，欢迎大家使用体验！\n一、主要功能\n“校财帮”微信小程序提供以下服务：提醒挂单原因、线上处理挂单、推送财务政策、咨询财务业务等，致力于让师生少跑路、让数据多跑路。\n二、登录方式\n关注“中国科学技术大学财务处”微信公众号，点击“掌上办公”——“校财帮”，输入用户名、密码登录，详见附件。\n三、咨询电话\n运行期间，欢迎大家提出宝贵建议！\n东区核算中心：63602362\n西区核算中心：63607627\n特此通知。\n附件：掌上AI打造智慧财务，财务处“校财帮”小程序正式上线！\n财务处\n2024\n年\n6\n月\n6\n日",
+          "chunk_ids": [
+            "ustc_finance_service:正文:0"
+          ],
+          "cited": true
+        },
+        {
+          "citation": 2,
+          "title": "日常经济业务财务报销指南（2024年修订）",
+          "url": "https://finance.ustc.edu.cn/_upload/article/files/45/28/1b135d524eaaae18e4bb600ef497/fe3665f0-c5d1-4231-8750-0196a890a958.pdf",
+          "version": "2024年修订，历史版本，不能据此宣称是现行全部制度",
+          "location": "PDF第26页 / PDF第33页 / PDF第22页",
+          "text": "PDF第26页\n报 销 指 南\n- 23 -\n4.活动结束后应该尽快报销，发票有效期一年。在报销时应汇总本次活动\n所发生的全部费用支出，并在报销单上注明该活动项目名称。\n5.学生活动经费购置设备达到固定资产要求的，应按要求办理固定资产登\n记手续。\n6.同一活动同一收款单位超过 2000 元，应对公转账或使用公务卡结算。\n7.单次订单费用超过 200 元（含）的车辆租赁，应通过学校公务用车管理\n信息平台实施。\n四、相关政策制度\n请参阅《关于印发〈中国科学技术大学学生活动经费管理规定〉的通知》\n（校财字〔2018〕144 号）、《关于印发〈中国科学技术大学公务车辆管理暂\n行办法〉〈中国科学技术大学公务用车租赁管理实施细则（试行）〉的通知》（校\n资后字〔2020〕161 号）等相关文件执行。\n\nPDF第33页\n报 销 指 南\n- 30 -\n个人承担。\n4.因商家优惠等原因导致公务卡实际支出金额小于发票金额的，报账时请\n按实际支出金额报销。\n四、相关政策制度\n请参阅《关于进一步重申严格执行公务卡结算管理制度的通知》（校财字\n〔2017〕67 号）、《中国科学技术大学公务卡结算管理暂行办法》（校财字〔2016〕\n58 号）等相关文件执行。\n\nPDF第22页\n报 销 指 南\n- 19 -\n请填报时在备注信息里说明原因。\n5.关于合同\n（1）签章：根据规定，采购金额在 5 万元人民币（含）以上的必须签订\n采购合同，经双方盖章后生效。\n（2）合同时间和发票时间的关系：坚持“无预算、不采购，先审批、后\n采购”原则，审批通过后方可实施采购活动。合同签订时间或约定的生效日期，\n应当早于发票的开具时间。\n（3）通过合同综合信息平台签订的合同应从平台办理合同款项支付。\n（4）合同的签订按照学校相关文件执行，具体可咨询学校资产与后勤保\n障处。\n6.涉及政府采购执行相关规定\n（1）需提前与资产与后期保障处联系办理政府集中采购。报销时需提供\n政府采购合同和政府采购验收单。\n（2）属于政府集中采购目录内的，用于科研的仪器设备，如果不通过政\n府采购，报销时由采购人据实做出“科研经费采购，用于科研”的承诺。\n7.购买通用办公设备和办公家具，应该按照《中国科学院院属事业单位通\n用办公设备和办公家具配置标准》，在标准范围内配备。\n8.发票中数量单位为批、套，需提供订单信息/销货清单。\n四、相关政策制度\n请参阅《关于印发〈中国科学技术大学采购管理办法〉的通知》（校资后\n字〔2024〕23 号）、《关于进一步加强试剂和耗材采购管理有关事项的通知》\n（资后字〔2020〕5 号）、《关于进一步完善物资采购管理有关事项的通知》（校",
+          "chunk_ids": [
+            "ustc_finance_2024:PDF第26页:0",
+            "ustc_finance_2024:PDF第33页:0",
+            "ustc_finance_2024:PDF第22页:0"
+          ],
+          "cited": false
+        }
+      ],
+      "has_valid_citations": true,
+      "model": "Qwen/Qwen3-8B",
+      "retrieval": "qwen_embedding+bm25_rrf",
+      "elapsed_ms": 1236
+    },
+    {
+      "npc_id": "library",
+      "question": "学生能借几本书，正常借期多久，能续借几次？",
+      "passed": true,
+      "wall_seconds": 1.12,
+      "answer": "学生可借30册图书，正常借期为60天，可续借1次。[1]",
+      "sources": [
+        {
+          "citation": 1,
+          "title": "中国科学技术大学图书馆：图书借阅规则",
+          "url": "https://lib.ustc.edu.cn/读者指南/图书借阅规则/",
+          "version": "网页快照，页面标注2026-07-22",
+          "location": "正文",
+          "text": "正文\n图书借阅规则\n2026-07-22\n（一）图书借书册数和期限\n读者类型 | 正常借期 | 限借册数 | 最大续借次数 | 到期提前续借天数 | 续借时间\n学生 | 60天 | 30册 | 1次 | 10天 | 45天\n教工 | 60天 | 30册 | 1次 | 10天 | 45天\n（二）借书时卡中应无超期图书，且逾期滞纳金未达\n10\n元，否则系统中不能办理手续。（三）图书（尤其各种画册）借出时，请读者先检查一下有无缺页和损坏情况，如有，须告诉图书馆工作人员加盖缺损印章。如还书时发现有缺损而又未盖章确认的，则由读者承担责任。（四）图书归还时，请归还到图书所在馆藏地，或者按规定使用24小时自助还书机。被预约图书必需在预约书柜归还。（五）馆藏现刊、过刊、内部资料等，不提供外借，只能在室内查阅；读者有急需请与工作人员说明。（六）寒暑假期间，图书馆会根据实际情况设置延期还书日以方便读者。（七）一卡通是在书库办理外借图书手续的唯一凭证，请读者一定要妥为保管，借书时须持本人一卡通办理。若不慎丢失一卡通请立即挂失，挂失前的一切借书记录由一卡通所有者本人负责。（八）按照学校的规定，读者因工作毕业、调动、休学、退学、短期学习结束等原因离校，或者因为本硕连读、硕博连读身份变化时，均需由本人或者单位担保人还清所借图书资料，方可签办离校手续或继续注册。",
+          "chunk_ids": [
+            "ustc_library:正文:0"
+          ],
+          "cited": true
+        }
+      ],
+      "has_valid_citations": true,
+      "model": "Qwen/Qwen3-8B",
+      "retrieval": "qwen_embedding+bm25_rrf",
+      "elapsed_ms": 946
+    },
+    {
+      "npc_id": "history",
+      "question": "科大什么时候在哪里建校，首任校长是谁？",
+      "passed": true,
+      "wall_seconds": 1.17,
+      "answer": "中国科学技术大学于1958年9月在北京建校，首任校长是郭沫若[1]。",
+      "sources": [
+        {
+          "citation": 1,
+          "title": "中国科学技术大学：学校简介",
+          "url": "https://www.ustc.edu.cn/xxgk/xxjj.htm",
+          "version": "网页数据截至2025年9月",
+          "location": "正文",
+          "text": "正文\n中国科学技术大学是中国科学院所属的一所以前沿科学和高新技术为主，兼有医学、特色管理和人文学科的理工科大学。\n学校现有34个学院，含8个科教融合学院；设有苏州高等研究院、上海研究院、北京研究院、先进技术研究院、国际金融研究院、附属第一医院（安徽省立医院）。\n学校于1958年9月在北京创建，郭沫若任首任校长。这是我党为“两弹一星”事业而创办的红色大学，她的创办被称为“我国教育史和科学史上的一项重大事件”。建校后，中国科学院实施“全院办校、所系结合”的办学方针，高起点、宽口径培养新兴、边缘、交叉学科的尖端科技人才，汇集了严济慈、华罗庚、钱学森、赵忠尧、郭永怀、赵九章、贝时璋等一批著名科学家，建校第二年即被列为全国重点大学。\n1970年初，学校迁至安徽省合肥市。1978年以来，学校锐意改革、大胆创新，在全国率先提出并实施一系列具有创新精神和前瞻意识的教育改革措施，创办少年班、首建研究生院、建设国家大科学工程、面向世界开放办学等，成为国家高质量人才培养和高水平科学研究的重要基地，是国家首批实施“985工程”和“211工程”的大学之一。2017年9月和2022年2月，学校两度入选全国世界一流大学和世界一流学科建设高校，共有11个学科入选世界一流学科建设名单。建校67年来，学校坚持红专并进、理实交融的校训，敢为人先，锐意进取，培养了大批德才兼备的优秀人才，取得了一系列举世瞩目的科研成果，为党和国家事业发展作出了重要贡献。\n校党委全面贯彻党的教育方针，坚持社会主义办学方向，将习近平总书记关于中国科大系列重要指示精神融入办学治校各环节，团结带领全校广大党员干部和师生员工，深刻领悟“两个确立”的决定性意义，不断增强“四个意识”、坚定“四个自信”、做到“两个维护”，围绕“潜心立德树人、执着攻关创新”两大根本任务，大力推进“双一流”建设，努力办出中国特色、科大风格的世界一流大学。\n（数据截至2025年9月）\n\n正文\n推进“双一流”建设，努力办出中国特色、科大风格的世界一流大学。\n（数据截至2025年9月）",
+          "chunk_ids": [
+            "ustc_history:正文:0",
+            "ustc_history:正文:1"
+          ],
+          "cited": true
+        }
+      ],
+      "has_valid_citations": true,
+      "model": "Qwen/Qwen3-8B",
+      "retrieval": "qwen_embedding+bm25_rrf",
+      "elapsed_ms": 999
+    },
+    {
+      "npc_id": "history",
+      "question": "学校什么时候迁到合肥？",
+      "passed": true,
+      "wall_seconds": 0.87,
+      "answer": "1970年初，中国科学技术大学迁至安徽省合肥市[1]。",
+      "sources": [
+        {
+          "citation": 1,
+          "title": "中国科学技术大学：学校简介",
+          "url": "https://www.ustc.edu.cn/xxgk/xxjj.htm",
+          "version": "网页数据截至2025年9月",
+          "location": "正文",
+          "text": "正文\n中国科学技术大学是中国科学院所属的一所以前沿科学和高新技术为主，兼有医学、特色管理和人文学科的理工科大学。\n学校现有34个学院，含8个科教融合学院；设有苏州高等研究院、上海研究院、北京研究院、先进技术研究院、国际金融研究院、附属第一医院（安徽省立医院）。\n学校于1958年9月在北京创建，郭沫若任首任校长。这是我党为“两弹一星”事业而创办的红色大学，她的创办被称为“我国教育史和科学史上的一项重大事件”。建校后，中国科学院实施“全院办校、所系结合”的办学方针，高起点、宽口径培养新兴、边缘、交叉学科的尖端科技人才，汇集了严济慈、华罗庚、钱学森、赵忠尧、郭永怀、赵九章、贝时璋等一批著名科学家，建校第二年即被列为全国重点大学。\n1970年初，学校迁至安徽省合肥市。1978年以来，学校锐意改革、大胆创新，在全国率先提出并实施一系列具有创新精神和前瞻意识的教育改革措施，创办少年班、首建研究生院、建设国家大科学工程、面向世界开放办学等，成为国家高质量人才培养和高水平科学研究的重要基地，是国家首批实施“985工程”和“211工程”的大学之一。2017年9月和2022年2月，学校两度入选全国世界一流大学和世界一流学科建设高校，共有11个学科入选世界一流学科建设名单。建校67年来，学校坚持红专并进、理实交融的校训，敢为人先，锐意进取，培养了大批德才兼备的优秀人才，取得了一系列举世瞩目的科研成果，为党和国家事业发展作出了重要贡献。\n校党委全面贯彻党的教育方针，坚持社会主义办学方向，将习近平总书记关于中国科大系列重要指示精神融入办学治校各环节，团结带领全校广大党员干部和师生员工，深刻领悟“两个确立”的决定性意义，不断增强“四个意识”、坚定“四个自信”、做到“两个维护”，围绕“潜心立德树人、执着攻关创新”两大根本任务，大力推进“双一流”建设，努力办出中国特色、科大风格的世界一流大学。\n（数据截至2025年9月）\n\n正文\n推进“双一流”建设，努力办出中国特色、科大风格的世界一流大学。\n（数据截至2025年9月）",
+          "chunk_ids": [
+            "ustc_history:正文:0",
+            "ustc_history:正文:1"
+          ],
+          "cited": true
+        }
+      ],
+      "has_valid_citations": true,
+      "model": "Qwen/Qwen3-8B",
+      "retrieval": "qwen_embedding+bm25_rrf",
+      "elapsed_ms": 697
+    },
+    {
+      "npc_id": "ai",
+      "question": "Qwen3 Embedding 论文提供哪些模型尺寸？",
+      "passed": true,
+      "wall_seconds": 1.25,
+      "answer": "Qwen3 Embedding 提供三种模型尺寸：0.6B、4B 和 8B [1]。",
+      "sources": [
+        {
+          "citation": 1,
+          "title": "Qwen3 Embedding: Advancing Text Embedding and Reranking Through Foundation Models",
+          "url": "https://arxiv.org/pdf/2506.05176",
+          "version": "arXiv:2506.05176，2025",
+          "location": "PDF第4页 / PDF第2页 / PDF第7页 / PDF第1页",
+          "text": "PDF第4页\nTechnical Report\nModel Type Models Size Layers SequenceLength EmbeddingDimension MRLSupport InstructionAware\nText Embedding\nQwen3-Embedding-0.6B 0.6B 28 32K 1024 Yes Yes\nQwen3-Embedding-4B 4B 36 32K 2560 Yes Yes\nQwen3-Embedding-8B 8B 36 32K 4096 Yes Yes\nText Reranking\nQwen3-Reranker-0.6B 0.6B 28 32K - - Yes\nQwen3-Reranker-4B 4B 36 32K - - Yes\nQwen3-Reranker-8B 8B 36 32K - - Yes\nTable 1: Model architecture of Qwen3 Embedding models. “MRL Support” indicates whether the\nembedding model supports custom dimensions for the final embedding. “Instruction Aware” notes\nwhether the embedding or reranker model supports customizing the input instruction according to\ndifferent tasks.\nFigure 2: Training pipeline of Qwen3 Embedding and Reranking models.\nTo calculate the relevance score based on the given input, we assess the likelihood of the next token\nbeing ”yes” or ”no.” This is expressed mathematica\n\nPDF第2页\nnt sizes of the Qwen3 backbone models (including 0.6B, 4B, and 8B), we ultimately trained\nthree text embedding models and three text reranking models. To facilitate their application in\ndownstream tasks, the Qwen3 Embedding series supports several practical features, such as flexible\ndimension representation for embedding models and customizable instructions for both embedding\nand reranking models.\nWe evaluate the Qwen3 Embedding series across a comprehensive set of benchmarks spanning\nmultiple tasks and domains. Experimental results demonstrate that our embedding and reranking\nmodels achieve state-of-the-art performance, performing competitively against leading proprietary\nmodels in several retrieval tasks. For example, the flagship model Qwen3-8B-Embedding attains a\nscore of 70.58 on the MTEB Multilingual benchmark (Enevoldsen et al., 2025) and 80.68 on the MTEB\nCode benchmark (Enevold\n\nPDF第7页\ny covers a wide range of embedding tasks across multiple languages. Our\nQwen3-Embedding-4B/8B models achieve the best performance, and our smallest model, Qwen3-\nEmbedding-0.6B, only lags behind the best-performing baseline method (Gemini-Embedding),\ndespite having only 0.6B parameters. In Table 3, we present the evaluation results on MTEB (English,\nv2) (Muennighoff et al., 2023), CMTEB (Xiao et al., 2024), and MTEB (Code) (Enevoldsen et al.,\n2025). The scores reflect similar trends as MMTEB, with our Qwen3-Embedding-4B/8B models\n1https://hf.co/jinaai/jina-reranker-v2-base-multilingual\n7\n\nPDF第1页\narXiv:2506.05176v3 [cs.CL] 11 Jun 2025\nTechnical Report\nQwen3 Embedding: Advancing T ext Embedding and\nReranking Through Foundation Models\nYanzhao Zhang* Mingxin Li* Dingkun Long* Xin Zhang*\nHuan Lin Baosong Yang Pengjun Xie An Yang\nDayiheng Liu Junyang Lin Fei Huang Jingren Zhou\nT ongyi Lab Alibaba Group\nhttps://huggingface.co/Qwen\nhttps://modelscope.cn/organization/qwen\nhttps://github.com/QwenLM/Qwen3-Embedding\nAbstract\nIn this work, we introduce the Qwen3 Embedding series, a significant advancement\nover its predecessor, the GTE-Qwen series, in text embedding and reranking capabili-\nties, built upon the Qwen3 foundation models. Leveraging the Qwen3 LLMs’ robust\ncapabilities in multilingual text understanding and generation, our innovative multi-\nstage training pipeline combines large-scale unsupervised pre-training with supervised\nfine-tuning on high-quality datasets. Effective model m",
+          "chunk_ids": [
+            "qwen_embedding_paper:PDF第4页:0",
+            "qwen_embedding_paper:PDF第2页:3",
+            "qwen_embedding_paper:PDF第7页:4",
+            "qwen_embedding_paper:PDF第1页:0"
+          ],
+          "cited": true
+        }
+      ],
+      "has_valid_citations": true,
+      "model": "Qwen/Qwen3-8B",
+      "retrieval": "qwen_embedding+bm25_rrf",
+      "elapsed_ms": 1063
+    }
+  ]
+}
