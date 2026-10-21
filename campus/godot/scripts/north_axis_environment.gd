@@ -167,12 +167,15 @@ static func build(c:Node3D):
 	_surface(c,[outline],-3.94,wood,"NorthAxisPlinthBottom")
 	# The scenery builder owns visible architecture; no solid wall across gate openings.
 	for building in d.buildings:_solid(c,[polygon(building.polygon)],-.75,building.height,"NorthBuilding_"+building.id)
-	var bridge_clear=[]
+	var bridge_clear=[];var ramp_cuts=[]
 	for bridge in d.bridges:
 		var deck=_stroke(polygon(bridge.points),bridge.width)
 		_solid(c,deck,.08,bridge.top,"NorthBridgeDeck_"+bridge.id)
 		bridge_clear.append_array(_stroke(polygon(bridge.points),bridge.width+.08))
-		for end in bridge.ramps:_ramp(c,bridge,end,stone)
+		for end in bridge.ramps:
+			var profile=_ramp_profile(bridge,end)
+			ramp_cuts.append(profile.corners)
+			_ramp(c,bridge,end,stone)
 	_solid(c,[polygon(d.pavilion.polygon)],-.2,d.pavilion.top,"NorthPavilionPlatform")
 	bridge_clear.append(polygon(d.pavilion.polygon))
 	var shore_boxes=[]
@@ -195,12 +198,14 @@ static func build(c:Node3D):
 	var regions=[outline,_core()];var road_pieces=[];var rim_pieces=[];var joints=[];var path_surfaces={}
 	for path in d.paths:
 		var points=polygon(path.points)
-		var pieces=_valid_surface(_stroke(points,path.width),regions,water_cuts+building_cuts)
+		# A bridge approach replaces the flat paving beneath it. Shared boundaries
+		# meet at surface_top, without a second coplanar road at the ramp's foot.
+		var pieces=_valid_surface(_stroke(points,path.width),regions,water_cuts+building_cuts+ramp_cuts)
 		road_pieces.append_array(pieces)
 		var kind=path.get("surface","pavers")
 		if not path_surfaces.has(kind):path_surfaces[kind]=[]
 		path_surfaces[kind].append_array(pieces)
-		rim_pieces.append_array(_valid_surface(_stroke(points,path.width+.26),regions,water_cuts+building_cuts))
+		rim_pieces.append_array(_valid_surface(_stroke(points,path.width+.26),regions,water_cuts+building_cuts+ramp_cuts))
 		for i in range(points.size()-1):
 			var a=points[i];var b=points[i+1];var direction=(b-a).normalized()
 			for k in range(1,int(a.distance_to(b)/3.0)):
@@ -217,19 +222,60 @@ static func build(c:Node3D):
 	_furniture(c,d,regions,water_cuts+building_cuts)
 	c.world.set_meta("north_axis_stats",{"land_pieces":land.size(),"road_pieces":road_pieces.size(),"trees_requested":d.trees.size(),"complete_ponds":2,"mapped_bridge_branches":4})
 
-static func _ramp(c:Node3D,bridge:Dictionary,end:String,mat:Material):
+static func _ramp_profile(bridge:Dictionary,end:String)->Dictionary:
 	var pts=polygon(bridge.points);var tip=pts[0] if end=="start" else pts[-1]
 	var inward=(pts[1]-tip).normalized() if end=="start" else (pts[-2]-tip).normalized()
-	var outside=tip-inward*2.2;var side=Vector2(-inward.y,inward.x)*bridge.width*.5
-	var corners=[outside+side,outside-side,tip-side,tip+side]
-	var ys=[.08,.08,bridge.top,bridge.top];var vertices=PackedVector3Array()
-	for i in range(4):vertices.append(Vector3(corners[i].x,ys[i],corners[i].y))
+	var outward=-inward;var path_width:float=bridge.width;var path_id="";var length=2.2
+	# The mapped paths can turn at the bridge mouth. Match their actual endpoint
+	# cross-section instead of extending the bridge axis out into the lawn.
+	for path in layout().paths:
+		var path_pts=polygon(path.points);var next:Vector2
+		if path_pts[0].distance_to(tip)<.01:next=path_pts[1]
+		elif path_pts[-1].distance_to(tip)<.01:next=path_pts[-2]
+		else:continue
+		outward=(next-tip).normalized();path_width=path.width;path_id=path.id
+		length=minf(length,tip.distance_to(next));break
+	var low_top:float=layout().surface_top
+	# The expanded road network can replace this legacy path with a wider,
+	# higher surface. Read its contract before creating the shared transition.
+	var mapped=load("res://scripts/campus_network.gd").bridge_approach(tip,outward)
+	if not mapped.is_empty():path_width=mapped.width;low_top=mapped.top
+	var outside=tip+outward*length
+	var side=Vector2(-inward.y,inward.x)*bridge.width*.5
+	var outside_side=Vector2(-outward.y,outward.x)*path_width*.5
+	if outside_side.dot(side)<0:outside_side=-outside_side
+	return {"corners":PackedVector2Array([outside+outside_side,outside-outside_side,tip-side,tip+side]),
+		"heights":PackedFloat32Array([low_top,low_top,bridge.top,bridge.top]),"path_id":path_id}
+
+static func _ramp(c:Node3D,bridge:Dictionary,end:String,mat:Material):
+	var profile=_ramp_profile(bridge,end);var corners:PackedVector2Array=profile.corners
+	var vertices=PackedVector3Array()
+	for i in range(4):vertices.append(Vector3(corners[i].x,profile.heights[i],corners[i].y))
 	var st=SurfaceTool.new();st.begin(Mesh.PRIMITIVE_TRIANGLES)
-	for i in [0,2,1,0,3,2]:st.add_vertex(vertices[i])
-	st.generate_normals();var mesh=MeshInstance3D.new();mesh.name="NorthBridgeApproachRamp";mesh.mesh=st.commit();mesh.material_override=mat;c.world.add_child(mesh)
-	for p in corners:vertices.append(Vector3(p.x,-.1,p.y))
-	var body=StaticBody3D.new();body.name="NorthBridgeApproachRamp";c.world.add_child(body)
-	var hull=ConvexPolygonShape3D.new();hull.points=vertices;var collider=CollisionShape3D.new();collider.shape=hull;body.add_child(collider)
+	var top_triangles=[]
+	for indices in [[0,2,1],[0,3,2]]:
+		var triangle=PackedVector3Array([vertices[indices[0]],vertices[indices[1]],vertices[indices[2]]])
+		if (triangle[1]-triangle[0]).cross(triangle[2]-triangle[0]).y<0:triangle.reverse()
+		top_triangles.append(triangle)
+		st.set_normal((triangle[1]-triangle[0]).cross(triangle[2]-triangle[0]).normalized())
+		for v in triangle:st.set_uv(Vector2(v.x,v.z));st.add_vertex(v)
+	# Close only the two exposed sides; the low and high ends join existing paving.
+	for edge in [[1,2],[3,0]]:
+		var a=vertices[edge[0]];var b=vertices[edge[1]]
+		var lower_a=Vector3(a.x,-.1,a.z);var lower_b=Vector3(b.x,-.1,b.z)
+		st.set_normal((lower_b-a).cross(lower_a-a).normalized())
+		for v in [a,lower_b,lower_a,a,b,lower_b]:st.set_uv(Vector2(v.x,v.z));st.add_vertex(v)
+	var mesh=MeshInstance3D.new();mesh.name="NorthBridgeApproachRamp";mesh.mesh=st.commit();mesh.material_override=mat
+	mesh.set_meta("bridge_id",bridge.id);mesh.set_meta("ramp_end",end);c.world.add_child(mesh)
+	var body=StaticBody3D.new();body.name="NorthBridgeApproachRamp"
+	body.set_meta("bridge_id",bridge.id);body.set_meta("ramp_end",end);c.world.add_child(body)
+	# Turning cross-sections make the four top corners noncoplanar. A single
+	# convex hull may choose the other diagonal, so use the two rendered triangles.
+	for triangle in top_triangles:
+		var hull_points=PackedVector3Array(triangle)
+		for v in triangle:hull_points.append(Vector3(v.x,-.1,v.z))
+		var hull=ConvexPolygonShape3D.new();hull.points=hull_points
+		var collider=CollisionShape3D.new();collider.shape=hull;body.add_child(collider)
 
 static func _internal_seam(a:Vector2,b:Vector2)->bool:
 	if is_equal_approx(a.y,118) and is_equal_approx(b.y,118) and minf(a.x,b.x)>=-80 and maxf(a.x,b.x)<=80:return true

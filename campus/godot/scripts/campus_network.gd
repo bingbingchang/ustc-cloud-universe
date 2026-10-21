@@ -1,6 +1,7 @@
 extends RefCounted
 const North=preload("res://scripts/north_axis_environment.gd")
 const Geometry=preload("res://scripts/wave2_environment.gd")
+const ROAD_TOP=0.14
 static var _data:Dictionary={}
 static func data()->Dictionary:
 	if _data.is_empty():_data=JSON.parse_string(FileAccess.get_file_as_string("res://data/campus_road_network.json"))
@@ -10,6 +11,18 @@ static func enabled()->bool:
 	for s in JSON.parse_string(FileAccess.get_file_as_string("res://data/module_layout.json")).modules:
 		if s.id=="north_academic_04":return s.enabled
 	return false
+
+static func bridge_approach(tip:Vector2,outward:Vector2)->Dictionary:
+	if not enabled():return {}
+	for road in data().roads:
+		if not road.get("build_enabled",true):continue
+		var points=North.polygon(road.points);var next:Vector2
+		if points[0].distance_to(tip)<.01:next=points[1]
+		elif points[-1].distance_to(tip)<.01:next=points[-2]
+		else:continue
+		if (next-tip).normalized().dot(outward)>.999:
+			return {"width":road.width,"top":ROAD_TOP}
+	return {}
 
 static func regions()->Array:
 	var result=[North._core(),North.polygon(North.layout().polygon)]
@@ -113,8 +126,8 @@ static func build_roads(c:Node3D):
 	North._solid(c,sidewalk,-.1,.23,"MappedSidewalkWalkable")
 	North._surface(c,curbs,.242,c.mats.stone,"MappedMainRoadCurbs")
 	for kind in surfaces:
-		North._surface(c,surfaces[kind],.14,Surfaces.material(c,kind),"MappedRoad_"+kind)
-		North._solid(c,surfaces[kind],-.1,.14,"MappedRoadWalkable_"+kind)
+		North._surface(c,surfaces[kind],ROAD_TOP,Surfaces.material(c,kind),"MappedRoad_"+kind)
+		North._solid(c,surfaces[kind],-.1,ROAD_TOP,"MappedRoadWalkable_"+kind)
 	c.world.set_meta("campus_roads",built)
 	print("CAMPUS_ROADS_READY built=",built.size()," registered=",data().roads.size())
 
