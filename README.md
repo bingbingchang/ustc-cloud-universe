@@ -1,5 +1,9 @@
 # 科大云宇宙
 
+使用 Godot 4.7.1 打开 `campus/godot/project.godot`，等待首次导入后按 F5 即可漫游。Windows 也可以设置 `GODOT_EXE` 后双击 `OPEN_GAME.cmd`。游戏启动和校园漫游不依赖 AI 后台；需要在线 NPC 对话时，再按[后台说明](campus/ai/README.md)配置并启动服务。
+
+仓库提供游戏源码和场景资源。密钥 `.env`、本机 AI 环境与模型、网页分区包及 Windows 导出包需另行配置或构建，详见[源码运行说明](docs/BUILD_GUIDE.md)。
+
 ## 校园数字空间——链接现实与虚拟
 
 **让真实校园在云端拥有一个持续生长的第二空间。**

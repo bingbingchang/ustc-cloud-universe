@@ -79,6 +79,60 @@
       "name": "东区图书馆",
       "outline": [
         [
+          -32.850218,
+          400.278288
+        ],
+        [
+          39.145,
+          401.108099
+        ],
+        [
+          38.851109,
+          426.606405
+        ],
+        [
+          18.552457,
+          426.372445
+        ],
+        [
+          18.547847,
+          426.772418
+        ],
+        [
+          8.748498,
+          426.659472
+        ],
+        [
+          8.753108,
+          426.259498
+        ],
+        [
+          -3.046108,
+          426.123502
+        ],
+        [
+          -3.050718,
+          426.523475
+        ],
+        [
+          -12.850067,
+          426.410529
+        ],
+        [
+          -12.845457,
+          426.010555
+        ],
+        [
+          -33.144109,
+          425.776595
+        ]
+      ],
+      "levels": 6,
+      "height": 24.3,
+      "source": "https://www.openstreetmap.org/way/284161541",
+      "confidence": "Six uploaded multiview references define the replacement proportions; 72 m width, 25.5 m depth, 24.3 m main roof and 32.1 m crown are image-derived estimates, not surveyed dimensions. The campus entrance origin and 3.18 m landing remain fixed.",
+      "source_osm_outline": [
+        [
           5.592,
           395.264
         ],
@@ -215,10 +269,14 @@
           395.311
         ]
       ],
-      "levels": 6,
-      "height": 21.6,
-      "source": "https://www.openstreetmap.org/way/284161541",
-      "confidence": "OSM footprint; library 6/Teaching 2 8 floors confirmed official pages; other heights estimated"
+      "replica_dimensions": {
+        "width": 72.0,
+        "depth": 25.5,
+        "main_roof": 24.3,
+        "tower_roof": 29.4,
+        "crown_top": 32.1,
+        "estimated": true
+      }
     },
     {
       "osm_way": "271958257",
@@ -1481,9 +1539,9 @@
     {
       "asset": "tree_plane_a",
       "position": [
-        144.326,
+        130.38,
         0,
-        379.002
+        379.14
       ],
       "scale": 1.049,
       "heading": 0.3133
@@ -1491,9 +1549,9 @@
     {
       "asset": "tree_garden",
       "position": [
-        153.901,
+        170.17,
         0,
-        379.353
+        379.72
       ],
       "scale": 0.883,
       "heading": 3.9219

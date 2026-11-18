@@ -24,6 +24,7 @@ var trace_cursor=0
 func _ready():
 	build_ui()
 	request=HTTPRequest.new();request.timeout=100;add_child(request)
+	request.accept_gzip=not OS.has_feature("web")
 	request.request_completed.connect(on_response)
 	print("CAMPUS_AGENT_READY guide=student endpoint=",game.hero_interactions.base_url)
 	if "--agent-focus" in OS.get_cmdline_user_args():open_panel()
@@ -32,7 +33,7 @@ func build_ui():
 	layer=CanvasLayer.new();layer.layer=35;add_child(layer)
 	var root=Control.new();root.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	root.mouse_filter=Control.MOUSE_FILTER_IGNORE;layer.add_child(root)
-	var theme=Theme.new();var font=SystemFont.new();font.font_names=PackedStringArray(["Microsoft YaHei","Segoe UI"])
+	var theme=Theme.new();var font=preload("res://scripts/campus_font.gd").get_font()
 	theme.default_font=font;theme.default_font_size=17;root.theme=theme
 	var entry=Button.new();entry.text="叶新程 · 行动向导 K";entry.position=Vector2(470,178)
 	entry.pressed.connect(toggle_panel);root.add_child(entry)
@@ -68,7 +69,9 @@ func open_panel():
 	panel_open=true;panel.show();locator_before=game.locator.visible
 	heroes.set_process_input(false)
 	if heroes.actors.has(guide_id):heroes.actors[guide_id].begin_conversation()
-	lock_controls();goal_input.grab_focus()
+	lock_controls()
+	if not OS.has_feature("web"):goal_input.grab_focus()
+	elif not game.player.touch_mode and game.web_text_input:game.web_text_input.request_focus("agent")
 
 func lock_controls():
 	game.player.enabled=false;game.player.velocity=Vector3.ZERO
@@ -80,14 +83,16 @@ func close_panel():
 	heroes.set_process_input(true)
 	if heroes.actors.has(guide_id):heroes.actors[guide_id].end_conversation()
 	if not heroes.panel.visible and not heroes.journal.visible:
-		game.player.enabled=true;game.locator.visible=locator_before;Input.mouse_mode=Input.MOUSE_MODE_CAPTURED
+		game.player.enabled=true;game.locator.visible=locator_before
+		Input.mouse_mode=Input.MOUSE_MODE_VISIBLE if OS.has_feature("web") else Input.MOUSE_MODE_CAPTURED
 
 func submit_goal(value:String):
 	if busy or value.strip_edges().is_empty():return
 	if not panel_open:open_panel()
 	goal=value.strip_edges();goal_input.text=goal;goal_input.release_focus()
 	action_results=[];sources=[];last_result={};transcript.clear()
-	trace_cursor=agent_state.get("tool_trace",[]).size()
+	# A new request must not inherit an unfinished action from an earlier goal.
+	agent_state={};trace_cursor=0
 	append_line("你："+goal,Color("fff0c2"))
 	append_line("叶新程：我来查找合适的人物，再确认游戏里的行动结果。",Color("c8dfd4"))
 	busy=true;run_button.disabled=true;goal_input.editable=false
@@ -96,7 +101,7 @@ func submit_goal(value:String):
 func send_step(observations:Array):
 	status_label.text="叶新程正在选择工具…"
 	var payload={"message":goal,"npc_id":guide_id,"history":[],"state":agent_state,"observations":observations}
-	var err=request.request(game.hero_interactions.base_url+"/agent",PackedStringArray(["Content-Type: application/json"]),HTTPClient.METHOD_POST,JSON.stringify(payload))
+	var err=request.request(game.hero_interactions.base_url+"/agent",game.hero_interactions.api_headers(),HTTPClient.METHOD_POST,JSON.stringify(payload))
 	if err!=OK:finish_error("无法发起 Agent 请求："+error_string(err))
 
 func append_line(value:String,color:Color=Color.WHITE):
@@ -106,7 +111,7 @@ func on_response(result:int,code:int,_headers:PackedStringArray,body:PackedByteA
 	var data=JSON.parse_string(body.get_string_from_utf8()) if not body.is_empty() else null
 	if result!=HTTPRequest.RESULT_SUCCESS or code!=200 or not data is Dictionary:
 		var detail=str(data.get("detail","")) if data is Dictionary else body.get_string_from_utf8().left(220)
-		finish_error("Agent 服务失败（HTTP %d）：%s"%[code,detail]);return
+		finish_error(game.hero_interactions.service_error(code,detail) if OS.has_feature("web") else "Agent 服务失败（HTTP %d）：%s"%[code,detail]);return
 	agent_state=data.get("state",{})
 	var trace:Array=data.get("tool_trace",[])
 	for item in trace.slice(trace_cursor):
@@ -118,7 +123,7 @@ func on_response(result:int,code:int,_headers:PackedStringArray,body:PackedByteA
 	if data.get("status","")=="awaiting_game":
 		var observations:Array=[]
 		for action in data.get("actions",[]):
-			var observation=execute_action(action);observations.append(observation);action_results.append(observation)
+			var observation=await execute_action(action);observations.append(observation);action_results.append(observation)
 		if observations.is_empty():finish_error("模型请求执行，但没有返回游戏动作。");return
 		send_step(observations);return
 	if data.get("status","")!="completed":finish_error("Agent 返回了未知状态："+str(data.get("status","")));return
@@ -138,20 +143,20 @@ func on_response(result:int,code:int,_headers:PackedStringArray,body:PackedByteA
 func execute_action(action:Dictionary)->Dictionary:
 	var action_id=str(action.get("id",""));var kind=str(action.get("type",""));var id=str(action.get("npc_id",""))
 	var heroes=game.hero_interactions
-	if not heroes.actors.has(id):
+	if not await heroes.ensure_actor(id):
 		append_line("[执行失败] 校园中没有角色："+id,Color("f0b2a6"))
 		return {"action_id":action_id,"status":"failed","detail":{"error":"unknown_npc","npc_id":id}}
 	if heroes.actors.has(guide_id):heroes.actors[guide_id].end_conversation()
 	var actor=heroes.actors[id]
 	if kind=="navigate_to_npc":
-		heroes.travel_to(id)
+		if not await heroes.travel_to(id):return {"action_id":action_id,"status":"failed","detail":{"error":"region_load_failed","npc_id":id}}
 		append_line("[游戏执行] 快速前往 "+str(actor.definition.name)+" · "+str(actor.definition.location),Color("c4e6ac"))
 	elif kind=="open_npc_dialogue":
 		var distance=game.player.global_position.distance_to(actor.global_position)
 		if distance>3.5:
 			append_line("[执行失败] 距离目标 %.1f 米，尚不能打开对话。"%distance,Color("f0b2a6"))
 			return {"action_id":action_id,"status":"failed","detail":{"error":"npc_out_of_reach","npc_id":id,"distance_to_npc":distance}}
-		heroes.open_dialogue(id)
+		await heroes.open_dialogue(id)
 		append_line("[游戏执行] 已打开 "+str(actor.definition.name)+" 的角色对话",Color("c4e6ac"))
 	else:
 		return {"action_id":action_id,"status":"failed","detail":{"error":"unknown_game_action","type":kind}}
@@ -169,6 +174,7 @@ func finish_error(message:String):
 
 func _input(event):
 	if not event is InputEventKey or not event.pressed or event.echo:return
+	if game.hero_interactions.api_panel.visible:return
 	if panel_open:
 		if event.keycode==KEY_ESCAPE:
 			close_panel();get_viewport().set_input_as_handled()

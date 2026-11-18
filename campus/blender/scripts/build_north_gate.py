@@ -17,13 +17,14 @@ GATE=(111.927,-71.737)
 FIXTURE_NORTH_OFFSET=6.75
 random.seed(2022)
 for name,color,rough,metal in [
-    ('GateSteel',(.49,.52,.50),.45,.62),('GateGlass',(.20,.31,.32),.28,.28),
+    ('GateSteel',(.49,.52,.50),.45,.62),
     ('GateDarkGlass',(.14,.22,.23),.38,.18),('GateGreyStone',(.40,.395,.34),.99,0),
     ('GateStoneLetter',(.29,.12,.09),.88,0),('GateCanopy',(.33,.36,.33),.68,.25),
     ('GateVineGreen',(.21,.32,.12),.95,0),('GateVineLight',(.30,.39,.18),.95,0),
     ('GateVineStem',(.25,.20,.15),.96,0),('GateBarrierWhite',(.72,.74,.69),.69,0),
     ('GateBarrierRed',(.55,.11,.075),.64,0),
 ]:material(name,color,rough,metal)
+ensure_door_glass()
 
 def prism_collision(name,poly,bottom,top):
     solids.append({'name':name,'type':'polygon_prism','polygon':poly,'bottom':bottom,'top':top})
@@ -37,17 +38,28 @@ def ellipse(cx,cz,rx,rz,n=24):
 cx,cz=GATE[0]+8.2,GATE[1]-.2
 part='GuardBooth'
 poly=ellipse(cx,cz,1.23,1.12)
-slab(poly,.08,.24,'GateSteel');slab(poly,.24,.99,'GateSteel')
-slab(poly,.99,2.54,'GateDarkGlass');slab(poly,2.54,2.72,'GateSteel')
+slab(poly,.08,.24,'GateSteel')
+slab(poly,2.54,2.72,'GateSteel')
+for i,(a,b) in enumerate(zip(poly,poly[1:]+poly[:1])):
+    if i in (5,6):  # Keep the south-facing door clear of the cylindrical wall.
+        continue
+    for low,high,mat in ((.24,.99,'GateSteel'),(.99,2.54,'GateDarkGlass')):
+        geo([(a[0],low,a[1]),(b[0],low,b[1]),
+             (b[0],high,b[1]),(a[0],high,a[1])],[(0,1,2,3)],mat)
 slab(ellipse(cx,cz,1.40,1.28),2.73,2.86,'GateSteel')
 slab(ellipse(cx,cz,1.35,1.23),2.88,2.98,'GateBarrierWhite')
 slab(ellipse(cx,cz,1.43,1.30),2.99,3.08,'GateSteel')
 for i in range(16):
+    if i == 4:
+        continue
     t=math.tau*i/16
     box((cx+1.24*math.cos(t),1.75,cz+1.13*math.sin(t)),(.055,1.56,.055),'GateSteel')
 # Dark framed door on its southern face.
-box((cx,1.42,cz+1.124),(.75,2.36,.06),'WindowRubber')
-box((cx,1.43,cz+1.164),(.63,2.22,.035),'GateGlass')
+for side in (-1,1):
+    box((cx+side*.342,1.42,cz+1.124),(.064,2.36,.06),'WindowRubber')
+for y in (.273,2.567):
+    box((cx,y,cz+1.124),(.75,.066,.06),'WindowRubber')
+box((cx,1.43,cz+1.164),(.63,2.22,.035),'PhotoDoorGlass')
 box((cx+.23,1.34,cz+1.20),(.03,.34,.035),'EntryHandle')
 prism_collision('NewNorthGate_guard_booth',poly,.08,3.08)
 
@@ -137,7 +149,8 @@ for mat,obs in sorted(matgroups.items()):
     ob=bpy.context.view_layer.objects.active;ob.name='NewNorthGate_'+mat;combined.append(ob)
 bpy.ops.object.select_all(action='DESELECT')
 for ob in combined:ob.select_set(True)
-dest=ROOT/'godot/assets/north_gate.glb'
+args.output_dir.mkdir(parents=True, exist_ok=True)
+dest=args.output_dir/'north_gate.glb'
 bpy.ops.export_scene.gltf(filepath=str(dest),export_format='GLB',use_selection=True,export_apply=True,export_yup=True,export_extras=True)
 verts=[ob.matrix_world@v.co for ob in combined for v in ob.data.vertices]
 triangles=0
@@ -164,8 +177,9 @@ manifest['observed_sources']=[s for s in manifest['observed_sources'] if 'New Hu
 manifest['assets']['north_gate.glb']={'file':'godot/assets/north_gate.glb','buildings':['NewNorthGate'],
                                    'objects':len(combined),'triangles':triangles,
                                    'bounds_min':[lo[0],lo[2],-hi[1]],'bounds_max':[hi[0],hi[2],-lo[1]]}
-mp.write_text(json.dumps(manifest,ensure_ascii=False,indent=2),encoding='utf-8')
-bpy.ops.wm.save_as_mainfile(filepath=str(ROOT/'blender/source/north_gate.blend'))
+(args.output_dir/mp.name).write_text(json.dumps(manifest,ensure_ascii=False,indent=2),encoding='utf-8')
+if args.output_dir == ROOT/'godot/assets':
+    bpy.ops.wm.save_as_mainfile(filepath=str(ROOT/'blender/source/north_gate.blend'))
 print('NORTH_GATE_OK',json.dumps(manifest['assets']['north_gate.glb']))
 if '--proof' in sys.argv:
     scene=bpy.context.scene;scene.render.engine='BLENDER_EEVEE';scene.render.resolution_x=1200;scene.render.resolution_y=720;scene.render.resolution_percentage=100

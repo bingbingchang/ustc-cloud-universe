@@ -3,7 +3,15 @@ static func material(c:Node3D,surface:String)->Material:
 	var key="RoadSurface_"+surface
 	if c.original_mats.has(key):return c.original_mats[key]
 	var m:ShaderMaterial
-	if surface in ["asphalt","pebble"]:
+	if surface=="sakura_stone":
+		m=ShaderMaterial.new()
+		m.shader=preload("res://shaders/teaching5_tile.gdshader")
+		m.set_shader_parameter("wall_color",Color("c0bab5"))
+		m.set_shader_parameter("tile_size",Vector2(.93,.48))
+		m.set_shader_parameter("tile_variation",.095)
+		m.set_shader_parameter("joint_strength",.19)
+		m.set_shader_parameter("staggered_rows",true)
+	elif surface in ["asphalt","pebble"]:
 		m=ShaderMaterial.new();m.shader=preload("res://shaders/campus_aggregate.gdshader")
 		m.set_shader_parameter("base_color",Color("555c58") if surface=="asphalt" else Color.WHITE)
 		m.set_shader_parameter("pebbles",surface=="pebble");c.art_mats.append(m)

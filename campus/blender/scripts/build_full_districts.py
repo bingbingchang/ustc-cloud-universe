@@ -1,14 +1,36 @@
 """Mapped exterior assets for the east housing, central life and southern science districts."""
 from pathlib import Path
-import bpy,bmesh,json,math
+import bpy,bmesh,json,math,os,sys
 script=Path(__file__).resolve()
+sys.path.insert(0,str(script.parent))
+from mapped_landmark_details import DETAILS, MATERIALS, build_detail, install_photo_materials
+from science_exteriors import SCIENCE, SCIENCE_MATERIALS, build_science_exterior
+from west_gate_exterior import GATE_MATERIALS, main_gate
+from campus_life_exteriors import EXTERIORS, LIFE_MATERIALS, build_life_exterior
+from visit_exteriors import MATERIALS as VISIT_MATERIALS
+
 exec(compile((script.parent/'build_north_teaching.py').read_text(encoding='utf-8').split('# Exact snapshot footprints')[0],'campus_exterior_helpers','exec'),globals())
 for name,col in [('HousingIvory',(.70,.71,.66)),('HousingWarm',(.63,.60,.51)),('HousingGrey',(.60,.64,.62)),('CampusBrick',(.52,.25,.16)),
                  ('WhiteTrim',(.78,.78,.72)),('RoofTile',(.27,.30,.29)),('LabSilver',(.59,.64,.64)),('LabBlue',(.25,.37,.45)),
                  ('ServiceWarm',(.64,.62,.53)),('KindergartenPale',(.74,.72,.59)),('KindergartenBlue',(.30,.53,.61)),
                  ('KindergartenRose',(.68,.40,.38))]:material(name,col)
+install_photo_materials(material,materials,MATERIALS)
+install_photo_materials(material,materials,SCIENCE_MATERIALS)
+install_photo_materials(material,materials,GATE_MATERIALS)
+install_photo_materials(material,materials,LIFE_MATERIALS)
+install_photo_materials(material,materials,VISIT_MATERIALS)
+
 data=json.loads((ROOT/'godot/data/full_districts.json').read_text(encoding='utf-8'))
-manifest={'unit':'meter','placement':[0,0,0],'districts':{},'assets':{},'collision_solids':solids,'sources':data['sources']}
+selected = set(filter(None,os.environ.get("CAMPUS_BUILD_MAPPED", "").split(",")))
+unknown = selected - {b["osm_way"] for d in data["districts"] for b in d["buildings"]}
+if unknown:
+    raise ValueError(f"Unknown mapped building IDs: {', '.join(sorted(unknown))}")
+original_manifest = ROOT/'godot/assets/full_districts_manifest.json'
+if selected:
+    manifest = json.loads(original_manifest.read_text(encoding='utf-8'))
+    previous_solids = manifest['collision_solids']
+else:
+    manifest={'unit':'meter','placement':[0,0,0],'districts':{},'assets':{},'collision_solids':solids,'sources':data['sources']}
 
 def roof(poly,h,whole=False):
     global part
@@ -34,9 +56,30 @@ def roof(poly,h,whole=False):
             geo([q(0,-.35,.2),q(length,-.35,.2),q(length,depth/2,1.6),q(0,depth/2,1.6),q(0,depth,.2),q(length,depth,.2)],[(0,1,2,3),(3,2,5,4),(0,3,4),(1,5,2)],'RoofTile')
 
 for d in data['districts']:
-    manifest['districts'][d['id']]={'buildings':d['buildings'],'assets':[]}
+    if not selected:
+        manifest['districts'][d['id']]={'buildings':d['buildings'],'assets':[]}
     for index,b in enumerate(d['buildings']):
-        asset='mapped_'+b['osm_way'];manifest['districts'][d['id']]['assets'].append(asset)
+        wid = b["osm_way"]
+        if selected and wid not in selected:
+            continue
+        asset='mapped_'+wid
+        if not selected:
+            manifest['districts'][d['id']]['assets'].append(asset)
+        if (wid in DETAILS or wid in SCIENCE or wid in EXTERIORS or b["style"]=="west_gate") and b.get("gis_reference"):
+            part = "PhotoExterior"
+            if wid in DETAILS:
+                build_detail(asset,b,geo,slab,edgebox,inscription,solids)
+            elif b["style"]=="west_gate":
+                main_gate(asset,b,geo,slab,edgebox,inscription,solids)
+            elif wid in EXTERIORS:
+                build_life_exterior(asset,b,geo,slab,edgebox,inscription,solids,facade)
+            else:
+                build_science_exterior(asset,b,geo,slab,edgebox,inscription,solids,facade)
+            if selected:
+                updated = manifest['districts'][d['id']]['buildings']
+                updated[next(i for i,item in enumerate(updated) if item['osm_way']==wid)] = b
+            print("GIS_LANDMARK",asset,b["name"])
+            continue
         p=b['outline'];s=b['style'];h=b['height'];levels=b['levels']
         if s=='west_gate':
             # West entrance is an open archway on its access road, not a building prism.
@@ -93,6 +136,21 @@ for d in data['districts']:
             box((cx,h+1,cz),(4,1.2,3),'FacultyDarkPanel');box((cx,h+1.68,cz),(4.2,.14,3.2),'FacultyRoof')
         print('MAPPED_BUILDING',asset,s,levels)
 
+if selected:
+    replacements = {wid: [] for wid in selected}
+    for solid in solids:
+        replacements[solid['name'].split('_')[1]].append(solid)
+    collision_solids = []
+    for solid in previous_solids:
+        wid = solid['name'].split('_')[1]
+        if wid not in selected:
+            collision_solids.append(solid)
+        elif wid in replacements:
+            collision_solids.extend(replacements.pop(wid))
+    for wid in sorted(replacements):
+        collision_solids.extend(replacements[wid])
+    manifest['collision_solids'] = collision_solids
+
 for (asset,part,mat),(vs,fs) in batches.items():
     me=bpy.data.meshes.new(asset+'_'+part+'_'+mat);me.from_pydata(vs,[],fs);me.update()
     bm=bmesh.new();bm.from_mesh(me);bmesh.ops.recalc_face_normals(bm,faces=bm.faces);bm.to_mesh(me);bm.free()
@@ -111,10 +169,12 @@ for asset,obs in objects.items():
         ob=bpy.context.view_layer.objects.active;ob.name=asset+'_'+mat;merged.append(ob)
     bpy.ops.object.select_all(action='DESELECT')
     for ob in merged:ob.select_set(True)
-    bpy.ops.export_scene.gltf(filepath=str(ROOT/'godot/assets'/f'{asset}.glb'),export_format='GLB',use_selection=True,export_apply=True,export_yup=True)
+    args.output_dir.mkdir(parents=True, exist_ok=True)
+    bpy.ops.export_scene.gltf(filepath=str(args.output_dir/f'{asset}.glb'),export_format='GLB',use_selection=True,export_apply=True,export_yup=True)
     count=0
     for ob in merged:ob.data.calc_loop_triangles();count+=len(ob.data.loop_triangles)
     manifest['assets'][asset]={'file':asset+'.glb','surfaces':len(merged),'triangles':count}
-(ROOT/'godot/assets/full_districts_manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
-bpy.ops.wm.save_as_mainfile(filepath=str(ROOT/'blender/source/full_districts.blend'))
+(args.output_dir/'full_districts_manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+if not selected and args.output_dir == ROOT/'godot/assets':
+    bpy.ops.wm.save_as_mainfile(filepath=str(ROOT/'blender/source/full_districts.blend'))
 print('FULL_ASSETS',len(manifest['assets']),sum(a['triangles'] for a in manifest['assets'].values()))

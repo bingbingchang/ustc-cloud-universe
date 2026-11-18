@@ -1,5 +1,10 @@
 extends "res://scripts/campus_performance.gd"
 
+const TEACHING5_ENTRY_VIEW := Vector3(184.616, 2.0, -5.266)
+const SCENE_FADE_DISTANCE := Vector2(220.0, 460.0)
+const SCENE_CLIP_MARGIN := 16.0
+const SCENE_HAZE := Color(0.73, 0.81, 0.87)
+
 var game_ready=false
 var balanced=true
 var detail_batches:Array[GeometryInstance3D]=[]
@@ -18,6 +23,8 @@ var net_status:Label
 var net_theme:Theme
 var hero_interactions
 var campus_agent
+var runtime_render_policy
+var campus_visits
 
 func use_lookdev()->bool:return true
 func west_enabled()->bool:return true
@@ -26,14 +33,30 @@ func write_spots():pass # Gameplay does not rewrite the historical photo reports
 func viewpoint(_i:int):pass # The game camera remains attached to the character.
 
 func _ready():
+	var runtime_optimized := "--runtime-before" not in OS.get_cmdline_user_args()
+	if OS.has_feature("windows") and not OS.has_feature("dedicated_server"):
+		var single_player := true
+		for argument in OS.get_cmdline_user_args():
+			if argument.begins_with("--net-host") or argument.begins_with("--net-join"):
+				single_player=false
+		if single_player:
+			campus_visits=preload("res://scripts/campus_visits.gd").new()
+			campus_visits.configure(self)
 	super._ready()
+	if campus_visits:
+		campus_visits.name="CampusVisits"
+		add_child(campus_visits)
+	# The lake uses its own camera to draw reflection-only tree impostors.
+	player.camera.cull_mask &= ~REFLECTION_LAYER
+	if runtime_optimized:
+		configure_scene_fade()
 	game_ready=true
 	player.respawn_position=Vector3(0,.16,12);player.respawn_target=Vector3(0,1.6,80)
 	player.set_view(player.respawn_position,player.respawn_target)
 	if "--plaza-focus" in OS.get_cmdline_user_args():
 		player.set_view(Vector3(12,.16,258),Vector3(-.597,1.8,244.127))
 	if "--north-campus-focus" in OS.get_cmdline_user_args():
-		player.set_view(Vector3(170,.16,20),Vector3(199,2,6))
+		player.set_view(Vector3(170,.16,20),TEACHING5_ENTRY_VIEW)
 	if "--library-focus" in OS.get_cmdline_user_args():
 		player.set_view(Vector3(20,.16,444),Vector3(2.1,6,430))
 	if "--sports-focus" in OS.get_cmdline_user_args():
@@ -48,6 +71,9 @@ func _ready():
 			if "flower" in asset or "bank" in asset or "reeds" in asset or "lotus" in asset:detail_batches.append(n)
 	apply_quality(not "--game-quality" in OS.get_cmdline_user_args())
 	setup_building_occlusion()
+	if runtime_optimized:
+		runtime_render_policy=preload("res://scripts/runtime_render_policy.gd").new()
+		runtime_render_policy.game=self;runtime_render_policy.name="RuntimeRenderPolicy";add_child(runtime_render_policy)
 	get_window().set_deferred("title","科大云宇宙 · 校园漫游 | 可操控人物")
 	print("CLOUD_UNIVERSE_READY player=1 third_person=true detail_batches=",detail_batches.size())
 	setup_net()
@@ -57,25 +83,49 @@ func _ready():
 	campus_agent.game=self;campus_agent.name="CampusGuideAgent";add_child(campus_agent)
 	if "--release-smoke-test" in OS.get_cmdline_user_args():preload("res://scripts/release_smoke.gd").run(self)
 
+func add_visit_opening(outline:PackedVector2Array,bottom:float,top:float,label:String)->bool:
+	return campus_visits!=null and campus_visits.replace_shell(outline,bottom,top,label)
+
+func has_teaching_interior(id: String) -> bool:
+	return campus_visits != null and campus_visits.teaching_building_open(id)
+
+func has_selected_visit_door()->bool:
+	return campus_visits!=null and campus_visits.selected!=null
+
+func activate_visit_door()->bool:
+	return campus_visits!=null and campus_visits.interact()
+
 func setup_building_occlusion():
 	# These four opaque hall volumes block the buildings behind the main avenue.
 	# Inset occluders stay inside the facade; the courtyard and entrances remain open.
 	get_viewport().use_occlusion_culling=true
 	if photo_view:photo_view.use_occlusion_culling=true
 	if reflection_view:reflection_view.use_occlusion_culling=true
+	if campus_visits and campus_visits.opened_shell("TeachingHallNorth"):
+		# Inset the occluders into the facade so they never cover the occupied rooms.
+		_hall_occluder("NorthUpper",Vector3(0,10.01,168.58),Vector3(122,11.98,.16))
+		for side in [-1,1]:
+			_hall_occluder("NorthSide"+str(side),Vector3(side*33.05,2.51,168.58),Vector3(55.9,3.04,.16))
 	for body in world.get_children():
 		if not body is StaticBody3D or not String(body.name).begins_with("TeachingHall"):continue
 		var collision=body.get_child(0)
 		if not collision is CollisionShape3D or not collision.shape is BoxShape3D:continue
-		var occluder=OccluderInstance3D.new();occluder.name="HallOcclusion_"+String(body.name)
-		var box=BoxOccluder3D.new();box.size=collision.shape.size-Vector3(2,2,8)
-		occluder.occluder=box;occluder.transform=body.transform;world.add_child(occluder)
+		_hall_occluder(body.name,body.position,collision.shape.size-Vector3(2,2,8))
+
+func _hall_occluder(label: String, center: Vector3, size: Vector3) -> void:
+	var instance:=OccluderInstance3D.new()
+	instance.name="HallOcclusion_"+label
+	var box:=BoxOccluder3D.new()
+	box.size=size
+	instance.occluder=box
+	instance.position=center
+	world.add_child(instance)
 
 func setup_hud():
 	hud=CanvasLayer.new();add_child(hud)
 	var root=Control.new();root.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	root.mouse_filter=Control.MOUSE_FILTER_IGNORE;hud.add_child(root)
-	var theme=Theme.new();var font=SystemFont.new();font.font_names=PackedStringArray(["Microsoft YaHei","Segoe UI"])
+	var theme=Theme.new();var font=preload("res://scripts/campus_font.gd").get_font()
 	theme.default_font=font;root.theme=theme
 	var title=label("科大云宇宙 · 校园漫游",25,Color("fff9e5"));title.position=Vector2(28,22);root.add_child(title)
 	spot_label=label("从老北门出发 · 樱花大道 → 双池与一鉴亭 → 第一教学楼",14,Color("edf1df"))
@@ -87,21 +137,28 @@ func setup_hud():
 		button.pressed.connect(func():player.set_free_camera(choice=="自由相机");Input.mouse_mode=Input.MOUSE_MODE_CAPTURED)
 		controls.add_child(button);control_buttons.append(button)
 	var copy=Button.new();copy.text="复制中心坐标";copy.pressed.connect(func():locator.copy_position());controls.add_child(copy)
-	var destinations=OptionButton.new();destinations.text="选择查看区域";controls.add_child(destinations)
+	var destinations=OptionButton.new()
+	# The region menu must not activate on the player's Space jump key.
+	destinations.focus_mode=Control.FOCUS_NONE
+	destinations.text="选择查看区域"
+	controls.add_child(destinations)
 	for destination in ["老北门", "广场", "五教／新北门", "图书馆", "运动场", "南侧球场", "东侧住宅", "校史馆／行政楼", "南部科研楼群"]:destinations.add_item(destination)
 	destinations.item_selected.connect(func(i):
 		var locations=[[Vector3(0,.16,12),Vector3(0,1.6,80)],[Vector3(12,.16,258),Vector3(-.597,1.8,244.127)],
-			[Vector3(170,.16,20),Vector3(199,2,6)],[Vector3(20,.16,444),Vector3(2.1,6,430)],
+			[Vector3(170,.16,20),TEACHING5_ENTRY_VIEW],[Vector3(20,.16,444),Vector3(2.1,6,430)],
 			[Vector3(-187,.16,418),Vector3(-236,2,450)],[Vector3(-236,.16,589),Vector3(-207,1.5,607)],
 			[Vector3(255,.16,406),Vector3(225,4,414)],[Vector3(55.7,.16,523),Vector3(25,5,523)],
 			[Vector3(97.6,.16,713.3),Vector3(165,28,707)]]
 		player.set_view(locations[i][0],locations[i][1]);Input.mouse_mode=Input.MOUSE_MODE_CAPTURED)
-	var help=label("WASD 移动    Shift 加速    Space 人物跳跃    V 人物/自由相机    Q/E 相机下降/上升    滚轮 调整相机速度/距离\nTab 第一/第三人称    Esc 释放鼠标    R 北门    2—9 区域跳转    C 坐标    F 界面    F12 截图+坐标记录",14,Color("edf1df"))
+	var interaction := "    E 开关门／交谈" if campus_visits else ""
+	var help=label("WASD 移动    Shift 加速    Space 跳跃    V 人物／自由相机    Q/E 自由相机升降"+interaction+
+		"\nTab 第一／第三人称    Esc 释放鼠标    R 北门    2—9 区域跳转    C 坐标    F 界面    F12 截图+坐标记录",14,Color("edf1df"))
 	help.set_anchors_and_offsets_preset(Control.PRESET_BOTTOM_LEFT);help.position=Vector2(28,-64);root.add_child(help)
 
 func _process(dt):
 	super._process(dt)
 	if not game_ready:return
+	update_scene_fade()
 	if net:
 		net_prune_clock+=dt
 		if net_prune_clock>=1.0:
@@ -137,7 +194,7 @@ func _unhandled_input(e):
 		match e.keycode:
 			KEY_R:player.set_view(player.respawn_position,player.respawn_target)
 			KEY_2:player.set_view(Vector3(12,.16,258),Vector3(-.597,1.8,244.127))
-			KEY_3:player.set_view(Vector3(170,.16,20),Vector3(199,2,6))
+			KEY_3:player.set_view(Vector3(170,.16,20),TEACHING5_ENTRY_VIEW)
 			KEY_4:player.set_view(Vector3(20,.16,444),Vector3(2.1,6,430))
 			KEY_5:player.set_view(Vector3(-187,.16,418),Vector3(-236,2,450))
 			KEY_6:player.set_view(Vector3(-236,.16,589),Vector3(-207,1.5,607))
@@ -157,11 +214,51 @@ func apply_quality(use_balanced:bool):
 	sun.directional_shadow_pancake_size=120.0
 	sun.directional_shadow_blend_splits=true
 	for n in detail_batches:
+		if n.get_meta("paired_vegetation_lod",false):
+			continue
 		n.visibility_range_end=90.0 if balanced else 0.0
 		n.visibility_range_end_margin=8.0 if balanced else 0.0
 	reflection_elapsed=1.0
 
+func scene_fade_distance(camera: Camera3D) -> Vector2:
+	# Let higher free-camera views cover more of the campus without a mode switch.
+	var altitude_offset := clampf(camera.global_position.y - 35.0, 0.0, 520.0)
+	return SCENE_FADE_DISTANCE + Vector2.ONE * altitude_offset
+
+func configure_scene_fade() -> void:
+	live_environment.fog_enabled = true
+	live_environment.fog_mode = Environment.FOG_MODE_DEPTH
+	live_environment.fog_density = 1.0
+	live_environment.fog_light_color = SCENE_HAZE
+	live_environment.fog_aerial_perspective = 0.0
+	live_environment.fog_sky_affect = 0.0
+	# Match the horizon to the fully fogged geometry before the camera clips it.
+	# Give the shorter view distance a taller band for the same buildings.
+	var distance := scene_fade_distance(player.camera)
+	var skyline := 72.0 / distance.y
+	var sky_material := live_environment.sky.sky_material as ShaderMaterial
+	sky_material.set_shader_parameter("horizon_haze", SCENE_HAZE)
+	sky_material.set_shader_parameter("horizon_haze_range", Vector2(skyline, skyline + 0.12))
+	update_scene_fade()
+
+func update_scene_fade() -> void:
+	if live_environment.fog_mode != Environment.FOG_MODE_DEPTH:
+		return
+	var camera := get_viewport().get_camera_3d()
+	if not camera:
+		return
+	var distance := scene_fade_distance(camera)
+	if not is_equal_approx(live_environment.fog_depth_end, distance.y):
+		live_environment.fog_depth_begin = distance.x
+		live_environment.fog_depth_end = distance.y
+	# By the time clipping drops distant geometry, its silhouette is already hidden.
+	var clip_distance := distance.y + SCENE_CLIP_MARGIN
+	if not is_equal_approx(camera.far, clip_distance):
+		camera.far = clip_distance
+
 func update_reflection():
+	if is_instance_valid(runtime_render_policy):
+		runtime_render_policy.update_reflection();return
 	if not game_ready or not balanced:
 		super.update_reflection();return
 	reflection_elapsed+=get_process_delta_time()
@@ -194,6 +291,7 @@ func local_net_state()->Array:
 		player.velocity.y,1.0 if player.is_on_floor() else 0.0]
 
 func setup_net():
+	if OS.has_feature("web"):return
 	var host_mode=false
 	var address=""
 	var port=45888
@@ -219,7 +317,7 @@ func setup_net():
 	if not host_mode and address=="":
 		return
 	setup_net_hud()
-	net=preload("res://scripts/net_session.gd").new()
+	net=load("res://scripts/net_session.gd").new()
 	net.name="NetSession"
 	add_child(net)
 	net.peer_state.connect(_on_peer_state)

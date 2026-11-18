@@ -16,9 +16,9 @@
   },
   "triangles": 499204,
   "vertices": 1011760,
-  "mesh_nodes": 11,
-  "glb_bytes": 30190480,
-  "output_sha256": "0d961c5f048ae8d0390e9d5fe25a798d27478846ae7deab6ab2c633a915e8457",
+  "mesh_nodes": 13,
+  "glb_bytes": 30187616,
+  "output_sha256": "d2f19fc567715a236d1df06276ead5cec5280088b4a42d4f4a6376aa418e0801",
   "selection": {
     "hall_inclusive_xyz_min_max": [
       -63.0,
@@ -314,18 +314,43 @@
       ]
     },
     {
+      "node": "PhotoVisitGlass_Architecture_Frame",
+      "source": "architecture.glb",
+      "source_node": "Architecture_Frame",
+      "role": "PhotoVisitGlass",
+      "material": "Frame",
+      "vertices": 1536,
+      "triangles": 752,
+      "bounds_godot_m": {
+        "min": [
+          -2.145,
+          0.15,
+          167.300003
+        ],
+        "max": [
+          3.945,
+          4.25,
+          167.399994
+        ]
+      },
+      "preserved_attributes": [
+        "POSITION",
+        "NORMAL"
+      ]
+    },
+    {
       "node": "ArchivedLookDevHall_Architecture_Frame",
       "source": "architecture.glb",
       "source_node": "Architecture_Frame",
       "role": "ArchivedLookDevHall",
       "material": "Frame",
-      "vertices": 796024,
-      "triangles": 390664,
+      "vertices": 794488,
+      "triangles": 389912,
       "bounds_godot_m": {
         "min": [
           -62.220001,
-          0.15,
-          167.300003
+          1.15,
+          168.087494
         ],
         "max": [
           62.220001,
@@ -339,18 +364,43 @@
       ]
     },
     {
+      "node": "PhotoVisitGlass_Architecture_Glass",
+      "source": "architecture.glb",
+      "source_node": "Architecture_Glass",
+      "role": "PhotoVisitGlass",
+      "material": "Glass",
+      "vertices": 96,
+      "triangles": 48,
+      "bounds_godot_m": {
+        "min": [
+          -3.9,
+          0.2,
+          167.440002
+        ],
+        "max": [
+          3.9,
+          4.2,
+          167.520004
+        ]
+      },
+      "preserved_attributes": [
+        "POSITION",
+        "NORMAL"
+      ]
+    },
+    {
       "node": "ArchivedLookDevHall_Architecture_Glass",
       "source": "architecture.glb",
       "source_node": "Architecture_Glass",
       "role": "ArchivedLookDevHall",
       "material": "Glass",
-      "vertices": 6264,
-      "triangles": 3132,
+      "vertices": 6168,
+      "triangles": 3084,
       "bounds_godot_m": {
         "min": [
           -62.174999,
-          0.2,
-          167.440002
+          1.2,
+          168.172501
         ],
         "max": [
           62.174999,
@@ -823,5 +873,13 @@
     "Original archived .018m bevel tessellation remains expensive; no optimization or aesthetic redesign in this extraction.",
     "This is asset integrity/alignment validation, not a Godot rendering or walkability result."
   ],
-  "builder_sha256": "3f6acb6e7be03d12980db2e86a6ae3414be8b77cc17fa93ac765d973843d5c92"
+  "builder_sha256": "6fae918470b06035b28990c927fb47efd5bf828a390a7463c235c3aeeed8734d",
+  "public_entry_glazing_bounds": [
+    -4.61,
+    0.12,
+    167.26,
+    4.61,
+    4.32,
+    167.64
+  ]
 }

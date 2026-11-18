@@ -1,7 +1,11 @@
 """Build only the new southern court equipment and mapped building exteriors."""
 from pathlib import Path
-import bpy,bmesh,json,math
+import bpy,bmesh,json,math,sys
 script=Path(__file__).resolve()
+sys.path.insert(0,str(script.parent))
+from mapped_landmark_details import MATERIALS, install_photo_materials
+from science_exteriors import SCIENCE_MATERIALS
+from sports_exteriors import SOUTH_PHOTO, SPORTS_MATERIALS, add_exterior
 helpers=(script.parent/'build_north_teaching.py').read_text(encoding='utf-8').split('# Exact snapshot footprints')[0]
 exec(compile(helpers,'campus_exterior_helpers','exec'),globals())
 for name,col in [('SouthDormPlaster',(.69,.70,.65)),('HumanitiesWarmBrick',(.50,.24,.15)),
@@ -9,6 +13,8 @@ for name,col in [('SouthDormPlaster',(.69,.70,.65)),('HumanitiesWarmBrick',(.50,
                  ('ServicePlaster',(.70,.67,.56)),('BalconyRail',(.40,.48,.44)),
                  ('CourtFrame',(.09,.27,.20)),('BasketBackboard',(.76,.81,.77)),
                  ('BasketRed',(.66,.18,.06)),('CourtNet',(.63,.67,.60))]:material(name,col)
+for palette in (MATERIALS,SCIENCE_MATERIALS,SPORTS_MATERIALS):
+    install_photo_materials(material,materials,palette)
 data=json.loads((ROOT/'godot/data/south_sports.json').read_text(encoding='utf-8'))
 manifest={'unit':'meter','placement':[0,0,0],'buildings':data['buildings'],'assets':{},'collision_solids':solids,
           'sources':data['sources'],'confidence':'Mapped outlines; GIS building color/massing and official balconies/tennis references. Unseen facade bays, storeys and doorway details approximated.'}
@@ -21,38 +27,17 @@ def tube(a,b,r,mat,n=8):
 
 for b in data['buildings']:
     wid=b['osm_way'];asset='south_dorm364_365' if wid=='271959068' else ('south_badminton_hall' if wid=='271959067' else 'south_service_buildings')
+    if signed_area(b["outline"])<0:
+        b["outline"].reverse()
     wall='SouthDormPlaster' if wid=='271959068' else ('HumanitiesWarmBrick' if wid=='1135310336' else ('SolarLabBrick' if wid=='1135310342' else ('SportsHallIvory' if wid=='271959067' else 'ServicePlaster')))
+    if wid in SOUTH_PHOTO:
+        part='PhotoExterior'
+        b['front_approach']=list(add_exterior(asset,b,geo,slab,edgebox,inscription,solids,facade))
+        continue
     p=facade(b['outline'],b['levels'],b['height'],wall,pitch=3.15 if wid=='271959068' else 3.6)
-    if wid=='271959068':
-        part='Balconies'
-        # Facing sides of the 364/365 wings have balconies; the courtyard stays open.
-        for a,c in zip(p,p[1:]+p[:1]):
-            midz=(a[1]+c[1])/2;length=math.dist(a,c)
-            if length<45 or not (611<midz<615 or 636<midz<640):continue
-            for floor in range(1,b['levels']):
-                y=.26+floor*(b['height']-.5)/b['levels']
-                edgebox(a,c,0,length,y,y+.14,.04,1.40,'SouthDormPlaster')
-                edgebox(a,c,0,length,y+.96,y+1.02,1.34,1.40,'BalconyRail')
-                edgebox(a,c,0,length,y+.22,y+.28,1.34,1.40,'BalconyRail')
-                for k in range(int(length/.85)+1):
-                    s=min(length,k*.85);edgebox(a,c,max(0,s-.025),min(length,s+.025),y+.16,y+1.02,1.34,1.40,'BalconyRail')
-                for k in range(int(length/3.2)+1):
-                    s=min(length,k*3.2);edgebox(a,c,max(0,s-.08),min(length,s+.08),y,y+3.0,.15,1.42,'SouthDormPlaster')
-        a,c=next((a,c) for a,c in zip(p,p[1:]+p[:1]) if 613<(a[1]+c[1])/2<638 and -332<(a[0]+c[0])/2<-328 and math.dist(a,c)>20)
-        approach=entry(a,c,5.2,3,'研究生公寓364 / 365')
-    elif wid=='271959067':
-        # East doorway opens onto the mapped north/south spine, away from dormitory walls.
-        a,c=max(zip(p,p[1:]+p[:1]),key=lambda e:(e[0][0]+e[1][0])/2 if math.dist(*e)>10 else -1000)
-        approach=entry(a,c,5.2,2,'羽毛球馆')
-        part='HallRoof';xs=[q[0] for q in p];zs=[q[1] for q in p]
-        for k in range(20):
-            x=min(xs)+(max(xs)-min(xs))*(k+.5)/20
-            box((x,b['height']+.54,(min(zs)+max(zs))/2),(.08,.07,max(zs)-min(zs)),'WindowAluminium')
-    else:
-        edges=[(a,c) for a,c in zip(p,p[1:]+p[:1]) if math.dist(a,c)>7 and abs(a[1]-c[1])<2]
-        # North entries serve the lab/International College; other frontages face the southern lane.
-        a,c=(min if wid in ['1135310342','270334649','271958264'] else max)(edges,key=lambda e:(e[0][1]+e[1][1])/2)
-        approach=entry(a,c,3.4 if wid=='271958265' else 4.5,2,b['name'])
+    edges=[(a,c) for a,c in zip(p,p[1:]+p[:1]) if math.dist(a,c)>7 and abs(a[1]-c[1])<2]
+    a,c=(min if wid in ['1135310342','271958264'] else max)(edges,key=lambda e:(e[0][1]+e[1][1])/2)
+    approach=entry(a,c,3.4 if wid=='271958265' else 4.5,2,b['name'])
     b['front_approach']=list(approach)
 
 asset='south_court_equipment';part='BasketballHoops'
@@ -104,9 +89,11 @@ for asset,obs in objects.items():
         ob=bpy.context.view_layer.objects.active;ob.name=asset+'_'+mat;merged.append(ob)
     bpy.ops.object.select_all(action='DESELECT')
     for ob in merged:ob.select_set(True)
-    bpy.ops.export_scene.gltf(filepath=str(ROOT/'godot/assets'/f'{asset}.glb'),export_format='GLB',use_selection=True,export_apply=True,export_yup=True)
+    args.output_dir.mkdir(parents=True,exist_ok=True)
+    bpy.ops.export_scene.gltf(filepath=str(args.output_dir/f'{asset}.glb'),export_format='GLB',use_selection=True,export_apply=True,export_yup=True)
     count=0
     for ob in merged:ob.data.calc_loop_triangles();count+=len(ob.data.loop_triangles)
     manifest['assets'][asset]={'file':asset+'.glb','surfaces':len(merged),'triangles':count};print('SOUTH_ASSET',asset,count)
-(ROOT/'godot/assets/south_sports_manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
-bpy.ops.wm.save_as_mainfile(filepath=str(ROOT/'blender/source/south_sports.blend'))
+(args.output_dir/'south_sports_manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+if args.output_dir==ROOT/'godot/assets':
+    bpy.ops.wm.save_as_mainfile(filepath=str(ROOT/'blender/source/south_sports.blend'))

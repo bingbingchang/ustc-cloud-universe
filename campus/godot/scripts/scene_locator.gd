@@ -17,7 +17,7 @@ func _ready():
 	regions.sort_custom(func(a,b):return footprint_area(a)<footprint_area(b))
 	var north=preload("res://scripts/north_axis_environment.gd")
 	core_regions=[north._core(),north.polygon(north.layout().polygon)]
-	var font=SystemFont.new();font.font_names=PackedStringArray(["Consolas","Microsoft YaHei"])
+	var font=preload("res://scripts/campus_font.gd").get_font()
 	var theme=Theme.new();theme.default_font=font;theme.default_font_size=int(15*ui_scale)
 	var control=Control.new();control.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT);control.mouse_filter=Control.MOUSE_FILTER_IGNORE;add_child(control)
 	panel=PanelContainer.new();panel.theme=theme;panel.mouse_filter=Control.MOUSE_FILTER_IGNORE

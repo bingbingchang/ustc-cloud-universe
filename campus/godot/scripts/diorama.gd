@@ -153,14 +153,26 @@ func model_boundary(side:String):
 
 func build_collisions():
 	preload("res://scripts/north_axis_solids.gd").build(self)
-	static_box(Vector3(0,8.5,176),Vector3(124,17,16),"TeachingHallNorth")
-	for x in [-55,55]:static_box(Vector3(x,8.5,201),Vector3(14,17,42),"TeachingHallWing")
-	static_box(Vector3(0,8.5,183.8),Vector3(31,17,11),"TeachingHallCenter")
+	var main_hall_open: bool = has_method("add_visit_opening") and call("add_visit_opening",
+		NorthAxis._rect(-62,168,124,16),0.0,17.0,"TeachingHallNorth")
+	if not main_hall_open:
+		static_box(Vector3(0,8.5,176),Vector3(124,17,16),"TeachingHallNorth")
+	if not main_hall_open or not has_method("has_teaching_interior") or not call("has_teaching_interior", "teaching-one"):
+		for x in [-55,55]:static_box(Vector3(x,8.5,201),Vector3(14,17,42),"TeachingHallWing")
+		static_box(Vector3(0,8.5,183.8),Vector3(31,17,11),"TeachingHallCenter")
 	for i in range(4):
 		var h=.12*(i+1);static_box(Vector3(0,h/2,165+i*.45),Vector3(12,h,.48),"EntryTread")
 	static_box(Vector3(0,.24,166.85),Vector3(12,.48,.75),"EntryLanding")
 	for x in [-10.2,10.2]:static_box(Vector3(x,.28,166.4),Vector3(4.3,.56,1.5),"EntryPlanter")
-	static_box(Vector3(0,2,167.5),Vector3(9,4,.4),"EntranceGlass")
+	if not main_hall_open:
+		static_box(Vector3(0,2,167.5),Vector3(9,4,.4),"EntranceGlass")
+	if OS.has_feature("windows"):
+		var details:=load("res://scripts/north_axis_photo_details.gd")
+		details.old_gate(self)
+		details.teaching_one(self,main_hall_open)
+		details.lake_viewing_bank(self)
+		details.expert_hotel(self)
+		details.expert_apartments(self)
 
 func paths():
 	box(Vector3(0,.03,143),Vector3(8,.10,50),mats.path,true)
@@ -237,7 +249,8 @@ func furniture():
 		for z in [160.0,160.5]:box(Vector3(x,.38,z),Vector3(.05,.76,.05),mats.dark)
 		box(Vector3(x,.76,160.25),Vector3(.05,.05,.55),mats.dark)
 		static_box(Vector3(x,.4,160.25),Vector3(.12,.8,.65),"CycleRack")
-	var title=Label3D.new();title.text="第一教学楼";title.position=Vector3(0,5.55,167.54);title.rotation.y=PI;title.font_size=64;title.pixel_size=.008;title.modulate=Color("ede0bb");title.outline_size=0;world.add_child(title)
+	if not has_method("has_teaching_interior") or not call("has_teaching_interior", "teaching-one"):
+		var title=Label3D.new();title.text="第一教学楼";title.position=Vector3(0,5.55,167.54);title.rotation.y=PI;title.font_size=64;title.pixel_size=.008;title.modulate=Color("ede0bb");title.outline_size=0;world.add_child(title)
 
 func setup_environment():
 	super.setup_environment()

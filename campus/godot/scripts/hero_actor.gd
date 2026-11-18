@@ -28,6 +28,7 @@ func _ready():
 	for mesh in model.find_children("*","MeshInstance3D",true,false):mesh.layers=mesh.layers|16
 	prepare();bones.Book.hide()
 	nameplate=Label3D.new();nameplate.text=definition.name+"\n"+definition.title
+	if OS.has_feature("web"):nameplate.font=preload("res://scripts/campus_font.gd").get_font()
 	nameplate.position.y=float(appearance.height)+.30;nameplate.font_size=32;nameplate.pixel_size=.0035
 	nameplate.modulate=Color(definition.color).lightened(.4);nameplate.outline_size=6
 	nameplate.billboard=BaseMaterial3D.BILLBOARD_ENABLED;nameplate.visibility_range_end=22;add_child(nameplate)
@@ -92,6 +93,9 @@ func pose_clip(state:String,t:float):
 
 func make_clips():
 	animator=AnimationPlayer.new();animator.name="CharacterAnimations";animator.callback_mode_process=2;add_child(animator)
+	var baked="res://web/npc_animations/"+str(definition.id)+".res"
+	if OS.has_feature("web") and ResourceLoader.exists(baked):
+		animator.add_animation_library("",load(baked));return
 	var library=AnimationLibrary.new()
 	for state in CLIPS:
 		var animation=Animation.new();animation.length=float(CLIPS[state])

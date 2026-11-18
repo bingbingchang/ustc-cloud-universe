@@ -1393,8 +1393,8 @@
       ]
     },
     "NorthPavilion": {
-      "objects": 6,
-      "triangles": 78392,
+      "objects": 7,
+      "triangles": 71696,
       "godot_bounds_min": [
         37.923912048339844,
         -0.3499999940395355,
@@ -1435,7 +1435,7 @@
       ]
     },
     "NorthBridges": {
-      "objects": 3,
+      "objects": 4,
       "triangles": 53596,
       "godot_bounds_min": [
         -45.43267822265625,
@@ -1512,7 +1512,7 @@
     "https://news.ustc.edu.cn/info/1056/94500.htm"
   ],
   "confidence": "OSM footprints and adjacency medium; photographed architecture character high; heights, joinery, expert facade/roof subdivision are estimated",
-  "total_triangles": 476656,
+  "total_triangles": 469960,
   "collision_policy": "Root loads box/cylinder/beam only. Four building polygons are informational and already built by north_axis_environment. Bridge and pavilion walkable decks/slopes belong exclusively to environment. No water blockers or ground added here.",
   "exports": [
     "godot/assets/north_axis_architecture.glb",

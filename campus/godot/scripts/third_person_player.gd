@@ -1,7 +1,7 @@
 extends "res://scripts/player.gd"
 
-const WALK_SPEED=2.6
-const RUN_SPEED=5.0
+const WALK_SPEED=5.2
+const RUN_SPEED=10.0
 const GRAVITY=16.0
 const JUMP_SPEED=5.6
 var orbit:Node3D
@@ -12,6 +12,17 @@ var jump_buffer=0.0
 var floor_grace=0.0
 var jump_count=0
 var fly_speed=12.0
+var touch_mode=false
+var touch_move=Vector2.ZERO
+var touch_jump=false
+
+func touch_look(relative:Vector2):
+	if not enabled or not touch_mode:return
+	orbit.rotation.y-=relative.x*.003
+	pitch=clampf(pitch-relative.y*.003,-1.05,.65);arm.rotation.x=pitch
+
+func clear_touch():
+	touch_move=Vector2.ZERO;touch_jump=false
 
 func set_free_camera(flying:bool):
 	if flying==free_camera:return
@@ -62,6 +73,9 @@ func toggle_view():
 
 func _unhandled_input(e):
 	if not enabled:return
+	# Touch also emits compatibility mouse events. Only the owned right-hand
+	# touch gesture may turn the camera on phones; GUI mouse emulation stays on.
+	if touch_mode and e is InputEventMouse:return
 	if e is InputEventKey and e.pressed and not e.echo:
 		if e.keycode==KEY_ESCAPE:Input.mouse_mode=Input.MOUSE_MODE_VISIBLE
 		if e.keycode==KEY_V:toggle_free_camera();get_viewport().set_input_as_handled()
@@ -72,17 +86,22 @@ func _unhandled_input(e):
 			fly_speed=clampf(fly_speed*(1.2 if e.button_index==MOUSE_BUTTON_WHEEL_UP else 1.0/1.2),2,120)
 		elif third_person and e.button_index in [MOUSE_BUTTON_WHEEL_UP,MOUSE_BUTTON_WHEEL_DOWN]:
 			arm.spring_length=clampf(arm.spring_length+(-.4 if e.button_index==MOUSE_BUTTON_WHEEL_UP else .4),2.0,6.5)
-	if e is InputEventMouseMotion and Input.mouse_mode==Input.MOUSE_MODE_CAPTURED:
+	if e is InputEventMouseMotion and (Input.mouse_mode==Input.MOUSE_MODE_CAPTURED or (OS.has_feature("web") and e.button_mask&MOUSE_BUTTON_MASK_LEFT)):
+		var motion=e.screen_relative if Input.mouse_mode==Input.MOUSE_MODE_CAPTURED else e.relative
 		if free_camera:
-			camera.rotation.y-=e.screen_relative.x*.0021;camera.rotation.x=clampf(camera.rotation.x-e.screen_relative.y*.0021,-1.5,1.5);return
-		orbit.rotation.y-=e.screen_relative.x*.0021
-		pitch=clampf(pitch-e.screen_relative.y*.0021,-1.05,.65)
+			camera.rotation.y-=motion.x*.0021;camera.rotation.x=clampf(camera.rotation.x-motion.y*.0021,-1.5,1.5);return
+		orbit.rotation.y-=motion.x*.0021
+		pitch=clampf(pitch-motion.y*.0021,-1.05,.65)
 		arm.rotation.x=pitch
 
 func _physics_process(dt):
 	if frozen:return
-	var active=enabled and Input.mouse_mode==Input.MOUSE_MODE_CAPTURED
-	var input=Input.get_vector("left","right","forward","back") if active else Vector2.ZERO
+	var active=enabled and (touch_mode or Input.mouse_mode==Input.MOUSE_MODE_CAPTURED)
+	# Embedded browsers may deny pointer lock. A focused canvas still accepts controls.
+	if enabled and OS.has_feature("web") and not active:
+		active=bool(JavaScriptBridge.eval("document.hasFocus() && document.activeElement === document.getElementById('canvas')",true))
+	if not enabled:clear_touch()
+	var input=(Input.get_vector("left","right","forward","back")+(touch_move if touch_mode else Vector2.ZERO)).limit_length() if active else Vector2.ZERO
 	if free_camera:
 		var flight=camera.global_basis*Vector3(input.x,0,input.y)
 		if active and Input.is_action_pressed("up"):flight.y+=1
@@ -96,7 +115,8 @@ func _physics_process(dt):
 	velocity.z=move_toward(velocity.z,dir.z*speed,acceleration*dt)
 	jump_buffer=maxf(0,jump_buffer-dt)
 	floor_grace=.10 if is_on_floor() else maxf(0,floor_grace-dt)
-	if active and Input.is_action_just_pressed("jump"):jump_buffer=.12
+	if active and (touch_jump or Input.is_action_just_pressed("jump")):jump_buffer=.12
+	touch_jump=false
 	velocity.y=-.5 if is_on_floor() else velocity.y-GRAVITY*dt
 	if jump_buffer>0 and floor_grace>0:
 		velocity.y=JUMP_SPEED;jump_buffer=0;floor_grace=0;jump_count+=1
@@ -121,4 +141,5 @@ func _physics_process(dt):
 
 func _notification(what):
 	if what==NOTIFICATION_APPLICATION_FOCUS_OUT:
+		clear_touch()
 		Input.mouse_mode=Input.MOUSE_MODE_VISIBLE

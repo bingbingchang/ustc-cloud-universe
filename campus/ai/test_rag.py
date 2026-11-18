@@ -26,7 +26,12 @@ def test_sources_and_role_isolation():
 
 @pytest.fixture
 def api(monkeypatch):
+    monkeypatch.setenv("MODEL_CALLS_PER_MINUTE", "100") # Full roster protocol, mocked upstream.
     monkeypatch.setenv("RAG_LEXICAL_ONLY", "1")
+    monkeypatch.setenv("AI_PROVIDER", "ustc")
+    monkeypatch.setenv("USTC_API_KEY", "test-key-not-a-real-credential")
+    monkeypatch.setenv("USTC_BASE_URL", "https://api.llm.ustc.edu.cn/v1")
+    monkeypatch.setenv("USTC_MODEL", "deepseek-v4-flash")
     import app
     importlib.reload(app)
     with TestClient(app.app) as client:
@@ -48,7 +53,7 @@ def test_generation_receives_scoped_evidence_and_keeps_citations(api):
     assert data["has_valid_citations"] and data["sources"][0]["citation"] == 1
     assert all("lib.ustc.edu.cn" in s["url"] for s in data["sources"])
     assert "检索资料" in captured["messages"][0]["content"]
-    assert captured["chat_template_kwargs"] == {"enable_thinking": False}
+    assert "chat_template_kwargs" not in captured
 
 
 def test_model_failure_is_reported_and_unknown_role_rejected(api):

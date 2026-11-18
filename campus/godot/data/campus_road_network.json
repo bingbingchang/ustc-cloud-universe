@@ -147,7 +147,7 @@
       ],
       "width": 8.0,
       "sidewalk_width": 1.5,
-      "surface": "asphalt",
+      "surface": "pavers",
       "osm_highway": "service",
       "osm_node_ids": [
         "2705289539",
@@ -644,6 +644,10 @@
         [
           168.161,
           621.179
+        ],
+        [
+          171.964,
+          621.14
         ]
       ],
       "width": 6.0,
@@ -662,7 +666,7 @@
         "url": "https://www.openstreetmap.org/way/265033439",
         "timestamp": "2023-03-06T02:52:42Z",
         "version": "4",
-        "geometry": "OSM road centerline, unchanged local site.json transform",
+        "geometry": "OSM road centerline with the final approach connected to the Zhixue Road junction",
         "map": "references/maps/east_campus.png"
       },
       "clipped_to_campus_boundary": false,
@@ -6494,6 +6498,10 @@
         [
           182,
           218
+        ],
+        [
+          181.995,
+          220.217
         ]
       ],
       "width": 2,
@@ -7204,6 +7212,60 @@
       "name": "东区图书馆",
       "outline": [
         [
+          -32.850218,
+          400.278288
+        ],
+        [
+          39.145,
+          401.108099
+        ],
+        [
+          38.851109,
+          426.606405
+        ],
+        [
+          18.552457,
+          426.372445
+        ],
+        [
+          18.547847,
+          426.772418
+        ],
+        [
+          8.748498,
+          426.659472
+        ],
+        [
+          8.753108,
+          426.259498
+        ],
+        [
+          -3.046108,
+          426.123502
+        ],
+        [
+          -3.050718,
+          426.523475
+        ],
+        [
+          -12.850067,
+          426.410529
+        ],
+        [
+          -12.845457,
+          426.010555
+        ],
+        [
+          -33.144109,
+          425.776595
+        ]
+      ],
+      "levels": 6,
+      "height": 24.3,
+      "source": "https://www.openstreetmap.org/way/284161541",
+      "confidence": "Six uploaded multiview references define the replacement proportions; 72 m width, 25.5 m depth, 24.3 m main roof and 32.1 m crown are image-derived estimates, not surveyed dimensions. The campus entrance origin and 3.18 m landing remain fixed.",
+      "source_osm_outline": [
+        [
           5.592,
           395.264
         ],
@@ -7340,10 +7402,14 @@
           395.311
         ]
       ],
-      "levels": 6,
-      "height": 21.6,
-      "source": "https://www.openstreetmap.org/way/284161541",
-      "confidence": "OSM footprint; library 6/Teaching 2 8 floors confirmed official pages; other heights estimated"
+      "replica_dimensions": {
+        "width": 72.0,
+        "depth": 25.5,
+        "main_roof": 24.3,
+        "tower_roof": 29.4,
+        "crown_top": 32.1,
+        "estimated": true
+      }
     },
     {
       "osm_way": "271958257",

@@ -20,7 +20,7 @@ func _ready():
 	cs.shape=cap;cs.position.y=.875;add_child(cs)
 	camera=Camera3D.new();camera.name="Eyes";camera.position.y=1.65;camera.fov=64;camera.far=850;camera.near=.075;add_child(camera)
 	camera.current=true
-	Input.mouse_mode=Input.MOUSE_MODE_CAPTURED
+	Input.mouse_mode=Input.MOUSE_MODE_VISIBLE if OS.has_feature("web") else Input.MOUSE_MODE_CAPTURED
 	set_view(Vector3(0,.10,15),Vector3(0,8,174))
 
 func set_view(pos:Vector3,target:Vector3):

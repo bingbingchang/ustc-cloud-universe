@@ -1,0 +1,195 @@
+[
+  {
+    "id": "teaching-five",
+    "building": "五教王璞楼",
+    "asset": "Teaching5",
+    "model": "NorthTeaching5",
+    "shell": "NorthAcademic_Teaching5_closed_exterior",
+    "edge": [[190.435, -1.403], [178.797, -9.129]],
+    "floor": 0.48,
+    "height": 3.62,
+    "width": 11.8,
+    "depth": 6.4,
+    "style": "teaching",
+    "doors": [
+      {"id": "west-a", "offset": -0.07, "span": 0.133, "height": 2.37, "outset": -0.05, "panel": "silver", "motion": "hinged"},
+      {"id": "west-b", "offset": 0.07, "span": 0.133, "height": 2.37, "outset": -0.05, "panel": "silver", "motion": "hinged"}
+    ]
+  },
+  {
+    "id": "new-library",
+    "building": "东区新图书馆",
+    "asset": "south_library",
+    "model": "SouthLibrary",
+    "shell": "LibraryDistrict_south_library_closed_exterior",
+    "edge": [[9.751, 426.271], [-4.044, 426.112]],
+    "floor": 3.18,
+    "height": 4.7,
+    "width": 12.8,
+    "depth": 8.4,
+    "style": "library",
+    "doors": [
+      {"id": "upper-east", "offset": -0.08698226168237042, "span": 0.162, "height": 2.25, "outset": 0.14, "panel": "charcoal", "motion": "hinged"},
+      {"id": "upper-west", "offset": 0.08698226168237042, "span": 0.162, "height": 2.25, "outset": 0.14, "panel": "charcoal", "motion": "hinged"}
+    ]
+  },
+  {
+    "id": "history-museum",
+    "building": "校史馆",
+    "asset": "mapped_271365634",
+    "model": "Mapped271365634",
+    "shell": "MappedBuilding_mapped_271365634_closed_exterior",
+    "edge": [[48.424, 527.503], [62.807, 527.517]],
+    "floor": 0.318,
+    "height": 3.25,
+    "width": 8.8,
+    "depth": 6.2,
+    "style": "museum",
+    "doors": [
+      {"id": "main", "offset": 0.0, "span": 0.145, "height": 2.54, "outset": -0.08, "panel": "wood", "motion": "hinged"}
+    ]
+  },
+  {
+    "id": "teaching-one",
+    "building": "第一教学楼",
+    "asset": "lookdev_teaching_hall",
+    "model": "LookdevTeachingHall",
+    "shell": "TeachingHallNorth",
+    "edge": [[-4.49, 167.46], [4.49, 167.46]],
+    "floor": 0.48,
+    "height": 3.44,
+    "width": 8.98,
+    "depth": 6.35,
+    "style": "teaching-one",
+    "doors": [
+      {"id": "north-west", "offset": -0.151, "span": 0.268, "height": 2.32, "outset": 0.0, "panel": "charcoal", "motion": "hinged"},
+      {"id": "north-east", "offset": 0.151, "span": 0.268, "height": 2.32, "outset": 0.0, "panel": "charcoal", "motion": "hinged"}
+    ]
+  },
+  {
+    "id": "teaching-two",
+    "building": "第二教学楼",
+    "asset": "south_teaching2",
+    "model": "SouthTeaching2",
+    "shell": "LibraryDistrict_south_teaching2_closed_exterior",
+    "edge": [[159.75, 352.864], [138.948, 352.628]],
+    "floor": 0.147,
+    "height": 3.35,
+    "width": 6.4,
+    "depth": 4.55,
+    "style": "teaching-two",
+    "doors": [
+      {"id": "south", "offset": 0.0, "span": 0.112, "height": 2.44, "outset": -0.17, "panel": "charcoal", "motion": "sliding"}
+    ]
+  },
+  {
+    "id": "computing-building",
+    "building": "计算小楼",
+    "asset": "mapped_290098001",
+    "model": "Mapped290098001",
+    "shell": "MappedBuilding_mapped_290098001_closed_exterior",
+    "edge": [[-98.549, 813.875], [-48.4, 815.386]],
+    "floor": 0.50,
+    "height": 3.05,
+    "width": 8.60,
+    "depth": 6.20,
+    "offset": -0.30267,
+    "style": "computing",
+    "doors": [
+      {"id": "north", "offset": 0.0, "span": 0.063, "height": 2.31, "outset": -0.12, "panel": "silver", "motion": "hinged"}
+    ]
+  },
+  {
+    "id": "auditorium",
+    "building": "东区大礼堂",
+    "asset": "mapped_271958271",
+    "model": "Mapped271958271",
+    "shell": "MappedBuilding_mapped_271958271_hall",
+    "edge": [
+      [
+        -97.568,
+        697.46
+      ],
+      [
+        -98.844,
+        736.915
+      ]
+    ],
+    "floor": 0.95,
+    "height": 3.3,
+    "width": 27.4,
+    "depth": 3.65,
+    "style": "auditorium",
+    "doors": [
+      {
+        "id": "foyer-south",
+        "offset": -0.2485891,
+        "span": 0.048,
+        "height": 2.52,
+        "outset": -0.14,
+        "panel": "charcoal",
+        "motion": "hinged"
+      },
+      {
+        "id": "foyer-center-a",
+        "offset": -0.0470569,
+        "span": 0.048,
+        "height": 2.52,
+        "outset": -0.14,
+        "panel": "charcoal",
+        "motion": "hinged"
+      },
+      {
+        "id": "foyer-center-b",
+        "offset": 0.0536858,
+        "span": 0.048,
+        "height": 2.52,
+        "outset": -0.14,
+        "panel": "charcoal",
+        "motion": "hinged"
+      },
+      {
+        "id": "foyer-north",
+        "offset": 0.2549035,
+        "span": 0.048,
+        "height": 2.52,
+        "outset": -0.14,
+        "panel": "charcoal",
+        "motion": "hinged"
+      }
+    ]
+  },
+  {
+    "id": "activity-center",
+    "building": "东区师生活动中心",
+    "asset": "mapped_267624861",
+    "model": "Mapped267624861",
+    "shell": "MappedBuilding_mapped_267624861_closed_core",
+    "edge": [
+      [
+        136.35299626,
+        513.040054049
+      ],
+      [
+        136.31099626,
+        462.805054049
+      ]
+    ],
+    "floor": 0.33,
+    "height": 3.1,
+    "width": 9.65,
+    "depth": 4.3,
+    "style": "activity",
+    "doors": [
+      {
+        "id": "covered-court",
+        "offset": -0.005,
+        "span": 0.05,
+        "height": 2.42,
+        "outset": 0.015,
+        "panel": "silver",
+        "motion": "hinged"
+      }
+    ]
+  }
+]

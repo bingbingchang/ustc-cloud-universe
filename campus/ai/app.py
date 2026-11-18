@@ -1,6 +1,5 @@
 import asyncio
 import json
-import os
 import re
 import time
 from contextlib import asynccontextmanager
@@ -8,17 +7,20 @@ from pathlib import Path
 from typing import Literal
 
 import httpx
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Request
 from pydantic import BaseModel, Field
 
 from retrieval import EMBEDDING_MODEL, ROOT, Retriever, query_text
 from campus_agent import create_agent_router
+from model_api import ModelAPI, ModelAPIError, ModelRateLimitError, load_settings
 
 HERO_PATH = ROOT.parent / "godot/data/hero_npcs.json"
 HEROES = {h["id"]: h for h in json.loads(HERO_PATH.read_text(encoding="utf-8"))}
-QWEN_URL = os.getenv("QWEN_BASE_URL", "http://127.0.0.1:8000/v1").rstrip("/")
-QWEN_MODEL = os.getenv("QWEN_MODEL", "Qwen/Qwen3-8B")
-LEXICAL_ONLY = os.getenv("RAG_LEXICAL_ONLY", "0") == "1"
+# Read only this backend's .env; process environment takes precedence. Do not mutate
+# os.environ, so importing/reloading the app cannot leave stale credentials behind.
+SETTINGS = load_settings(ROOT / ".env")
+MODEL_API = ModelAPI.from_settings(SETTINGS)
+LEXICAL_ONLY = SETTINGS.get("RAG_LEXICAL_ONLY", "0") == "1"
 
 
 @asynccontextmanager
@@ -28,21 +30,28 @@ async def lifespan(app):
     app.state.embedding_lock = asyncio.Lock()
     if not LEXICAL_ONLY:
         import torch
-        torch.set_num_threads(int(os.getenv("TORCH_CPU_THREADS", "4")))
+        torch.set_num_threads(int(SETTINGS.get("TORCH_CPU_THREADS", "4")))
         from sentence_transformers import SentenceTransformer
-        device = os.getenv("EMBEDDING_DEVICE", "cpu")
-        app.state.encoder = SentenceTransformer(os.getenv("EMBEDDING_MODEL_PATH", EMBEDDING_MODEL), device=device,
+        device = SETTINGS.get("EMBEDDING_DEVICE", "cpu")
+        model_path = SETTINGS.get("EMBEDDING_MODEL_PATH")
+        if model_path and not Path(model_path).is_absolute():
+            model_path = str(ROOT / model_path)
+        app.state.encoder = SentenceTransformer(model_path or EMBEDDING_MODEL, device=device,
                                                 model_kwargs={"torch_dtype": torch.bfloat16} if device != "cpu" else {})
         app.state.encoder.max_seq_length = 1024
-    headers = {}
-    if os.getenv("QWEN_API_KEY"):
-        headers["Authorization"] = "Bearer " + os.environ["QWEN_API_KEY"]
-    async with httpx.AsyncClient(timeout=90, headers=headers) as client:
+    async with httpx.AsyncClient(timeout=90) as client:
         app.state.client = client
         yield
 
 
 app = FastAPI(title="科大云宇宙 · 校园人物知识服务", lifespan=lifespan)
+
+
+def request_model(http_request: Request):
+    try:
+        return MODEL_API.with_session_key(http_request.headers.get("X-Campus-API-Key"))
+    except ValueError as exc:
+        raise HTTPException(400, str(exc)) from None
 
 
 class Turn(BaseModel):
@@ -57,16 +66,11 @@ class ChatRequest(BaseModel):
 
 
 @app.get("/health")
-async def health():
-    reachable = False
-    try:
-        response = await app.state.client.get(QWEN_URL + "/models", timeout=3)
-        reachable = response.is_success and QWEN_MODEL in [m["id"] for m in response.json().get("data", [])]
-    except (httpx.HTTPError, ValueError, KeyError):
-        pass
-    return {"status": "ready" if reachable else "model_unavailable", "model": QWEN_MODEL,
+async def health(http_request: Request):
+    model_api = request_model(http_request)
+    return {**await model_api.health(app.state.client), "model": model_api.model, "provider": model_api.provider,
             "retrieval": "bm25_explicit_test_mode" if LEXICAL_ONLY else "qwen_embedding+bm25_rrf",
-            "chunks": len(app.state.retriever.chunks), "npcs": len(HEROES), "model_ready": reachable}
+            "chunks": len(app.state.retriever.chunks), "npcs": len(HEROES)}
 
 
 @app.get("/npcs")
@@ -109,7 +113,8 @@ def evidence_documents(passages):
 
 
 @app.post("/chat")
-async def chat(request: ChatRequest):
+async def chat(request: ChatRequest, http_request: Request):
+    model_api = request_model(http_request)
     started = time.perf_counter()
     passages = await retrieve(request)
     if not passages:
@@ -127,26 +132,22 @@ async def chat(request: ChatRequest):
               "跨领域问题请推荐下列名单中负责该领域的角色，不越过自己的知识库编造回答；招呼和角色闲聊可以自然回应。"
               "\n校园可找到的角色：" + "；".join(h["name"] + "·" + h["title"] for h in HEROES.values()) +
               "\n检索资料：\n" + context)
-    payload = {"model": QWEN_MODEL, "messages": [{"role": "system", "content": prompt}]
-               + [t.model_dump() for t in request.history] + [{"role": "user", "content": request.message}],
-               "temperature": 0.3, "top_p": 0.8, "max_tokens": 640,
-               "chat_template_kwargs": {"enable_thinking": False}}
+    messages = [{"role": "system", "content": prompt}] + [t.model_dump() for t in request.history] \
+               + [{"role": "user", "content": request.message}]
     try:
-        response = await app.state.client.post(QWEN_URL + "/chat/completions", json=payload)
-        response.raise_for_status()
-        answer = response.json()["choices"][0]["message"]["content"]
-        answer = re.sub(r"<think>.*?</think>", "", answer or "", flags=re.S).strip()
-        if not answer:
-            raise ValueError("Empty model response")
-    except (httpx.HTTPError, KeyError, ValueError, IndexError) as exc:
-        raise HTTPException(503, "Qwen服务未就绪或返回异常；请检查模型服务与QWEN_BASE_URL。") from exc
+        answer = await model_api.complete(app.state.client, messages, temperature=0.3, max_tokens=2048)
+    except ModelRateLimitError as exc:
+        raise HTTPException(429,str(exc),headers={"Retry-After":str(exc.retry_after)}) from exc
+    except ModelAPIError as exc:
+        raise HTTPException(503, str(exc)) from exc
     cited = {int(n) for n in re.findall(r"\[(\d+)\]", answer)}
     for source in sources:
         source["cited"] = source["citation"] in cited
     return {"npc_id": request.npc_id, "answer": answer, "sources": sources,
             "has_valid_citations": bool(cited) and cited.issubset(set(range(1, len(sources) + 1))),
-            "model": QWEN_MODEL, "retrieval": "bm25" if LEXICAL_ONLY else "qwen_embedding+bm25_rrf",
+            "model": model_api.model, "provider": model_api.provider,
+            "retrieval": "bm25" if LEXICAL_ONLY else "qwen_embedding+bm25_rrf",
             "elapsed_ms": round((time.perf_counter() - started) * 1000)}
 
 
-app.include_router(create_agent_router(app, HEROES, retrieve, evidence_documents, QWEN_URL, QWEN_MODEL))
+app.include_router(create_agent_router(app, HEROES, retrieve, evidence_documents, MODEL_API, request_model))

@@ -5,8 +5,13 @@ const OUT="res://../renders/bridge_approaches/"
 var campus
 var player
 var report={"routes":[],"checks":{},"surface_samples":0,"surface_mismatches":[]}
+var report_path:=OUT+"validation.json"
 
-func _initialize():call_deferred("run")
+func _initialize():
+	for argument in OS.get_cmdline_user_args():
+		if argument.begins_with("--bridge-report="):
+			report_path=argument.trim_prefix("--bridge-report=")
+	call_deferred("run")
 func p3(p:Vector2,y:float)->Vector3:return Vector3(p.x,y,p.y)
 func p2(p:Vector3)->Vector2:return Vector2(p.x,p.z)
 func xyz(p:Vector3)->Array:return [p.x,p.y,p.z]
@@ -110,7 +115,7 @@ func run():
 		report.checks.native_screenshots=await load("res://../tools/capture_bridge_approach.gd").capture(campus,root)
 	report.method="Actual campus_game, unmodified third_person_player, 1/60-second simulation. Four approaches walked both ways; east bridge includes center and +/-0.55m. No jumps or relocation during routes. Ambient actors paused only in this validation instance."
 	report.passed=not report.checks.values().has(false)
-	var path=OUT+"validation.json";var file=FileAccess.open(path,FileAccess.WRITE)
+	var file=FileAccess.open(report_path,FileAccess.WRITE)
 	file.store_string(JSON.stringify(report,"\t"));file.close()
-	print("BRIDGE_APPROACH_CHECKS ",JSON.stringify(report.checks)," report=",ProjectSettings.globalize_path(path))
+	print("BRIDGE_APPROACH_CHECKS ",JSON.stringify(report.checks)," report=",ProjectSettings.globalize_path(report_path))
 	quit(0 if report.passed else 1)

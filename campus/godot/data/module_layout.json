@@ -1855,7 +1855,12 @@
       "surface_top": 0.105,
       "ports": [],
       "story_nodes": [],
-      "source": "references/full_campus/full_osm_overlay.jpg"
+      "source": "references/full_campus/full_osm_overlay.jpg",
+      "boundary_opening": {
+        "x": -210.4,
+        "z_min": 266.8,
+        "z_max": 278.7
+      }
     },
     {
       "id": "east_living_10",

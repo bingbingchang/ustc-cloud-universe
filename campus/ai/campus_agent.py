@@ -5,11 +5,11 @@ from types import SimpleNamespace
 from typing import Any, Literal
 from uuid import uuid4
 
-import httpx
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, HTTPException, Request
 from pydantic import BaseModel, Field
 
 from retrieval import tokens
+from model_api import ModelAPIError, ModelRateLimitError
 
 
 class AgentMessage(BaseModel):
@@ -65,11 +65,12 @@ def parse_decision(content):
     return decision
 
 
-def create_agent_router(app, heroes, retrieve, evidence_documents, model_url, model_name):
+def create_agent_router(app, heroes, retrieve, evidence_documents, model_api, resolve_model=None):
     router = APIRouter()
 
     @router.post("/agent")
-    async def agent(request: AgentRequest):
+    async def agent(request: AgentRequest, http_request: Request):
+        active_model = resolve_model(http_request) if resolve_model else model_api
         if request.npc_id not in heroes:
             raise HTTPException(404, "没有这个角色")
         hero = heroes[request.npc_id]
@@ -80,7 +81,8 @@ def create_agent_router(app, heroes, retrieve, evidence_documents, model_url, mo
             sources = [{**source, "cited": source["citation"] in citations} for source in state.sources]
             return {"answer": answer, "actions": actions or [], "sources": sources,
                     "tool_trace": state.tool_trace, "state": state.model_dump(), "npc_id": request.npc_id,
-                    "status": "awaiting_game" if actions else "completed", "model": model_name}
+                    "status": "awaiting_game" if actions else "completed", "model": active_model.model,
+                    "provider": active_model.provider}
 
         if state.pending_action:
             action = state.pending_action
@@ -117,17 +119,16 @@ def create_agent_router(app, heroes, retrieve, evidence_documents, model_url, mo
         )
 
         for _ in range(6):
-            payload = {"model": model_name, "messages": [{"role": "system", "content": prompt}]
-                       + [message.model_dump() for message in state.messages],
-                       "temperature": 0.2, "top_p": 0.8, "max_tokens": 400,
-                       "chat_template_kwargs": {"enable_thinking": False}}
+            messages = [{"role": "system", "content": prompt}] + [message.model_dump() for message in state.messages]
             try:
-                result = await app.state.client.post(model_url + "/chat/completions", json=payload)
-                result.raise_for_status()
-                content = result.json()["choices"][0]["message"]["content"]
+                content = await active_model.complete(app.state.client, messages, temperature=0.2, max_tokens=2048)
                 decision = parse_decision(content)
-            except (httpx.HTTPError, KeyError, ValueError, IndexError, TypeError) as exc:
-                raise HTTPException(503, "Agent模型调用或工具决策解析失败，请检查模型服务。") from exc
+            except ModelRateLimitError as exc:
+                raise HTTPException(429,str(exc),headers={"Retry-After":str(exc.retry_after)}) from exc
+            except ModelAPIError as exc:
+                raise HTTPException(503, str(exc)) from exc
+            except (ValueError, TypeError) as exc:
+                raise HTTPException(503, "Agent工具决策解析失败，请检查模型是否支持 JSON 指令。") from exc
             state.messages.append(AgentMessage(role="assistant", content=json.dumps(decision, ensure_ascii=False)))
             tool = decision.get("tool")
             arguments = decision["arguments"]

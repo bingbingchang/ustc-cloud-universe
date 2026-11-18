@@ -9,7 +9,14 @@ from fastapi.testclient import TestClient
 
 @pytest.fixture
 def api(monkeypatch):
+    # Protocol tests intentionally exercise several mocked calls in one second;
+    # production defaults are verified separately by test_call_budget.
+    monkeypatch.setenv("MODEL_CALLS_PER_MINUTE", "100")
     monkeypatch.setenv("RAG_LEXICAL_ONLY", "1")
+    monkeypatch.setenv("AI_PROVIDER", "ustc")
+    monkeypatch.setenv("USTC_API_KEY", "test-key-not-a-real-credential")
+    monkeypatch.setenv("USTC_BASE_URL", "https://api.llm.ustc.edu.cn/v1")
+    monkeypatch.setenv("USTC_MODEL", "deepseek-v4-flash")
     import app
     importlib.reload(app)
     with TestClient(app.app) as client:
@@ -44,6 +51,7 @@ def test_goal_uses_role_search_rag_and_two_acknowledged_game_tools(api):
     assert first["actions"][0]["npc_id"] == "library"
     assert first["sources"] and all("lib.ustc.edu.cn" in source["url"] for source in first["sources"])
     assert "叶新程" in captured[0]["messages"][0]["content"]
+    assert all(row["model"] == "deepseek-v4-flash" and "chat_template_kwargs" not in row for row in captured)
     assert any("30册" in message["content"] for message in captured[2]["messages"])
 
     # Retrying while the game has not reported its result must not ask the model to claim success.

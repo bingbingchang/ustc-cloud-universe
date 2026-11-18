@@ -1,5 +1,6 @@
 extends RefCounted
 const NorthAxis=preload("res://scripts/north_axis_environment.gd")
+const Districts=preload("res://scripts/full_districts.gd")
 ## Small grounded modules use the same materials and collision convention as the hero.
 ## The JSON is the layout source; this builder never rescales the measured campus.
 static func layout()->Array:
@@ -12,7 +13,11 @@ static func layout()->Array:
 static func build(campus:Node3D):
 	NorthAxis.build(campus)
 	preload("res://scripts/north_axis_landscape_detail.gd").build(campus)
-	for spec in layout():
+	var modules=layout()
+	for spec in modules:
+		if spec.enabled and spec.template=="full_mapped_district":
+			Districts.build_waterfront(campus,spec.id)
+	for spec in modules:
 		if not spec.enabled:continue
 		if spec.template=="tree_lined_walkway":walkway(campus,spec)
 		elif spec.template=="wave2_landscape":preload("res://scripts/wave2_environment.gd").build(campus,spec)
@@ -21,7 +26,7 @@ static func build(campus:Node3D):
 		elif spec.template=="library_district":preload("res://scripts/library_district.gd").build(campus,spec)
 		elif spec.template=="sports_district":preload("res://scripts/sports_district.gd").build(campus,spec)
 		elif spec.template=="south_sports":preload("res://scripts/south_sports.gd").build(campus,spec)
-		elif spec.template=="full_mapped_district":preload("res://scripts/full_districts.gd").build(campus,spec)
+		elif spec.template=="full_mapped_district":Districts.build(campus,spec)
 	preload("res://scripts/campus_network.gd").build_roads(campus)
 	preload("res://scripts/campus_network.gd").build_trees(campus)
 
