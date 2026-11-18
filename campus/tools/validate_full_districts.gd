@@ -2,6 +2,31 @@ extends "res://../tools/validate_plaza.gd"
 const FULL_OUT="res://../renders/full_campus/"
 const District=preload("res://scripts/full_districts.gd")
 const North=preload("res://scripts/north_axis_environment.gd")
+var route_output := ""
+var reverse_routes := false
+
+
+func _initialize() -> void:
+	for argument in OS.get_cmdline_user_args():
+		if argument.begins_with("--campus-route-output="):
+			route_output=argument.trim_prefix("--campus-route-output=")
+		elif argument=="--reverse-campus-routes":
+			reverse_routes=true
+	super._initialize()
+
+
+func walk_route(id: String, points: Array) -> Dictionary:
+	if reverse_routes:
+		points.reverse()
+	return await super.walk_route(id,points)
+
+
+func result_path() -> String:
+	if not route_output.is_empty():
+		return route_output
+	return FULL_OUT+("visual_validation.json" if "--visual-only" in OS.get_cmdline_user_args() else "validation.json")
+
+
 func screenshot(name:String):
 	player.frozen=true;player.enabled=false;Input.mouse_mode=Input.MOUSE_MODE_VISIBLE
 	for i in range(24):await process_frame
@@ -11,7 +36,7 @@ func screenshot(name:String):
 	player.frozen=false
 func save_report():
 	report.passed=not report.checks.values().has(false)
-	var f=FileAccess.open(FULL_OUT+("visual_validation.json" if "--visual-only" in OS.get_cmdline_user_args() else "validation.json"),FileAccess.WRITE)
+	var f:=FileAccess.open(result_path(),FileAccess.WRITE)
 	f.store_string(JSON.stringify(report,"\t"));f.close();print("FULL_CHECKS ",JSON.stringify(report.checks));quit(0 if report.passed else 1)
 func lamp_check():
 	var playing=[North.polygon(preload("res://scripts/sports_district.gd").data().track.outer_polygon)]
@@ -65,6 +90,8 @@ func visuals():
 func run():
 	DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path(FULL_OUT))
 	campus=load("res://scenes/campus_game.tscn").instantiate();root.add_child(campus);player=campus.player;await frames(24)
+	if DisplayServer.get_name()=="headless":
+		player.touch_mode=true
 	DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_DISABLED);Engine.max_fps=0;lamp_check()
 	report.districts={};report.building_count=0
 	for d in District.data().districts:
@@ -82,8 +109,10 @@ func run():
 			report=JSON.parse_string(FileAccess.get_file_as_string(FULL_OUT+"visual_validation.json"));report.screenshots=report.screenshots.filter(func(s):return s.file!="10_campus_overview.png")
 		await visuals();save_report();return
 	var resume="--repair" in OS.get_cmdline_user_args()
-	if resume:
-		var previous=JSON.parse_string(FileAccess.get_file_as_string(FULL_OUT+"validation.json"));report.routes=previous.routes
+	if resume and FileAccess.file_exists(result_path()):
+		var previous=JSON.parse_string(FileAccess.get_file_as_string(result_path()))
+		if previous is Dictionary and previous.get("reverse_routes",false)==reverse_routes:
+			report.routes=previous.routes
 	Engine.time_scale=8;Engine.physics_ticks_per_second=480
 	for d in District.data().districts:
 		for route in d.walk_routes:
@@ -102,6 +131,10 @@ func run():
 		# Walk the existing southern and eastern lanes to the northern crossroad.
 		if road.id=="road_298766172":points=[Vector3(-128.355,.14,809.722),Vector3(-49.129,.14,811.942),Vector3(-51.406,.14,807.022),Vector3(-53.128,.14,799.501),Vector3(-53.753,.14,793.645),Vector3(-52.392,.14,752.546),Vector3(-127.488,.14,750.846)]
 		if road.id=="road_686071140":points[-1]=Vector3(96.925,.14,912.5) # Stand inside the southern campus edge.
+		if road.id in ["road_1135310361","road_265032059"]:
+			# These two GIS endpoints lie on the center of the playable map fence.
+			var boundary_point: Vector3 = points[0]
+			points[0]=boundary_point.move_toward(points[1],.65)
 		report.routes=report.routes.filter(func(r):return r.id!=road.id);report.routes.append(await walk_route(road.id,points))
 	# Existing northern roads connect continuously into the east, then the southern crossroad.
 	for route in [["north_to_east",[Vector3(288.8,.14,60),Vector3(287.4,.14,59.5)]],
@@ -110,7 +143,9 @@ func run():
 		if resume and report.routes.any(func(r):return r.id==route[0] and r.passed):continue
 		report.routes=report.routes.filter(func(r):return r.id!=route[0]);report.routes.append(await walk_route(route[0],route[1]))
 	report.checks.all_entry_and_cross_district_routes=report.routes.all(func(r):return r.passed)
+	report.reverse_routes=reverse_routes
 	report.barriers=[]
+	var visits = campus.get("campus_visits")
 	for name in ["校史馆","礼堂","物质科学教研B楼","47#"]:
 		for d in District.data().districts:
 			for b in d.buildings:
@@ -122,7 +157,15 @@ func run():
 				var query=PhysicsRayQueryParameters3D.create(start+Vector3.UP,target+Vector3.UP,1,[player.get_rid()])
 				var hit=campus.get_world_3d().direct_space_state.intersect_ray(query)
 				result.waist_ray_collider=String(hit.collider.name) if not hit.is_empty() else ""
-				result.passed=result.remaining_m>.35 and result.waist_ray_collider.begins_with("MappedBuilding_")
+				var expected_body: bool = result.waist_ray_collider.begins_with("MappedBuilding_")
+				if not hit.is_empty() and result.waist_ray_collider.begins_with("DoorLeaf"):
+					var visit_door: Node3D = hit.collider.get_parent()
+					expected_body=visit_door.get_parent().spec.building.ends_with(name) and visit_door.open_amount==0.0
+				elif not hit.is_empty() and visits:
+					var room: Node3D = hit.collider.get_parent()
+					if visits.rooms.has(room):
+						expected_body=room.spec.building.ends_with(name)
+				result.passed=result.remaining_m>.35 and expected_body
 				report.barriers.append(result)
 	report.checks.physical_building_exteriors=report.barriers.all(func(b):return b.passed)
 	save_report()

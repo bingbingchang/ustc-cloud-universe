@@ -6,12 +6,14 @@ definitions and evaluated bevels are copied byte-for-byte. Blender imports the
 result only to save a separately editable source file; it does not re-export it.
 """
 from pathlib import Path
+import argparse
 import copy
 import hashlib
 import json
 import math
 import shutil
 import struct
+import sys
 
 ROOT = Path(__file__).resolve().parents[2]
 ASSETS = ROOT / 'godot/assets'
@@ -21,6 +23,7 @@ MANIFEST = ASSETS / 'lookdev_teaching_hall_manifest.json'
 HALL = (-63.0, -.02, 163.8, 63.0, 18.0, 223.0)
 OLD_STEPS = (-6.2, -.02, 164.0, 6.2, .761, 166.4)
 CORRECTED_ENTRY = (-6.01, -.01, 164.75, 6.01, .481, 167.235)
+ENTRY_GLAZING = (-4.61, .12, 167.26, 4.61, 4.32, 167.64)
 
 
 def digest(path):
@@ -186,11 +189,18 @@ def extract(source, writer, entry=False):
                         and not (old is not None and all(old[i] for i in face))]
             if entry and selected:
                 selected = complete_entry_components(selected, world)
+            kept_triangles = len(selected)
+            if not entry and material in ('Glass', 'GlassLight', 'Frame', 'Dark'):
+                leaves = [face for face in selected if all(inside(world[i],ENTRY_GLAZING) for i in face)]
+                if leaves:
+                    removed = set(leaves)
+                    selected = [face for face in selected if face not in removed]
+                    writer.add(source,node,primitive,leaves,pos,world,'PhotoVisitGlass')
             if selected:
                 writer.add(source, node, primitive, selected, pos, world,
                            'CorrectedEntry' if entry else 'ArchivedLookDevHall')
             rejected.append({'node': node.get('name'), 'material': material,
-                             'source_triangles': len(faces), 'kept_triangles': len(selected)})
+                             'source_triangles': len(faces), 'kept_triangles': kept_triangles})
     return rejected
 
 
@@ -389,11 +399,7 @@ def verify_export(path):
             'scope': 'CPU asset integrity only; Godot render and player traversal are validated by the integrating task'}
 
 
-def main():
-    frozen = [ASSETS / name for name in ('architecture.glb', 'dioarchitecture.glb', 'diositedetail.glb', 'background.glb', 'site.json')]
-    frozen += [ROOT / 'blender/source' / name for name in ('ustc_north_axis.blend', 'ustc_diorama.blend')]
-    frozen += [ROOT / 'blender/scripts' / name for name in ('build_campus.py', 'lookdev_assets.py', 'diorama_assets.py')]
-    hashes = {str(p.relative_to(ROOT)): digest(p) for p in frozen}
+def write_hall(output):
     writer = Writer()
     archived = Glb(ASSETS / 'architecture.glb')
     corrected = Glb(ASSETS / 'dioarchitecture.glb')
@@ -401,7 +407,37 @@ def main():
     assert all(inside(p, HALL) for p in writer.all_world)
     assert not any('Pavilion' in r['material'] or r['material'] in ('Letter', 'Plaster', 'Wood') for r in writer.records)
     assert any(r['role'] == 'CorrectedEntry' for r in writer.records)
-    writer.write(EXPORT)
+    assert any(r['role'] == 'PhotoVisitGlass' and r['material'] == 'Glass' for r in writer.records)
+    writer.write(output)
+    return writer, selection
+
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--hall-output', type=Path)
+    args = parser.parse_args(sys.argv[sys.argv.index('--')+1:] if '--' in sys.argv else sys.argv[1:])
+    if args.hall_output:
+        destination = args.hall_output / EXPORT.name
+        writer, _ = write_hall(destination)
+        manifest = json.loads(MANIFEST.read_text(encoding='utf-8'))
+        manifest['validation'].update(verify_export(destination))
+        manifest.update({
+            'mesh_nodes':len(writer.records),
+            'vertices':sum(item['vertices'] for item in writer.records),
+            'triangles':sum(item['triangles'] for item in writer.records),
+            'glb_bytes':destination.stat().st_size,
+            'output_sha256':digest(destination),
+            'mesh_records':writer.records,
+            'builder_sha256':digest(Path(__file__)),
+            'public_entry_glazing_bounds':ENTRY_GLAZING,
+        })
+        (args.hall_output / MANIFEST.name).write_text(json.dumps(manifest,ensure_ascii=False,indent=2),encoding='utf-8')
+        return
+    frozen = [ASSETS / name for name in ('architecture.glb', 'dioarchitecture.glb', 'diositedetail.glb', 'background.glb', 'site.json')]
+    frozen += [ROOT / 'blender/source' / name for name in ('ustc_north_axis.blend', 'ustc_diorama.blend')]
+    frozen += [ROOT / 'blender/scripts' / name for name in ('build_campus.py', 'lookdev_assets.py', 'diorama_assets.py')]
+    hashes = {str(p.relative_to(ROOT)): digest(p) for p in frozen}
+    writer, selection = write_hall(EXPORT)
     shutil.copy2(EXPORT, ASSETS / EXPORT.name)
     hall_validation = verify_export(EXPORT)
     hall_validation['corrected_entry_components'] = 5

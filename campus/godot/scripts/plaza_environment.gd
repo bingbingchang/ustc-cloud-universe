@@ -35,7 +35,7 @@ static func build(c:Node3D,s:Dictionary):
 	var usable=North._pieces(outline,exclusions)
 	var stone=c.asset_material("PlazaWarmStone",Color("d4cbb9"))
 	c.surface(stone,"paving",Vector2(3.2,3.2))
-	var edging=c.asset_material("PlazaBrickJoint",Color("8f6d5c"))
+	var edging=preload("res://scripts/north_axis_photo_details.gd").matte(Color(.33,.116,.085))
 	var paths=[]
 	for path in s.paths:
 		var points=Geometry.polygon(path.points)
@@ -51,23 +51,108 @@ static func build(c:Node3D,s:Dictionary):
 	_patch(c,usable,_rect(-4.8,237.6,8.8,3.1),.092,c.mats.grass)
 	var joints=[]
 	for z in range(250,335,4):
-		for x in [-8.45,1.80]:joints.append(Geometry._box_transform(Vector3(x+2.8,.081,z),Vector3(5.6,.003,.06),0))
+		for x in [-8.45,1.80]:joints.append(Geometry._box_transform(Vector3(x+2.8,.082,z),Vector3(5.6,.006,.135),0))
+	for x in [-8.36,7.08]:
+		joints.append(Geometry._box_transform(Vector3(x,.083,280.3),Vector3(.14,.006,49.5),0))
 	Geometry._box_batch(c,joints,edging,"PlazaPavingJoints")
-	var basin=Geometry.polygon(s.basin)
+	var basin:=North.polygon(s.basin)
 	North._surface(c,[basin],-.05,c.mats.water,"PlazaBasinWater")
 	North._solid(c,[basin],-.55,1.65,"PlazaNoEntryBasin")
 	var coping=[]
 	for i in basin.size():
 		var a=basin[i];var b=basin[(i+1)%basin.size()];var mid=(a+b)*.5
-		coping.append(Geometry._box_transform(Vector3(mid.x,.045,mid.y),Vector3(.18,.10,a.distance_to(b)),atan2(b.x-a.x,b.y-a.y)))
-	Geometry._box_batch(c,coping,c.mats.stone,"PlazaBasinCoping")
+		coping.append(Geometry._box_transform(Vector3(mid.x,.078,mid.y),Vector3(.28,.152,a.distance_to(b)+.07),atan2(b.x-a.x,b.y-a.y)))
+	Geometry._box_batch(c,coping,edging,"PlazaBasinCoping")
+	var tiles:=preload("res://scripts/north_axis_photo_details.gd").matte(Color(.059,.234,.307))
+	var pool_edge=[]
+	for i in basin.size():
+		var a:=basin[i]
+		var b:=basin[(i+1)%basin.size()]
+		var middle:=(a+b)*.5
+		var inward:=Vector2((b-a).y,-(b-a).x).normalized()*.20
+		var p:=middle+inward
+		pool_edge.append(Geometry._box_transform(Vector3(p.x,-.008,p.y),Vector3(.18,.045,a.distance_to(b)+.02),atan2(b.x-a.x,b.y-a.y)))
+	Geometry._box_batch(c,pool_edge,tiles,"PlazaBluePoolTile")
 	_landmarks(c,s)
+	if OS.has_feature("windows"):_star_forecourt(c)
 	_planting(c,s,paths)
 	Geometry._furniture(c,s)
 	Geometry._boundaries(c,s,outline)
 	_backdrop(c,s.backdrop)
 	c.world.set_meta("guo_plaza",{"module":s.id,"mapped_basin":true,"cafe":"268207470","monument":"3026612881","trees":s.trees.size(),"new_npcs":0,"bounds":s.bounds,"playable":true})
 	print("PLAZA_READY trees=",s.trees.size()," bounds=",s.bounds)
+
+static func _terraced_beds(c:Node3D,center:Vector3):
+	var pads=[]
+	var flowers=[[],[]]
+	for side in [-1,1]:
+		for row in range(3):
+			var y=.18+row*.14
+			var z=center.z+1.08-row*.56
+			var position=Vector3(center.x+side*(3.2+row*.19),y*.50,z)
+			pads.append(Geometry._box_transform(position,Vector3(3.55,y,.50),0))
+			for i in range(7):
+				var x=position.x-1.42+i*.48
+				flowers[(row+int(side>0))%2].append(c.placement(x,y,z,Vector3.ONE*.31,i*1.2+row))
+	Geometry._box_batch(c,pads,c.mats.stone,"GuoMonumentTerracedPlanting")
+	for i in flowers.size():c.multimesh_batch("study_flower_mound_"+str(i),flowers[i])
+
+static func _star_forecourt(c:Node3D):
+	var details=preload("res://scripts/north_axis_photo_details.gd")
+	var dark:=details.matte(Color(.155,.143,.139))
+	var bronze:=details.matte(Color(.61,.50,.32))
+	var plaque:=details.matte(Color(.071,.08,.075))
+	var center:=Vector2(.06,318.8)
+	var sectors=[]
+	for sector in range(16):
+		var points:=PackedVector2Array([center+Vector2.from_angle(TAU*float(sector)/16+.018)*.33])
+		for k in range(6):
+			points.append(center+Vector2.from_angle(TAU*(float(sector)+float(k)/5)/16+(.016 if k==0 else -.016 if k==5 else 0))*
+					(6.15 if sector%2==0 else 5.33))
+		points.append(center+Vector2.from_angle(TAU*float(sector+1)/16-.018)*.33)
+		sectors.append(points)
+	var paving:=SurfaceTool.new()
+	paving.begin(Mesh.PRIMITIVE_TRIANGLES)
+	for polygon in sectors:
+		var triangles:=Geometry2D.triangulate_polygon(polygon)
+		for i in range(0,triangles.size(),3):
+			var a:Vector2=polygon[triangles[i]]
+			var b:Vector2=polygon[triangles[i+1]]
+			var edge:Vector2=polygon[triangles[i+2]]
+			var corners=[a,edge,b] if (b-a).cross(edge-a)>0 else [a,b,edge]
+			for pos in corners:
+				paving.set_normal(Vector3.UP)
+				paving.add_vertex(Vector3(pos.x,.095,pos.y))
+	var star:=MeshInstance3D.new()
+	star.name="PlazaStarRadialPaving"
+	star.mesh=paving.commit()
+	dark.cull_mode=BaseMaterial3D.CULL_DISABLED
+	star.material_override=dark
+	c.world.add_child(star)
+	var board:=c.box(Vector3(.06,.69,310.35),Vector3(2.79,1.29,.19),plaque) as MeshInstance3D
+	board.name="USTCStarBlackStone"
+	c.static_box(board.position,Vector3(2.79,1.29,.19),"USTCStarInterpretiveStone")
+	details.fixed_sign(c,"中 科 大 星",Vector3(-.45,1.10,310.455),.0098,Color("d9d3bb"))
+	var decoration=[]
+	for ring in range(1,4):
+		var points:=PackedVector2Array()
+		for k in range(25):
+			var theta:=TAU*k/24
+			points.append(Vector2(-.49+cos(theta)*ring*.207,.56+sin(theta)*ring*.099))
+		for i in range(points.size()-1):
+			var a:=points[i]
+			var b:=points[i+1]
+			var part:=Transform3D(Basis(Vector3.FORWARD,(b-a).angle())*Basis.from_scale(Vector3(a.distance_to(b),.009,.014)),
+				Vector3((a.x+b.x)*.5,(a.y+b.y)*.5,310.452))
+			decoration.append(part)
+	for y in [.48,.58,.68,.78,.88]:
+		decoration.append(Geometry._box_transform(Vector3(.67,y,310.452),Vector3(.73,.009,.014),0))
+	Geometry._box_batch(c,decoration,bronze,"USTCStarEngraving")
+	var flag_base:=c.box(Vector3(.06,.19,328.0),Vector3(6.09,.38,1.92),details.matte(Color(.33,.14,.092))) as MeshInstance3D
+	flag_base.name="PlazaBrickFlagDais"
+	c.static_box(flag_base.position,Vector3(6.09,.38,1.92),"PlazaFlagDaisContact")
+	for x in [-1.78,0.06,1.90]:
+		c.box(Vector3(x,5.04,328.0),Vector3(.062,9.38,.062),bronze)
 
 static func _landmarks(c:Node3D,s:Dictionary):
 	var data=JSON.parse_string(FileAccess.get_file_as_string("res://assets/plaza_landmarks_manifest.json"))
@@ -89,6 +174,8 @@ static func _landmarks(c:Node3D,s:Dictionary):
 			for p in [Vector3(-5.3,.65,-5.9),Vector3(.1,.65,-5.85),Vector3(5.3,.65,-5.9)]:
 				var body=StaticBody3D.new();body.name="PlazaCafeTableContact";body.position=model.to_global(p);c.world.add_child(body)
 				var collider=CollisionShape3D.new();var shape=CylinderShape3D.new();shape.radius=.43;shape.height=1.1;collider.shape=shape;body.add_child(collider)
+		else:
+			_terraced_beds(c,model.position)
 	c.signpost(Vector3(41,.08,238.8),"郭沫若广场","Guo Moruo Plaza")
 	c.static_box(Vector3(41,.88,238.8),Vector3(.12,1.6,.12),"PlazaSignPole")
 	c.static_box(Vector3(41,1.54,238.8),Vector3(2.2,.78,.14),"PlazaSignBoard")

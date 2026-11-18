@@ -144,12 +144,31 @@ static func _boundaries(c:Node3D,s:Dictionary,outline:PackedVector2Array):
 		if s.id=="east_teaching_garden_02" and is_equal_approx(a.y,145) and is_equal_approx(b.y,145):
 			if a.x<88:a.x=88
 			if b.x<88:b.x=88
-		for edge in boundary_segments(a,b,s.id):
+		var edges:=boundary_segments(a,b,s.id)
+		if s.has("boundary_opening") and absf(a.x-s.boundary_opening.x)<3.0 and absf(b.x-s.boundary_opening.x)<3.0:
+			edges=_split_gate_edges(edges,s.boundary_opening.z_min,s.boundary_opening.z_max)
+		for edge in edges:
 			var start:Vector2=edge[0];var end:Vector2=edge[1]
 			var mid=(start+end)*.5;var angle=atan2(end.x-start.x,end.y-start.y)
 			var body=c.static_box(Vector3(mid.x,1.05,mid.y),Vector3(.32,3.0,start.distance_to(end)+.04),"Wave2OuterBoundary_"+s.id);body.rotation.y=angle
 			rim.append(_box_transform(Vector3(mid.x,.045,mid.y),Vector3(.28,.09,start.distance_to(end)),angle))
 	_box_batch(c,rim,c.mats.stone,"Wave2Rim")
+
+static func _split_gate_edges(edges:Array,low:float,high:float)->Array:
+	var result=[]
+	for edge in edges:
+		var a:Vector2=edge[0]
+		var b:Vector2=edge[1]
+		if a.y>b.y:
+			var swap:=a
+			a=b
+			b=swap
+		if b.y<=low or a.y>=high:
+			result.append([a,b])
+			continue
+		if a.y<low:result.append([a,a.lerp(b,(low-a.y)/(b.y-a.y))])
+		if b.y>high:result.append([a.lerp(b,(high-a.y)/(b.y-a.y)),b])
+	return result
 
 static func boundary_segments(a:Vector2,b:Vector2,id:String)->Array:
 	var regions=[polygon([[-80,118],[80,118],[80,238],[-80,238]])]

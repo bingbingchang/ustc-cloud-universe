@@ -30,8 +30,10 @@ func optimized()->bool:
 func render_instance_groups(asset:String,transforms:Array)->Array:
 	if not optimized() or "--perf-case=reflection_only" in OS.get_cmdline_user_args():return super.render_instance_groups(asset,transforms)
 	var groups={}
+	var cell_size=8.0 if asset.begins_with("sakura_tree") and not "--runtime-before" in OS.get_cmdline_user_args() else 24.0
+	if asset in preload("res://scripts/detail_hlod.gd").ASSETS and not "--runtime-before" in OS.get_cmdline_user_args():cell_size=12.0
 	for tr in transforms:
-		var cell=Vector2i(floor(tr.origin.x/24.0),floor(tr.origin.z/24.0))
+		var cell=Vector2i(floor(tr.origin.x/cell_size),floor(tr.origin.z/cell_size))
 		if not groups.has(cell):groups[cell]=[]
 		groups[cell].append(tr)
 	return groups.values()

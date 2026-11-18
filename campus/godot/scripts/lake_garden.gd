@@ -13,6 +13,9 @@ static func edge_distance(p:Vector2,ring:PackedVector2Array)->float:
 	for i in ring.size():result=minf(result,p.distance_to(Geometry2D.get_closest_point_to_segment(p,ring[i],ring[(i+1)%ring.size()])))
 	return result
 static func land_safe(p:Vector2,r:float)->bool:
+	if OS.has_feature("windows"):
+		var details=preload("res://scripts/north_axis_photo_details.gd")
+		if details.OVERLOOK.grow(r).has_point(p) or details.EXPERT_ENTRY.grow(r).has_point(p):return false
 	if not segment(p):return false
 	for q in [Vector2.ZERO,Vector2(r,0),Vector2(-r,0),Vector2(0,r),Vector2(0,-r)]:
 		if not North.contains(p+q):return false

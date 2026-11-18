@@ -11,6 +11,10 @@ uniform float foliage=0.0;
 uniform float ground=0.0;
 uniform float brick=0.0;
 uniform bool graybox=false;
+#ifdef VISIT_OPENING
+uniform vec3 visit_clip_min[5];
+uniform vec3 visit_clip_max[5];
+#endif
 varying vec3 wp;
 varying vec3 wn;
 varying float leaf_light;
@@ -28,6 +32,11 @@ void vertex(){
  leaf_light=.94+.08*sin(wp.x*1.1+wp.z*.83+wp.y*.62);
 }
 void fragment(){
+#ifdef VISIT_OPENING
+ for(int i=0;i<5;i++){
+  if(all(greaterThan(wp,visit_clip_min[i])) && all(lessThan(wp,visit_clip_max[i]))){discard;}
+ }
+#endif
  vec3 normal=normalize(wn);vec3 tx=vec3(1,0,0);vec3 ty=vec3(0,0,1);vec2 uv=wp.xz/tile_meters;
  if(abs(normal.y)<.65){
   ty=vec3(0,1,0);

@@ -55,7 +55,12 @@ static func _buildings(c:Node3D):
 		var model=load("res://assets/"+asset+".glb").instantiate();model.name=asset.to_pascal_case();c.world.add_child(model);c.style(model)
 	var manifest=JSON.parse_string(FileAccess.get_file_as_string("res://assets/north_teaching_manifest.json"))
 	for solid in manifest.collision_solids:
-		North._solid(c,[North.polygon(solid.polygon)],solid.bottom,solid.top,"NorthAcademic_"+solid.name)
+		var outline:=North.polygon(solid.polygon)
+		var label:String="NorthAcademic_"+solid.name
+		if solid.type=="sloped_prism":
+			North._sloped_solid(c,outline,solid.bottom,solid.top_heights,label)
+		else:
+			North._solid(c,[outline],solid.bottom,solid.top,label)
 	var frontage=[];var building_cuts=[]
 	for b in manifest.buildings:building_cuts.append(North.polygon(b.polygon))
 	for b in manifest.buildings:
@@ -69,6 +74,8 @@ static func _buildings(c:Node3D):
 		frontage.append_array(North._pieces(North._rect(p.x-7.4,p.y-3.2,14.8,4.8),building_cuts))
 	North._surface(c,frontage,.10,c.mats.path,"NorthAcademicEntryAprons")
 	North._solid(c,frontage,-.1,.10,"NorthAcademicEntryPaths")
+	if OS.has_feature("windows"):
+		preload("res://scripts/north_axis_photo_details.gd").new_gate(c)
 	c.signpost(Vector3(104,0,-53),"新北门 · 第五教学楼","North gate · Teaching 5")
 	c.signpost(Vector3(155,0,-22),"教学行政楼 · 地空学院","Earth and Space Sciences")
 	c.signpost(Vector3(338,0,-20),"管理科学教学科研楼","School of Management")
@@ -91,9 +98,9 @@ static func legacy_tree_allowed(p:Vector2)->bool:
 	if p.distance_to(Vector2(82,71))<.1:return false
 	return true
 
-static func _clipped(parts:Array,cuts:Array)->Array:
+static func _clipped(parts:Array,cuts:Array,districts:Array)->Array:
 	var out=[];var seen=[]
-	for region in regions():
+	for region in districts:
 		for part in parts:
 			for intersection in Geometry2D.intersect_polygons(part,region):out.append_array(North._pieces(intersection,cuts+seen))
 		seen.append(region)
@@ -105,7 +112,13 @@ static func build_roads(c:Node3D):
 	for area in Geometry.protected_areas():cuts.append(North.polygon(area.polygon))
 	for b in data().buildings:cuts.append(North.polygon(b.outline))
 	var Surfaces=preload("res://scripts/road_surfaces.gd")
+	var districts: Array = []
+	for region in regions():
+		# Close gaps caused by independently surveyed borders. The original
+		# protected areas still trim the road and each fragment is emitted once.
+		districts.append_array(Geometry2D.offset_polygon(region, .015))
 	var sidewalk=[];var curbs=[];var surfaces={};var previous_edges=[];var previous_roads=[];var built=[];var all_roads=[]
+	var avenue=[]
 	for road in data().roads:
 		if not road.get("build_enabled",true):continue
 		all_roads.append_array(North._stroke(North.polygon(road.points),road.width))
@@ -114,20 +127,28 @@ static func build_roads(c:Node3D):
 		var points=North.polygon(road.points)
 		if road.sidewalk_width>0:
 			var edge=North._stroke(points,road.width+2*road.sidewalk_width)
-			sidewalk.append_array(_clipped(edge,cuts+all_roads+previous_edges));previous_edges.append_array(edge)
-			curbs.append_array(_clipped(North._stroke(points,road.width+.28),cuts+all_roads))
+			sidewalk.append_array(_clipped(edge,cuts+all_roads+previous_edges,districts));previous_edges.append_array(edge)
+			curbs.append_array(_clipped(North._stroke(points,road.width+.28),cuts+all_roads,districts))
 		var surface=North._stroke(points,road.width)
-		var pieces=_clipped(surface,cuts+previous_roads);previous_roads.append_array(surface)
+		var pieces=_clipped(surface,cuts+previous_roads,districts);previous_roads.append_array(surface)
 		if pieces.is_empty():continue
-		if not surfaces.has(road.surface):surfaces[road.surface]=[]
-		surfaces[road.surface].append_array(pieces)
+		if OS.has_feature("windows") and road.id=="road_264872432":
+			avenue.append_array(pieces)
+		else:
+			if not surfaces.has(road.surface):surfaces[road.surface]=[]
+			surfaces[road.surface].append_array(pieces)
 		built.append({"id":road.id,"name":road.name,"width":road.width,"grade":road.grade,"surface":road.surface,"sidewalk_width":road.sidewalk_width})
+	if OS.has_feature("windows"):
+		preload("res://scripts/campus_road_details.gd").build(c)
 	North._surface(c,sidewalk,.23,Surfaces.material(c,"pavers"),"MappedRoadSidewalks")
 	North._solid(c,sidewalk,-.1,.23,"MappedSidewalkWalkable")
 	North._surface(c,curbs,.242,c.mats.stone,"MappedMainRoadCurbs")
 	for kind in surfaces:
 		North._surface(c,surfaces[kind],ROAD_TOP,Surfaces.material(c,kind),"MappedRoad_"+kind)
 		North._solid(c,surfaces[kind],-.1,ROAD_TOP,"MappedRoadWalkable_"+kind)
+	if not avenue.is_empty():
+		North._surface(c,avenue,ROAD_TOP,Surfaces.material(c,"sakura_stone"),"SakuraAvenueStone")
+		North._solid(c,avenue,-.1,ROAD_TOP,"SakuraAvenueWalkable")
 	c.world.set_meta("campus_roads",built)
 	print("CAMPUS_ROADS_READY built=",built.size()," registered=",data().roads.size())
 

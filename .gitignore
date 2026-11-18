@@ -6,6 +6,8 @@
 **/logs/
 **/knowledge/raw/
 .env
+/START_WEB_AI.cmd
+/STOP_WEB_AI.cmd
 *.pyc
 *.blend1
 *.blend2
@@ -13,3 +15,7 @@
 *.pid
 dist/
 **/scenes/campus_world.scn
+campus/godot/web/regions/*.scn
+campus/godot/web/shared/*.res
+campus/godot/web/regions/*.bin
+campus/godot/web/npc_animations/*.res

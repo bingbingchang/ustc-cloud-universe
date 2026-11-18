@@ -144,6 +144,8 @@ func build_collisions():
 	if FileAccess.file_exists(path):
 		var data=JSON.parse_string(FileAccess.get_file_as_string(path))
 		for s in data.get("new_collision_proposals",[]):
+			if world.get_meta("teaching_one_side_ramps",false) and (s.name.begins_with("LookDevCanopyColumn") or s.name.begins_with("LookDevHandrail")):
+				continue
 			var p=Vector3(s.center[0],s.center[1],s.center[2])
 			if s.type=="box":static_box(p,Vector3(s.size[0],s.size[1],s.size[2]),s.name)
 			else:
@@ -165,7 +167,7 @@ func _process(dt):
 	if sun:
 		sun.rotation_degrees=Vector3(-36,-128+sin(elapsed*.012)*.28,0)
 		sun.light_energy=1.85+sin(elapsed*.045)*.012
-	if live_environment and player:
+	if live_environment and player and live_environment.fog_mode == Environment.FOG_MODE_EXPONENTIAL:
 		var camera=photo_camera if photo_camera else player.camera
 		# Retain human-eye air perspective without washing out the spatial overview.
 		live_environment.fog_density=lerpf(.00075,.00016,clampf((camera.global_position.y-15.0)/120.0,0,1))

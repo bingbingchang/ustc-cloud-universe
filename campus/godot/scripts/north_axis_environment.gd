@@ -104,7 +104,7 @@ static func _clean_polygon(p:PackedVector2Array)->PackedVector2Array:
 		else:i+=1
 	return clean
 
-static func _surface(c:Node3D,parts:Array,y:float,mat:Material,label:String):
+static func _surface(c:Node3D,parts:Array,y:float,mat:Material,label:String)->MeshInstance3D:
 	var st=SurfaceTool.new();st.begin(Mesh.PRIMITIVE_TRIANGLES);var count=0
 	for part in parts:
 		var tri=Geometry2D.triangulate_polygon(part)
@@ -113,11 +113,14 @@ static func _surface(c:Node3D,parts:Array,y:float,mat:Material,label:String):
 			var vs=[Vector3(a.x,y,a.y),Vector3(b.x,y,b.y),Vector3(z.x,y,z.y)]
 			if (vs[1]-vs[0]).cross(vs[2]-vs[0]).y<0:vs.reverse()
 			for v in vs:st.set_normal(Vector3.UP);st.set_uv(Vector2(v.x,v.z));st.add_vertex(v);count+=1
-	if count==0:return
+	if count==0:return null
 	var node=MeshInstance3D.new();node.name=label;node.mesh=st.commit();node.material_override=mat;c.world.add_child(node)
-	if label.begins_with("NorthWater_"):node.cast_shadow=GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+	if mat==c.mats.water:node.cast_shadow=GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+	return node
 
 static func _solid(c:Node3D,parts:Array,bottom:float,top:float,label:String)->StaticBody3D:
+	if parts.size()==1 and c.has_method("add_visit_opening") and c.add_visit_opening(parts[0],bottom,top,label):
+		return null
 	var body=StaticBody3D.new();body.name=label;c.world.add_child(body)
 	if parts.size()>1:
 		# Static triangle meshes match the clipped surfaces and avoid convex
@@ -147,6 +150,21 @@ static func _solid(c:Node3D,parts:Array,bottom:float,top:float,label:String)->St
 
 static func _stroke(points:PackedVector2Array,width:float)->Array:
 	return Geometry2D.offset_polyline(points,width*.5,Geometry2D.JOIN_ROUND,Geometry2D.END_BUTT)
+
+static func _sloped_solid(c:Node3D,outline:PackedVector2Array,bottom:float,heights:Array,label:String)->void:
+	var body:=StaticBody3D.new()
+	body.name=label
+	c.world.add_child(body)
+	var vertices:=PackedVector3Array()
+	for i in outline.size():
+		var p:=outline[i]
+		vertices.append(Vector3(p.x,bottom,p.y))
+		vertices.append(Vector3(p.x,heights[i],p.y))
+	var shape:=ConvexPolygonShape3D.new()
+	shape.points=vertices
+	var collision:=CollisionShape3D.new()
+	collision.shape=shape
+	body.add_child(collision)
 
 static func _valid_surface(parts:Array,regions:Array,cuts:Array)->Array:
 	var result=[]

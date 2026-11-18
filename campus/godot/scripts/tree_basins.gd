@@ -50,7 +50,6 @@ static func build(c:Node3D,records:Array)->Array:
 	var basins=[];var rims=[];var soils=[]
 	for record in records:
 		var p:Vector3=record.position
-		if p.z<118 or p.z>150:continue
 		var half=root_half_extent(c,record);var width=.12
 		# A square opening accommodates the widest visible root plus a soil margin.
 		var h=maxf(half.x,half.y)
@@ -60,7 +59,13 @@ static func build(c:Node3D,records:Array)->Array:
 		soils.append(c.placement(p.x,.018,p.z,Vector3(h*2,.028,h*2),0))
 		basins.append({"center":[p.x,p.z],"inner_half":h,"root_half":[half.x-.16,half.y-.16],"asset":record.asset})
 	var geo=load("res://scripts/wave2_environment.gd")
-	geo._box_batch(c,rims,c.mats.stone,"AlignedTreeBasinRims")
+	var rim_material: Material=c.mats.stone
+	if OS.has_feature("windows"):
+		var pale_stone:=StandardMaterial3D.new()
+		pale_stone.albedo_color=Color("b3ada5")
+		pale_stone.roughness=.91
+		rim_material=pale_stone
+	geo._box_batch(c,rims,rim_material,"AlignedTreeBasinRims")
 	geo._box_batch(c,soils,c.material(Color("514936")),"AlignedTreeBasinSoil")
 	c.world.set_meta("tree_basins",{"count":basins.size(),"removed_legacy_triangles":removed,"basins":basins})
 	return basins

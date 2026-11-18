@@ -4,6 +4,7 @@ const REFLECTION_LAYER=1<<17
 var reflection_view:SubViewport
 var reflection_camera:Camera3D
 var reflection_material:ShaderMaterial
+var reflection_plane_height := -0.05
 var study_ready=false
 var study_records=[]
 var study_stats={}
@@ -34,6 +35,9 @@ func place_tree(asset:String,p:Vector2,scale:float):
 	lookdev_tree_contacts.append(record);study_records.append(record);tree_count+=1
 
 func study_land_safe(p:Vector2,r:float)->bool:
+	if OS.has_feature("windows"):
+		var details=preload("res://scripts/north_axis_photo_details.gd")
+		if details.OVERLOOK.grow(r).has_point(p) or details.EXPERT_ENTRY.grow(r).has_point(p):return false
 	if p.y<118:return Lake.land_safe(p,r)
 	if p.x<18 or p.x>79-r or p.y>138:return false
 	for q in [Vector2.ZERO,Vector2(r,0),Vector2(-r,0),Vector2(0,r),Vector2(0,-r)]:
@@ -118,6 +122,7 @@ func setup_reflection():
 	var e=live_environment.duplicate();e.ssr_enabled=false;e.ssao_enabled=false;e.ssil_enabled=false;e.glow_enabled=false;reflection_camera.environment=e
 	reflection_material=ShaderMaterial.new();reflection_material.shader=preload("res://shaders/study_water.gdshader")
 	reflection_material.set_shader_parameter("reflection_texture",reflection_view.get_texture())
+	reflection_material.set_shader_parameter("ripple_normals",preload("res://assets/textures/water_ripple_normals.tres"))
 	for n in world.get_children():
 		if n is MeshInstance3D and n.get_meta("lake_water",false):n.material_override=reflection_material
 
@@ -128,9 +133,9 @@ func _process(dt):
 	update_reflection()
 
 func update_reflection():
-	var cam=photo_camera if photo_camera else player.camera
+	var cam=photo_camera if photo_camera else get_viewport().get_camera_3d()
 	if not cam:return
-	var pos=cam.global_position;pos.y=-.10-pos.y
+	var pos=cam.global_position;pos.y=2.0*reflection_plane_height-pos.y
 	var forward=-cam.global_basis.z;forward.y=-forward.y
 	reflection_camera.global_position=pos;reflection_camera.look_at(pos+forward,Vector3.UP)
 	reflection_camera.fov=cam.fov;reflection_camera.projection=cam.projection;reflection_camera.size=cam.size

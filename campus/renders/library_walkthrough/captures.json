@@ -1,0 +1,13 @@
+{
+	"checks": {
+		"capture_entrance": true,
+		"capture_front": true,
+		"capture_interior-upper-east": true,
+		"capture_interior-upper-west": true,
+		"capture_oblique": true,
+		"capture_side": true
+	},
+	"passed": true,
+	"scope": "Screenshots captured during this movement validation run.",
+	"source_asset_sha256": "6167ca2e0bec0b8ecb6e926b53c4cafcc351b87c074680d65054bdf6175dcec9"
+}

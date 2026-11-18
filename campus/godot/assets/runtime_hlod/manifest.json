@@ -1,0 +1,327 @@
+{
+  "assets": {
+    "lake_willow_0": {
+      "center": [
+        -0.103441715240479,
+        3.39417457580566,
+        -0.192822456359863
+      ],
+      "size": 8.71964126586914,
+      "source_sha256": "f704e115df3e304d807362ff0911189c6a1622b9ba1d98a44af0e5a22d5ec106",
+      "texture": "res://assets/runtime_hlod/lake_willow_0.png",
+      "tile_size": 256.0
+    },
+    "lake_willow_1": {
+      "center": [
+        -0.231427192687988,
+        3.38294124603271,
+        -0.531381130218506
+      ],
+      "size": 7.94887275695801,
+      "source_sha256": "79bbbebd7a04d5c8ab066d28ceb92ec882309590adb9e3474b2aa13a95356fb2",
+      "texture": "res://assets/runtime_hlod/lake_willow_1.png",
+      "tile_size": 256.0
+    },
+    "sakura_shrub_0": {
+      "center": [
+        -0.139811813831329,
+        0.494252234697342,
+        0.139626383781433
+      ],
+      "size": 1.90457340717316,
+      "source_sha256": "f50f01b486abfa2c9e9c04f728e7668ba2acacd2b8429f739b9381c3ae9609c5",
+      "texture": "res://assets/runtime_hlod/sakura_shrub_0.png",
+      "tile_size": 256
+    },
+    "sakura_shrub_1": {
+      "center": [
+        0.035727858543396,
+        0.540755867958069,
+        -0.0514698624610901
+      ],
+      "size": 2.14234763145447,
+      "source_sha256": "f713efef58d0f77c88c12b41b3807d1333b09ad70521d7a5c4ee830aafbc5cd7",
+      "texture": "res://assets/runtime_hlod/sakura_shrub_1.png",
+      "tile_size": 256
+    },
+    "sakura_shrub_2": {
+      "center": [
+        0.0912824869155884,
+        0.559193730354309,
+        -0.162829279899597
+      ],
+      "size": 1.93406641960144,
+      "source_sha256": "cf672ca23650892fe07765ecc9ad57bd50a7aeb0d154b559a9a7249a45a60eab",
+      "texture": "res://assets/runtime_hlod/sakura_shrub_2.png",
+      "tile_size": 256
+    },
+    "sakura_tree_0": {
+      "center": [
+        -0.097292423248291,
+        3.7145459651947,
+        0.305368423461914
+      ],
+      "size": 11.2198253631592,
+      "source_sha256": "038fbc0c8627370b8909729b5a2ea85a9b62afa5ff8eacfa916274084b97ade7",
+      "texture": "res://assets/runtime_hlod/sakura_tree_0.png"
+    },
+    "sakura_tree_1": {
+      "center": [
+        0.239889144897461,
+        3.71064591407776,
+        -0.230406284332275
+      ],
+      "size": 11.1843048477173,
+      "source_sha256": "77e04a3381a3cf35f702d060ee5b80c95a0e104cb03e2ba0d548ae3af21700e3",
+      "texture": "res://assets/runtime_hlod/sakura_tree_1.png"
+    },
+    "sakura_tree_2": {
+      "center": [
+        0.140013694763184,
+        3.76694369316101,
+        -0.0892391204833984
+      ],
+      "size": 12.0339328765869,
+      "source_sha256": "b2607725873bb12109ee545ebb556a2202413f320062717c29639540c588b5f3",
+      "texture": "res://assets/runtime_hlod/sakura_tree_2.png"
+    },
+    "study_bank_patch_0": {
+      "center": [
+        -0.023410975933075,
+        0.313795477151871,
+        0.0670185089111328
+      ],
+      "size": 1.67473225593567,
+      "source_sha256": "fa64f22e5c6295a6129c534467e57feab3c44d506c3f79d613684fa93b2527bb",
+      "texture": "res://assets/runtime_hlod/study_bank_patch_0.png",
+      "tile_size": 256
+    },
+    "study_bank_patch_1": {
+      "center": [
+        0.0356860160827637,
+        0.306067436933517,
+        -0.0270665884017944
+      ],
+      "size": 1.52059724807739,
+      "source_sha256": "81beafd1de4a9db8b4a3defc9d2568e827c457e4fd27984c374c409787ba53d5",
+      "texture": "res://assets/runtime_hlod/study_bank_patch_1.png",
+      "tile_size": 256
+    },
+    "study_canopy_0": {
+      "center": [
+        0.00174283981323242,
+        5.03992319107056,
+        -0.301009178161621
+      ],
+      "size": 10.9842304229736,
+      "source_sha256": "1315f052235740e59b5d8d40c9c623475b85acf3ed0e7533282bbbaaa31126fd",
+      "texture": "res://assets/runtime_hlod/study_canopy_0.png",
+      "tile_size": 256.0
+    },
+    "study_canopy_1": {
+      "center": [
+        0.210602760314941,
+        4.97080516815186,
+        -0.150091648101807
+      ],
+      "size": 10.8349354934692,
+      "source_sha256": "d2bcdd8640d862f59f6bc3988733d7f383726b8f01f594ad634e7dde34a49349",
+      "texture": "res://assets/runtime_hlod/study_canopy_1.png",
+      "tile_size": 256.0
+    },
+    "study_canopy_2": {
+      "center": [
+        0.128313064575195,
+        4.98094320297241,
+        -0.153242111206055
+      ],
+      "size": 10.8568336486816,
+      "source_sha256": "9379a47d856ce6a7a2fbcf023b8272ab3de9aaa49f6d7ae8ce67c560985344a4",
+      "texture": "res://assets/runtime_hlod/study_canopy_2.png",
+      "tile_size": 256.0
+    },
+    "study_flower_mound_0": {
+      "center": [
+        -0.0158994197845459,
+        0.528626382350922,
+        0.0136544704437256
+      ],
+      "size": 2.59378658294678,
+      "source_sha256": "4fe3a9c7703c8f7d0887bce3d0e2a7fae3e00a328937b6bc0b486096d0d38909",
+      "texture": "res://assets/runtime_hlod/study_flower_mound_0.png",
+      "tile_size": 256
+    },
+    "study_flower_mound_1": {
+      "center": [
+        0.0270901918411255,
+        0.514174580574036,
+        0.120724081993103
+      ],
+      "size": 2.5511981678009,
+      "source_sha256": "e8589a132e31878bb1c87e5984bf9d3ad2dba03c344e98afbbc623a762816bde",
+      "texture": "res://assets/runtime_hlod/study_flower_mound_1.png",
+      "tile_size": 256
+    },
+    "tree0": {
+      "center": [
+        -0.305589199066162,
+        4.61536836624146,
+        -0.377587795257568
+      ],
+      "size": 12.6763240814209,
+      "source_sha256": "43699e8813cadfdb7914499d5011e34d0ef00fb2e2432e023ff1aac2940731d4",
+      "texture": "res://assets/runtime_hlod/tree0.png",
+      "tile_size": 256.0
+    },
+    "tree0b": {
+      "center": [
+        0.534532070159912,
+        4.78542137145996,
+        0.0513815879821777
+      ],
+      "size": 12.3760409545898,
+      "source_sha256": "754f2845fa4a56878567faee52792001fb0007a40e275bbbc09a86a8a71bc70d",
+      "texture": "res://assets/runtime_hlod/tree0b.png",
+      "tile_size": 256.0
+    },
+    "tree0c": {
+      "center": [
+        -0.252500534057617,
+        4.38568210601807,
+        0.089545726776123
+      ],
+      "size": 13.3025839233398,
+      "source_sha256": "558df4301c96f5ce475a7d2e8fe052c4e656784c9ff27182447cde6f264024a8",
+      "texture": "res://assets/runtime_hlod/tree0c.png",
+      "tile_size": 256.0
+    },
+    "tree1": {
+      "center": [
+        0.190464496612549,
+        6.92764520645142,
+        -0.0307397842407227
+      ],
+      "size": 16.0206310272217,
+      "source_sha256": "f52392da99b5e8b096d2e7bcb3dd397b18776186d2b70becda721807524c7981",
+      "texture": "res://assets/runtime_hlod/tree1.png",
+      "tile_size": 256.0
+    },
+    "tree1b": {
+      "center": [
+        0.523826599121094,
+        6.19803810119629,
+        0.0293464660644531
+      ],
+      "size": 14.6483631134033,
+      "source_sha256": "9e7a0f7bc9aa668cf311e620d677c8d0b7c621cc2c0e692d0ff27ed278fe790d",
+      "texture": "res://assets/runtime_hlod/tree1b.png",
+      "tile_size": 256.0
+    },
+    "tree1c": {
+      "center": [
+        0.670556545257568,
+        6.61953783035278,
+        -0.154802322387695
+      ],
+      "size": 15.9010125732422,
+      "source_sha256": "88ac545504b4b04f55e01ef79db2e3077b9e800f1e8199c254d66a790012a998",
+      "texture": "res://assets/runtime_hlod/tree1c.png",
+      "tile_size": 256.0
+    },
+    "tree2": {
+      "center": [
+        -0.326199054718018,
+        5.34217262268066,
+        0.0936417579650879
+      ],
+      "size": 13.5425078201294,
+      "source_sha256": "b6cd45559aff5f587022f730420c8dc110f65487008d4e515c26e9496d387d40",
+      "texture": "res://assets/runtime_hlod/tree2.png",
+      "tile_size": 256.0
+    },
+    "tree2b": {
+      "center": [
+        0.160791397094727,
+        5.62458658218384,
+        -0.472221851348877
+      ],
+      "size": 12.8843076324463,
+      "source_sha256": "f1d0cb589a8fac97f7396d3fe56e4bb1be8eee19bb4f0c6c0985d660b36fd4e8",
+      "texture": "res://assets/runtime_hlod/tree2b.png",
+      "tile_size": 256.0
+    },
+    "tree2c": {
+      "center": [
+        0.761993408203125,
+        4.61390256881714,
+        0.10080623626709
+      ],
+      "size": 13.3734828186035,
+      "source_sha256": "35856cffa102c3615173c14f8384a50a6ab96829ba0eec5f1aed1abaee2544cf",
+      "texture": "res://assets/runtime_hlod/tree2c.png",
+      "tile_size": 256.0
+    },
+    "tree_conifer": {
+      "center": [
+        0.322727203369141,
+        6.63999128341675,
+        0.253864765167236
+      ],
+      "size": 14.3862423706055,
+      "source_sha256": "c1c8bb59c2b9cd2539ca8a8bd1b2a622967a6980f3a7c7d6c5d264f35dd740d5",
+      "texture": "res://assets/runtime_hlod/tree_conifer.png",
+      "tile_size": 256.0
+    },
+    "tree_garden": {
+      "center": [
+        0.154867172241211,
+        4.57295227050781,
+        -0.206530094146729
+      ],
+      "size": 9.92718944549561,
+      "source_sha256": "d5a26961d9b650a8b1e96807deaa9f76547066a208c2f129a408b34f9ede769e",
+      "texture": "res://assets/runtime_hlod/tree_garden.png",
+      "tile_size": 256.0
+    },
+    "tree_plane_a": {
+      "center": [
+        0.384396553039551,
+        7.35638332366943,
+        0.195054531097412
+      ],
+      "size": 15.9529909515381,
+      "source_sha256": "8ba4f9277c78ca435cb1b371904923676dbcc7417c3e3acabc2bf0bb0e497652",
+      "texture": "res://assets/runtime_hlod/tree_plane_a.png",
+      "tile_size": 256.0
+    },
+    "tree_plane_b": {
+      "center": [
+        0.102080821990967,
+        7.7121319770813,
+        0.180051803588867
+      ],
+      "size": 16.7054291152954,
+      "source_sha256": "1a227d42fbb04fce8b020feff789acf18d404ed7769703b92859e5c947a46022",
+      "texture": "res://assets/runtime_hlod/tree_plane_b.png",
+      "tile_size": 256.0
+    },
+    "tree_plane_c": {
+      "center": [
+        -0.334272861480713,
+        6.76243782043457,
+        -0.208292007446289
+      ],
+      "size": 14.6450157165527,
+      "source_sha256": "154638c7980d1460383a21363c70af666b6503a1d9f089e0bd645e3135da3010",
+      "texture": "res://assets/runtime_hlod/tree_plane_c.png",
+      "tile_size": 256.0
+    }
+  },
+  "elevations": [
+    -10.0,
+    30.0
+  ],
+  "tile_size": 512.0,
+  "version": 1.0,
+  "yaw_count": 8.0
+}

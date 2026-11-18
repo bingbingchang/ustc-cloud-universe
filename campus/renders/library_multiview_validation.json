@@ -1,0 +1,40 @@
+{
+	"checks": {
+		"campus_entrance_origin": true,
+		"campus_orientation": true,
+		"door_cut_intersects_shell": true,
+		"door_position_UpperEast": true,
+		"door_position_UpperWest": true,
+		"landing_height_retained": true,
+		"local_asset_depth": true,
+		"local_asset_height": true,
+		"local_asset_width": true,
+		"local_coordinate_contract": true,
+		"new_shell_main_roof": true,
+		"old_shell_removed_(-40.0, -12.0)": true,
+		"old_shell_removed_(0.0, -27.0)": true,
+		"old_shell_removed_(40.0, -12.0)": true,
+		"separate_replaceable_door_leaves": true,
+		"two_working_entry_door_nodes": true,
+		"unchanged_pose_south_canteen": true,
+		"unchanged_pose_south_old_library": true,
+		"unchanged_pose_south_teaching2": true,
+		"unchanged_pose_south_young_college": true,
+		"upper-east_no_permanent_mesh": true,
+		"upper-west_no_permanent_mesh": true
+	},
+	"local_bounds_position": [
+		-36.5999984741211,
+		0.0,
+		-26.2099990844727
+	],
+	"local_bounds_size": [
+		73.1999969482422,
+		32.2400016784668,
+		37.0061073303223
+	],
+	"mesh_count": 157,
+	"passed": true,
+	"source_asset_sha256": "6167ca2e0bec0b8ecb6e926b53c4cafcc351b87c074680d65054bdf6175dcec9",
+	"triangles": 93480
+}

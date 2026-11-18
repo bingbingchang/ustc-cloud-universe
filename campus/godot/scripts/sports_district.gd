@@ -34,6 +34,8 @@ static func build(c:Node3D,s:Dictionary):
 	North._surface(c,[track],.10,sports_material(Color("a55240")),"AthleticRedTrack")
 	North._solid(c,[track],-.1,.10,"AthleticTrackWalkable")
 	North._surface(c,[North.polygon(d.soccer_outline)],.112,sports_material(Color("487952"),true),"FootballTurf")
+	if OS.has_feature("windows"):
+		preload("res://scripts/sports_photo_details.gd").track_entry(c,d.track)
 	var white=sports_material(Color("dfddd0"))
 	# Lane markings follow the whole measured oval, including both straightaways.
 	for k in range(d.track.lanes+1):paint(c,oval(d.track,d.track.outer_radius-k*d.track.lane_width),white,.075)

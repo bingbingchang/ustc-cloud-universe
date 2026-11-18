@@ -1,0 +1,78 @@
+{
+  "base_commit": "372e19711459f156934637ae069ba9b0c965f847",
+  "gpu": "NVIDIA GeForce RTX 2060",
+  "engine": "4.7.1-stable (official)",
+  "renderer": "forward_plus",
+  "rows": [
+    {
+      "view": "avenue_near",
+      "before_fps": 29.4674826329146,
+      "after_fps": 38.8882944151996,
+      "before_p95_ms": 37.502,
+      "after_p95_ms": 28.734,
+      "before_primitives": 32089459.0,
+      "after_primitives": 12400589.0,
+      "fps_gain_percent": 31.970195417243218
+    },
+    {
+      "view": "avenue_gate",
+      "before_fps": 23.127134684446,
+      "after_fps": 36.3780271388407,
+      "before_p95_ms": 47.277,
+      "after_p95_ms": 30.519,
+      "before_primitives": 41728826.0,
+      "after_primitives": 11096780.0,
+      "fps_gain_percent": 57.29586753912279
+    },
+    {
+      "view": "hall_occluded",
+      "before_fps": 42.7331097383759,
+      "after_fps": 55.5918585556702,
+      "before_p95_ms": 29.162,
+      "after_p95_ms": 22.801,
+      "before_primitives": 20400098.0,
+      "after_primitives": 5176005.0,
+      "fps_gain_percent": 30.090833304711893
+    },
+    {
+      "view": "avenue_far",
+      "before_fps": 47.3263566395921,
+      "after_fps": 76.2245981526656,
+      "before_p95_ms": 24.207,
+      "after_p95_ms": 14.615,
+      "before_primitives": 12143351.0,
+      "after_primitives": 3980824.0,
+      "fps_gain_percent": 61.061623089105346
+    },
+    {
+      "view": "lake_toward_trees",
+      "before_fps": 34.5008504251794,
+      "after_fps": 51.9790697612428,
+      "before_p95_ms": 32.436,
+      "after_p95_ms": 21.52,
+      "before_primitives": 32912553.0,
+      "after_primitives": 6718761.0,
+      "fps_gain_percent": 50.66025654633559
+    },
+    {
+      "view": "gate_away",
+      "before_fps": 86.7774847904136,
+      "after_fps": 89.248096040618,
+      "before_p95_ms": 13.214,
+      "after_p95_ms": 12.466,
+      "before_primitives": 3534133.0,
+      "after_primitives": 2118834.0,
+      "fps_gain_percent": 2.8470648304355306
+    }
+  ],
+  "all_views_30fps_p95_40ms": true,
+  "native_project_settings_unchanged": true,
+  "bridge_validation": {
+    "four_approaches": true,
+    "native_screenshots": true,
+    "rendered_collision_alignment": true,
+    "twelve_actual_third_person_routes": true
+  },
+  "physical_mobile_tests": "pending",
+  "public_build_for_pr1": "pending"
+}

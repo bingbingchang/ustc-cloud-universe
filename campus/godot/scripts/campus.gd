@@ -2,6 +2,19 @@ extends Node3D
 
 const Walker=preload("res://scripts/player.gd")
 const ArtShader=preload("res://shaders/academic.gdshader")
+const PHOTO_TILE_SIZES := {
+	"PhotoAuditStone":Vector2(.66,.48),"PhotoAuditSoffit":Vector2(1.14,.75),
+	"PhotoActivityBrick":Vector2(.23,.105),"PhotoActivityStone":Vector2(1.15,.60),
+	"PhotoArchiveBrick":Vector2(.32,.15),"PhotoLibraryStone":Vector2(.91,.52),
+	"PhotoLibraryOrangeBrick":Vector2(.29,.10),"PhotoOldLibraryBrick":Vector2(.31,.114),
+	"PhotoTeachingOrange":Vector2(1.18,1.06),"PhotoCanteenRed":Vector2(1.09,.94),
+	"PhotoCanteenPanel":Vector2(1.04,.92),"PhotoReportCladding":Vector2(.92,.41),
+	"PhotoReportStone":Vector2(1.14,.68),"PhotoLabTile":Vector2(.134,.100),
+	"PhotoLabWhite":Vector2(.103,.085),"PhotoLabGoldPanel":Vector2(1.07,.91),
+	"PhotoResourcesGrey":Vector2(.226,.087),"PhotoGateMasonry":Vector2(.76,.63),
+	"PhotoGymBrick":Vector2(.24,.081),"PhotoGymCream":Vector2(.20,.16),
+	"PhotoServiceStone":Vector2(.76,.58),"PhotoD364Red":Vector2(.32,.11),
+	"PhotoHistoricYellow":Vector2(.43,.244)}
 var site:Dictionary
 var world:Node3D
 var player:CharacterBody3D
@@ -11,6 +24,7 @@ var art_mats:Array[ShaderMaterial]=[]
 var locator:CanvasLayer
 var original_mats={}
 var asset_cache={}
+var sign_font:Font
 var ponds:Array[PackedVector2Array]=[]
 var hud:CanvasLayer
 var mode_label:Label
@@ -141,6 +155,32 @@ func style(n:Node):
 			var old=n.mesh.surface_get_material(s)
 			if old is StandardMaterial3D:
 				var key=old.resource_name
+				var glazing: String = key.get_slice(".", 0)
+				if glazing in ["PhotoVisitGlass", "PhotoLobbyGlass", "PhotoDoorGlass", "Teaching5EntryDoorPane"] or ("PhotoVisitGlass" in str(n.name) and key == "Glass"):
+					var door_finish := "door:" + glazing
+					if not original_mats.has(door_finish):
+						original_mats[door_finish] = preload("res://scripts/campus_visit_interior.gd").clear_glass(old.albedo_color)
+					n.set_surface_override_material(s, original_mats[door_finish])
+					n.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+					continue
+				if key=="Teaching5EntryIvory" or PHOTO_TILE_SIZES.has(key):
+					if not original_mats.has(key):
+						var tiles:=ShaderMaterial.new()
+						tiles.shader=preload("res://shaders/teaching5_tile.gdshader")
+						tiles.set_shader_parameter("wall_color",old.albedo_color)
+						if PHOTO_TILE_SIZES.has(key):
+							var bricks:bool=key.ends_with("Brick")
+							tiles.set_shader_parameter("tile_size",PHOTO_TILE_SIZES[key])
+							tiles.set_shader_parameter("joint_strength",.12 if bricks else .17)
+							tiles.set_shader_parameter("staggered_rows",bricks)
+							tiles.set_shader_parameter("tile_variation",.17 if bricks else .065)
+						original_mats[key]=tiles
+					n.set_surface_override_material(s,original_mats[key])
+					continue
+				if key.begins_with("Teaching5Entry") or key.begins_with("Photo"):
+					if old.transparency != BaseMaterial3D.TRANSPARENCY_DISABLED:
+						n.cast_shadow=GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+					continue
 				if key=="TikuFace":
 					var face=ShaderMaterial.new();face.shader=preload("res://shaders/tiku_face.gdshader")
 					face.set_shader_parameter("face_albedo",load("res://assets/textures/tiku_face_albedo.png"))
@@ -280,7 +320,7 @@ func multimesh_batch(asset:String,transforms:Array):
 			for group in render_instance_groups(asset,transforms):
 				var mm=MultiMesh.new();mm.transform_format=MultiMesh.TRANSFORM_3D;mm.mesh=ar;mm.instance_count=group.size()
 				for i in group.size():mm.set_instance_transform(i,group[i]*part.transform)
-				var mi=MultiMeshInstance3D.new();mi.name=asset+"_"+key;mi.multimesh=mm;mi.set_meta("render_asset",asset);world.add_child(mi)
+				var mi=MultiMeshInstance3D.new();mi.name=asset+"_"+key;mi.multimesh=mm;mi.set_meta("render_asset",asset);mi.set_meta("render_placements",group);world.add_child(mi)
 				mi.visibility_range_end=370 if asset.begins_with("tree") else 170
 				mi.visibility_range_end_margin=15
 		part_index+=1
@@ -392,7 +432,8 @@ func signpost(p:Vector3,title:String,sub:String):
 	box(p+Vector3(0,.8,0),Vector3(.08,1.6,.08),mats.dark)
 	box(p+Vector3(0,1.46,0),Vector3(2.2,.78,.10),mats.dark)
 	var label=Label3D.new();label.text=title+"\n"+sub;label.font_size=38;label.pixel_size=.0045;label.position=p+Vector3(0,1.48,-.065);label.rotation.y=PI
-	var font=SystemFont.new();font.font_names=PackedStringArray(["Microsoft YaHei","Noto Sans CJK SC"]);label.font=font
+	if sign_font==null:sign_font=preload("res://scripts/campus_font.gd").get_font()
+	label.font=sign_font
 	label.modulate=Color("eae4c8");label.outline_size=0;world.add_child(label)
 
 func setup_environment():
@@ -436,7 +477,7 @@ func label(text:String,size:int,color:Color)->Label:
 func setup_hud():
 	hud=CanvasLayer.new();add_child(hud)
 	var root=Control.new();root.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT);root.mouse_filter=Control.MOUSE_FILTER_IGNORE;hud.add_child(root)
-	var theme=Theme.new();var font=SystemFont.new();font.font_names=PackedStringArray(["Microsoft YaHei","Segoe UI"]);theme.default_font=font;root.theme=theme
+	var theme=Theme.new();theme.default_font=preload("res://scripts/campus_font.gd").get_font();root.theme=theme
 	var top=VBoxContainer.new();top.position=Vector2(38,30);top.add_theme_constant_override("separation",4);root.add_child(top)
 	top.add_child(label("U S T C   /   E A S T   C A M P U S",13,Color("e2dfbd")))
 	top.add_child(label("东区 · 普通下午",28,Color("fff9e5")))

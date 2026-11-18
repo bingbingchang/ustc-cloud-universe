@@ -1,7 +1,11 @@
 """Independent mapped dormitory, grandstand and football-equipment assets."""
 from pathlib import Path
-import json,math,bpy,bmesh
+import json,math,bpy,bmesh,sys
 script=Path(__file__).resolve()
+sys.path.insert(0,str(script.parent))
+from mapped_landmark_details import MATERIALS, install_photo_materials
+from science_exteriors import SCIENCE_MATERIALS
+from sports_exteriors import SPORTS_MATERIALS, add_teaching_office
 helpers=(script.parent/'build_north_teaching.py').read_text(encoding='utf-8').split('# Exact snapshot footprints')[0]
 exec(compile(helpers,'campus_exterior_helpers','exec'),globals())
 for name,col in [('DormCream',(.74,.71,.61)),('DormPale',(.72,.73,.66)),
@@ -9,6 +13,8 @@ for name,col in [('DormCream',(.74,.71,.61)),('DormPale',(.72,.73,.66)),
                  ('StandTrim',(.63,.48,.17)),('SeatMutedGold',(.60,.53,.25)),
                  ('SportsSteel',(.55,.62,.60)),('GoalWhite',(.83,.85,.79)),
                  ('NetCord',(.59,.65,.58)),('AirConditioner',(.62,.65,.61))]:material(name,col)
+for palette in (MATERIALS,SCIENCE_MATERIALS,SPORTS_MATERIALS):
+    install_photo_materials(material,materials,palette)
 data=json.loads((ROOT/'godot/data/sports_district.json').read_text(encoding='utf-8'))
 manifest={'unit':'meter','placement':[0,0,0],'buildings':data['buildings'],
           'assets':{},'collision_solids':solids,'sources':data['sources'],
@@ -24,6 +30,9 @@ def tube(a,b,r,mat,n=8):
 
 for i,b in enumerate(data['buildings']):
     asset='sports_dorms' if i<4 else 'sports_teaching_office'
+    if i==4:
+        b['front_approach']=list(add_teaching_office(asset,b,geo,slab,edgebox,inscription,solids,facade))
+        continue
     wall=['DormCream','DormPale','DormOchre','DormCream','DormPale'][i]
     p=facade(b['outline'],b['levels'],b['height'],wall,pitch=3.1 if i<4 else 3.7)
     edges=[(a,bp) for a,bp in zip(p,p[1:]+p[:1]) if math.dist(a,bp)>12 and abs(a[1]-bp[1])<2]
@@ -119,10 +128,12 @@ for asset,obs in objects.items():
         ob=bpy.context.view_layer.objects.active;ob.name=asset+'_'+mat;merged.append(ob)
     bpy.ops.object.select_all(action='DESELECT')
     for ob in merged:ob.select_set(True)
-    bpy.ops.export_scene.gltf(filepath=str(ROOT/'godot/assets'/f'{asset}.glb'),export_format='GLB',use_selection=True,export_apply=True,export_yup=True)
+    args.output_dir.mkdir(parents=True,exist_ok=True)
+    bpy.ops.export_scene.gltf(filepath=str(args.output_dir/f'{asset}.glb'),export_format='GLB',use_selection=True,export_apply=True,export_yup=True)
     count=0
     for ob in merged:ob.data.calc_loop_triangles();count+=len(ob.data.loop_triangles)
     manifest['assets'][asset]={'file':asset+'.glb','surfaces':len(merged),'triangles':count}
     print('SPORTS_ASSET',asset,count)
-(ROOT/'godot/assets/sports_district_manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
-bpy.ops.wm.save_as_mainfile(filepath=str(ROOT/'blender/source/sports_district.blend'))
+(args.output_dir/'sports_district_manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+if args.output_dir==ROOT/'godot/assets':
+    bpy.ops.wm.save_as_mainfile(filepath=str(ROOT/'blender/source/sports_district.blend'))

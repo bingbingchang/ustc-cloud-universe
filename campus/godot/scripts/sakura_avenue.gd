@@ -126,7 +126,7 @@ static func build(c:Node3D):
 			pavers.append(Geometry._box_transform(Vector3(p.x,.042,p.y),Vector3(1.45,.076,.988),0))
 			# Thin infill sits on the already walkable strip; top difference is below a step.
 			c.static_box(Vector3(p.x,.015,p.y),Vector3(1.45,.13,.99),"SakuraSidePavingSupport")
-	Geometry._box_batch(c,pavers,c.mats.path,"SakuraSidePaving")
+	Geometry._box_batch(c,pavers,preload("res://scripts/road_surfaces.gd").material(c,"pavers"),"SakuraSidePaving")
 	# Understated low garden lights, placed in planting rather than the travel lane.
 	var dark=c.material(Color("354b43"));var glow=c.material(Color("e7d9ac"))
 	for side in [-1,1]:

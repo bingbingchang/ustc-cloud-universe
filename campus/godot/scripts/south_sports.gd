@@ -16,6 +16,23 @@ static func arc(c:Node3D,ct:Dictionary,x:float,z:float,r:float,a:float,b:float,m
 	for k in range(65):points.append([x+r*cos(lerpf(a,b,k/64.0)),z+r*sin(lerpf(a,b,k/64.0))])
 	line(c,ct,points,mat)
 
+static func paint_basketball_red(c:Node3D,ct:Dictionary,red:Material) -> void:
+	var length:float=ct.length*.5
+	var parts=[]
+	var center:=PackedVector2Array()
+	for i in range(32):
+		var angle:=TAU*i/32
+		center.append(point(ct,1.76*cos(angle),1.76*sin(angle)))
+	center.reverse()
+	parts.append(center)
+	for direction in [-1,1]:
+		var z:float=direction*length
+		var shape:=PackedVector2Array([point(ct,-2.41,z),point(ct,2.41,z),
+					point(ct,2.41,z-direction*5.23),point(ct,-2.41,z-direction*5.23)])
+		if not Geometry2D.is_polygon_clockwise(shape):shape.reverse()
+		parts.append(shape)
+	North._surface(c,parts,.115,red,"CourtRedKeys_"+ct.id)
+
 static func fence(c:Node3D,ct:Dictionary,a:Vector2,b:Vector2,mat:Material):
 	var length=a.distance_to(b);var st=SurfaceTool.new();st.begin(Mesh.PRIMITIVE_TRIANGLES)
 	var vs=[Vector3(a.x,.12,a.y),Vector3(b.x,.12,b.y),Vector3(b.x,3.0,b.y),Vector3(a.x,3.0,a.y)]
@@ -48,6 +65,7 @@ static func build(c:Node3D,s:Dictionary):
 		var w:float=ct.width*.5;var l:float=ct.length*.5
 		line(c,ct,[[-w,-l],[w,-l],[w,l],[-w,l],[-w,-l]],white)
 		if ct.sport=="basketball":
+			paint_basketball_red(c,ct,red)
 			line(c,ct,[[-w,0],[w,0]],white);arc(c,ct,0,0,1.8,0,TAU,white)
 			for side in [-1,1]:
 				var z=side*l
@@ -67,6 +85,8 @@ static func build(c:Node3D,s:Dictionary):
 	for h in d.hardscape:
 		var pieces=North._pieces(North.polygon(h.polygon),cuts+court_cuts)
 		North._surface(c,pieces,.105,Surfaces.material(c,h.surface),"SouthHardscape_"+h.id);North._solid(c,pieces,-.1,.105,"SouthForecourt_"+h.id)
+	if OS.has_feature("windows"):
+		preload("res://scripts/sports_photo_details.gd").courtside_seats(c)
 	for b in manifest.buildings:
 		var p=Vector2(b.front_approach[0],b.front_approach[2]);var nearest=Vector2.ZERO;var best=INF
 		for road in Network.data().roads:

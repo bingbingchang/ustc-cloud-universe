@@ -1,6 +1,6 @@
 """Independent researched north-axis architecture; never rebuild accepted hall assets.
 All authored geometry uses Godot (east, up, south), converted with pt=(x,-z,y).
-Run Blender -b --python build_north_axis.py [-- --proof].
+Run Blender -b --python build_north_axis.py [-- --proof | --output-dir DIRECTORY].
 """
 from pathlib import Path
 import sys, math, random, json, shutil
@@ -18,6 +18,16 @@ for name,col in {'Brick':(.36,.22,.16),'BrickWarm':(.41,.28,.21),'Leaf':(.22,.32
 for name,col,rough in [('NorthGateIvory',(.69,.66,.56),.82),('NorthJoint',(.36,.37,.33),.93),('NorthRoofTile',(.30,.32,.30),.76),('NorthTileWarm',(.42,.215,.155),.8),('NorthColumn',(.56,.44,.27),.78),('NorthSoffit',(.66,.63,.54),.85),('NorthCourtWood',(.28,.205,.14),.80),('NorthExpertBrick',(.43,.275,.205),.86),('NorthBrickPale',(.57,.47,.34),.86),('NorthBackgroundPlaster',(.56,.57,.50),.85),('NorthGateLetter',(.25,.09,.065),.77)]:
  m=bpy.data.materials.new(name);m.use_nodes=True;m.diffuse_color=(*col,1)
  bs=next(n for n in m.node_tree.nodes if n.type=='BSDF_PRINCIPLED');bs.inputs['Base Color'].default_value=(*col,1);bs.inputs['Roughness'].default_value=rough;M[name]=m
+for name,color in {
+ 'PhotoPavilionRed':(.348,.108,.102), 'PhotoPavilionTile':(.413,.139,.125),
+ 'PhotoPavilionPost':(.56,.385,.292), 'PhotoPavilionStone':(.53,.491,.445),
+ 'PhotoPavilionRedWood':(.242,.086,.068), 'PhotoLakeBridgeCoping':(.61,.555,.495),
+}.items():
+ m=bpy.data.materials.new(name);m.use_nodes=True;m.diffuse_color=(*color,1)
+ shader=next(n for n in m.node_tree.nodes if n.type=='BSDF_PRINCIPLED')
+ shader.inputs['Base Color'].default_value=(*color,1)
+ shader.inputs['Roughness'].default_value=.86
+ M[name]=m
 # Canonical coordinates are copied from the verified OSM geometry and replaced by
 # north_axis_layout.json when present. Never use the old site.json hand-drawn bridge.
 PAV=[42.501,80.789]
@@ -140,25 +150,27 @@ inner=[(px+(x-px)*.96,pz+(z-pz)*.96) for x,z in PAV_OUTLINE]
 slab(inner,DECK-.008,DECK,'NorthSoffit')
 colpts=[(px+(x-px)*.70,pz+(z-pz)*.70) for x,z in PAV_OUTLINE]
 for i,(x,z) in enumerate(colpts):
- tube((x,DECK,z),(x,3.83,z),.165,.145,'NorthColumn',24)
+ tube((x,DECK,z),(x,3.83,z),.165,.145,'PhotoPavilionPost',24)
  tube((x,DECK,z),(x,DECK+.13,z),.19,.18,'Stone',24)
  solid_cylinder('YijianColumn'+str(i),(x,(DECK+3.83)/2,z),.17,3.83-DECK)
  a=colpts[i];b=colpts[(i+1)%6]
  beam(a,b,.32,.29,3.84,'NorthSoffit')
- beam(a,b,.17,.09,3.61,'NorthCourtWood')
+ beam(a,b,.17,.09,3.61,'PhotoPavilionRedWood')
  dx,dz=b[0]-a[0],b[1]-a[1]
  # Simple rectangular Chinese garden bracket rhythm observed in close reference.
  for t in [.16,.84]:
   c=(a[0]+dx*t,a[1]+dz*t)
-  beam((c[0]-dx*.07,c[1]-dz*.07),(c[0]+dx*.07,c[1]+dz*.07),.095,.10,3.45,'NorthCourtWood')
-  tube((c[0],3.41,c[1]),(c[0],3.62,c[1]),.042,.042,'NorthCourtWood',8)
+  beam((c[0]-dx*.07,c[1]-dz*.07),(c[0]+dx*.07,c[1]+dz*.07),.095,.10,3.45,'PhotoPavilionRedWood')
+  tube((c[0],3.35,c[1]),(c[0],3.62,c[1]),.048,.052,'PhotoPavilionRedWood',8)
  # Both bridge junctions at northern/eastern vertices stay unblocked.
  if i in [0,1,2]:
-  beam(a,b,.45,.12,.84,'NorthCourtWood')
-  beam(a,b,.10,.11,1.37,'NorthCourtWood')
+  beam(a,b,.45,.12,.84,'PhotoPavilionStone')
+  beam(a,b,.18,.092,1.37,'PhotoPavilionStone')
   for q in range(9):
    t=(q+.5)/9;xx=a[0]+dx*t;zz=a[1]+dz*t
-   tube((xx,.9,zz),(xx+dx*.025,1.33,zz+dz*.025),.030,.027,'NorthCourtWood',10)
+   tube((xx,.90,zz),(xx,1.03,zz),.036,.053,'PhotoPavilionStone',10)
+   tube((xx,1.03,zz),(xx,1.20,zz),.053,.028,'PhotoPavilionStone',10)
+   tube((xx,1.20,zz),(xx,1.33,zz),.028,.047,'PhotoPavilionStone',10)
   beam(a,b,.42,.95,.84,'NorthCourtWood',collide='YijianBenchBarrier'+str(i))
 # Roof is a tessellated curved sheet over the irregular six-sided plan.
 def rv(side,t,k,lift=0):
@@ -170,20 +182,20 @@ for side in range(6):
  for j in range(22):
   for k in range(24):
    coords=[rv(side,j/22,k/24),rv(side,j/22,(k+1)/24),rv(side,(j+1)/22,(k+1)/24),rv(side,(j+1)/22,k/24)]
-   active='NorthPavilionRoofSurface';geo(coords,[(0,1,2,3)],'PavilionRoof')
+   active='NorthPavilionRoofSurface';geo(coords,[(0,1,2,3)],'PhotoPavilionRed')
    active='NorthPavilionRoofSoffit';geo([(x,y-.12,z) for x,y,z in coords],[(3,2,1,0)],'NorthSoffit')
    active='NorthPavilion'
  # Fewer, continuous broad rolled channels read cleanly at real-world scale.
  for k in range(19):
   q=k/18
-  sweep([rv(side,j/24,q,.026) for j in range(4,25)],.041,'NorthTileWarm' if k%4==0 else 'PavilionRoof',8)
-  ellipsoid(rv(side,1,q,.012),(.055,.058,.055),'NorthTileWarm' if k%4==0 else 'PavilionRoof',12,7)
- sweep([rv(side,j/32,0,.07) for j in range(33)],.071,'NorthTileWarm',10)
+  sweep([rv(side,j/24,q,.026) for j in range(4,25)],.041,'PhotoPavilionTile' if k%4==0 else 'PhotoPavilionRed',8)
+  ellipsoid(rv(side,1,q,.012),(.055,.058,.055),'PhotoPavilionTile' if k%4==0 else 'PhotoPavilionRed',12,7)
+ sweep([rv(side,j/32,0,.07) for j in range(33)],.071,'PhotoPavilionTile',10)
  # The fascia follows the true six-edge curve, no floating flat strip.
- sweep([rv(side,1,k/24,-.042) for k in range(25)],.058,'PavilionRoof',10)
-tube((px,6.34,pz),(px,6.50,pz),.16,.17,'PavilionRoof',24)
-tube((px,6.49,pz),(px,7.12,pz),.23,.27,'NorthTileWarm',24)
-tube((px,7.10,pz),(px,7.15,pz),.285,.285,'PavilionRoof',24)
+ sweep([rv(side,1,k/24,-.042) for k in range(25)],.058,'PhotoPavilionRed',10)
+tube((px,6.34,pz),(px,6.50,pz),.16,.17,'PhotoPavilionRed',24)
+tube((px,6.49,pz),(px,7.12,pz),.21,.255,'PhotoPavilionTile',24)
+tube((px,7.10,pz),(px,7.15,pz),.263,.263,'PhotoPavilionTile',24)
 # The photographed pavilion does not justify a invented hanging sign; omit it.
 
 # STONE BRIDGES: mitered walks, pale low cope slabs / short stone piers.
@@ -216,7 +228,7 @@ for bridge in BRIDGES:
     if i==4:aa=aa.lerp(bb,min(.9,1.2/(bb-aa).length))
    if bridge['id'] in ['west_short','west_spur'] and i==0:aa=aa.lerp(bb,min(.9,1.35/(bb-aa).length))
    beam(aa,bb,.30,.30,DECK-.03,'Stone')
-   beam(aa,bb,.36,.14,DECK+.60,'Stone')
+   beam(aa,bb,.36,.14,DECK+.60,'PhotoLakeBridgeCoping')
    beam(aa,bb,.22,.11,DECK+.135,'Stone')
    beam(aa,bb,.28,.66,DECK+.33,'Stone',collide='BridgeBarrier_'+bridge['id']+'_'+str(i)+'_'+str(side))
    spacing=max(1,math.ceil((bb-aa).length/1.65))
@@ -319,21 +331,23 @@ for (group,mat),(vs,fs) in groups.items():
  if group=='NorthPavilionRoofSurface':bmesh.ops.reverse_faces(bm,faces=[f for f in bm.faces if f.normal.z<0])
  if group=='NorthPavilionRoofSoffit':bmesh.ops.reverse_faces(bm,faces=[f for f in bm.faces if f.normal.z>0])
  bm.to_mesh(mesh);bm.free()
- if mat in ['PavilionRoof','NorthTileWarm','NorthSoffit','NorthColumn','Trunk'] or group=='NorthGateVine':
+ if mat in ['PhotoPavilionTile','PhotoPavilionRed','PhotoPavilionPost','NorthSoffit','NorthColumn','Trunk'] or group=='NorthGateVine':
   for f in mesh.polygons:f.use_smooth=True
- if mat not in ['Glass','GlassLight','Leaf','LeafLight','LeafDark','PavilionRoof','NorthTileWarm','Trunk','Frame','Dark','NorthBrickPale','NorthBackgroundPlaster']:
+ if mat not in ['Glass','GlassLight','Leaf','LeafLight','LeafDark','PhotoPavilionTile','PhotoPavilionRed',
+                'PhotoPavilionPost','PhotoPavilionStone','Trunk','Frame','Dark','NorthBrickPale','NorthBackgroundPlaster']:
   bev=o.modifiers.new('Soft architectural edges','BEVEL');bev.width=.018 if group in ['NorthPavilion','NorthBridges'] else .027;bev.segments=2;bev.limit_method='ANGLE';bev.angle_limit=.55
   normal=o.modifiers.new('Face weighted normals','WEIGHTED_NORMAL');normal.keep_sharp=True
  asset_objects.setdefault(group,[]).append(o)
 for o in bpy.context.scene.objects:
  if o.type=='FONT':asset_objects.setdefault(o['asset_group'],[]).append(o)
+staging = Path(sys.argv[sys.argv.index('--output-dir')+1]).resolve() if '--output-dir' in sys.argv else None
 for layer in ['north_axis_architecture','north_axis_surroundings']:
  objs=[o for g,os in asset_objects.items() for o in os if g.startswith('NorthSurrounding')==(layer=='north_axis_surroundings')]
  bpy.ops.object.select_all(action='DESELECT')
  for o in objs:o.select_set(True)
- path=R/'blender/exports'/f'{layer}.glb';path.parent.mkdir(parents=True,exist_ok=True)
+ path=(staging or R/'blender/exports')/f'{layer}.glb';path.parent.mkdir(parents=True,exist_ok=True)
  bpy.ops.export_scene.gltf(filepath=str(path),export_format='GLB',use_selection=True,export_apply=True,export_yup=True,export_extras=True)
- shutil.copy2(path,R/'godot/assets'/path.name)
+ if staging is None:shutil.copy2(path,R/'godot/assets'/path.name)
 for group,objs in asset_objects.items():
  deps=bpy.context.evaluated_depsgraph_get();verts=[];tri=0
  for o in objs:
@@ -350,10 +364,12 @@ for solid in solids:
  solid['load_in_scene']=solid['type']!='polygon'
 manifest['collision_policy']='Root loads box/cylinder/beam only. Four building polygons are informational and already built by north_axis_environment. Bridge and pavilion walkable decks/slopes belong exclusively to environment. No water blockers or ground added here.'
 manifest['exports']=['godot/assets/north_axis_architecture.glb','godot/assets/north_axis_surroundings.glb']
-out=R/'renders/north_axis';out.mkdir(parents=True,exist_ok=True)
-(R/'godot/assets/north_axis_assets_manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2),encoding='utf-8')
-(out/'asset_manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2),encoding='utf-8')
-bpy.ops.wm.save_as_mainfile(filepath=str(R/'blender/source/north_axis_architecture.blend'))
+(staging or R/'godot/assets').joinpath('north_axis_assets_manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2),encoding='utf-8')
+out=R/'renders/north_axis'
+if staging is None:
+ out.mkdir(parents=True,exist_ok=True)
+ (out/'asset_manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2),encoding='utf-8')
+ bpy.ops.wm.save_as_mainfile(filepath=str(R/'blender/source/north_axis_architecture.blend'))
 print('NORTH_AXIS_ASSETS_OK',json.dumps(manifest['groups']))
 
 if '--proof' in sys.argv:

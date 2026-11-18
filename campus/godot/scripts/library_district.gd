@@ -4,11 +4,25 @@ const Geometry=preload("res://scripts/wave2_environment.gd")
 const Network=preload("res://scripts/campus_network.gd")
 const Surfaces=preload("res://scripts/road_surfaces.gd")
 static func data()->Dictionary:return JSON.parse_string(FileAccess.get_file_as_string("res://data/library_district.json"))
+
+static func asset_transform(spec: Dictionary) -> Transform3D:
+	# Original district assets contain absolute campus coordinates. New measured
+	# or reference-proportioned assets may retain a useful local modelling origin.
+	var placement: Dictionary = spec.get("local_placement", {})
+	if placement.is_empty():
+		return Transform3D.IDENTITY
+	var p: Array = placement.position
+	return Transform3D(Basis(Vector3.UP, deg_to_rad(float(placement.yaw_degrees))),
+		Vector3(float(p[0]), float(p[1]), float(p[2])))
+
 static func build(c:Node3D,s:Dictionary):
 	Network.build_land(c,s)
 	var d=data();var manifest=JSON.parse_string(FileAccess.get_file_as_string("res://assets/library_district_manifest.json"))
 	for asset in manifest.assets:
-		var model=load("res://assets/"+asset+".glb").instantiate();model.name=asset.to_pascal_case();c.world.add_child(model);c.style(model)
+		var model=load("res://assets/"+asset+".glb").instantiate()
+		model.name=asset.to_pascal_case()
+		model.transform=asset_transform(manifest.assets[asset])
+		c.world.add_child(model);c.style(model)
 	for solid in manifest.collision_solids:North._solid(c,[North.polygon(solid.polygon)],solid.bottom,solid.top,"LibraryDistrict_"+solid.name)
 	var cuts=[]
 	for b in d.buildings:cuts.append(North.polygon(b.outline))
